@@ -1,0 +1,28 @@
+.butt {
+    padding: 10px;
+    display: flex;
+}
+
+.butt button {
+    padding: 10px;
+    margin: 10px;
+}
+
+#id {
+    width: 460px;
+    padding-left: 15px;
+}
+
+.input {
+    width: 600px;
+    padding-bottom: -4px;
+}
+
+.title {
+    padding-left: 20px;
+}
+
+.input div {
+    width: 450px;
+    padding: 5px;
+}

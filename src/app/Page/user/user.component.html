@@ -1,0 +1,37 @@
+<div class="display">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Profile</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Confirm Password</th>
+                <th>Check</th>
+                <th>Edit</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let use of user">
+                <td>{{use.id}}</td>
+                <td><img [src]="'../../../../../assets/image/'+ use.file" width="30"></td>
+                <td>{{use.email}}</td>
+                <td>{{use.password}}</td>
+                <td>{{use.confirmPassword}}</td>
+                <td>{{use.check}}</td>
+                <td>
+                    <p id="edit" (click)="popUp(use.id)"><i class="fa fa-edit"></i></p>
+                </td>
+                <td>
+                    <p id="del" (click)="deleteCompAccess(use)"><i class="fa fa-trash"></i></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<hr>
+
+<nav>
+    <i class="fa fa-copyright"></i> copy rights reserved
+</nav>

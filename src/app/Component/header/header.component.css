@@ -1,0 +1,37 @@
+nav {
+    display: flex;
+    justify-content: "space-between";
+    width: 100%;
+    padding-left: 9px;
+    background-color: rgb(2, 2, 80);
+}
+
+form {
+    display: flex;
+}
+
+input {
+    margin-right: 5px;
+}
+
+.collapse {
+    right: 0;
+    float: right;
+}
+
+#img {
+    width: 39px;
+    height: 39px;
+    border: 1px solid;
+    border-radius: 100%;
+}
+
+.log {
+    width: 60px;
+    border-radius: 2px;
+}
+
+.space {
+    justify-content: space-between;
+    align-items: flex-end;
+}

@@ -1,0 +1,11 @@
+nav {
+    background-color: rgb(2, 2, 80);
+}
+
+a:hover {
+    color: white;
+}
+
+.collapse {
+    align-items: center;
+}

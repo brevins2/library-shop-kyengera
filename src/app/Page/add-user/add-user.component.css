@@ -1,0 +1,12 @@
+body {
+    width: 600px;
+    height: 500px;
+    padding-top: 20px;
+}
+
+#inputFile,
+#email,
+#ids,
+#inputPassword4 {
+    width: 400px;
+}

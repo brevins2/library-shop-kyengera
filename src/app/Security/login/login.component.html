@@ -1,0 +1,32 @@
+<html>
+
+<body>
+    <div class="container" id="contain">
+        <div class="side">
+            <div class="sec">
+                <form [formGroup]="loginForm" class="forms" id="main" (ngSubmit)="Login()">
+                    <p style="text-align: center;">
+                        <a class="navbar-brand" id="link">{{title}}</a>
+                    </p>
+                    <div class="form-group" style="padding: 9px;">
+                        <label for="Email1">Email address</label>
+                        <input formControlName="email" type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted ">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group" style="padding: 9px;">
+                        <label for="Password">Password</label>
+                        <input formControlName="password" type="password" class="form-control" id="InputPassword" placeholder="Password ">
+                    </div>
+                    <p style="margin-left: 350px;">
+                        <button type="submit" style="padding: 10px; text-align: center;" class="btn btn-primary">Login</button> <br>
+                    </p>
+
+                    <a routerLink="/create" id="a" style="margin: 20px;">Don't have an account? Click to Register</a>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

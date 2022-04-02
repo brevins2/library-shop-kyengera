@@ -1,0 +1,27 @@
+.display {
+    background-color: rgb(231, 250, 250);
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+    display: flex;
+    border-radius: 2%;
+}
+
+#edit {
+    color: green;
+}
+
+#del {
+    color: red;
+}
+
+hr {
+    margin-top: 81px;
+    margin-bottom: 2%;
+    width: 100%;
+    text-align: center;
+}
+
+nav {
+    margin-left: 1%;
+}

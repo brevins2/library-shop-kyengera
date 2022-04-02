@@ -1,0 +1,100 @@
+body {
+    overflow: hidden;
+}
+
+.page {
+    font-family: 'Muli', sans-serif;
+    overflow: hidden;
+    margin: 0;
+    margin-top: 0px;
+    background: white;
+    height: auto;
+    padding-left: 60px;
+    padding-right: 40px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    width: auto;
+    display: flex;
+}
+
+.p button:hover {
+    size: +5%;
+    color: black;
+}
+
+.cont {
+    margin-top: -70px;
+    margin-left: -50px;
+    margin-right: -100px;
+    padding: 40px;
+    background-color: rgb(56, 56, 56, 0.4);
+    width: auto;
+    height: 650px;
+}
+
+.move {
+    margin-top: -100px;
+    width: auto;
+    height: 660px;
+    background-image: url('../../../assets/image/Tech Net.jpg');
+    background-position: center;
+    padding: 80px 40px 20px 50px;
+    display: flex;
+    opacity: .9;
+    color: white;
+}
+
+.move img {
+    margin-top: 97px;
+    width: 178px;
+    height: 250px;
+}
+
+#note {
+    margin-top: 100px;
+    height: 400px;
+    margin-left: 70px;
+}
+
+.content {
+    display: block;
+    height: 350px;
+    padding: 0px;
+    padding-left: 0px;
+    padding-top: 0px;
+    margin: 10px 10px 10px 8px;
+    width: 194px;
+    border: 1px solid rgb(3, 31, 31);
+    border-radius: 2px;
+    float: left;
+    left: 0;
+}
+
+.upper {
+    width: 172px;
+    height: 250px;
+}
+
+.lower {
+    display: block;
+    width: 194px;
+    margin-left: -1px;
+    height: 97px;
+    background-color: rgb(3, 31, 31);
+    border: 2px solid rgb(3, 31, 31);
+}
+
+.title {
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+    text-align: justify;
+    padding: 5px;
+    color: white;
+}
+
+nav {
+    text-align: center;
+    width: auto;
+    height: 50px;
+}

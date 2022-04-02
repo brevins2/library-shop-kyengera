@@ -1,0 +1,47 @@
+<div class="display">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Cartegory</th>
+                <th>Price</th>
+                <th>File</th>
+                <th>Edit</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let comp of api">
+                <td>{{comp.id}}</td>
+                <td>{{comp.Title}}</td>
+                <td>{{comp.Category}}</td>
+                <td>{{comp.Price}}</td>
+                <td>
+                    <img [src]="'../../../assets/image/computers/'+comp.File" width="80">
+                </td>
+                <td>
+                    <p id="edit" (click)="updateCompAccess(comp.id)"><i class="fa fa-edit"></i></p>
+                </td>
+                <td>
+                    <p id="del" (click)="deleteCompAccess(comp)"><i class="fa fa-trash"></i></p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br>
+
+<!-- Button trigger modal -->
+<div style="margin-bottom: 70px; margin-top: 10px;">
+    <button type="button" (click)="popUp(id)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id="btn">
+        Add Computer
+    </button>
+</div>
+<br>
+
+<hr>
+
+<nav>
+    <i class="fa fa-copyright"></i> copy rights reserved
+</nav>

@@ -1,0 +1,109 @@
+<mat-card class="mat-parent">
+    <carousel>
+        <div class="carousel-inner" align="center" role="listbox">
+            <slide>
+                <div class="carousel-item" style="display: flex; width: 95%;">
+                    <div class="col-md-4" *ngFor="let mov of movie">
+                        <mat-card class="example-card">
+                            <video mat-card-image>
+                                <source [src]="'../../../assets/videos/'+ mov.File" alt="Photo of a Shiba Inu" type="video/mp4">
+                                <source [src]="'../../../assets/videos/'+ mov.File" style="width: 197px; height: 252px;" type="video/ogg">
+                                Your browser does not support the video tag.
+                            </video>
+
+                            <mat-card-content>
+                                <div class="card-body">
+                                    <h4 class="card-title">Card title</h4>
+                                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.
+                                    </p>
+                                    <!-- <button mat-raised-button color="primary">Primary</button> -->
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+            </slide>
+        </div>
+    </carousel>
+</mat-card>
+<!--/*for mobile and small  devices */-->
+<mat-card class="mat-parent">
+    <carousel>
+        <div class="carousel-inner" align="center" role="listbox">
+            <slide>
+                <div class="carousel-item" style="display: flex; width: 95%;">
+                    <div class="col-md-4" *ngFor="let phon of phone">
+                        <mat-card class="example-card">
+                            <img mat-card-image *ngIf="phon.Brand =='tecno'" [src]="'../../../../../assets/image/phones/'+ phon.File" alt="Photo of a Shiba Inu">
+                            <mat-card-content>
+                                <div class="card-body">
+                                    <h4 class="card-title">Card title</h4>
+                                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.
+                                    </p>
+                                    <!-- <button mat-raised-button color="primary">Primary</button> -->
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+            </slide>
+            <slide>
+                <div class="carousel-item" style="display: flex; width: 95%;">
+                    <div class="col-md-4" *ngFor="let phon of phone">
+                        <mat-card class="example-card">
+                            <img mat-card-image [src]="'../../../../../assets/image/phones/'+ phon.File" alt="Photo of a Shiba Inu">
+                            <mat-card-content>
+                                <div class="card-body">
+                                    <h4 class="card-title">Card title</h4>
+                                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.
+                                    </p>
+                                    <!-- <button mat-raised-button color="primary">Primary</button> -->
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+            </slide>
+            <slide>
+                <div class="carousel-item" style="display: flex; width: 95%;">
+                    <div class="col-md-4" *ngFor="let phon of phone">
+                        <mat-card class="example-card">
+                            <img mat-card-image [src]="'../../../../../assets/image/phones/'+ phon.File" alt="Photo of a Shiba Inu">
+                            <mat-card-content>
+                                <div class="card-body">
+                                    <h4 class="card-title">Card title</h4>
+                                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.
+                                    </p>
+                                    <!-- <button mat-raised-button color="primary">Primary</button> -->
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+            </slide>
+        </div>
+    </carousel>
+</mat-card>
+<mat-card class="mat-parent">
+    <carousel>
+        <div class="carousel-inner" align="center" role="listbox">
+            <slide>
+                <div class="carousel-item" style="display: flex; width: 95%;">
+                    <div class="col-md-4" *ngFor="let comp of computer">
+                        <mat-card class="example-card">
+                            <img mat-card-image [src]="'../../../assets/image/computers/'+comp.File" alt="Photo of a Shiba Inu">
+                            <mat-card-content>
+                                <div class="card-body">
+                                    <h4 class="card-title">Card 2</h4>
+                                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.
+                                    </p>
+                                    <!-- <button mat-raised-button color="primary">Primary</button> -->
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+            </slide>
+        </div>
+    </carousel>
+</mat-card>

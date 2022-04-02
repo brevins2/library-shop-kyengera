@@ -1,0 +1,41 @@
+<body>
+    <div class="container">
+        <div class="input">
+            <form [formGroup]="addPhone" (ngSubmit)="save()" id="styled" class="form-control">
+                <h1>Add Movie</h1>
+                <div class="form-row">
+                    <div class="form-group col-md-6" id="title">
+                        <label for="title">Title</label>
+                        <input formControlName="title" type="text" class="form-control" id="inputTitle" placeholder="Enter Title">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6" id="ids">
+                        <div>
+                            <label for="inputStorage">Storage</label>
+                            <input formControlName="Storage" type="text" class="form-control" id="inputStorage" placeholder="Enter Storage">
+                        </div>
+                        <div>
+                            <label for="inputBattery">Battery</label>
+                            <input formControlName="Battery" type="text" class="form-control" id="inputBattery" placeholder="Enter Battery">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row" id="id">
+                    <label class="inputPrice" for="Price">Price</label>
+                    <input formControlName="Price" class="form-control" type="text" placeholder="Enter Price" id="inputPrice">
+                </div>
+                <div class="form-row" id="id">
+                    <input formControlName="file" class="form-control" type="file" id="inputFile">
+                </div>
+                <br>
+                <div class="butt">
+                    <button class="btn btn-primary" (click)="save()" [ngStyle]="{'background-color': 'green', 'border-color': 'green'}">Save</button>
+                    <button class="btn btn-secondary" (click)="clr()">Clear</button>
+                    <button class="btn btn-primary" (click)="del()" [ngStyle]=" { 'background-color': 'red', 'border-color': 'red'} ">Delete</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</body>
