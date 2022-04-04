@@ -18,22 +18,18 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './Component/footer/footer.component';
 import { HeaderComponent } from './Component/header/header.component';
 import { SliderComponent } from './Component/slider/slider.component';
-import { AddMovieComponent } from './Page/add-movie/add-movie.component';
 import { AddPhoneComponent } from './Page/add-phone/add-phone.component';
 import { AddUserComponent } from './Page/add-user/add-user.component';
 import { AddComputerComponent } from './Page/add-computer/add-computer.component';
 import { AdminComponent } from './Page/admin/admin.component';
 import { ComputingComponent } from './Page/computing/computing.component';
-import { MovieComponent } from './Page/movie/movie.component';
 import { PhoneComponent } from './Page/phone/phone.component';
 import { UserComponent } from './Page/user/user.component';
 import { ComputersComponent } from './Pages/computers/computers.component';
 import { FirstPageComponent } from './Pages/first-page/first-page.component';
 import { MainComponent } from './Pages/main/main.component';
 import { PhonesComponent } from './Pages/phones/phones.component';
-import { MoviesComponent } from './Pages/movies/movies.component';
 import { ComputerPayComponent } from './Pay/computer-pay/computer-pay.component';
-import { MoviePayComponent } from './Pay/movie-pay/movie-pay.component';
 import { PhonePayComponent } from './Pay/phone-pay/phone-pay.component';
 import { LoginComponent } from './Security/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -73,22 +69,18 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
     FooterComponent,
     HeaderComponent,
     SliderComponent,
-    AddMovieComponent,
     AddPhoneComponent,
     AddUserComponent,
     AddComputerComponent,
     AdminComponent,
     ComputingComponent,
-    MovieComponent,
     PhoneComponent,
     UserComponent,
     ComputersComponent,
     FirstPageComponent,
     MainComponent,
     PhonesComponent,
-    MoviesComponent,
     ComputerPayComponent,
-    MoviePayComponent,
     PhonePayComponent,
     LoginComponent,
     FileUploadComponent,

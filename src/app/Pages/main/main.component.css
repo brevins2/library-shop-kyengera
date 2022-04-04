@@ -9,3 +9,7 @@ a:hover {
 .collapse {
     align-items: center;
 }
+
+a:active {
+    background-color: black;
+}

@@ -9,7 +9,8 @@ export class Api{
     public Title: string,
     public Price: number,
     public Category: string,
-    public File: string
+    public File: string,
+    public Brand: string
   ){}
 }
 

@@ -14,25 +14,8 @@ const httpOptions = {
 })
 export class ServeService {
 
-   //for movies
-   private url1 = 'http://localhost:3000/Movies';
-
-   constructor(private http: HttpClient) { }
- 
-   getTask(): Observable<Movies[]>{
-     return this.http.get<any>(this.url1);
-   }
- 
-   deleteTask(movie: Movies): Observable<Movies>{
-     const url = `${this.url1}/${movie.id}`;
-     return this.http.delete<Movies>(url);
-   }
- 
-   updateData(movie: Movies): Observable<Movies>{
-     const url = `${this.url1}/${movie.id}`;
-     return this.http.put<Movies>(url, movie, httpOptions);
-   }
- 
+  constructor(private http: HttpClient) { }
+  
  //for phones
    private url2 ="http://localhost:3000/Phones";
  
