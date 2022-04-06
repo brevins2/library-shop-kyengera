@@ -38,10 +38,9 @@
 .mat-parent {
     background-color: white;
     margin-top: 6%;
-    width: 80%;
-    margin-left: 5%;
+    width: 100%;
+    /* margin-left: 5%; */
     margin-right: 5%;
-    /*background-image: url("/assets/img/bg1.jpg");*/
 }
 
 .mat-parent-small {
@@ -51,7 +50,7 @@
 
 /*for ipad and other lage tabs*/
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 200px) {
     .mat-parent-small {
         display: block;
     }
@@ -84,7 +83,7 @@
 
 /*for mobile devices*/
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 200px) {
     .mat-parent-small {
         display: block;
     }

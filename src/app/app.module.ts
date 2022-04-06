@@ -11,6 +11,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSliderModule } from '@angular/material/slider';
+import { MatGridListModule} from '@angular/material/grid-list';
 
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
@@ -104,6 +105,7 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
     MatProgressBarModule,
     MatDialogModule,
     MatSliderModule,
+    MatGridListModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
