@@ -8,8 +8,6 @@ export class Phones{
     public Amount: number,
     public Battery: string,
     public Title: string,
-    public password: string,
-    public email: string,
     public Cartegory: string,
     public Category: string,
     public Rating: string,

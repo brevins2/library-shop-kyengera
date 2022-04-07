@@ -1,81 +1,96 @@
-<!--/*for mobile and small  devices */-->
-<mat-card class="mat-parent">
-    <carousel style="width: 100%;">
-        <div class="carousel-inner" align="center" role="listbox">
-            <slide>
-                <div class="carousel-item" style="display: flex; width: 100%;">
-                    <div class="col-md-4" *ngFor="let phon of phone">
-                        <mat-card class="example-card">
-                            <img mat-card-image *ngIf="phon.Brand =='tecno'" [src]="'../../../../../assets/image/phones/'+ phon.File" alt="Photo of a Shiba Inu">
-                            <mat-card-content>
-                                <div class="card-body">
-                                    <h4 class="card-title">{{phon.Title}}</h4>
-                                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.
-                                    </p>
-                                    <!-- <button mat-raised-button color="primary">Primary</button> -->
-                                </div>
-                            </mat-card-content>
-                        </mat-card>
+<p style="background: linear-gradient(rgb(213, 213, 215), rgb(236, 236, 251));">
+    <!--/*for mobile and small  devices */-->
+    <mat-card class="mat-parent">
+        <carousel style="width: 100%;">
+            <div class="carousel-inner" align="center" role="listbox">
+                <slide>
+                    <div class="carousel-item" style="display: flex; width: 55%;">
+                        <div class="col-md-4" *ngFor="let phon of phone">
+                            <mat-card class="example-card">
+                                <img mat-card-image [src]="'../../../../../assets/image/phones/'+ phon.File" alt="Photo of a Shiba Inu">
+                                <mat-card-content>
+                                    <div>
+                                        <h4 class="card-title">{{phon.Title}}</h4>
+                                        <p>
+                                            Shs. {{phon.Price}}
+                                            <br/>{{phon.Battery}}
+                                            <br/>{{phon.Brand}}
+                                        </p>
+                                        <!-- <button mat-raised-button color="primary">Primary</button> -->
+                                    </div>
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
                     </div>
-                </div>
-            </slide>
-            <slide>
-                <div class="carousel-item" style="display: flex; width: 95%;">
-                    <div class="col-md-4" *ngFor="let phon of phone">
-                        <mat-card class="example-card">
-                            <img mat-card-image [src]="'../../../../../assets/image/phones/'+ phon.File" alt="Photo of a Shiba Inu">
-                            <mat-card-content>
-                                <div class="card-body">
-                                    <h4 class="card-title">{{phon.Title}}</h4>
-                                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.
-                                    </p>
-                                    <!-- <button mat-raised-button color="primary">Primary</button> -->
-                                </div>
-                            </mat-card-content>
-                        </mat-card>
+                </slide>
+                <slide>
+                    <div class="carousel-item" style="display: flex; width: 55%;">
+                        <div class="col-md-4" *ngFor="let phon of phone">
+                            <mat-card class="example-card">
+                                <img mat-card-image [src]="'../../../../../assets/image/phones/'+ phon.File" alt="Photo of a Shiba Inu">
+                                <mat-card-content>
+                                    <div class="card-body">
+                                        <h4 class="card-title">{{phon.Title}}</h4>
+                                        <p>
+                                            Shs. {{phon.Price}}
+                                            <br/>{{phon.Battery}}
+                                            <br/>{{phon.Brand}}
+                                        </p>
+
+                                    </div>
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
                     </div>
-                </div>
-            </slide>
-            <slide>
-                <div class="carousel-item" style="display: flex; width: 95%;">
-                    <div class="col-md-4" *ngFor="let phon of phone">
-                        <mat-card class="example-card">
-                            <img mat-card-image [src]="'../../../../../assets/image/phones/'+ phon.File" alt="Photo of a Shiba Inu">
-                            <mat-card-content>
-                                <div class="card-body">
-                                    <h4 class="card-title">{{phon.Title}}</h4>
-                                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.
-                                    </p>
-                                    <!-- <button mat-raised-button color="primary">Primary</button> -->
-                                </div>
-                            </mat-card-content>
-                        </mat-card>
+                </slide>
+                <slide>
+                    <div class="carousel-item" style="display: flex; width: 55%;">
+                        <div class="col-md-4" *ngFor="let phon of phone">
+                            <mat-card class="example-card">
+                                <img mat-card-image [src]="'../../../../../assets/image/phones/'+ phon.File" alt="Photo of a Shiba Inu">
+                                <mat-card-content>
+                                    <div class="card-body">
+                                        <h4 class="card-title">{{phon.Title}}</h4>
+                                        <p>
+                                            Shs. {{phon.Price}}
+                                            <br/>{{phon.Battery}}
+                                            <br/>{{phon.Brand}}
+                                        </p>
+
+                                    </div>
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
                     </div>
-                </div>
-            </slide>
-        </div>
-    </carousel>
-</mat-card>
-<mat-card class="mat-parent">
-    <carousel>
-        <div class="carousel-inner" align="center" role="listbox">
-            <slide>
-                <div class="carousel-item" style="display: flex; width: 95%;">
-                    <div class="col-md-4" *ngFor="let comp of computer">
-                        <mat-card class="example-card">
-                            <img mat-card-image [src]="'../../../assets/image/computers/'+comp.File" alt="Photo of a Shiba Inu">
-                            <mat-card-content>
-                                <div class="card-body">
-                                    <h4 class="card-title">Card 2</h4>
-                                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.
-                                    </p>
-                                    <!-- <button mat-raised-button color="primary">Primary</button> -->
-                                </div>
-                            </mat-card-content>
-                        </mat-card>
+                </slide>
+            </div>
+        </carousel>
+    </mat-card>
+    <mat-card class="mat-parent">
+        <carousel>
+            <div class="carousel-inner" align="center" role="listbox">
+                <slide>
+                    <div class="carousel-item" style="display: flex; width: 55%;">
+                        <div class="col-md-5" *ngFor="let comp of computer">
+                            <mat-card class="example-card">
+                                <img mat-card-image [src]="'../../../assets/image/computers/'+comp.File" style="height: 110px;">
+                                <mat-card-content>
+                                    <!-- class="card-body" -->
+                                    <div>
+                                        <h4 class="card-title">{{comp.Title}}</h4>
+                                        <p>
+                                            {{comp.Category}}
+                                            <br/> Shs. {{comp.Price}}
+                                            <br/> {{comp.Category}}
+                                        </p>
+                                        <!-- <button mat-raised-button color="primary">Primary</button> -->
+                                    </div>
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
                     </div>
-                </div>
-            </slide>
-        </div>
-    </carousel>
-</mat-card>
+                </slide>
+            </div>
+        </carousel>
+    </mat-card>
+</p>

@@ -13,10 +13,14 @@
                 height: 600px;
             }
         }
+        
+        a:hover {
+            color: black;
+        }
     </style>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg" style="background-color: rgb(2, 2, 80);">
+    <nav class="navbar navbar-expand-lg" style="background-color: rgb(2, 2, 80); height: 120px;">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" (click)="backgroundImageExample2.toggle()" aria-controls="backgroundImageExample2" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fas fa-bars"></i>
@@ -25,45 +29,81 @@
                 <a class="nav-link" aria-current="page" routerLink="#">
                     <img src="../../../assets/image/Cmj.png" width="40">
                 </a>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="text-align: center;">
-                    <li class="nav-item active">
-                        <a class="nav-link" routerLink="phones">Phones</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="computers">Computer Accessories</a>
-                    </li>
-                </ul>
             </div>
-            <a class="btn btn-danger" routerLink="/login">Logout</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="text-align: center;">
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink="/cmj" style="color: white;"><i class="fa fa-home" style="height: 60px; color: white;"></i></a>
+                </li>
+                <li class="nav-item">
+
+                    <a class="nav-link" routerLink="/phones" style="color: white;">
+                        <i class="fa fa-phone" style="height: 60px; color: white;"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+
+                    <a class="nav-link" routerLink="/computers" style="color: white;">
+                        <i class="fa fa-desktop" style="height: 60px; color: white;"></i>
+                    </a>
+                </li>
+            </ul>
+            <a class="btn btn-danger" style="margin-left: 50px;" routerLink="/login">Logout</a>
         </div>
     </nav>
-    <nav class="navbar navbar-expand-lg" style="background-color: rgb(252, 252, 252);">
+    <nav class="navbar navbar-expand-lg" style="background-color: rgb(252, 252, 252); height: 100px;">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" (click)="backgroundImageExample2.toggle()" aria-controls="backgroundImageExample2" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fas fa-bars"></i>
-        </button>
+                    </button>
             <div mdbCollapse #backgroundImageExample2="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
-                <a class="nav-link" aria-current="page" routerLink="#">
-                    <img src="../../../assets/image/Cmj.png" width="40">
-                </a>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="text-align: center;">
-                    <li class="nav-item active">
-                        <a class="nav-link" routerLink="phones">Phones</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="computers">Computer Accessories</a>
-                    </li>
-                </ul>
+                <input type="search" class="form-control" id="search-input-sidenav" id="form1" name="search" placeholder="Search...." style="width:280px;">
             </div>
-            <a class="btn btn-danger" routerLink="/login">Logout</a>
+            <a class="btn" style="margin-right: 2px;" routerLink="/create">Create account</a>
+            <a class="btn btn-danger" routerLink="/login">Login</a>
         </div>
     </nav>
 </header>
-<br/>
 
 <body>
+    <div style="display:flex;">
+        <div class="btn" style="width:20%;">
+            Ads
+        </div>
+        <div style="width: 80%; margin:0px; padding: 0px;">
+            <mat-card class="mat-parent-small" style="background-color: none; border: 0px; margin:0px; padding: 0px;">
+                <carousel style="width: 100%; padding: 0px; margin:0px;">
+                    <slide style="width: 100%;">
+                        <mat-card class="example-card">
+                            <img mat-card-image src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Photo of a Shiba Inu">
+                        </mat-card>
+                    </slide>
+                    <slide style="width: 100%;">
+                        <mat-card class="example-card">
+                            <img mat-card-image src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg" alt="Photo of a Shiba Inu">
+                        </mat-card>
+                    </slide>
+                    <slide style="width: 100%;">
+                        <mat-card class="example-card">
+                            <img mat-card-image src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" alt="Photo of a Shiba Inu">
+                        </mat-card>
+                    </slide>
+                    <slide style="width: 100%;">
+                        <mat-card class="example-card">
+                            <img mat-card-image src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Photo of a Shiba Inu">
+                        </mat-card>
+                    </slide>
+                    <slide style="width: 100%;">
+                        <mat-card class="example-card">
+                            <img mat-card-image src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg" alt="Photo of a Shiba Inu">
+                        </mat-card>
+                    </slide>
+                </carousel>
+            </mat-card>
+        </div>
+    </div>
     <app-tests>
     </app-tests>
+    <br/>
 
     <!-- <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
