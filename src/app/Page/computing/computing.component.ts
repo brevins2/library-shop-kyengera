@@ -45,15 +45,6 @@ export class ComputingComponent implements OnInit {
       });
   }
 
-  popUp(idToPass: any){
-    // alert(this.id);
-    return this.dialogRef.open(AddComputerComponent,{
-      data:{
-        id: idToPass
-      }
-    });
-  }
-
   deleteCompAccess(computeDelete: ComputerAccess){
     this.Serve.deleteCompAccess(computeDelete).subscribe(()=> this.compute = this.compute.filter(t => t.id !== computeDelete.id));
     this.http.delete('http://localhost:3000/Computers').
@@ -63,7 +54,6 @@ export class ComputingComponent implements OnInit {
 
   updateCompAccess(idToPass: any){
     // this.Serve.updateCompAccess(computeUpdate).subscribe();
-    alert(this.id);
     return this.dialogRef.open(AddComputerComponent,{
       data:{
         id: idToPass
