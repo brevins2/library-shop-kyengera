@@ -16,7 +16,7 @@ import { FileUploadComponent } from './Component/file-upload/file-upload.compone
 import { CreateComponent } from './Security/create/create.component';
 import { AddUserComponent } from './Page/add-user/add-user.component';
 import { TestsComponent } from './test/tests/tests.component';
-import { PhonComponent } from './Pages/First/phon/phon.component';
+
 import { PhonePayComponent } from './Pay/phone-pay/phone-pay.component';
 import { ComputerPayComponent } from './Pay/computer-pay/computer-pay.component';
 

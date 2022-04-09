@@ -43,9 +43,6 @@ import { CreateComponent } from './Security/create/create.component';
 import { TermsComponent } from './Component/terms/terms.component';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { TestsComponent } from './test/tests/tests.component';
-import { MovComponent } from './Pages/First/mov/mov.component';
-import { PhonComponent } from './Pages/First/phon/phon.component';
-import { CompComponent } from './Pages/First/comp/comp.component';
 
 import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
@@ -87,10 +84,7 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
     FileUploadComponent,
     CreateComponent,
     TermsComponent,
-    TestsComponent,
-    MovComponent,
-    PhonComponent,
-    CompComponent
+    TestsComponent
   ],
   imports: [
     BrowserModule,
