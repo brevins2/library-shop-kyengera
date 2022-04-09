@@ -10,7 +10,7 @@
             <div class="carousel-inner" align="center" role="listbox">
                 <slide>
                     <div class="carousel-item" style="display: flex; width: 55%;">
-                        <div class="col-md-4" *ngFor="let phon of phone">
+                        <div class="col-md-4" *ngFor="let phon of phone" [ngIf]="'Tecno'">
                             <mat-card class="example-card">
                                 <img mat-card-image [src]="'../../../../../assets/image/phones/'+ phon.File" alt="Photo of a Shiba Inu">
                                 <mat-card-content>
