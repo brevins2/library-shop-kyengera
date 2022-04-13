@@ -26,4 +26,9 @@ export class FirstPageComponent implements OnInit {
   onSlideRangeChange(indexes: number[]|void): void {
     this.slidesChangeMessage = `Slides have been switched: ${indexes}`;
   }
+
+  search() {
+    let text = "Mr. Blue has a blue house";
+    let position = text.search(/Blue/);
+}
 }
