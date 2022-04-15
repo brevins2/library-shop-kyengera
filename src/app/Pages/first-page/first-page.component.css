@@ -4,7 +4,3 @@ body {
     padding-top: 10px;
     background: linear-gradient(rgb(213, 213, 215), rgb(236, 236, 251));
 }
-
-header {
-    position: static;
-}

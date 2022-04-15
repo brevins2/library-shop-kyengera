@@ -15,7 +15,8 @@ body {
 }
 
 #styled {
-    height: 515px;
+    height: 90%;
+    width: 100%;
 }
 
 #inputFile {

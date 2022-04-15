@@ -41,6 +41,6 @@ export class MainComponent implements OnInit {
     });
   }
 
-  mySearch(){}
+  search(){}
 
 }

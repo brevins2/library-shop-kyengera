@@ -34,4 +34,6 @@ export class AdminComponent implements OnInit {
     });
   }
 
+  search(){}
+
 }

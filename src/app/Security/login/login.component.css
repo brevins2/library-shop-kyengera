@@ -9,7 +9,7 @@ body {
     padding: 40px 0px 0px 0px;
     padding-bottom: 18.7%;
     height: 100%;
-    width: 50%;
+    width: 95%;
 }
 
 #main {
@@ -20,7 +20,7 @@ body {
     margin-top: 40px;
     border: 2px solid rgb(10, 104, 104);
     border-radius: 20px;
-    width: 50%;
+    width: 60%;
     height: 100%;
     background-color: rgb(255, 255, 255);
     opacity: 1;

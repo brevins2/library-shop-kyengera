@@ -7,13 +7,13 @@
             </b>
         </p>
         <carousel style="width: 100%;">
-            <div class="carousel-inner" align="center" role="listbox">
-                <slide>
-                    <div class="carousel-item" style="display: flex; width: 55%;">
-                        <div class="col-md-4" *ngFor="let phon of phone" [ngIf]="'Tecno'">
+            <div class="carousel-inner" align="center" role="listbox" style=" height: 350px; padding-bottom: 5px;">
+                <slide style="margin-left: -30px;">
+                    <div class="carousel-item" style="display: flex; width: 57%;">
+                        <div class="col-md-4" *ngFor="let phon of phone" style="margin-right: -53px; height: 100px;">
                             <mat-card class="example-card">
-                                <img mat-card-image [src]="'../../../../../assets/image/phones/'+ phon.File" alt="Photo of a Shiba Inu">
-                                <mat-card-content>
+                                <img mat-card-image [src]="'../../../../../assets/image/phones/'+ phon.File" height="80">
+                                <mat-card-content style="height: 140px;">
                                     <div>
                                         <h4 class="card-title">{{phon.Title}}</h4>
                                         <p>
@@ -21,47 +21,44 @@
                                             <br/>{{phon.Battery}}
                                             <br/>{{phon.Brand}}
                                         </p>
-                                        <!-- <button mat-raised-button color="primary">Primary</button> -->
                                     </div>
                                 </mat-card-content>
                             </mat-card>
                         </div>
                     </div>
                 </slide>
-                <slide>
-                    <div class="carousel-item" style="display: flex; width: 55%;">
-                        <div class="col-md-4" *ngFor="let phon of phone">
+                <slide style="margin-left: -30px;">
+                    <div class="carousel-item" style="display: flex; width: 57%;">
+                        <div class="col-md-4" *ngFor="let phon of phone" style="margin-right: -53px; height: 100px;">
                             <mat-card class="example-card">
-                                <img mat-card-image [src]="'../../../../../assets/image/phones/'+ phon.File" alt="Photo of a Shiba Inu">
-                                <mat-card-content>
-                                    <div class="card-body">
+                                <img mat-card-image [src]="'../../../../../assets/image/phones/'+ phon.File" height="80">
+                                <mat-card-content style="height: 140px;">
+                                    <div>
                                         <h4 class="card-title">{{phon.Title}}</h4>
                                         <p>
                                             Shs. {{phon.Price}}
                                             <br/>{{phon.Battery}}
                                             <br/>{{phon.Brand}}
                                         </p>
-
                                     </div>
                                 </mat-card-content>
                             </mat-card>
                         </div>
                     </div>
                 </slide>
-                <slide>
-                    <div class="carousel-item" style="display: flex; width: 55%;">
-                        <div class="col-md-4" *ngFor="let phon of phone">
+                <slide style="margin-left: -30px;">
+                    <div class="carousel-item" style="display: flex; width: 57%;">
+                        <div class="col-md-4" *ngFor="let phon of phone" style="margin-right: -53px; height: 100px;">
                             <mat-card class="example-card">
-                                <img mat-card-image [src]="'../../../../../assets/image/phones/'+ phon.File" alt="Photo of a Shiba Inu">
-                                <mat-card-content>
-                                    <div class="card-body">
+                                <img mat-card-image [src]="'../../../../../assets/image/phones/'+ phon.File" height="80">
+                                <mat-card-content style="height: 140px;">
+                                    <div>
                                         <h4 class="card-title">{{phon.Title}}</h4>
                                         <p>
                                             Shs. {{phon.Price}}
                                             <br/>{{phon.Battery}}
                                             <br/>{{phon.Brand}}
                                         </p>
-
                                     </div>
                                 </mat-card-content>
                             </mat-card>
@@ -78,17 +75,59 @@
             </b>
         </p>
         <carousel>
-            <div class="carousel-inner" align="center" role="listbox">
-                <slide>
-                    <div class="carousel-item" style="display: flex; width: 55%;">
-                        <div class="col-md-5" *ngFor="let comp of computer">
+            <div class="carousel-inner" align="center" role="listbox" style="height: 350px; padding-bottom: 5px; padding-left: 0px;">
+                <slide style="margin-left: -30px;">
+                    <div class="carousel-item" style="display: flex; width: 57%;">
+                        <div class="col-md-5" *ngFor="let comp of computer" style="margin-right: -53px; height: 100px;">
                             <mat-card class="example-card">
                                 <img mat-card-image [src]="'../../../assets/image/computers/'+comp.File" style="height: 110px;">
-                                <mat-card-content>
+                                <mat-card-content style="height: 140px;">
                                     <!-- class="card-body" -->
                                     <div>
-                                        <h4 class="card-title">{{comp.Title}}</h4>
-                                        <p>
+                                        <h4 style="text-align: left;" class="card-title">{{comp.Title}}</h4>
+                                        <p style="text-align: left;">
+                                            {{comp.Category}}
+                                            <br/> Shs. {{comp.Price}}
+                                            <br/> {{comp.Category}}
+                                        </p>
+                                        <!-- <button mat-raised-button color="primary">Primary</button> -->
+                                    </div>
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
+                    </div>
+                </slide>
+                <slide style="margin-left: -30px;">
+                    <div class="carousel-item" style="display: flex; width: 57%;">
+                        <div class="col-md-5" *ngFor="let comp of computer" style="margin-right: -53px; height: 100px;">
+                            <mat-card class="example-card">
+                                <img mat-card-image [src]="'../../../assets/image/computers/'+comp.File" style="height: 110px;">
+                                <mat-card-content style="height: 140px;">
+                                    <!-- class="card-body" -->
+                                    <div>
+                                        <h4 style="text-align: left;" class="card-title">{{comp.Title}}</h4>
+                                        <p style="text-align: left;">
+                                            {{comp.Category}}
+                                            <br/> Shs. {{comp.Price}}
+                                            <br/> {{comp.Category}}
+                                        </p>
+                                        <!-- <button mat-raised-button color="primary">Primary</button> -->
+                                    </div>
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
+                    </div>
+                </slide>
+                <slide style="margin-left: -30px;">
+                    <div class="carousel-item" style="display: flex; width: 57%;">
+                        <div class="col-md-5" *ngFor="let comp of computer" style="margin-right: -53px; height: 100px;">
+                            <mat-card class="example-card">
+                                <img mat-card-image [src]="'../../../assets/image/computers/'+comp.File" style="height: 110px;">
+                                <mat-card-content style="height: 140px;">
+                                    <!-- class="card-body" -->
+                                    <div>
+                                        <h4 style="text-align: left;" class="card-title">{{comp.Title}}</h4>
+                                        <p style="text-align: left;">
                                             {{comp.Category}}
                                             <br/> Shs. {{comp.Price}}
                                             <br/> {{comp.Category}}

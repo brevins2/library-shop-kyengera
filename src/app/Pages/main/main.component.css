@@ -1,9 +1,14 @@
+body {
+    background-color: rgb(246, 244, 240);
+}
+
 nav {
     background-color: rgb(2, 2, 80);
 }
 
 a:hover {
-    color: white;
+    color: black;
+    background-color: black;
 }
 
 .collapse {
@@ -11,5 +16,5 @@ a:hover {
 }
 
 a:active {
-    background-color: black;
+    color: black;
 }
