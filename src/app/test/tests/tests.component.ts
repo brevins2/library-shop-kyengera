@@ -30,7 +30,8 @@ export class Computers{
     public Category: string,
     public Rating: string,
     public File: string,
-    public Storage: string
+    public Storage: string,
+    public Brand: string
   ){}
 }
 
