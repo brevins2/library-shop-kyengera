@@ -23,7 +23,7 @@ export class Data{
 export class PhonePayComponent implements OnInit {
 
   data: Data[] = [];
-  dts = new FormGroup({
+  addPhone = new FormGroup({
     id: new FormControl(''),
     file: new FormControl(''),
     title: new FormControl(''),
@@ -47,7 +47,7 @@ export class PhonePayComponent implements OnInit {
 
   datas(){
     this.service.getCurrentData(this.router.snapshot.params['id']).subscribe((response)=>{
-      this.dts = new FormGroup({
+      this.addPhone = new FormGroup({
         // id: new FormControl(response['id']),
         file: new FormControl(''),
         title: new FormControl(''),
@@ -59,4 +59,9 @@ export class PhonePayComponent implements OnInit {
 
   }
 
+  save(){}
+
+  clr(){}
+
+  del(){}
 }

@@ -6,6 +6,16 @@ import { ServeService } from 'src/app/Services/serve.service';
 import { compAccess } from 'src/app/values';
 import { ComputerAccess } from 'src/app/interfaces';
 
+export class values{
+  constructor(
+    public id: number,
+    public Title: string,
+    public Category: string,
+    public Price: number,
+    public File: string
+  ){}
+}
+
 @Component({
   selector: 'app-add-computer',
   templateUrl: './add-computer.component.html',
@@ -26,7 +36,7 @@ export class AddComputerComponent implements OnInit {
     this.addComputer = this.addBuild.group({
       Title: [''],
       Category: [''],
-      Price: [''],
+      Price: [''] ,
       File: ['']
     });
   }

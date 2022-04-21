@@ -32,25 +32,6 @@
             "check": true
         }
     ],
-    "Movies": [{
-            "id": 1,
-            "Title": "Rabbit movie",
-            "Cartegory": "Animation",
-            "Amount": 1500,
-            "Rating": "PG-5",
-            "File": "mov_bbb.mp4",
-            "fine": "mov_bbb.ogg"
-        },
-        {
-            "id": 2,
-            "Title": "Venom 2",
-            "Cartegory": "Action Sci-fi",
-            "Amount": 1500,
-            "Rating": "PG-13",
-            "File": "venom.mp4",
-            "fine": "venom.ogg"
-        }
-    ],
     "Phones": [{
             "id": 1,
             "Title": "Edge",
