@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
 
   title = "login";
   alert = false;
+  alerts = false;
   @Output() profile: string = '';
   public loginForm! : FormGroup;
   constructor(
@@ -50,15 +51,19 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['users']);
       }
       else{
-        alert('something went wrong!');
+        this.alerts = true;
       }
     },
     error=>{
-      alert("something went wrong!")
+      this.alerts = true;
     });
   }
 
   closeAlert(){
     this.alert = false;
+  }
+
+  closeDangerAlert(){
+    this.alerts = false;
   }
 }

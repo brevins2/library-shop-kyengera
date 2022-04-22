@@ -3,9 +3,12 @@
 <body>
     <div id="contain">
         <div class="side">
-            <div class="sec" style="display: flex;">
-                <div style="width: 20%; height: 300px; margin-top: 12%; margin-left: 50px; text-align: center;">
-                    <img src="../../../assets/image/icons/triouser.png" width="200" style="border-radius:5%;">
+            <div class="sec">
+                <div *ngIf="alerts" class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Oops!!</strong> Something went wrong, check your password
+                    <button type="button" (click)="closeDangerAlert()" class="close" data-dismiss="alerts" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
                     <strong>Success !</strong> Log in successful !.
@@ -13,18 +16,17 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-
                 <form [formGroup]="loginForm" class="forms" id="main" (ngSubmit)="Login()">
-                    <p style="text-align: center;">
-                        <a class="navbar-brand" id="link">{{title}}</a>
-                    </p>
+                    <div class="profile">
+                        <img src="../../../assets/image/icons/triouser.png" width="200" style="border-radius:5%;">
+                    </div>
                     <div class="form-group" style="padding: 9px;">
                         <label for="Email1">Email address</label>
                         <input formControlName="email" type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email">
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <div class="form-group" style="padding: 9px;">
-                        <label for="Password ">Password</label>
+                        <label for="Password">Password</label>
                         <input formControlName="password" type="password" class="form-control" id="InputPassword" placeholder="Password">
                     </div>
                     <p>

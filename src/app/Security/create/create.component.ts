@@ -10,8 +10,9 @@ import { Router } from '@angular/router';
 })
 export class CreateComponent implements OnInit {
 
-  // @Output() file: string = this.signUpForm.value.file;
   public signUpForm !: FormGroup;
+  alert = false;
+  alerts = false;
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
@@ -30,12 +31,20 @@ export class CreateComponent implements OnInit {
 
   signUp(){
     this.http.post<any>("http://localhost:3000/register", this.signUpForm.value).subscribe(res=>{  
+      this.alert = true;
       this.signUpForm.reset();
       this.router.navigate(['login']);
     },
     error=>{
-      alert('something went wrong!!');
+      this.alerts =true;
     });
   }
 
+  closeAlert(){
+    this.alert = false;
+  }
+
+  closeDangerAlert(){
+    this.alerts = false;
+  }
 }
