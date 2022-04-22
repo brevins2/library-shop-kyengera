@@ -21,8 +21,8 @@ import { PhonePayComponent } from './Pay/phone-pay/phone-pay.component';
 import { ComputerPayComponent } from './Pay/computer-pay/computer-pay.component';
 
 const routes: Routes = [
-  { path: 'test', component: TestsComponent },
   { path: '', redirectTo: 'cmj', pathMatch: 'full' },
+  { path: 'test', component: TestsComponent },
   { path: 'cmj', component: FirstPageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'create', component: CreateComponent },
