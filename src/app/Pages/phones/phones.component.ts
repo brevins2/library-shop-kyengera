@@ -39,7 +39,7 @@ export class PhonesComponent implements OnInit {
   }
 
   getCurrentDatas(){
-    this.service.getCurrentData(this.router.snapshot.params['id']).subscribe((results)=>{
+    this.service.getCurrentPhoneData(this.router.snapshot.params['id']).subscribe((results)=>{
       console.log(results);
       return results;
     });

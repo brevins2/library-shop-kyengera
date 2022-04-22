@@ -34,21 +34,13 @@ export class PhonePayComponent implements OnInit {
   constructor(private router: ActivatedRoute, private service: ServeService, private http: HttpClient) { }
 
   ngOnInit(): void {
-    // this.getCurrentDatas();
-    this.datas();
+    this.getCurrentData();
   }
 
-  getCurrentDatas(){
-    this.service.getCurrentData(this.router.snapshot.params['id']).subscribe((results)=>{
-      console.log(results);
-      return results;      
-    });
-  }
-
-  datas(){
-    this.service.getCurrentData(this.router.snapshot.params['id']).subscribe((response)=>{
+  getCurrentData(){
+    this.service.getCurrentPhoneData(this.router.snapshot.params['id']).subscribe((result)=>{
       this.addPhone = new FormGroup({
-        // id: new FormControl(response['id']),
+        id: new FormControl(result),
         file: new FormControl(''),
         title: new FormControl(''),
         storage: new FormControl(''),
@@ -56,7 +48,6 @@ export class PhonePayComponent implements OnInit {
         price: new FormControl('')
       });
     });
-
   }
 
   save(){}

@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   title = "login";
+  alert = false;
   @Output() profile: string = '';
   public loginForm! : FormGroup;
   constructor(
@@ -38,10 +39,12 @@ export class LoginComponent implements OnInit {
         'i83admin' === this.loginForm.value.password
       });
       if(admin){
+        this.alert = true;
         this.loginForm.reset();
         this.router.navigate(['admin']);
       }
       else if (user) {
+        this.alert = true;
         this.profile = user.email;
         this.loginForm.reset();
         this.router.navigate(['users']);
@@ -55,5 +58,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-
+  closeAlert(){
+    this.alert = false;
+  }
 }

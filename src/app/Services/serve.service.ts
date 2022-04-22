@@ -23,15 +23,9 @@ export class ServeService {
      return this.http.get<any>(this.url2);
    }
 
-   getCurrentData(id: number){
+   getCurrentPhoneData(id: number){
     return this.http.get(`${this.url2}/${id}`);
    }
-
-  //  displayData(id: any, data: any){
-  //   this.http.get<any>(`${this.url2}/${id}`, data).subscribe((data)=>{
-  //     return data;
-  //   });
-  //  }
  
    deletePhone(phone: Phones): Observable<Phones>{
      const url = `${this.url2}/${phone.id}`;
@@ -48,6 +42,10 @@ export class ServeService {
  
    getTaskComputer(): Observable<ComputerAccess[]>{
      return this.http.get<any>(this.url3);
+   }
+
+   getCurrentComputerData(id: number){
+    return this.http.get(`${this.url3}/${id}`);
    }
  
    deleteCompAccess(comp: ComputerAccess): Observable<ComputerAccess>{

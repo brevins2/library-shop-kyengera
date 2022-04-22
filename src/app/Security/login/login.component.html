@@ -1,13 +1,24 @@
 <html>
 
 <body>
-
     <div id="contain">
         <div class="side">
             <div class="sec" style="display: flex;">
                 <div style="width: 20%; height: 300px; margin-top: 12%; margin-left: 50px; text-align: center;">
                     <img src="../../../assets/image/icons/triouser.png" width="200" style="border-radius:5%;">
                 </div>
+                <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Success !</strong> Log in successful !.
+                    <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Success !</strong> Log in successful !.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div> -->
                 <form [formGroup]="loginForm" class="forms" id="main" (ngSubmit)="Login()">
                     <p style="text-align: center;">
                         <a class="navbar-brand" id="link">{{title}}</a>
@@ -15,14 +26,14 @@
                     <div class="form-group" style="padding: 9px;">
                         <label for="Email1">Email address</label>
                         <input formControlName="email" type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted ">We'll never share your email with anyone else.</small>
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <div class="form-group" style="padding: 9px;">
-                        <label for="Password">Password</label>
-                        <input formControlName="password" type="password" class="form-control" id="InputPassword" placeholder="Password ">
+                        <label for="Password ">Password</label>
+                        <input formControlName="password" type="password" class="form-control" id="InputPassword" placeholder="Password">
                     </div>
                     <p>
-                        <button type="submit" style="padding: 10px; text-align: center; " class="btn btn-primary ">Login</button> <br>
+                        <button type="submit" style="padding: 10px; text-align: center;" class="btn btn-primary">Login</button> <br>
                     </p>
 
                     <a routerLink="/create" id="a" style="margin: 20px;">Don't have an account? Click to Register</a>

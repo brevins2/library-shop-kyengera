@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
+import { ActivatedRoute } from '@angular/router';
+import { ServeService } from 'src/app/Services/serve.service';
+import { HttpClient } from '@angular/common/http';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-computer-pay',
@@ -9,11 +13,33 @@ import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
 export class ComputerPayComponent implements OnInit{
 
   public payPalConfig?: IPayPalConfig;
-  constructor(
-  ) { }
+  editComputer = new FormGroup({
+    id: new FormControl(''),
+    Title: new FormControl(''),
+    Price: new FormControl(''),
+    Category: new FormControl(''),
+    File: new FormControl(''),
+    Brand: new FormControl('')
+  });
+
+  constructor(private router: ActivatedRoute, private service: ServeService, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.initConfig();
+  }
+
+  getData(){
+    this.service.getCurrentComputerData(this.router.snapshot.params['id']).subscribe((result)=>{
+      console.log(result);
+      this.editComputer = new FormGroup({
+        id: new FormControl(result),
+        Title: new FormControl(result),
+        Price: new FormControl(result),
+        Category: new FormControl(result),
+        File: new FormControl(result),
+        Brand: new FormControl(result)
+      });
+    });
   }
 
   private initConfig(): void {
