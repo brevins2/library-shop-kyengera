@@ -103,4 +103,12 @@ export class ComputerPayComponent implements OnInit{
   };
   }
 
+  save(){}
+
+  clr(){}
+
+  del(){}
+
+  search(){}
+
 }
