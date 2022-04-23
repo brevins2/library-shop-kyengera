@@ -6,17 +6,20 @@ nav {
     background-color: rgb(2, 2, 80);
 }
 
-a:hover {
+#backgroundImageExample2 a:hover {
     color: black;
-    background-color: black;
+    size: 2%;
+    border-top: 2px solid orange;
 }
 
 .collapse {
     align-items: center;
 }
 
-a:active {
+#backgroundImageExample2 a:active {
     color: black;
+    size: 2%;
+    border-top: 2px solid orange;
 }
 
 li a {

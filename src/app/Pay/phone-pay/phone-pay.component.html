@@ -1,4 +1,68 @@
+<header>
+    <!-- Intro settings -->
+    <style>
+        /* Default height for small devices */
+        
+        #intro-example {
+            height: 400px;
+        }
+        /* Height for devices larger than 992px */
+        
+        @media (min-width: 992px) {
+            #intro-example {
+                height: 600px;
+            }
+        }
+        
+        a:hover {
+            color: black;
+        }
+    </style>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg" id="id1" style="background-color: rgb(2, 2, 80);">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" (click)="backgroundImageExample2.toggle()" aria-controls="backgroundImageExample2" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+            <div mdbCollapse #backgroundImageExample2="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
+                <a class="nav-link" id="homeIcon" aria-current="page" routerLink="#">
+                    <img src="../../../assets/image/icons/logo.png" width="400">
+                </a>
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navs">
+                    <li class="nav-item active" style="margin-right: -40px;">
+                        <a class="nav-link" routerLink="/cmj" style="width: 100px;">
+                            <img src="../../../assets/image/icons/newHome.png" id="homeImg">
+                            <br/>
+                            <p style="margin-top: 5px;">Home</p>
+                        </a>
+                    </li>
+                    <li class="nav-item" style="margin-right: -40px;">
+                        <a class="nav-link active" routerLink="phones" style="width: 100px;">
+                            <img src="../../../assets/image/icons/newPhone.png" id="phoneImg">
+                            <br/>
+                            <p>Phone</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="computers" style="width: 150px;">
+                            <img src="../../../assets/image/icons/comp.png" id="compImg">
+                            <br/>
+                            <p>Accessories</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<br/>
+
 <body>
+    <div class="side">
+        <img src="' ../../../../../assets/image/phones/ ' '+ data.File">
+    </div>
     <div class="container">
         <div class="input">
             <form [formGroup]="addPhone" (ngSubmit)="save()" id="styled" class="form-control">
@@ -37,15 +101,9 @@
                 </div>
             </form>
         </div>
-
     </div>
 </body>
-<div class="container">
-    <img src="' ../../../../../assets/image/phones/ ' '+ data.File">
-</div>
-<!-- <ngx-paypal [config]="payPalConfig "></ngx-paypal> -->
-<div id="myPaypalButtons">
-    <button class="btn btn-primary"><i class="fa fa-paypal"></i>PayPal</button>
-    <button class="btn btn-danger"><i class="fa fa-credit-card"></i>Airtel money</button>
-    <button class="btn btn" id="MMM"><i class="fa fa-credit-card"></i>MTN Mobile money</button>
-</div>
+<hr>
+<nav>
+    <i class="fa fa-copyright"></i> copy rights reserved
+</nav>

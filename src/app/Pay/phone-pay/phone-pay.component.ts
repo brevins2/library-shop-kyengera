@@ -55,4 +55,6 @@ export class PhonePayComponent implements OnInit {
   clr(){}
 
   del(){}
+
+  search(){}
 }
