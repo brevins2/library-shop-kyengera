@@ -1,14 +1,3 @@
-button {
-    width: 400px;
-    margin-bottom: 10px;
-    margin-left: 180px;
-}
-
-.MMM {
-    background-color: yellow;
-    color: white;
-}
-
 body {
     display: flex;
 }
@@ -50,10 +39,6 @@ li a img {
     padding: 0;
 }
 
-#id1 {
-    padding: 0;
-}
-
 #homeImg {
     margin-top: -5px;
 }
@@ -66,7 +51,7 @@ li a img {
     width: 22px;
 }
 
-nav {
+.navLast {
     text-align: center;
     width: auto;
     height: 50px;

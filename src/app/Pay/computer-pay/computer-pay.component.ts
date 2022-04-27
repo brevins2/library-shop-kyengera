@@ -5,6 +5,16 @@ import { ServeService } from 'src/app/Services/serve.service';
 import { HttpClient } from '@angular/common/http';
 import { FormControl, FormGroup } from '@angular/forms';
 
+export class values{
+  constructor(
+    public id: number,
+    public Title: string,
+    public Category: string,
+    public Price: number,
+    public File: string
+  ){}
+}
+
 @Component({
   selector: 'app-computer-pay',
   templateUrl: './computer-pay.component.html',
@@ -13,7 +23,9 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class ComputerPayComponent implements OnInit{
 
   public payPalConfig?: IPayPalConfig;
-  editComputer = new FormGroup({
+  data: values[] = [];
+
+  addComputer = new FormGroup({
     id: new FormControl(''),
     Title: new FormControl(''),
     Price: new FormControl(''),
@@ -31,7 +43,7 @@ export class ComputerPayComponent implements OnInit{
   getData(){
     this.service.getCurrentComputerData(this.router.snapshot.params['id']).subscribe((result)=>{
       console.log(result);
-      this.editComputer = new FormGroup({
+      this.addComputer = new FormGroup({
         id: new FormControl(result),
         Title: new FormControl(result),
         Price: new FormControl(result),
