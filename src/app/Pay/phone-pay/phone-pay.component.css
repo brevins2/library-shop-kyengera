@@ -1,19 +1,63 @@
 body {
     display: flex;
+    background-color: rgb(227, 227, 227, 0.2);
 }
 
 .side {
     width: 30%;
+    margin: 0% 1% 0% 1%;
+    border: 2px solid rgb(0, 0, 0, 0.3);
+    border-radius: 1%;
+}
+
+#styled {
+    background-color: rgb(227, 227, 227, 0.2);
+}
+
+input,
+textarea {
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 .container {
     width: 70%;
+    /* background-color: rgb(227, 227, 227, 0.2); */
 }
 
 .butt {
     width: 400px;
-    margin-bottom: 10px;
-    margin-left: 180px;
+    margin: 2%;
+}
+
+.butt button {
+    margin: 1%;
+}
+
+.navas {
+    text-align: center;
+    height: 100px;
+    background-color: rgb(227, 227, 227, 0.2);
+}
+
+hr {
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+#backgroundImageExample2 li a:hover {
+    color: black;
+    size: 2%;
+    border-top: 2px solid orange;
+}
+
+.collapse {
+    align-items: center;
+}
+
+#backgroundImageExample2 li a:active {
+    color: black;
+    size: 2%;
+    border-top: 2px solid orange;
 }
 
 li a {
@@ -30,7 +74,6 @@ li a img {
 
 #navs {
     margin-left: 400px;
-    /* text-align: center; */
     padding-left: 5px;
 }
 
@@ -48,15 +91,21 @@ li a img {
 }
 
 #compImg {
-    margin-top: -7px;
+    height: 35px;
 }
 
 #phoneImg {
     width: 22px;
+    height: 32px;
 }
 
-nav {
-    text-align: center;
-    width: auto;
-    height: 50px;
+#inputBattery,
+#inputStorage,
+#inputTitle {
+    width: 200%;
+    margin-bottom: 4%;
+}
+
+#inputPrice {
+    margin-bottom: 4%;
 }

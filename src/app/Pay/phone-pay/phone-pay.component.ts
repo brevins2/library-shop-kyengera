@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ServeService } from 'src/app/Services/serve.service';
 import { FormGroup, FormBuilder, FormControl} from '@angular/forms';
 
@@ -31,7 +31,7 @@ export class PhonePayComponent implements OnInit {
     battery: new FormControl(''),
     price: new FormControl('')
   });
-  constructor(private router: ActivatedRoute, private service: ServeService, private http: HttpClient) { }
+  constructor(private router: ActivatedRoute, private route: Router, private service: ServeService, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.getCurrentData();
@@ -52,9 +52,8 @@ export class PhonePayComponent implements OnInit {
 
   save(){}
 
-  clr(){}
-
-  del(){}
-
-  search(){}
+  cancel(){
+    // alert('done');
+    this.route.navigate(['users/phones']);
+  }
 }

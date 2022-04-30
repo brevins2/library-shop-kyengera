@@ -20,13 +20,13 @@
     </style>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg" id="id1" style="background-color: rgb(2, 2, 80);">
+    <nav class="navbar navbar-expand-lg" style="background-color: rgb(2, 2, 80); height: 120px;">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" (click)="backgroundImageExample2.toggle()" aria-controls="backgroundImageExample2" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fas fa-bars"></i>
         </button>
             <div mdbCollapse #backgroundImageExample2="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
-                <a class="nav-link" id="homeIcon" aria-current="page" routerLink="#">
+                <a class="nav-link" id="homeIcon" aria-current="page" routerLink="/cmj">
                     <img src="../../../assets/image/icons/logo.png" width="400">
                 </a>
 
@@ -39,14 +39,14 @@
                         </a>
                     </li>
                     <li class="nav-item" style="margin-right: -40px;">
-                        <a class="nav-link active" routerLink="phones" style="width: 100px;">
+                        <a class="nav-link active" routerLink="/phones" style="width: 100px;">
                             <img src="../../../assets/image/icons/newPhone.png" id="phoneImg">
                             <br/>
                             <p>Phone</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="computers" style="width: 150px;">
+                        <a class="nav-link" routerLink="/computers" style="width: 150px;">
                             <img src="../../../assets/image/icons/comp.png" id="compImg">
                             <br/>
                             <p>Accessories</p>
@@ -58,11 +58,10 @@
     </nav>
 
 </header>
-<br/>
 
 <body>
     <div class="side">
-        <img src="' ../../../../../assets/image/phones/ ' '+ data.File">
+        <img src="'../../../../../assets/image/phones/'+ data.File" title="Phone" aria-label="image of product" alt="Image of Phone" width="150">
     </div>
     <div class="container">
         <div class="input">
@@ -70,41 +69,43 @@
                 <h1>Buys Phones</h1>
                 <div class="form-row">
                     <div class="form-group col-md-6" id="title">
-                        <label for="Name">Name</label>
-                        <input formControlName="Name" type="text" class="form-control" id="inputTitle" placeholder="Enter Name">
+                        <label for="Name">Title</label>
+                        <input formControlName="title" type="text" class="form-control" id="inputTitle" placeholder="title">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6" id="ids">
                         <div>
-                            <label for="Detailes">Storage</label>
-                            <input formControlName="Details" type="text area" class="form-control" id="inputStorage" placeholder="Enter Storage">
+                            <label for="Storage">Storage</label>
+                            <input formControlName="Storage" type="text area" class="form-control" id="inputStorage" placeholder="Storage">
                         </div>
                         <div>
-                            <label for="inputBattery">Battery</label>
-                            <input formControlName="Battery" type="text" class="form-control" id="inputBattery" placeholder="Enter Battery">
+                            <label for="Battery">Battery</label>
+                            <input formControlName="Battery" type="text" class="form-control" id="inputBattery" placeholder="Battery">
                         </div>
                     </div>
                 </div>
                 <div class="form-row" id="id">
-                    <label class="inputPrice" for="Price">Price</label>
-                    <input formControlName="Price" class="form-control" type="text" placeholder="Enter Price" id="inputPrice">
+                    <label class="Price" for="Price">Price</label>
+                    <input formControlName="Price" class="form-control" type="text" placeholder="Price" id="inputPrice">
                 </div>
                 <div class="form-row" id="id">
-                    <label class="inputPicture" for="picture">Picture</label>
-                    <input formControlName="file" class="form-control" type="file" id="inputFile">
+                    <label class="inputPicture" for="picture">Address</label>
+                    <address>
+                        <textarea rows="5" cols="78" class="form-control" name="Address" id="inputAddress">
+                        </textarea>
+                </address>
                 </div>
                 <br>
                 <div class="butt">
-                    <button class="btn btn-primary" (click)="save()">Save</button>
-                    <button class="btn btn-secondary" (click)="clr()">Clear</button>
-                    <button class="btn btn-danger" (click)="del()">Delete</button>
+                    <button class="btn btn-primary" (click)="save()">Order</button>
+                    <button class="btn btn-danger" (click)="cancel()">Cancel</button>
                 </div>
             </form>
         </div>
     </div>
 </body>
 <hr>
-<nav>
+<nav class="navas">
     <i class="fa fa-copyright"></i> copy rights reserved
 </nav>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ServeService } from 'src/app/Services/serve.service';
 import { HttpClient } from '@angular/common/http';
 import { FormControl, FormGroup } from '@angular/forms';
@@ -34,7 +34,7 @@ export class ComputerPayComponent implements OnInit{
     Brand: new FormControl('')
   });
 
-  constructor(private router: ActivatedRoute, private service: ServeService, private http: HttpClient) { }
+  constructor(private router: ActivatedRoute, private route: Router, private service: ServeService, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.initConfig();
@@ -115,12 +115,9 @@ export class ComputerPayComponent implements OnInit{
   };
   }
 
-  save(){}
+  order(){}
 
-  clr(){}
-
-  del(){}
-
-  search(){}
-
+  cancel(){
+    this.route.navigate(['users/computers']);
+  }
 }

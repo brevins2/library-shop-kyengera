@@ -6,7 +6,7 @@ nav {
     background-color: rgb(2, 2, 80);
 }
 
-#backgroundImageExample2 a:hover {
+#backgroundImageExample2 li a:hover {
     color: black;
     size: 2%;
     border-top: 2px solid orange;
@@ -16,7 +16,7 @@ nav {
     align-items: center;
 }
 
-#backgroundImageExample2 a:active {
+#backgroundImageExample2 li a:active {
     color: black;
     size: 2%;
     border-top: 2px solid orange;
