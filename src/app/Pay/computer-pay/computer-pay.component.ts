@@ -41,10 +41,10 @@ export class ComputerPayComponent implements OnInit{
       console.log(result);
       this.buyComputer = new FormGroup({
         // id: new FormControl(result[id]),
-        title: new FormControl(result['title']),
-        Price: new FormControl(result['Price']),
-        Cartegory: new FormControl(result['Cartegory']),
-        textarea: new FormControl(result['textarea'])
+        // title: new FormControl(result['title']),
+        // Price: new FormControl(result['Price']),
+        // Cartegory: new FormControl(result['Cartegory']),
+        // textarea: new FormControl(result['textarea'])
       });
     });
   }
