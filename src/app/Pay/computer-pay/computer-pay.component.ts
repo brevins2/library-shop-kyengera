@@ -25,34 +25,33 @@ export class ComputerPayComponent implements OnInit{
   public payPalConfig?: IPayPalConfig;
   data: values[] = [];
 
-  addComputer = new FormGroup({
+  buyComputer = new FormGroup({
     id: new FormControl(''),
-    Title: new FormControl(''),
+    title: new FormControl(''),
     Price: new FormControl(''),
-    Category: new FormControl(''),
-    File: new FormControl(''),
-    Brand: new FormControl('')
+    Cartegory: new FormControl(''),
+    textarea: new FormControl('')
   });
 
   constructor(private router: ActivatedRoute, private route: Router, private service: ServeService, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.initConfig();
-  }
-
-  getData(){
-    this.service.getCurrentComputerData(this.router.snapshot.params['id']).subscribe((result)=>{
+     this.service.getCurrentComputerData(this.router.snapshot.params['id']).subscribe((result)=>{
       console.log(result);
-      this.addComputer = new FormGroup({
-        id: new FormControl(result),
-        Title: new FormControl(result),
-        Price: new FormControl(result),
-        Category: new FormControl(result),
-        File: new FormControl(result),
-        Brand: new FormControl(result)
+      this.buyComputer = new FormGroup({
+        // id: new FormControl(result[id]),
+        title: new FormControl(result['title']),
+        Price: new FormControl(result['Price']),
+        Cartegory: new FormControl(result['Cartegory']),
+        textarea: new FormControl(result['textarea'])
       });
     });
   }
+
+  // getData(){
+   
+  // }
 
   private initConfig(): void {
     this.payPalConfig = {
