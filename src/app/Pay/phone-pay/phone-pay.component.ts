@@ -23,13 +23,13 @@ export class Data{
 export class PhonePayComponent implements OnInit {
 
   data: Data[] = [];
-  addPhone = new FormGroup({
+  buyPhone = new FormGroup({
     id: new FormControl(''),
-    file: new FormControl(''),
-    title: new FormControl(''),
-    storage: new FormControl(''),
-    battery: new FormControl(''),
-    price: new FormControl('')
+    File: new FormControl(''),
+    Title: new FormControl(''),
+    Storage: new FormControl(''),
+    Battery: new FormControl(''),
+    Price: new FormControl('')
   });
   constructor(private router: ActivatedRoute, private route: Router, private service: ServeService, private http: HttpClient) { }
 
@@ -38,14 +38,14 @@ export class PhonePayComponent implements OnInit {
   }
 
   getCurrentData(){
-    this.service.getCurrentPhoneData(this.router.snapshot.params['id']).subscribe((result)=>{
-      this.addPhone = new FormGroup({
-        id: new FormControl(result),
-        file: new FormControl(''),
-        title: new FormControl(''),
-        storage: new FormControl(''),
-        battery: new FormControl(''),
-        price: new FormControl('')
+    this.service.getCurrentPhoneData(this.router.snapshot.params['id']).subscribe((result: any)=>{
+      this.buyPhone = new FormGroup({
+        id: new FormControl(result['id']),
+        File: new FormControl(result['File']),
+        Title: new FormControl(result['Title']),
+        Storage: new FormControl(result['Storage']),
+        Battery: new FormControl(result['Battery']),
+        Price: new FormControl(result['Price'])
       });
     });
   }

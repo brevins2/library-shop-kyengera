@@ -27,7 +27,7 @@
         </button>
             <div mdbCollapse #backgroundImageExample2="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
                 <a class="nav-link" id="homeIcon" aria-current="page" routerLink="/cmj">
-                    <img src="../../../assets/image/icons/logo.png" width="400">
+                    <img src="../../../assets/image/icons/logo.png" width="310">
                 </a>
 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navs">
@@ -59,24 +59,25 @@
 </header>
 
 <body>
-    <div class="side">
-        <img src="' ../../../../../assets/image/phones/'+ data.File" title="Accessory" aria-label="image of product" alt="Image of accessory" width="150">
-    </div>
-    <div class="container">
-        <div class="input">
-            <form [formGroup]="buyComputer" id="styled" (ngSubmit)="order()" class="form-control">
+    <form [formGroup]="buyComputer" id="styled" (ngSubmit)="order()" class="form-control">
+        <div class="side">
+            <img formControlName="File" src="' ../../../../../assets/image/phones/'File" title="Accessory" aria-label="image of product" alt="Image of accessory" width="150">
+        </div>
+        <div class="container">
+            <div class="input">
+
                 <h1>Buy Computer Accessory</h1>
                 <div class="form-row">
                     <div class="form-group col-md-6" id="title">
                         <label for="Title">Title</label>
-                        <input formControlName="title" type="text" class="form-control" id="inputTitle" placeholder="title">
+                        <input formControlName="Title" type="text" class="form-control" id="inputTitle" placeholder="title">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6" id="ids">
                         <div>
-                            <label for="Cartegory">Cartegory</label>
-                            <input formControlName="Cartegory" type="text" class="form-control" id="inputCartegory" placeholder="Cartegory">
+                            <label for="Category">Category</label>
+                            <input formControlName="Category" type="text" class="form-control" id="inputCategory" placeholder="Category">
                         </div>
 
                     </div>
@@ -97,13 +98,12 @@
                     <button class="btn btn-primary" (click)="order()">Order</button>
                     <button class="btn btn-danger" (click)="cancel()">Cancel</button>
                 </div>
-            </form>
+
+            </div>
         </div>
-    </div>
+    </form>
 </body>
 <hr>
 <nav class="navLast">
     <i class="fa fa-copyright"></i> copy rights reserved
 </nav>
-<!-- <ngx-paypal [config]="payPalConfig">
-</ngx-paypal> -->

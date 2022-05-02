@@ -27,7 +27,7 @@
         </button>
             <div mdbCollapse #backgroundImageExample2="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
                 <a class="nav-link" id="homeIcon" aria-current="page" routerLink="/cmj">
-                    <img src="../../../assets/image/icons/logo.png" width="400">
+                    <img src="../../../assets/image/icons/logo.png" width="310">
                 </a>
 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navs">
@@ -65,12 +65,12 @@
     </div>
     <div class="container">
         <div class="input">
-            <form [formGroup]="addPhone" (ngSubmit)="save()" id="styled" class="form-control">
+            <form [formGroup]="buyPhone" (ngSubmit)="save()" id="styled" class="form-control">
                 <h1>Buys Phones</h1>
                 <div class="form-row">
                     <div class="form-group col-md-6" id="title">
                         <label for="Name">Title</label>
-                        <input formControlName="title" type="text" class="form-control" id="inputTitle" placeholder="title">
+                        <input formControlName="Title" type="text" class="form-control" id="inputTitle" placeholder="title">
                     </div>
                 </div>
                 <div class="form-row">
