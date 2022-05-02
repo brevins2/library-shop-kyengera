@@ -6,6 +6,11 @@ nav {
     background-color: rgb(2, 2, 80);
 }
 
+#navbar {
+    background-color: rgb(252, 252, 252);
+    padding: 3% 0;
+}
+
 #backgroundImageExample2 li a:hover {
     color: black;
     size: 2%;
@@ -36,7 +41,6 @@ li a img {
 
 #navs {
     margin-left: 400px;
-    /* text-align: center; */
     padding-left: 5px;
 }
 

@@ -41,4 +41,6 @@ export class ComputersComponent implements OnInit {
         this.comp = response;
       });
   }
+
+  search(){}
 }

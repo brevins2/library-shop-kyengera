@@ -55,4 +55,6 @@ export class PhonesComponent implements OnInit {
         this.api = response
       });
   }
+
+  search(){}
 }

@@ -1,40 +1,69 @@
+<header>
+    <!-- Intro settings -->
+    <style>
+        /* Default height for small devices */
+        
+        #intro-example {
+            height: 400px;
+        }
+        /* Height for devices larger than 992px */
+        
+        @media (min-width: 992px) {
+            #intro-example {
+                height: 600px;
+            }
+        }
+    </style>
+
+    <nav class="navbar navbar-expand-lg" id="navbars">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" (click)="backgroundImageExample3.toggle()" aria-controls="backgroundImageExample2" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+                    </button>
+            <div mdbCollapse #backgroundImageExample3="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
+                <input type="search" class="form-control" id="search-input-sidenav" id="form1" name="search" placeholder="Search for Phones, mouse, keyboards, fans, cables, flash....">
+                <button class="btn btn-primary" (click)="search()">Search</button>
+                <div class="clean">
+                    <a class="btn" id="createBtn" routerLink="/create">Create account</a>
+                    <a class="btn btn-danger" routerLink="/login">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <br/>
+</header>
 <mat-card class="mat-parent-small">
-    <carousel style="width: 100%; padding: 0px; margin:0px;">
-        <slide style="width: 100%;">
+    <carousel>
+        <slide>
             <mat-card class="example-card">
                 <img mat-card-image src="../../../assets/image/AI laptop.jpg">
-                <!-- https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg -->
             </mat-card>
         </slide>
-        <slide style="width: 100%;">
+        <slide>
             <mat-card class="example-card">
                 <img mat-card-image src="../../../assets/image/phones/edge.jpg">
-                <!-- https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg -->
             </mat-card>
         </slide>
-        <slide style="width: 100%;">
+        <slide>
             <mat-card class="example-card">
                 <img mat-card-image src="../../../assets/image/phones/nokia kapesa.jpg">
-                <!-- https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg -->
             </mat-card>
         </slide>
-        <slide style="width: 100%;">
+        <slide>
             <mat-card class="example-card">
                 <img mat-card-image src="../../../assets/image/phones/nokia 2.4.jpg">
-                <!-- https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg -->
             </mat-card>
         </slide>
-        <slide style="width: 100%;">
+        <slide>
             <mat-card class="example-card">
                 <img mat-card-image src="../../../assets/image/phones/iphone11.jpg">
-                <!-- https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg -->
             </mat-card>
         </slide>
     </carousel>
 
-    <body style="padding: 2% 2% 0% 8%;">
-        <div class="row row-cols-1 row-cols-md-3 g-2" style="padding: .1%;">
-            <a class="col" *ngFor="let phon of api" routerLink="/phon-pay/{{phon.id}}" style="width: 29%; font-size: 13px; padding: 1.5%; color: black;">
+    <body>
+        <div class="row row-cols-1 row-cols-md-3 g-2">
+            <a class="col" *ngFor="let phon of api" routerLink="/phon-pay/{{phon.id}}">
                 <div class="card h-100">
                     <img [src]="'../../../../../assets/image/phones/'+ phon.File" class="card-img-top" />
                     <div class="card-body">
@@ -51,11 +80,8 @@
                 </div>
             </a>
         </div>
-
     </body>
-
     <hr>
-
     <nav>
         <i class="fa fa-copyright"></i> copy rights reserved
     </nav>

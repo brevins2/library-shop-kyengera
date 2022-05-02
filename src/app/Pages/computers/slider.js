@@ -1,16 +1,17 @@
-const searchBar = document.forms['searchBarId'].querySelector('searched');
+const searchBar = document.querySelector('#form1');
+// .forms['searchBarId']
 
 searchBar.addEventListener('keyup', function(e) {
     const searchedInput = e.target.value.toLowerCase();
-    const divPhones = list.getElementsByTagName('div');
+    const divComputers = list.getElementsByTagName('div');
 
-    Array.from(divPhones).forEach(function(divPhone) {
-        const title = divPhone.firstElementChild.textContent;
+    Array.from(divComputers).forEach(function(divPComputer) {
+        const title = divPComputer.firstElementChild.textContent;
 
         if (title.toLowerCase().indexOf(term) != -1) {
-            divPhone.style.display = 'block';
+            divPComputer.style.display = 'block';
         } else {
-            divPhone.style.display = 'none'
+            divPComputer.style.display = 'none'
         }
     })
 })

@@ -52,24 +52,8 @@
             </div>
         </div>
     </nav>
-    <nav class="navbar navbar-expand-lg" style="background-color: rgb(252, 252, 252); padding: 3% 0;">
-        <div class="container-fluid" style="display: flex;">
-            <button class="navbar-toggler" type="button" (click)="backgroundImageExample3.toggle()" aria-controls="backgroundImageExample2" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fas fa-bars"></i>
-                    </button>
-            <div mdbCollapse #backgroundImageExample3="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
-                <input type="search" class="form-control" id="search-input-sidenav" id="form1" name="search" placeholder="Search for Phones, mouse, keyboards, funs, cables, flash...." style="width:480px;">
-                <button class="btn btn-primary" (click)="search()">Search</button>
-                <div style=" margin-left: 210px;">
-                    <a class="btn" style="margin-right: 2px;" routerLink="/create">Create account</a>
-                    <a class="btn btn-danger" routerLink="/login">Logout</a>
-                </div>
-            </div>
-        </div>
-    </nav>
 </header>
 
 <body>
-    <br/>
     <router-outlet></router-outlet>
 </body>
