@@ -60,7 +60,6 @@ import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,6 +84,9 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
     CreateComponent,
     TermsComponent,
     TestsComponent
+  ],
+  exports: [
+    MatDialogModule
   ],
   imports: [
     BrowserModule,
@@ -121,10 +123,6 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
-    // RouterModule.forRoot(
-    //   appRoutes,
-    //   { enableTracing: true } 
-    // )
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ComputerAccess, Movies } from 'src/app/interfaces';
 import { ServeService } from 'src/app/Services/serve.service';
@@ -26,11 +27,14 @@ export class ComputingComponent implements OnInit {
   id: number = 0;
   api: Api[] = [];
   compute: ComputerAccess[] = compAccess;
-  constructor(
-    private http: HttpClient,
-    private Serve: ServeService,
-    private dialogRef: MatDialog
-  ) { 
+  addComputer = new FormGroup({
+    id: new FormControl(''),
+    Title: new FormControl(''),
+    Category: new FormControl(''),
+    Price: new FormControl(''),
+    File: new FormControl('')
+  });
+  constructor(private http: HttpClient,private Serve: ServeService,private dialogRef: MatDialog) { 
     console.log(this.compute);
   }
 

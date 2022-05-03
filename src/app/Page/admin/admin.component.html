@@ -13,56 +13,62 @@
                 height: 600px;
             }
         }
+        
+        a:hover {
+            color: black;
+        }
     </style>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg" style="background-color: rgb(2, 2, 80); height: 120px;">
+    <nav class="navbar navbar-expand-lg" id="id1" style="background-color: rgb(2, 2, 80); height: 120px;">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" (click)="backgroundImageExample2.toggle()" aria-controls="backgroundImageExample2" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fas fa-bars"></i>
         </button>
             <div mdbCollapse #backgroundImageExample2="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
-                <a class="nav-link" aria-current="page" routerLink="/cmj" style="margin-left: -130px; margin-top: 17px;">
-                    <img src="../../../assets/image/icons/logo.png" width="400" height="300">
+                <a class="nav-link" id="homeIcon" aria-current="page" routerLink="/cmj">
+                    <img src="../../../assets/image/icons/logo.png" width="310">
                 </a>
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navs">
+                    <li class="nav-item active" style="margin-right: -40px;">
+                        <a class="nav-link" routerLink="/cmj" style="width: 100px;">
+                            <img src="../../../assets/image/icons/newHome.png" id="homeImg">
+                            <br/>
+                            <p style="margin-top: 5px;">Home</p>
+                        </a>
+                    </li>
+                    <li class="nav-item" style="margin-right: -40px;">
+                        <a class="nav-link active" routerLink="phones" style="width: 100px;">
+                            <img src="../../../assets/image/icons/newPhone.png" id="phoneImg">
+                            <br/>
+                            <p>Phone</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="computers" style="width: 150px;">
+                            <img src="../../../assets/image/icons/comp.png" id="compImg">
+                            <br/>
+                            <p>Accessories</p>
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="text-align: center;padding-left: 5px;">
-                <li class="nav-item active" style="margin-right: -40px;">
-                    <a class="nav-link" routerLink="user" style="color: white;width: 100px; margin-right: 20px;">
-                        <img src="../../../assets/image/icons/newHome.png" width="90" height="90" style="margin-top: -9px;">
-                        <br/>
-                        <p>User</p>
-                    </a>
-                </li>
-                <li class="nav-item" style="margin-right: -40px;">
-                    <a class="nav-link active" routerLink="phone" style="color: white; width: 100px; margin-right: 20px;">
-                        <img src="../../../assets/image/icons/newPhone.png" width="40" height="35" style="margin-top: 20px;">
-                        <br/><br/>
-                        <p>Phone</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="computer" style="color: white;width: 150px;">
-                        <img src="../../../assets/image/icons/comp.png" width="100" height="100" style="margin-top: -7px;">
-                        <br/>
-                        <p style="margin-top: -10px;">Accessories</p>
-                    </a>
-                </li>
-            </ul>
-            <a class="btn btn-danger" routerLink="/login">Logout</a>
         </div>
     </nav>
-    <nav class="navbar navbar-expand-lg" style="background-color: rgb(252, 252, 252); height: 100px;">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" (click)="backgroundImageExample2.toggle()" aria-controls="backgroundImageExample2" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div mdbCollapse #backgroundImageExample2="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
-                <input type="search" class="form-control" id="search-input-sidenav" id="form1" name="search" placeholder="Search for Phones, mouse, keyboards, funs, cables, flash...." style="width:480px;">
+    <nav class="navbar navbar-expand-lg" style="background-color: rgb(252, 252, 252); padding: 3% 0;">
+        <div class="container-fluid" style="display: flex;">
+            <button class="navbar-toggler" type="button" (click)="backgroundImageExample3.toggle()" aria-controls="backgroundImageExample2" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+                    </button>
+            <div mdbCollapse #backgroundImageExample3="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
+                <input type="search" class="form-control" id="search-input-sidenav" id="form1" name="search" placeholder="Search for Phones, mouse, keyboards, fans, cables, flash...." style="width:480px;">
                 <button class="btn btn-primary" (click)="search()">Search</button>
+                <div style="margin-left: 100px;">
+                    <a class="btn" style="margin-right: 2px;" routerLink="/create">Create account</a>
+                    <a class="btn btn-danger" routerLink="/login">Login</a>
+                </div>
             </div>
-            <a class="btn" style="margin-right: 2px;" routerLink="/create">Create account</a>
-            <a class="btn btn-danger" routerLink="/login">Login</a>
         </div>
     </nav>
 </header>

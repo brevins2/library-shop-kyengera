@@ -50,10 +50,11 @@ export class PhonePayComponent implements OnInit {
     });
   }
 
-  save(){}
+  save(){
+    console.log(this.buyPhone.value);
+  }
 
   cancel(){
-    // alert('done');
     this.route.navigate(['users/phones']);
   }
 }
