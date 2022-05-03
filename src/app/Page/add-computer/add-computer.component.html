@@ -1,8 +1,35 @@
 <body>
+    <!-- edit button -->
+    <div class="modal fade" id="exampleModal" tabindex="0" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+                Add Computer Accessory
+            </h5>
+            <button type="button" class="close" data-dismiss="form" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
         <div class="input">
             <form [formGroup]="addComputer" id="styled" class="form-control">
-                <h1>Add Computer Accessory</h1>
                 <div class="form-row">
                     <div class="form-group col-md-6" id="title">
                         <label for="title">Title</label>
