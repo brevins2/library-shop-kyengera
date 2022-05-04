@@ -20,7 +20,7 @@
     </style>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg" id="id1" style="background-color: rgb(2, 2, 80); height: 120px;">
+    <nav class="navbar navbar-expand-lg" style="background-color: rgb(2, 2, 80); height: 120px;">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" (click)="backgroundImageExample2.toggle()" aria-controls="backgroundImageExample2" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fas fa-bars"></i>
@@ -32,21 +32,21 @@
 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navs">
                     <li class="nav-item active" style="margin-right: -40px;">
-                        <a class="nav-link" routerLink="/cmj" style="width: 100px;">
-                            <img src="../../../assets/image/icons/newHome.png" id="homeImg">
+                        <a class="nav-link" routerLink="user" style="width: 100px;">
+                            <img src="../../../assets/image/icons/user.png" id="homeImg">
                             <br/>
-                            <p style="margin-top: 5px;">Home</p>
+                            <p>User</p>
                         </a>
                     </li>
                     <li class="nav-item" style="margin-right: -40px;">
-                        <a class="nav-link active" routerLink="phones" style="width: 100px;">
+                        <a class="nav-link active" routerLink="phone" style="width: 100px;">
                             <img src="../../../assets/image/icons/newPhone.png" id="phoneImg">
                             <br/>
                             <p>Phone</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="computers" style="width: 150px;">
+                        <a class="nav-link" routerLink="computer" style="width: 150px;">
                             <img src="../../../assets/image/icons/comp.png" id="compImg">
                             <br/>
                             <p>Accessories</p>
@@ -62,10 +62,9 @@
           <i class="fas fa-bars"></i>
                     </button>
             <div mdbCollapse #backgroundImageExample3="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
-                <input type="search" class="form-control" id="search-input-sidenav" id="form1" name="search" placeholder="Search for Phones, mouse, keyboards, fans, cables, flash...." style="width:480px;">
+                <input type="search" class="form-control" id="search-input-sidenav" id="search" name="search" placeholder="Search for Phones, mouse, keyboards, fans, cables, flash....">
                 <button class="btn btn-primary" (click)="search()">Search</button>
-                <div style="margin-left: 100px;">
-                    <a class="btn" style="margin-right: 2px;" routerLink="/create">Create account</a>
+                <div class="logout">
                     <a class="btn btn-danger" routerLink="/login">Login</a>
                 </div>
             </div>

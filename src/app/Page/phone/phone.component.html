@@ -1,47 +1,50 @@
-<div class="display">
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Storage</th>
-                <th>Battery</th>
-                <th>Price</th>
-                <th>File</th>
-                <th>Change</th>
-                <th>Remove</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let phon of phones">
-                <td>{{phon.id}}</td>
-                <td>{{phon.Title}}</td>
-                <td>{{phon.Storage}}</td>
-                <td>{{phon.Battery}}</td>
-                <td>{{phon.Price}}</td>
-                <td>
-                    <img [src]="'../../../assets/image/phones/'+phon.File" width="100"></td>
-                <td>
-                    <p id="edit" (click)="edit(phon.id)">edit<i class="fa fa-edit"></i></p>
-                </td>
-                <td>
-                    <p id="del" (click)="deletePhone(phon)">del<i class="fa fa-trash"></i></p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<br>
+<body>
+    <div class="display">
+        <!-- Button trigger modal -->
+        <div class="addPhone">
+            <button type="button" (click)="popUp(id)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id="btn">
+    <i class="fa fa-add" color="white"></i>Add Phone
+    </button>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Storage</th>
+                    <th>Battery</th>
+                    <th>Price</th>
+                    <th>File</th>
+                    <th>Change</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let phon of phones">
+                    <td>{{phon.id}}</td>
+                    <td>{{phon.Title}}</td>
+                    <td>{{phon.Storage}}</td>
+                    <td>{{phon.Battery}}</td>
+                    <td>{{phon.Price}}</td>
+                    <td>
+                        <img [src]="'../../../assets/image/phones/'+phon.File" width="100"></td>
+                    <td>
+                        <p class="btn btn-primary" id="edit" (click)="edit(phon.id)"><i class="fa fa-edit" aria-label="edit"></i></p>
+                    </td>
+                    <td>
+                        <p class="btn btn-danger" id="del" (click)="deletePhone(phon)"><i class="fa fa-trash" aria-label="delete"></i></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
 
-<!-- Button trigger modal -->
-<div style="margin-bottom: 100px; margin-top: 50px;">
-    <button type="button" (click)="popUp(id)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id="btn">
-    Add Phone
-</button>
-</div>
-<br>
-<hr>
 
-<nav>
-    <i class="fa fa-copyright"></i> copy rights reserved
-</nav>
+    <br>
+    <hr>
+
+    <nav>
+        <i class="fa fa-copyright"></i> copy rights reserved
+    </nav>
+</body>

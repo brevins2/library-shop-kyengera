@@ -5,36 +5,27 @@ body {
 
 nav {
     background-color: rgb(2, 2, 80);
-    width: 100%;
 }
 
-a:hover {
-    color: white;
-    cursor: hand;
-}
-
-.collapse {
-    align-items: center;
-}
-
-li {
-    margin: 9px;
+#navbar {
+    background-color: rgb(252, 252, 252);
+    padding: 3% 0;
 }
 
 #backgroundImageExample2 li a:hover {
-    color: black;
-    size: 2%;
-    border-top: 2px solid orange;
-}
-
-#backgroundImageExample2 li a:active {
-    color: black;
+    color: orange;
     size: 2%;
     border-top: 2px solid orange;
 }
 
 .collapse {
     align-items: center;
+}
+
+#backgroundImageExample2 li a:active {
+    color: orange;
+    size: 2%;
+    border-top: 2px solid orange;
 }
 
 li a {
@@ -51,7 +42,6 @@ li a img {
 
 #navs {
     margin-left: 400px;
-    /* text-align: center; */
     padding-left: 5px;
 }
 
@@ -65,14 +55,27 @@ li a img {
 }
 
 #homeImg {
-    margin-top: -5px;
-}
-
-#compImg {
+    margin-top: 5px;
+    width: 35px;
     height: 35px;
 }
 
+#compImg {
+    margin-top: 1px;
+    height: 40px;
+}
+
 #phoneImg {
+    margin-top: 6px;
     width: 22px;
-    height: 32px;
+    height: 35px;
+}
+
+.logout {
+    margin-left: 40%;
+}
+
+#search {
+    width: 50%;
+    margin-right: .5%;
 }

@@ -6,13 +6,13 @@ body {
 }
 
 #backgroundImageExample2 li a:hover {
-    color: black;
+    color: orange;
     size: 2%;
     border-top: 2px solid orange;
 }
 
 #backgroundImageExample2 li a:active {
-    color: black;
+    color: orange;
     size: 2%;
     border-top: 2px solid orange;
 }
