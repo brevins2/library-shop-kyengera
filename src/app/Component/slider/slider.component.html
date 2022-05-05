@@ -1,7 +1,161 @@
+<header>
+    <!-- Intro settings -->
+    <style>
+        /* Default height for small devices */
+        
+        #intro-example {
+            height: 400px;
+        }
+        /* Height for devices larger than 992px */
+        
+        @media (min-width: 992px) {
+            #intro-example {
+                height: 600px;
+            }
+        }
+        
+        a:hover {
+            color: black;
+        }
+    </style>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg" id="id1" style="background-color: rgb(2, 2, 80); height: 120px;">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" (click)="backgroundImageExample2.toggle()" aria-controls="backgroundImageExample2" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+            <div mdbCollapse #backgroundImageExample2="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
+                <a class="nav-link" id="homeIcon" aria-current="page" routerLink="/cmj">
+                    <img src="../../../assets/image/icons/logo.png" width="310">
+                </a>
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navs">
+                    <li class="nav-item active" style="margin-right: -40px;">
+                        <a class="nav-link" href="#home" style="width: 110px;">
+                            <i class="fa fa-home"></i>
+                            <br/>
+                            <p>Home</p>
+                        </a>
+                    </li>
+                    <li class="nav-item" style="margin-right: -40px;">
+                        <a class="nav-link active" routerLink="phones" style="width: 110px;">
+                            <i class="fa fa-address-book-o"></i>
+                            <br/>
+                            <p>Contact Us</p>
+                        </a>
+                    </li>
+                    <li class="nav-item" style="margin-right: -40px;">
+                        <a class="nav-link active" routerLink="/login" style="width: 110px;">
+                            <i class="fa fa-mobile"></i>
+                            <br/>
+                            <p>Phones</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/login" style="width: 150px;">
+                            <i class="fa fa-desktop"></i>
+                            <br/>
+                            <p>Accessories</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
 <body>
-    <div class="main">
-        <figure *ngFor="let Appi of image">
-            <img *ngIf="image" [src]="'../assets/image/'+ Appi.File" width="auto" height="700">
-        </figure>
+    <div class="home" id="home">
+        <div class="logo">
+            <img src="../../../assets/image/icons/logo.png" width="400">
+        </div>
+        <div id="about">
+            Cmj Entertainment is a Home of the best Phones and Computer accessories in town.<br/> At your service we are ready to serve you.
+            <br/>Create account or Login to get the best deals in town
+            <div class="accounts">
+                <a class="btn bg-light" id="create" routerLink="/create">Create account</a>
+                <a class="btn btn-danger bg-dark" id="login" routerLink="/login">Login</a>
+            </div>
+        </div>
     </div>
+    <div class="about">
+        <div class="help" id="serve">
+            <div class="howtoOrder">
+                <h2>About us</h2>
+                We sell phones and Computer accessories at the cheapest prices there is.
+                <b>For online services</b><br/>Order from our websites or any of our social media platforms the device or accessory of your choice and we shall be at your service. Use our email
+                <a href="email">cmjentertainment@gmail.com</a> or out telephone lines <b style="color: red;">0700711932</b> and get served quickly.
+            </div>
+            <div class="image"><img src="../../../assets/image/icons/round.jpg " width="200"> </div>
+        </div>
+    </div>
+    <div class="owner" id="owner">
+        <div class="ownerImage">
+            <img src="../../../assets/image/icons/round.jpg" width="200">
+        </div>
+        <div class="aboutOwner">
+            <div class="name">
+                <p>
+                    Name: Mr.CMJ
+                </p>
+            </div>
+            <div class="details">
+                <h2>C.E.O</h2>
+            </div>
+            <div class="personalContct">
+                <p>Email: </p>
+                <p>Number: </p>
+            </div>
+        </div>
+    </div>
+    <div class="services" id="services">
+        <div class="phones">
+            <div style="display:flex; padding: 2px; height: 20%;">
+                <div class="btn" style="width: 65%; display: flex; margin-right: 2%; margin-left: 1%;">
+                    <div>
+                        <img src="../../../assets/image/icons/round.jpg" width="200">
+                    </div>
+                    <div></div>
+                </div>
+                <div *ngFor="let apis for api" style="width: 30%; margin:0px; padding: 0px;">
+                    <mat-card class="mat-parent-small" style="background-color: none; border: 0px; margin:0px; padding: 0px;">
+                        <carousel style="width: 100%; padding: 0px; margin:0px;">
+                            <slide style="width: 100%; margin-bottom: -16px;">
+                                <mat-card class="example-card">
+                                    <img mat-card-image [src]="'../../../assets/image/computers/'+apis.File" height="500">
+                                </mat-card>
+                            </slide>
+                        </carousel>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+        <div class="computers">
+            <div style="display:flex; padding: 2px; ">
+                <div class="btn" style="width:65%; display: flex; margin-right: 2%; margin-left:1%;">
+                    <div>
+                        <img src="../../../assets/image/icons/round.jpg " width="200">
+                    </div>
+                    <div></div>
+                </div>
+                <div *ngFor="let apis of api" style="width: 32%; margin:0px; padding: 0px;">
+                    <mat-card class="mat-parent-small" style="border: 0px; padding: 0px;">
+                        <carousel style="width: 100%; padding: 0px; margin:0px;">
+                            <slide style="width: 100%; margin-bottom: -16px;">
+                                <mat-card class="example-card">
+                                    <img mat-card-image [src]="'../../../assets/image/computers/'+apis.File" height="500">
+                                </mat-card>
+                            </slide>
+                        </carousel>
+                    </mat-card>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <br/>
 </body>
+
+<app-footer></app-footer>
+<app-footer></app-footer>

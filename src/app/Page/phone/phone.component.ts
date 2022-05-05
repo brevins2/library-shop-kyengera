@@ -42,9 +42,9 @@ export class PhoneComponent implements OnInit {
   }
 
   edit(idToPass: any){
-    // this.router.navigate(['/edit phone', phoneID]).then.apply((response: any)=>{
-    //   this.updatePhones = response;
-    // });
+    this.router.navigate(['/edit phone', idToPass]).then.apply((response: any)=>{
+      this.updatePhones = response;
+    });
 
     alert(this.id);
     return this.dialogRef.open(AddPhoneComponent,{

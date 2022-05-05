@@ -26,13 +26,13 @@
                     <input formControlName="Price" class="form-control" type="text" placeholder="Enter Price" id="inputPrice">
                 </div>
                 <div class="form-row" id="id">
-                    <input formControlName="file" class="form-control" type="file" id="inputFile">
+                    <input formControlName="file" class="form-control" type="file" id="fileUpload">
                 </div>
                 <br>
                 <div class="butt">
                     <button class="btn btn-primary" (click)="save()" [ngStyle]="{'background-color': 'green', 'border-color': 'green'}">Save</button>
                     <button class="btn btn-secondary" (click)="clr()">Clear</button>
-                    <button class="btn btn-primary" (click)="del()" [ngStyle]=" { 'background-color': 'red', 'border-color': 'red'} ">Delete</button>
+                    <button class="btn btn-primary" (click)="del()" [ngStyle]="{ 'background-color': 'red', 'border-color': 'red'}">Delete</button>
                 </div>
             </form>
         </div>

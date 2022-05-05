@@ -3,8 +3,9 @@
         <!-- Button trigger modal -->
         <div class="addPhone">
             <button type="button" (click)="popUp(id)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id="btn">
-    <i class="fa fa-add" color="white"></i>Add Phone
-    </button>
+                <i class="fa fa-plus" color="white"></i>&nbsp;
+                    Add Phone
+            </button>
         </div>
         <table class="table table-striped">
             <thead>
@@ -29,7 +30,7 @@
                     <td>
                         <img [src]="'../../../assets/image/phones/'+phon.File" width="100"></td>
                     <td>
-                        <p class="btn btn-primary" id="edit" (click)="edit(phon.id)"><i class="fa fa-edit" aria-label="edit"></i></p>
+                        <p class="btn btn-primary" id="edit" (click)="edit(id)"><i class="fa fa-edit" aria-label="edit"></i></p>
                     </td>
                     <td>
                         <p class="btn btn-danger" id="del" (click)="deletePhone(phon)"><i class="fa fa-trash" aria-label="delete"></i></p>
@@ -39,8 +40,6 @@
         </table>
     </div>
     <br>
-
-
     <br>
     <hr>
 

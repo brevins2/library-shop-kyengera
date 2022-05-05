@@ -1,73 +1,47 @@
-<!-- Button trigger modal -->
-<!-- <div style="margin-bottom: 70px; margin-top: 10px;">
-    <button type="button" (click)="updateCompAccess(id)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id="btn">
-        Add Computer
-    </button>
-</div> -->
-<div class="display">
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Cartegory</th>
-                <th>Price</th>
-                <th>File</th>
-                <th>Edit</th>
-                <th>Remove</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let comp of api">
-                <td>{{comp.id}}</td>
-                <td>{{comp.Title}}</td>
-                <td>{{comp.Category}}</td>
-                <td>{{comp.Price}}</td>
-                <td>
-                    <img [src]="'../../../assets/image/computers/'+comp.File" width="80">
-                </td>
-                <td>
-                    <button type="button" class="btn btn-primary" id="edit" (click)="updateCompAccess(comp.id)"><i class="fa fa-edit"></i>
-                    </button>
-                </td>
-                <td>
-                    <p id="del" class="btn btn-danger" (click)="deleteCompAccess(comp)"><i class="fa fa-trash"></i></p>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<br>
-
-<hr>
-<nav>
-    <i class="fa fa-copyright"></i> copy rights reserved
-</nav>
-
-<!-- (click)="updateCompAccess(comp.id) " -->
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-    Launch demo modal
-  </button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-            </div>
-            <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+<body>
+    <div class="display">
+        <!-- Button trigger modal -->
+        <div class="addPhone">
+            <button type="button" (click)="updateCompAccess(id)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id="btn"><i class="fa fa-plus"></i>&nbsp;
+            Add Computer
+        </button>
         </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Cartegory</th>
+                    <th>Price</th>
+                    <th>File</th>
+                    <th>Edit</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let comp of api">
+                    <td>{{comp.id}}</td>
+                    <td>{{comp.Title}}</td>
+                    <td>{{comp.Category}}</td>
+                    <td>{{comp.Price}}</td>
+                    <td>
+                        <img [src]="'../../../assets/image/computers/'+comp.File" width="80">
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary" id="edit" (click)="updateCompAccess(comp.id)"><i class="fa fa-edit"></i>
+                    </button>
+                    </td>
+                    <td>
+                        <p id="del" class="btn btn-danger" (click)="deleteCompAccess(comp)"><i class="fa fa-trash"></i></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-</div>
+    <br>
+
+    <hr>
+    <nav>
+        <i class="fa fa-copyright"></i> copy rights reserved
+    </nav>
+</body>

@@ -19,10 +19,12 @@ import { TestsComponent } from './test/tests/tests.component';
 
 import { PhonePayComponent } from './Pay/phone-pay/phone-pay.component';
 import { ComputerPayComponent } from './Pay/computer-pay/computer-pay.component';
+import { SliderComponent } from './Component/slider/slider.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'cmj', pathMatch: 'full' },
   { path: 'test', component: TestsComponent },
+  { path: 'second option', component: SliderComponent},
   { path: 'cmj', component: FirstPageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'create', component: CreateComponent },

@@ -6,6 +6,11 @@ body {
     padding: 2% 2% 0% 8%;
 }
 
+mat-parent-small {
+    padding: 0px;
+    border: -1px;
+}
+
 nav {
     text-align: center;
     width: 100%;

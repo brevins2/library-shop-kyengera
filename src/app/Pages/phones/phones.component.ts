@@ -34,8 +34,6 @@ export class PhonesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getApi();
-
-    // this.getCurrentDatas();
   }
 
   getCurrentDatas(){

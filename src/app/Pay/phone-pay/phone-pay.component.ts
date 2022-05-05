@@ -37,6 +37,12 @@ export class PhonePayComponent implements OnInit {
     this.getCurrentData();
   }
 
+  getData(){
+    this.http.get('http//localhost/3000/Phones').subscribe(result=>{
+      result = this.data;
+    });
+  }
+
   getCurrentData(){
     this.service.getCurrentPhoneData(this.router.snapshot.params['id']).subscribe((result: any)=>{
       this.buyPhone = new FormGroup({

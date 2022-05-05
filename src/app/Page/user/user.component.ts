@@ -33,7 +33,7 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
     this.getUser();
   }
-
+  
   popUp(idToPass: any){
     return this.dialogRef.open(AddUserComponent,{
       data:{

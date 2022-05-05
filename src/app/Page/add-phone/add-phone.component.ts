@@ -10,22 +10,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AddPhoneComponent implements OnInit {
 
-  // public addPhone ! : FormGroup;
-  constructor(
-    private addBuild: FormBuilder,
-    private http: HttpClient,
-    private router: Router
-  ) { }
+  constructor(private http: HttpClient,private router: Router) { }
 
   ngOnInit(): void {
-    // this.addPhone;
-    //= this.addBuild.group({
-    //   title: [''],
-    //   Storage: [''],
-    //   Battery: [''],
-    //   Price: [''],
-    //   File: ['']
-    // });
   }
 
   addPhone = new FormGroup({

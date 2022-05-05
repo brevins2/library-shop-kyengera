@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
         return 'admin@ug.com' === this.loginForm.value.email &&
         'i83admin' === this.loginForm.value.password
       });
+      
       if(admin){
         this.alert = true;
         this.loginForm.reset();
