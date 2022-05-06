@@ -10,11 +10,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AddPhoneComponent implements OnInit {
 
+  selectedFile!: File;
   constructor(private http: HttpClient,private router: Router) { }
 
   ngOnInit(): void {
   }
-
   addPhone = new FormGroup({
     title: new FormControl(''),
     Storage: new FormControl(''),
@@ -23,10 +23,20 @@ export class AddPhoneComponent implements OnInit {
     File: new FormControl(''),
   });
 
-  addPhones(){}
-
   clr(){
     this.addPhone.reset();
+  }
+
+  onFileUpload(event: any){
+    this.selectedFile = event.target.files[0];
+  }
+
+  onUpload(){
+    const fd = new FormData();
+    fd.append('image', this.selectedFile, this.selectedFile.name);
+    this.http.post("http://localhost/3000/Phones", fd).subscribe(response => {
+      console.log(response);
+    });
   }
 
   save(){
