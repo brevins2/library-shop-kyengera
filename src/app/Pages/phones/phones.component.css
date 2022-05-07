@@ -50,7 +50,7 @@ nav {
 .row .col {
     width: 29%;
     font-size: 13px;
-    padding: 1.5%;
+    /* padding: 1.5%; */
     color: black;
 }
 

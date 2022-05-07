@@ -2,6 +2,14 @@
     margin-bottom: 10px;
 }
 
+.body {
+    background: linear-gradient(rgb(213, 213, 215), rgb(236, 236, 251));
+    /* position: absolute; */
+    display: block;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
 .carousel-item {
     float: left;
 }
@@ -49,7 +57,7 @@ button {
     background-color: white;
     margin-top: 1%;
     width: 100%;
-    /* margin-right: 5%; */
+    /* position: fixed; */
 }
 
 .mat-parent-small {

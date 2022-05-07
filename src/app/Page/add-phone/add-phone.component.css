@@ -8,7 +8,13 @@
     margin: 10px;
 }
 
-#id {
+#price {
+    width: 460px;
+    padding-left: 15px;
+}
+
+#upload {
+    margin-top: 1%;
     width: 460px;
     padding-left: 15px;
 }
@@ -25,4 +31,14 @@
 .input div {
     width: 450px;
     padding: 5px;
+}
+
+#cancel {
+    background-color: red;
+    border-color: red;
+}
+
+#save {
+    background-color: green;
+    border-color: green;
 }

@@ -10,3 +10,8 @@ body {
 #inputPassword4 {
     width: 400px;
 }
+
+header {
+    position: fixed;
+    width: 100%;
+}
