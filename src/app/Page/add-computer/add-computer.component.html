@@ -23,7 +23,7 @@
         </button>
             <div mdbCollapse #backgroundImageExample2="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
                 <a class="nav-link" id="homeIcon" aria-current="page" routerLink="/cmj">
-                    <img src="../../../assets/image/icons/logo.png" width="310">
+                    <img src="../../../assets/image/icons/logo.png">
                 </a>
             </div>
         </div>
@@ -32,16 +32,9 @@
 
 <body>
     <div class="container">
-        <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">
-                Add Computer Accessory
-            </h5>
-            <button type="button" class="close" data-dismiss="form" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
         <div class="input">
             <form [formGroup]="addComputer" id="styled" class="form-control">
+                <h1>Add Phone</h1>
                 <div class="form-row">
                     <div class="form-group col-md-6" id="title">
                         <label for="title">Title</label>

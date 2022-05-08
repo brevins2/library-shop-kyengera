@@ -16,39 +16,16 @@
     </style>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg" style="background-color: rgb(2, 2, 80); height: 120px;">
+    <nav class="navbar navbar-expand-lg" id="nav-header">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" (click)="backgroundImageExample2.toggle()" aria-controls="backgroundImageExample2" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fas fa-bars"></i>
         </button>
             <div mdbCollapse #backgroundImageExample2="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
                 <a class="nav-link" id="homeIcon" aria-current="page" routerLink="/cmj">
-                    <img src="../../../assets/image/icons/logo.png" width="310">
+                    <img src="../../../assets/image/icons/logo.png">
                 </a>
 
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navs">
-                    <li class="nav-item active" style="margin-right: -40px;">
-                        <a class="nav-link" routerLink="/cmj" style="width: 100px;">
-                            <i class="fa fa-home"></i>
-                            <br/>
-                            <p style="margin-top: 5px;">Home</p>
-                        </a>
-                    </li>
-                    <li class="nav-item" style="margin-right: -40px;">
-                        <a class="nav-link active" routerLink="phones" style="width: 100px;">
-                            <i class="fa fa-mobile"></i>
-                            <br/>
-                            <p>Phone</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="computers" style="width: 150px;">
-                            <i class="fa fa-desktop"></i>
-                            <br/>
-                            <p>Accessories</p>
-                        </a>
-                    </li>
-                </ul>
             </div>
         </div>
     </nav>
@@ -56,11 +33,12 @@
 
 <body>
     <div id="contain">
-        <form [formGroup]="signUpForm" (ngSubmit)="signUp()" id="styled" class="form-control ">
+        <form [formGroup]="signUpForm" id="Form" class="form-control">
+            <h1>Add Phone</h1>
             <div class="form-row">
                 <div class="form-group col-md-6" id="email">
                     <label for="inputEmail ">Email</label>
-                    <input formControlName="email" type="email" class="form-control " id="inputEmail " placeholder="Email ">
+                    <input formControlName="email" type="email" class="form-control" id="inputEmail" placeholder="Email">
                 </div>
             </div>
             <div class="form-row">
@@ -87,7 +65,7 @@
                     </label>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary" id="btn">Sign up</button>
+            <button type="submit" (click)="signUp()" class="btn btn-primary" id="btn">Sign up</button>
         </form>
 
     </div>

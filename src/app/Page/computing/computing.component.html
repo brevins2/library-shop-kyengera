@@ -2,8 +2,8 @@
     <div class="display">
         <!-- Button trigger modal -->
         <div class="addPhone">
-            <button type="button" (click)="updateCompAccess(id)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id="btn"><i class="fa fa-plus"></i>&nbsp;
-            Add Computer
+            <button type="button" (click)="addComputers()" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id="btn"><i class="fa fa-plus"></i>&nbsp;
+                Add Computer
         </button>
         </div>
         <table class="table table-striped">
@@ -28,7 +28,7 @@
                         <img [src]="'../../../assets/image/computers/'+comp.File" width="80">
                     </td>
                     <td>
-                        <button type="button" class="btn btn-primary" id="edit" (click)="updateCompAccess(comp.id)"><i class="fa fa-edit"></i>
+                        <button type="button" class="btn btn-primary" id="edit" (click)="updateCompAccess()"><i class="fa fa-edit"></i>
                     </button>
                     </td>
                     <td>

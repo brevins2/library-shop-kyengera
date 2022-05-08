@@ -37,7 +37,7 @@ export class UserComponent implements OnInit {
   }
   
   popUp(){
-    this.dialogRef.open(AddUserComponent);
+    this.route.navigate(['add user']);
     // return this.dialogRef.open(AddUserComponent,{
     //   data:{
     //     id: idToPass

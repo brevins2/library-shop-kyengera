@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { ComputerAccess, Movies } from 'src/app/interfaces';
 import { ServeService } from 'src/app/Services/serve.service';
 import { compAccess } from 'src/app/values';
@@ -34,12 +35,16 @@ export class ComputingComponent implements OnInit {
     Price: new FormControl(''),
     File: new FormControl('')
   });
-  constructor(private http: HttpClient,private Serve: ServeService,private dialogRef: MatDialog) { 
+  constructor(private http: HttpClient, private Serve: ServeService, private dialogRef: MatDialog, private router: Router) { 
     console.log(this.compute);
   }
 
   ngOnInit(): void {
     this.getAPi();
+  }
+
+  addComputers(){
+    this.dialogRef.open(AddComputerComponent);
   }
 
   getAPi(){
@@ -56,12 +61,7 @@ export class ComputingComponent implements OnInit {
     t.id!)));
   }
 
-  updateCompAccess(idToPass: any){
-    // this.Serve.updateCompAccess(computeUpdate).subscribe();
-    return this.dialogRef.open(AddComputerComponent,{
-      data:{
-        id: idToPass
-      }
-    });
+  updateCompAccess(){
+    this.router.navigate(['/add computer']);
   }
 }
