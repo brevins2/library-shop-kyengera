@@ -62,7 +62,7 @@ export class PhoneComponent implements OnInit {
   }
 
   popUp(idToPass: any){
-    alert(this.id);
+    // alert(this.id);
     return this.dialogRef.open(AddPhoneComponent,{
       data:{
         id: idToPass

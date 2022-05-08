@@ -20,40 +20,39 @@
     </style>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg" id="nav1" style="background-color: rgb(2, 2, 80); height: 120px;">
+    <nav class="navbar navbar-expand-lg">
+        <a class="nav-link" id="homeIcon" aria-current="page" routerLink="/cmj">
+            <img src="../../../assets/image/icons/logo.png" class="logo">
+        </a>
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" (click)="backgroundImageExample2.toggle()" aria-controls="backgroundImageExample2" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fa fa-bars"></i>
+          <i class="fa fa-bars" id="bars"></i>
         </button>
             <div mdbCollapse #backgroundImageExample2="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
-                <a class="nav-link" id="homeIcon" aria-current="page" routerLink="/cmj">
-                    <img src="../../../assets/image/icons/logo.png" width="310">
-                </a>
-
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navs">
                     <li class="nav-item active">
-                        <a class="nav-link" routerLink="user" style="width: 90px;">
+                        <a class="nav-link" routerLink="user">
                             <i class="fa fa-user"></i>
                             <br/>
-                            <p>User</p>
-                        </a>
-                    </li>
-                    <li class="nav-item" style="margin-right: -40px;">
-                        <a class="nav-link active" routerLink="phone" style="width: 100px;">
-                            <i class="fa fa-mobile"></i>
-                            <br/>
-                            <p>Phone</p>
+                            <p style="margin-top: 5px;">User</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="computer" style="width: 150px;">
+                        <a class="nav-link active" routerLink="phone">
+                            <i class="fa fa-mobile"></i>
+                            <br/>
+                            <p>Phones</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="computer">
                             <i class="fa fa-desktop"></i>
                             <br/>
                             <p>Accessories</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" routerLink="phone" style="width: 130px;">
+                        <a class="nav-link" routerLink="">
                             <i class="fa fa-bell"></i>
                             <br/>
                             <p>Notification</p>
@@ -62,18 +61,17 @@
                 </ul>
             </div>
         </div>
-
     </nav>
     <nav class="navbar navbar-expand-lg" id="navbar" style="background-color: rgb(252, 252, 252); padding: 3% 0;">
         <div class="container-fluid" style="display: flex;">
             <button class="navbar-toggler" type="button" (click)="backgroundImageExample3.toggle()" aria-controls="backgroundImageExample2" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fas fa-bars"></i>
-                    </button>
+                <i class="fa fa-bars"></i>
+            </button>
             <div mdbCollapse #backgroundImageExample3="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
                 <input type="search" class="form-control" id="search-input-sidenav" id="search" name="search" placeholder="Search for Phones, mouse, keyboards, fans, cables, flash....">
                 <button class="btn btn-primary" (click)="search()">Search</button>
                 <div class="logout">
-                    <a class="btn btn-danger" routerLink="/login">Login</a>
+                    <a class="btn btn-danger" routerLink="/login">Logout</a>
                 </div>
             </div>
         </div>

@@ -11,6 +11,20 @@ nav {
     padding: 3% 0;
 }
 
+.navbar {
+    background-color: rgb(2, 2, 80);
+    height: 30%;
+    display: flex;
+}
+
+#bars {
+    color: white;
+}
+
+.logo {
+    margin-left: 2.5%;
+}
+
 #backgroundImageExample2 li a:hover {
     color: orange;
     size: 2%;
@@ -40,12 +54,17 @@ li a img {
 }
 
 #navs {
-    margin-left: 400px;
-    padding-left: 5px;
+    margin-left: 42%;
+    margin-right: 10;
+    float: right;
+}
+
+.container-fluid {
+    float: right;
 }
 
 #homeIcon {
-    margin-left: -31px;
+    margin-left: -35px;
     padding: 0;
 }
 

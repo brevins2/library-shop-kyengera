@@ -1,7 +1,8 @@
 import { Component, OnInit, Output } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ServeService } from 'src/app/Services/serve.service';
 
 
 @Component({
@@ -11,21 +12,32 @@ import { Router } from '@angular/router';
 })
 export class AddUserComponent implements OnInit {
 
-  public signUpForm !: FormGroup;
+  signUpForm = new FormGroup({
+    email: new FormControl(''),
+    password: new FormControl(''),
+    confirmPassword: new FormControl(''),
+    file: new FormControl(''),
+    check: new FormControl('')
+  });
+
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute,
+    private service: ServeService
   ) { }
 
   ngOnInit(): void {
-    this.signUpForm = this.formBuilder.group({
-      email: [''],
-      password: [''],
-      confirmPassword: [''],
-      file: [''],
-      check: ['']
+    this.service.getCurrentUserData(this.route.snapshot.params['id']).subscribe((result: any) => {
+      this.signUpForm = new FormGroup({
+      email: new FormControl(result['email']),
+      password: new FormControl(result['password']),
+      confirmPassword: new FormControl(result['confirmPassword']),
+      file: new FormControl(result['file']),
+      check: new FormControl(result['check'])
     });
+  });
   }
 
   signUp(){

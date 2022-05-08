@@ -16,33 +16,32 @@
     </style>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg" style="background-color: rgb(2, 2, 80); height: 120px;">
+    <nav class="navbar navbar-expand-lg">
+        <a class="nav-link" id="homeIcon" aria-current="page" routerLink="/cmj">
+            <img src="../../../assets/image/icons/logo.png" class="logo">
+        </a>
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" (click)="backgroundImageExample2.toggle()" aria-controls="backgroundImageExample2" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fas fa-bars"></i>
+          <i class="fa fa-bars" id="bars"></i>
         </button>
             <div mdbCollapse #backgroundImageExample2="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
-                <a class="nav-link" id="homeIcon" aria-current="page" routerLink="/cmj">
-                    <img src="../../../assets/image/icons/logo.png" width="310">
-                </a>
-
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navs">
-                    <li class="nav-item active" style="margin-right: -40px;">
-                        <a class="nav-link" routerLink="/cmj" style="width: 100px;">
+                    <li class="nav-item active">
+                        <a class="nav-link" routerLink="/cmj">
                             <i class="fa fa-home"></i>
                             <br/>
                             <p style="margin-top: 5px;">Home</p>
                         </a>
                     </li>
-                    <li class="nav-item" style="margin-right: -40px;">
-                        <a class="nav-link active" routerLink="phones" style="width: 100px;">
+                    <li class="nav-item">
+                        <a class="nav-link active" routerLink="phones">
                             <i class="fa fa-mobile"></i>
                             <br/>
                             <p>Phone</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="computers" style="width: 150px;">
+                        <a class="nav-link" routerLink="computers">
                             <i class="fa fa-desktop"></i>
                             <br/>
                             <p>Accessories</p>

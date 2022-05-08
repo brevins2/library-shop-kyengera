@@ -74,7 +74,6 @@ export class AddPhoneComponent implements OnInit {
       this.router.navigate(['/phone']);
     },
     error => {
-      // alert(this.addPhone.value);
       alert("something went wrong!!");
     });
   }

@@ -64,6 +64,10 @@ export class ServeService {
    getTaskUser(): Observable<User[]>{
      return this.http.get<any>(this.url4);
    }
+
+   getCurrentUserData(id: number){
+    return this.http.get(`${this.url3}/${id}`);
+   }
  
    deleteUser(use: User): Observable<User>{
      const url = `${this.url4}/${use.id}`;

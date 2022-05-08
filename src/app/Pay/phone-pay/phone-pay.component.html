@@ -23,7 +23,7 @@
     <nav class="navbar navbar-expand-lg" style="background-color: rgb(2, 2, 80); height: 120px;">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" (click)="backgroundImageExample2.toggle()" aria-controls="backgroundImageExample2" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fas fa-bars"></i>
+          <i class="fa fa-bars" style="color: white;"></i>
         </button>
             <div mdbCollapse #backgroundImageExample2="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
                 <a class="nav-link" id="homeIcon" aria-current="page" routerLink="/cmj">
@@ -33,21 +33,21 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navs">
                     <li class="nav-item active" style="margin-right: -40px;">
                         <a class="nav-link" routerLink="/cmj" style="width: 100px;">
-                            <img src="../../../assets/image/icons/newHome.png" id="homeImg">
+                            <i class="fa fa-home"></i>
                             <br/>
                             <p style="margin-top: 5px;">Home</p>
                         </a>
                     </li>
                     <li class="nav-item" style="margin-right: -40px;">
-                        <a class="nav-link active" routerLink="/phones" style="width: 100px;">
-                            <img src="../../../assets/image/icons/newPhone.png" id="phoneImg">
+                        <a class="nav-link active" routerLink="/users/phones" style="width: 100px;">
+                            <i class="fa fa-mobile"></i>
                             <br/>
                             <p>Phone</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/computers" style="width: 150px;">
-                            <img src="../../../assets/image/icons/comp.png" id="compImg">
+                        <a class="nav-link" routerLink="/users/computers" style="width: 150px;">
+                            <i class="fa fa-desktop"></i>
                             <br/>
                             <p>Accessories</p>
                         </a>
@@ -61,7 +61,7 @@
 
 <body>
     <div class="side">
-        <img src="'../../../../../assets/image/phones/'+ data.File" title="Phone" aria-label="image of product" alt="Image of Phone" width="150">
+        <img src="'../../../../../assets/image/phones/'+ data.file" title="Phone" aria-label="image of product" alt="Image of Phone" width="150">
     </div>
     <div class="container">
         <div class="input">
@@ -93,6 +93,7 @@
                     <label class="inputPicture" for="picture">Address</label>
                     <address>
                         <textarea rows="5" cols="78" class="form-control" name="Address" id="inputAddress">
+                            <img src="" formControlName="File">
                         </textarea>
                 </address>
                 </div>

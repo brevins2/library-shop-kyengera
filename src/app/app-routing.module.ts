@@ -41,7 +41,7 @@ const routes: Routes = [
   ]},
   { path: 'add computer', component: AddComputerComponent },
   { path: 'add phone', component: AddPhoneComponent },
-  { path: 'add user/:id', component: AddUserComponent },
+  { path: 'add user', component: AddUserComponent },
   { path: 'edit phone/:id', component: AddPhoneComponent },
   { path: 'up', component: FileUploadComponent },
   { path: 'comp-pay/:id', component: ComputerPayComponent },

@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ServeService } from 'src/app/Services/serve.service';
 import { User } from 'src/app/interfaces';
 import { AddUserComponent } from '../add-user/add-user.component';
+import { Router } from '@angular/router';
 
 export class Users{
   constructor(
@@ -27,19 +28,21 @@ export class UserComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private dialogRef: MatDialog,
-    private Serve: ServeService
+    private Serve: ServeService,
+    private route: Router
   ) { }
 
   ngOnInit(): void {
     this.getUser();
   }
   
-  popUp(idToPass: any){
-    return this.dialogRef.open(AddUserComponent,{
-      data:{
-        id: idToPass
-      }
-    });
+  popUp(){
+    this.dialogRef.open(AddUserComponent);
+    // return this.dialogRef.open(AddUserComponent,{
+    //   data:{
+    //     id: idToPass
+    //   }
+    // });
   }
 
   getUser(){

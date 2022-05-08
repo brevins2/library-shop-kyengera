@@ -1,7 +1,7 @@
 <body>
     <div class="display">
         <div class="addPhone">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id="btn">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" (click)="popUp()" id="btn">
             <i class="fa fa-plus" color="white"></i>&nbsp;
                 Add User
         </button>
@@ -26,7 +26,7 @@
                     <td>{{use.confirmPassword}}</td>
                     <td>{{use.check}}</td>
                     <td>
-                        <p class="btn btn-primary" id="edit" (click)="popUp(use.id)"><i class="fa fa-edit"></i></p>
+                        <p class="btn btn-primary" id="edit" (click)="popUp()"><i class="fa fa-edit"></i></p>
                     </td>
                     <td>
                         <p class="btn btn-danger" id="del" (click)="deleteCompAccess(use)"><i class="fa fa-trash"></i></p>

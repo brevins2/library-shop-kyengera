@@ -1,7 +1,6 @@
 body {
     width: 600px;
     height: 500px;
-    padding-top: 20px;
 }
 
 #inputFile,
@@ -14,4 +13,5 @@ body {
 header {
     position: fixed;
     width: 100%;
+    /* margin-bottom: 40%; */
 }

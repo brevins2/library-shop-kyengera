@@ -43,12 +43,13 @@ nav {
     display: flex;
 }
 
-#form1 {
-    width: 480px;
+#search {
+    width: 40%;
 }
 
-.clean {
-    margin-left: 100px;
+.accounts {
+    margin-left: 14%;
+    float: right;
 }
 
 #createBtn {
@@ -57,5 +58,6 @@ nav {
 
 #navbars {
     background-color: rgb(252, 252, 252);
-    padding: 4.5% 0;
+    padding: 2.5% 0;
+    height: 20%;
 }
