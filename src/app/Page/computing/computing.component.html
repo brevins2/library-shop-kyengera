@@ -28,8 +28,9 @@
                         <img [src]="'../../../assets/image/computers/'+comp.File" width="80">
                     </td>
                     <td>
-                        <button type="button" class="btn btn-primary" id="edit" (click)="updateCompAccess()"><i class="fa fa-edit"></i>
-                    </button>
+                        <a type="button" class="btn btn-primary" id="edit" routerLink="/edit-computer/{{comp.id}}">
+                            <i class="fa fa-edit"></i>
+                        </a>
                     </td>
                     <td>
                         <p id="del" class="btn btn-danger" (click)="deleteCompAccess(comp)"><i class="fa fa-trash"></i></p>

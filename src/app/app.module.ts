@@ -59,6 +59,7 @@ import { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';
 import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
+import { NotificationsComponent } from './Page/notifications/notifications.component';
 
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -85,7 +86,8 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
     FileUploadComponent,
     CreateComponent,
     TermsComponent,
-    TestsComponent
+    TestsComponent,
+    NotificationsComponent
   ],
   exports: [
     MatDialogModule

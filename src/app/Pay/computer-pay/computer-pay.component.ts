@@ -11,12 +11,13 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class ComputerPayComponent implements OnInit{
 
+  alert = false;
   buyComputer = new FormGroup({
     id: new FormControl(''),
     Title: new FormControl(''),
     Price: new FormControl(''),
     Category: new FormControl(''),
-    textarea: new FormControl(''),
+    Message: new FormControl(''),
     File: new FormControl('')
   });
 
@@ -29,14 +30,23 @@ export class ComputerPayComponent implements OnInit{
         Title: new FormControl(result['Title']),
         Price: new FormControl(result['Price']),
         Category: new FormControl(result['Category']),
-        textarea: new FormControl(result['textarea']),
+        Message: new FormControl(result['Message']),
         File: new FormControl(result['File'])
       });
     });
   }
 
  
-  order(){}
+  order(){
+    this.http.post('http://localhost:3000/Orders', this.buyComputer.value).subscribe(result =>{
+      this.alert = true;
+      return result;
+    });
+  }
+
+  closeAlert(){
+    this.alert = false;
+  }
 
   cancel(){
     this.route.navigate(['users/computers']);

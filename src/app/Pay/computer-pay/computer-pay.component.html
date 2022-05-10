@@ -57,6 +57,12 @@
         </div>
     </nav>
 </header>
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Success !</strong> Log in successful !.
+    <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
 
 <body>
     <form [formGroup]="buyComputer" id="styled" (ngSubmit)="order()" class="form-control">
@@ -89,7 +95,7 @@
                 <div class="form-row" id="id">
                     <label class="inputPicture" for="picture">Address</label>
                     <address>
-                            <textarea rows="5" cols="78" class="form-control" name="Address" id="inputAddress" formControlName="textarea">
+                            <textarea rows="5" cols="78" class="form-control" name="Address" id="inputAddress" formControlName="Message">
                             </textarea>
                     </address>
                 </div>

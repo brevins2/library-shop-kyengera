@@ -38,11 +38,6 @@ export class UserComponent implements OnInit {
   
   popUp(){
     this.route.navigate(['add user']);
-    // return this.dialogRef.open(AddUserComponent,{
-    //   data:{
-    //     id: idToPass
-    //   }
-    // });
   }
 
   getUser(){
@@ -50,10 +45,6 @@ export class UserComponent implements OnInit {
       response=>{
       this.user = response;
       })
-  }
-
-  updateUser(userUpdate: User){
-    this.Serve.updateUser(userUpdate).subscribe();
   }
 
   deleteCompAccess(userDelete: User){

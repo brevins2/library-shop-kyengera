@@ -34,7 +34,7 @@
 <body>
     <div class="container">
         <div class="input">
-            <form [formGroup]="addPhone" (ngSubmit)="save()" id="styled" class="form-control">
+            <form [formGroup]="addPhone" id="styled" class="form-control">
                 <h1>Add Phone</h1>
                 <div class="form-row">
                     <div class="form-group col-md-6" id="title">
@@ -64,12 +64,11 @@
                 </div>
                 <br>
                 <div class="butt">
-                    <button class="btn btn-primary" id="save" (click)="onUpload()">Save</button>
+                    <button class="btn btn-primary" id="save" (click)="Edit()">Save</button>
                     <button class="btn btn-secondary" (click)="clr()">Clear Form</button>
                     <button class="btn btn-primary" id="cancel" (click)="cancel()">Cancel</button>
                 </div>
             </form>
         </div>
-
     </div>
 </body>

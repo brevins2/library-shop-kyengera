@@ -30,7 +30,7 @@
                     <td>
                         <img [src]="'../../../assets/image/phones/'+phon.File" width="100"></td>
                     <td>
-                        <p class="btn btn-primary" id="edit" (click)="edit(id)"><i class="fa fa-edit" aria-label="edit"></i></p>
+                        <p class="btn btn-primary" id="edit" routerLink="/edit-phone/{{phon.id}}"><i class="fa fa-edit" aria-label="edit"></i></p>
                     </td>
                     <td>
                         <p class="btn btn-danger" id="del" (click)="deletePhone(phon)"><i class="fa fa-trash" aria-label="delete"></i></p>

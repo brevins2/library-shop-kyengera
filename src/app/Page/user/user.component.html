@@ -26,7 +26,8 @@
                     <td>{{use.confirmPassword}}</td>
                     <td>{{use.check}}</td>
                     <td>
-                        <p class="btn btn-primary" id="edit" (click)="popUp()"><i class="fa fa-edit"></i></p>
+                        <a class="btn btn-primary" id="edit" routerLink="/edit-user/{{use.id}}"><i class="fa fa-edit"></i>
+                        </a>
                     </td>
                     <td>
                         <p class="btn btn-danger" id="del" (click)="deleteCompAccess(use)"><i class="fa fa-trash"></i></p>

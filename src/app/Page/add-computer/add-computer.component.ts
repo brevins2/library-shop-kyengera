@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ServeService } from 'src/app/Services/serve.service';
 import { compAccess } from 'src/app/values';
@@ -24,20 +24,33 @@ export class values{
 export class AddComputerComponent implements OnInit {
 
   compute: ComputerAccess[] = compAccess;
-  public addComputer ! : FormGroup;
+  addComputer = new FormGroup({
+    id: new FormControl(''),
+    Title: new FormControl(''),
+    Category: new FormControl(''),
+    Price: new FormControl(''),
+    File: new FormControl('')
+  });
   constructor(
     private addBuild: FormBuilder, 
     private http: HttpClient,
     private router: Router,
-    private serve: ServeService
+    private serve: ServeService, private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    this.addComputer = this.addBuild.group({
-      Title: [''],
-      Category: [''],
-      Price: [''] ,
-      File: ['']
+    this.getCurrentData();
+  }
+
+  getCurrentData(){
+    this.serve.getCurrentComputerData(this.route.snapshot.params['id']).subscribe((result: any) => {
+      this.addComputer = new FormGroup({
+        id: new FormControl(result['id']),
+        Title: new FormControl(result['Title']),
+        Category: new FormControl(result['Category']),
+        Price: new FormControl(result['Price']),
+        File: new FormControl(result['File'])
+      });
     });
   }
 
@@ -52,6 +65,7 @@ export class AddComputerComponent implements OnInit {
   }
 
   save(){
+    this.serve.updateCompAccess;
     this.http.post<any>("http://localhost/3000/Computers", this.addComputer.value)
     .subscribe(res=>{
       alert("added successfully!!");
@@ -62,11 +76,12 @@ export class AddComputerComponent implements OnInit {
     });
   }
 
-  del(){
-    this.http.delete<any>('http://localhost/3000/Computers')
-    .subscribe(res=>{
-      this.addComputer.value;
-    });
+  cancel(){
+    this.router.navigate(['/admin/computer']);
+    // this.http.delete<any>('http://localhost/3000/Computers')
+    // .subscribe(res=>{
+    //   this.addComputer.value;
+    // });
   }
 
 }

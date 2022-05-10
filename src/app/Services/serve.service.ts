@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ComputerAccess, Movies, Phones, User } from '../interfaces';
+import { ComputerAccess, Phones, User } from '../interfaces';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -32,9 +32,9 @@ export class ServeService {
      return this.http.delete<Phones>(url);
    }
  
-   updatePhones(phone: Phones): Observable<Phones>{
-     const url = `${this.url2}/${phone.id}`;
-     return this.http.put<Phones>(url, phone, httpOptions);
+   updatePhones(id: any, phone: { id: any; }){
+     const url = `${this.url2}/${id}`;
+     return this.http.put(url, phone);
    }
  
    //for computers
@@ -53,9 +53,9 @@ export class ServeService {
      return this.http.delete<ComputerAccess>(url);
    }
  
-   updateCompAccess(comp: ComputerAccess): Observable<ComputerAccess>{
+   updateCompAccess(id: any, comp: { id: any; }){
      const url = `${this.url3}/${comp.id}`;
-     return this.http.put<ComputerAccess>(url, comp, httpOptions);
+     return this.http.put(url, comp);
    }
  
    //for Users
@@ -66,7 +66,7 @@ export class ServeService {
    }
 
    getCurrentUserData(id: number){
-    return this.http.get(`${this.url3}/${id}`);
+    return this.http.get(`${this.url4}/${id}`);
    }
  
    deleteUser(use: User): Observable<User>{
@@ -74,8 +74,8 @@ export class ServeService {
      return this.http.delete<User>(url);
    }
  
-   updateUser(use: User): Observable<User>{
-     const url = `${this.url4}/${use.id}`;
-     return this.http.put<User>(url, use, httpOptions);
+   updateUser(id: any, use: { id: any; }){
+     const url = `${this.url4}/${id}`;
+     return this.http.put(url, use);
    }
 }

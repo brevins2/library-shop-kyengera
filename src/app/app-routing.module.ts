@@ -20,6 +20,7 @@ import { TestsComponent } from './test/tests/tests.component';
 import { PhonePayComponent } from './Pay/phone-pay/phone-pay.component';
 import { ComputerPayComponent } from './Pay/computer-pay/computer-pay.component';
 import { SliderComponent } from './Component/slider/slider.component';
+import { NotificationsComponent } from './Page/notifications/notifications.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'cmj', pathMatch: 'full' },
@@ -37,12 +38,15 @@ const routes: Routes = [
     { path: '', redirectTo: 'user', pathMatch: 'full' },
     { path: 'user', component: UserComponent },
     { path: 'computer', component: ComputingComponent },
-    { path: 'phone', component: PhoneComponent }
+    { path: 'phone', component: PhoneComponent },
+    { path: 'notifications', component: NotificationsComponent }
   ]},
   { path: 'add computer', component: AddComputerComponent },
   { path: 'add phone', component: AddPhoneComponent },
   { path: 'add user', component: AddUserComponent },
-  { path: 'edit phone/:id', component: AddPhoneComponent },
+  { path: 'edit-user/:id', component: AddUserComponent },
+  { path: 'edit-phone/:id', component: AddPhoneComponent },
+  { path: 'edit-computer/:id', component: AddComputerComponent },
   { path: 'up', component: FileUploadComponent },
   { path: 'comp-pay/:id', component: ComputerPayComponent },
   { path: 'phon-pay/:id', component: PhonePayComponent }

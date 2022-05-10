@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router,ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpEventType } from '@angular/common/http';
+import { ServeService } from 'src/app/Services/serve.service';
 
 @Component({
   selector: 'app-add-phone',
@@ -18,16 +19,28 @@ export class AddPhoneComponent implements OnInit {
     File: new FormControl(''),
   });
   selectedFile!: File; 
-  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) { }
+  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute, private service: ServeService) { }
 
   ngOnInit(): void {
+    this.getCurrentPhoneData();
   }
   cancel(){
     this.router.navigate(['/phone']);
-    alert('what happened');
   }
   clr(){
     this.addPhone.reset();
+  }
+
+  getCurrentPhoneData(){
+    this.service.getCurrentPhoneData(this.route.snapshot.params['id']).subscribe((result: any ) => {
+      this.addPhone = new FormGroup({
+        title: new FormControl(result['title']),
+        Storage: new FormControl(result['Storage']),
+        Battery: new FormControl(result['Battery']),
+        Price: new FormControl(result['Price']),
+        File: new FormControl(result['File']),
+      })
+    });
   }
 
   onFileUpload(event: any){
@@ -66,15 +79,10 @@ export class AddPhoneComponent implements OnInit {
   }
 }
 
-  save(){
-    this.http.post<any>("http://localhost/3000/Phones", this.addPhone.value)
-    .subscribe(res=>{
-      alert("added successfully!!");
+  Edit(){
+    this.service.updatePhones(this.route.snapshot.params['id'], this.addPhone.value).subscribe((result) => {
       this.addPhone.reset();
-      this.router.navigate(['/phone']);
-    },
-    error => {
-      alert("something went wrong!!");
+      return result;
     });
   }
 }

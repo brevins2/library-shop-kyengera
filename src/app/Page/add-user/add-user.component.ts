@@ -4,6 +4,15 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServeService } from 'src/app/Services/serve.service';
 
+export class user{
+  constructor(
+    public email: string,
+    public password: string,
+    public confirmPassword: string,
+    public file: string,
+    public check: boolean
+  ){}
+}
 
 @Component({
   selector: 'app-add-user',
@@ -20,15 +29,13 @@ export class AddUserComponent implements OnInit {
     check: new FormControl('')
   });
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private http: HttpClient,
-    private router: Router,
-    private route: ActivatedRoute,
-    private service: ServeService
-  ) { }
+  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute, private service: ServeService) { }
 
   ngOnInit(): void {
+    this.getCurrentData();
+  }
+
+  getCurrentData(){
     this.service.getCurrentUserData(this.route.snapshot.params['id']).subscribe((result: any) => {
       this.signUpForm = new FormGroup({
       email: new FormControl(result['email']),
@@ -41,13 +48,14 @@ export class AddUserComponent implements OnInit {
   }
 
   signUp(){
-    this.http.post<any>("http://localhost:3000/register", this.signUpForm.value).subscribe(res=>{  
+    this.service.updateUser(this.route.snapshot.params['id'], this.signUpForm.value).subscribe((result) => {
       this.signUpForm.reset();
-      // this.router.navigate(['login']);
-    },
-    error=>{
-      alert('something went wrong!!');
+      return result;
     });
+  }
+
+  cancel(){
+    this.router.navigate(['/admin/user']);
   }
 
 }

@@ -43,7 +43,7 @@ export class PhoneComponent implements OnInit {
 
   edit(idToPass: any){
     this.router.navigate(['/edit phone', idToPass]).then.apply((response: any)=>{
-      this.updatePhones = response;
+      // this.updatePhones = response;
     });
 
     alert(this.id);
@@ -62,7 +62,6 @@ export class PhoneComponent implements OnInit {
   }
 
   popUp(idToPass: any){
-    // alert(this.id);
     return this.dialogRef.open(AddPhoneComponent,{
       data:{
         id: idToPass
@@ -77,7 +76,7 @@ export class PhoneComponent implements OnInit {
     t.id!)));
   }
 
-  updatePhones(phonesUpdate: Phones){
-    this.Serve.updatePhones(phonesUpdate).subscribe();
-  }
+  // updatePhones(phonesUpdate: Phones){
+  //   this.Serve.updatePhones(phonesUpdate).subscribe();
+  // }
 }

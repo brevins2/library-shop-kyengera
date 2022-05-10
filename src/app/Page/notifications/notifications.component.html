@@ -1,0 +1,40 @@
+<body>
+    <div class="display">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Cartegory</th>
+                    <th>Price</th>
+                    <th>File</th>
+                    <th>Battery</th>
+                    <th>Storage</th>
+                    <th>Message</th>
+                    <th>Delivered</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let datas of data">
+                    <td>{{datas.id}}</td>
+                    <td>{{datas.Title}}</td>
+                    <td>{{datas.Category}}</td>
+                    <td>{{datas.Price}}</td>
+                    <td>{{datas.File}}</td>
+                    <td>{{datas.Battery}}</td>
+                    <td>{{datas.Storage}}</td>
+                    <td>{{datas.Message}}</td>
+                    <td>
+                        <input type="checkbox" name="delivered">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+
+    <hr>
+    <nav>
+        <i class="fa fa-copyright"></i> copy rights reserved
+    </nav>
+</body>

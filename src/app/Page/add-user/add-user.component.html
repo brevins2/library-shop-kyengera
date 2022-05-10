@@ -37,7 +37,7 @@
             <h1>Add Phone</h1>
             <div class="form-row">
                 <div class="form-group col-md-6" id="email">
-                    <label for="inputEmail ">Email</label>
+                    <label for="inputEmail">Email</label>
                     <input formControlName="email" type="email" class="form-control" id="inputEmail" placeholder="Email">
                 </div>
             </div>
@@ -49,7 +49,7 @@
                     </div>
                     <div>
                         <label for="inputPassword4">Confirm Password</label>
-                        <input formControlName="confirmPassword" type="password" class="form-control" id="inputPassword4 " placeholder="Confirm Password ">
+                        <input formControlName="confirmPassword" type="password" class="form-control" id="inputPassword4" placeholder="Confirm Password">
                     </div>
                 </div>
             </div>
@@ -57,15 +57,10 @@
                 <label for="inputPassword4">Upload Image</label>
                 <input formControlName="file" class="form-control" type="file" id="inputFile">
             </div>
-            <div class="form-group">
-                <div class="form-check" id="id">
-                    <input formControlName="check" class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                        Check me out
-                    </label>
-                </div>
+            <div class="buttons">
+                <button type="submit" (click)="signUp()" class="btn btn-primary" id="btn">Sign up</button>&nbsp;
+                <button type="submit" (click)="cancel()" class="btn btn-danger" id="btn">Cancel</button>
             </div>
-            <button type="submit" (click)="signUp()" class="btn btn-primary" id="btn">Sign up</button>
         </form>
 
     </div>

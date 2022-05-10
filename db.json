@@ -33,12 +33,20 @@
       "check": true
     },
     {
-      "email": "",
-      "password": "",
-      "confirmPassword": "",
+      "email": "good@gmail.com",
+      "password": "gooeds",
+      "confirmPassword": "goods",
       "file": "C:\\fakepath\\Books.jpg",
       "check": "",
       "id": 5
+    },
+    {
+      "email": "kasitaa@gmail.com",
+      "password": "kasitaa21",
+      "confirmPassword": "kasitaa21",
+      "file": "C:\\fakepath\\Books.jpg",
+      "check": "",
+      "id": 6
     }
   ],
   "Phones": [
@@ -279,6 +287,32 @@
       "Category": "New",
       "Price": 50000,
       "File": "wireless.jpg"
+    }
+  ],
+  "Orders": [
+    {
+      "id": 3,
+      "Message": "Kyengera Town, Wakiso 0755113122, kiggundubrevin@gmail.com",
+      "Title": "Infinix Note i",
+      "Storage": "64GB, 3GB RAM",
+      "Battery": "10000Amh",
+      "Price": 500000
+    },
+    {
+      "id": 5,
+      "Title": "Flash Disk",
+      "Price": 80000,
+      "Category": "24GB New",
+      "Message": "Kibuye, Kampala 0777980098 buyer@gmail.com",
+      "File": "flash disk.jpg"
+    },
+    {
+      "id": 6,
+      "Message": "Musoke Nathan \nKyengera Town, 088888065\nmusoke@gmail.com",
+      "Title": "iPhone 13",
+      "Storage": "64GB, 4GB RAM",
+      "Battery": "12000Amh",
+      "Price": 450000
     }
   ]
 }

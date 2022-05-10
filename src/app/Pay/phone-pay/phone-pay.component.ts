@@ -23,9 +23,10 @@ export class Data{
 export class PhonePayComponent implements OnInit {
 
   data: Data[] = [];
+  alert = false;
   buyPhone = new FormGroup({
     id: new FormControl(''),
-    File: new FormControl(''),
+    Message: new FormControl(''),
     Title: new FormControl(''),
     Storage: new FormControl(''),
     Battery: new FormControl(''),
@@ -47,7 +48,7 @@ export class PhonePayComponent implements OnInit {
     this.service.getCurrentPhoneData(this.router.snapshot.params['id']).subscribe((result: any)=>{
       this.buyPhone = new FormGroup({
         id: new FormControl(result['id']),
-        File: new FormControl(result['File']),
+        Message: new FormControl(result['Message']),
         Title: new FormControl(result['Title']),
         Storage: new FormControl(result['Storage']),
         Battery: new FormControl(result['Battery']),
@@ -57,10 +58,17 @@ export class PhonePayComponent implements OnInit {
   }
 
   save(){
-    console.log(this.buyPhone.value);
+    this.http.post('http://localhost:3000/Orders', this.buyPhone.value).subscribe((result) => {
+      this.alert = true;
+      return result;
+    });
   }
 
   cancel(){
     this.route.navigate(['users/phones']);
+  }
+
+  closeAlert(){
+    this.alert = false;
   }
 }

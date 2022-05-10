@@ -37,3 +37,7 @@ body {
 #nav-header {
     background-color: rgb(2, 2, 80);
 }
+
+.buttons {
+    margin-top: 2%;
+}
