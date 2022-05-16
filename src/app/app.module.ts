@@ -61,7 +61,7 @@ import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { NotificationsComponent } from './Page/notifications/notifications.component';
 
-// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -127,6 +127,7 @@ import { NotificationsComponent } from './Page/notifications/notifications.compo
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

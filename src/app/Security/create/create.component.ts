@@ -11,13 +11,12 @@ import { Router } from '@angular/router';
 export class CreateComponent implements OnInit {
 
   public signUpForm !: FormGroup;
+  readonly VAPID_PUBLIC_KEY = "BFmoP_EhCj12NEoynMpDYFrC0axOyEVumyl7NbxtpI0qHTL4YdAw_OqSxJ6FBShMxWAeYEvNU8ivKFfg8ETkVLA";
   alert = false;
   alerts = false;
-  constructor(
-    private formBuilder: FormBuilder,
-    private http: HttpClient,
-    private router: Router
-  ) { }
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router) { }
+
+  // private swPush: SwPush, private newsletterService: NewsletterService
 
   ngOnInit(): void {
     this.signUpForm = this.formBuilder.group({
@@ -47,4 +46,13 @@ export class CreateComponent implements OnInit {
   closeDangerAlert(){
     this.alerts = false;
   }
+
+  // for notifications
+  // subscribeToNotifications() {
+  //   this.swPush.requestSubscription({
+  //       serverPublicKey: this.VAPID_PUBLIC_KEY
+  //   })
+  //   .then(sub => this.newsletterService.addPushSubscriber(sub).subscribe())
+  //   .catch(err => console.error("Could not subscribe to notifications", err));
+  // }
 }
