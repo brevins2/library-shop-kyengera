@@ -21,6 +21,7 @@ import { PhonePayComponent } from './Pay/phone-pay/phone-pay.component';
 import { ComputerPayComponent } from './Pay/computer-pay/computer-pay.component';
 import { SliderComponent } from './Component/slider/slider.component';
 import { NotificationsComponent } from './Page/notifications/notifications.component';
+import { HeaderComponent } from './Component/header/header.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'cmj', pathMatch: 'full' },
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'cmj', component: FirstPageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'create', component: CreateComponent },
+  { path: 'header', component: HeaderComponent },
   { path: 'users', component: MainComponent, children: [
     { path: '', redirectTo: 'phones', pathMatch: 'full' },
     { path: 'phones', component: PhonesComponent },

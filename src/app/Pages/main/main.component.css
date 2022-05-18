@@ -6,28 +6,35 @@ nav {
     background-color: rgb(2, 2, 80);
 }
 
-#navbar {
-    background-color: rgb(252, 252, 252);
-    padding: 3% 0;
-}
-
 .navbar {
     background-color: rgb(2, 2, 80);
-    height: 30%;
-    display: flex;
+    height: 100%;
 }
 
 #bars {
     color: white;
 }
 
+#mat-bars {
+    background-color: rgb(2, 2, 80);
+    right: 0;
+    float: right;
+    padding: 1%;
+    /* margin-right: -1%; */
+    /* width: 100px; */
+}
+
 .logo {
     margin-left: 2.5%;
 }
 
+#secondNav {
+    height: 20%;
+}
+
 #backgroundImageExample2 li a:hover {
     color: orange;
-    size: 2%;
+    size: +2%;
     border-top: 2px solid orange;
 }
 
@@ -37,7 +44,7 @@ nav {
 
 #backgroundImageExample2 li a:active {
     color: orange;
-    size: 2%;
+    size: +2%;
     border-top: 2px solid orange;
 }
 
@@ -47,20 +54,9 @@ li a {
     margin-right: 12px;
 }
 
-li a img {
-    width: 25px;
-    padding-bottom: 4px;
-    margin-top: 4px;
-}
-
-#navs {
-    margin-left: 42%;
-    margin-right: 10;
-    float: right;
-}
-
 .container-fluid {
-    float: right;
+    float: left;
+    display: block;
 }
 
 #homeIcon {
@@ -72,15 +68,26 @@ li a img {
     padding: 0;
 }
 
-#homeImg {
-    margin-top: -5px;
+
+/* side nav css */
+
+.example-container {
+    width: 100%;
+    height: 100%;
 }
 
-#compImg {
-    height: 35px;
+.example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
-#phoneImg {
-    width: 22px;
-    height: 32px;
+.example-sidenav {
+    padding: 20px;
+    width: 20%;
+}
+
+mat-drawer {
+    background-color: rgb(2, 2, 80);
 }

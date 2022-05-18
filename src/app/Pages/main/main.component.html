@@ -20,39 +20,80 @@
         <a class="nav-link" id="homeIcon" aria-current="page" routerLink="/cmj">
             <img src="../../../assets/image/icons/logo.png" class="logo">
         </a>
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" (click)="backgroundImageExample2.toggle()" aria-controls="backgroundImageExample2" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fa fa-bars" id="bars"></i>
-        </button>
-            <div mdbCollapse #backgroundImageExample2="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navs">
-                    <li class="nav-item active">
-                        <a class="nav-link" routerLink="/cmj">
-                            <i class="fa fa-home"></i>
-                            <br/>
-                            <p style="margin-top: 5px;">Home</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" routerLink="phones">
-                            <i class="fa fa-mobile"></i>
-                            <br/>
-                            <p>Phone</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="computers">
-                            <i class="fa fa-desktop"></i>
-                            <br/>
-                            <p>Accessories</p>
-                        </a>
-                    </li>
-                </ul>
+
+
+        <div mdbCollapse #backgroundImageExample3="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2" id="mat-bars">
+            <div class="accounts">
+                <a class="btn btn-danger" routerLink="/login">Logout</a>
             </div>
+            <div id="bars" class="example-sidenav-content">
+                <button type="button" mat-button (click)="drawer.toggle()">
+                <i class="fa fa-bars"></i>
+              </button>
+            </div>
+
         </div>
     </nav>
 </header>
 
 <body>
-    <router-outlet></router-outlet>
+    <mat-drawer-container class="example-container" autosize>
+        <mat-drawer #drawer class="example-sidenav" mode="side">
+            <p>Auto-resizing sidenav</p>
+            <div *ngIf="showFiller">
+                <header>
+                    <!-- Intro settings -->
+                    <style>
+                        /* Default height for small devices */
+                        
+                        #intro-example {
+                            height: 400px;
+                        }
+                        /* Height for devices larger than 992px */
+                        
+                        @media (min-width: 992px) {
+                            #intro-example {
+                                height: 600px;
+                            }
+                        }
+                    </style>
+
+                    <!-- Navbar -->
+                    <nav class="navbar navbar-expand-lg" id="secondNav">
+                        <div class="container-fluid">
+                            <div mdbCollapse #backgroundImageExample2="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navs">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" routerLink="/cmj">
+                                            <i class="fa fa-home"></i>
+                                            <br/>
+                                            <p style="margin-top: 5px;">Home</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" routerLink="phones">
+                                            <i class="fa fa-mobile"></i>
+                                            <br/>
+                                            <p>Phone</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" routerLink="computers">
+                                            <i class="fa fa-desktop"></i>
+                                            <br/>
+                                            <p>Accessories</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+
+        </mat-drawer>
+        <router-outlet></router-outlet>
+    </mat-drawer-container>
+
+
 </body>

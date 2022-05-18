@@ -1,34 +1,26 @@
-<nav class="navbar navbar-light navclass justify-content-between">
-    <!-- <div class="navbar-expand-lg navclass d-flex justify-content-between"> -->
-    <a class="navbar-brand" href="#">
-        <img class="log" src="../../../assets/image/Cmj.png">
-    </a>
-    <form class="space">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (onClick)="mySearch()">Search</button>
-    </form>
-    <button class="good btn btn-danger" routerLink="/login">Logout</button>
-    <!-- </div> -->
-</nav>
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="mb-3">
+                <label for="dateOfBirth">Date of birth</label>
+                <div class="input-group">
+                    <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #dp="ngbDatepicker">
+                    <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+    </div>
+</ng-template>
 
-<script>
-    function mySearch() {
-        // Declare variables
-        var input, filter, ul, li, a, i, txtValue;
-        input = document.getElementById('search');
-        filter = input.value.toUpperCase();
-        ul = document.getElementById("#");
-        li = ul.getElementsByTagName('li');
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
 
-        // Loop through all list items, and hide those who don't match the search query
-        for (i = 0; i < li.length; i++) {
-            a = li[i].getElementsByTagName("div")[0];
-            txtValue = a.textContent || a.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                li[i].style.display = " ";
-            } else {
-                li[i].style.display = "none ";
-            }
-        }
-    }
-</script>
+<hr>
+
+<pre>{{ closeResult }}</pre>

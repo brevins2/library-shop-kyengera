@@ -13,10 +13,8 @@ import { TermsComponent } from 'src/app/Component/terms/terms.component';
 })
 export class MainComponent implements OnInit {
 
-  @Input() profile: string | undefined;
-  @ViewChild(MatSidenav) sidenav!: MatSidenav;
+  showFiller = true;
   constructor(
-    private observer: BreakpointObserver,
     private router: Router,
     private dialogRef: MatDialog
   ) { }
@@ -28,19 +26,6 @@ export class MainComponent implements OnInit {
     this.dialogRef.open(TermsComponent);
   }
 
-  ngAfterViewInit(){
-    this.observer.observe(['(max-width: 100px)']).subscribe((res)=>{
-      if(res.matches){
-        this.sidenav.mode = 'side';
-        this.sidenav.close();
-      }
-      else{
-        this.sidenav.mode = 'over';
-        this.sidenav.open();
-      }
-    });
-  }
-
   search(){}
-
 }
+
