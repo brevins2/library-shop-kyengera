@@ -1,16 +1,17 @@
 body {
-    overflow: hidden;
+    display: flex;
+    width: 100%;
+    padding: 10px;
     background-color: rgb(246, 244, 240);
-    padding: 2% 2% 0% 8%;
 }
 
 .row {
-    padding: .1%;
+    width: 100%;
 }
 
 .row .col {
-    width: 29%;
-    padding: 1.5%;
+    width: 32%;
+    font-size: 13px;
     color: black;
 }
 
@@ -43,8 +44,13 @@ nav {
     display: flex;
 }
 
+#backgroundImageExample2 {
+    width: 100%;
+    display: flex;
+}
+
 #search {
-    width: 40%;
+    width: 80%;
 }
 
 .accounts {
@@ -58,6 +64,14 @@ nav {
 
 #navbars {
     background-color: rgb(252, 252, 252);
-    padding: 2.5% 0;
     height: 20%;
+}
+
+.cart {
+    width: 80%;
+    margin: 0% 5% 5% 7%;
+    background-color: orange;
+    border: 2px solid orange;
+    font-size: .5rem;
+    text-align: left;
 }

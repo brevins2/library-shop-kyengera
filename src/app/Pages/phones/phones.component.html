@@ -17,16 +17,9 @@
 
     <nav class="navbar navbar-expand-lg" id="navbars">
         <div class="container-fluid">
-            <button class="navbar-toggler" type="button" (click)="backgroundImageExample3.toggle()" aria-controls="backgroundImageExample2" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-bars"></i>
-            </button>
             <div mdbCollapse #backgroundImageExample3="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
-                <input type="search" class="form-control" id="search-input-sidenav" id="search" name="search" placeholder="Search for Phones, mouse, keyboards, fans, cables, flash....">
+                <input type="search" class="form-control" id="search-input-sidenav" id="search" name="search" placeholder="Search for Phones, mouse, keyboards, fans, cables, flash....">&nbsp;
                 <button class="btn btn-primary" (click)="search()">Search</button>
-                <div class="accounts">
-                    <a class="btn" id="createBtn" routerLink="/create">Create account</a>
-                    <a class="btn btn-danger" routerLink="/login">Logout</a>
-                </div>
             </div>
         </div>
     </nav>
@@ -60,6 +53,7 @@
             </mat-card>
         </slide>
     </carousel>
+    <br/>
 
     <body>
         <div class="row row-cols-1 row-cols-md-3 g-2">
@@ -73,6 +67,9 @@
                             <br>{{phon.Price}}
                             <br>{{phon.Battery}}
                         </p>
+                    </div>
+                    <div class="btn cart">
+                        <i class="fa fa-cart-plus"></i>&nbsp;Order
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">{{phon.Brand}}</small>

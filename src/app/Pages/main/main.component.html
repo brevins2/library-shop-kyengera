@@ -21,25 +21,19 @@
             <img src="../../../assets/image/icons/logo.png" class="logo">
         </a>
 
-
-        <div mdbCollapse #backgroundImageExample3="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2" id="mat-bars">
-            <div class="accounts">
-                <a class="btn btn-danger" routerLink="/login">Logout</a>
-            </div>
+        <div class="container-fluid" id="menus">
             <div id="bars" class="example-sidenav-content">
-                <button type="button" mat-button (click)="drawer.toggle()">
-                <i class="fa fa-bars"></i>
-              </button>
+                <button class="menu" type="button" mat-button (click)="drawer.toggle()">
+                    Menu &nbsp;<i class="fa fa-bars"></i>
+                </button>
             </div>
-
         </div>
     </nav>
 </header>
 
 <body>
-    <mat-drawer-container class="example-container" autosize>
-        <mat-drawer #drawer class="example-sidenav" mode="side">
-            <p>Auto-resizing sidenav</p>
+    <mat-drawer-container class="example-container">
+        <mat-drawer #drawer class="example-sidenav" mode="over">
             <div *ngIf="showFiller">
                 <header>
                     <!-- Intro settings -->
@@ -86,11 +80,19 @@
                                     </li>
                                 </ul>
                             </div>
+                            <div class="container-fluid">
+
+                                <div mdbCollapse #backgroundImageExample3="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2" id="mat-bars">
+                                    <div class="accounts">
+                                        <a class="btn btn-danger" routerLink="/login">Logout</a>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </nav>
                 </header>
             </div>
-
         </mat-drawer>
         <router-outlet></router-outlet>
     </mat-drawer-container>

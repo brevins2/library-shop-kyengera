@@ -4,25 +4,28 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ServeService } from 'src/app/Services/serve.service';
 import { FormGroup, FormBuilder, FormControl} from '@angular/forms';
 
-export class Data{
+export class Api{
   constructor(
-  public id: number,
-  public file: string,
-  public title: string,
-  public storage: string,
-  public battery: string,
-  public price : number
+    public id: number,
+    public Title: string,
+    public Storage: string,
+    public Battery: string,
+    public Price: number,
+    public File: string,
+    public Brand: string
   ){}
 }
+
 
 @Component({
   selector: 'app-phone-pay',
   templateUrl: './phone-pay.component.html',
   styleUrls: ['./phone-pay.component.css']
 })
+
 export class PhonePayComponent implements OnInit {
 
-  data: Data[] = [];
+  api: Api[] = [];
   alert = false;
   buyPhone = new FormGroup({
     id: new FormControl(''),
@@ -36,11 +39,20 @@ export class PhonePayComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCurrentData();
+    this.getCurrentDatas();
+    this.getData();
   }
 
   getData(){
     this.http.get('http//localhost/3000/Phones').subscribe(result=>{
-      result = this.data;
+      result = this.api;
+    });
+  }
+
+  getCurrentDatas(){
+    this.service.getCurrentPhoneData(this.router.snapshot.params['id']).subscribe((results)=>{
+      console.log(results);
+      results = this.api;
     });
   }
 
@@ -54,6 +66,7 @@ export class PhonePayComponent implements OnInit {
         Battery: new FormControl(result['Battery']),
         Price: new FormControl(result['Price'])
       });
+      this.api = result;
     });
   }
 
