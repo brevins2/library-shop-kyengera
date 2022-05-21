@@ -64,10 +64,10 @@
     </nav>
     <nav class="navbar navbar-expand-lg" id="navbar" style="background-color: rgb(252, 252, 252); padding: 3% 0;">
         <div class="container-fluid" style="display: flex;">
-            <button class="navbar-toggler" type="button" (click)="backgroundImageExample3.toggle()" aria-controls="backgroundImageExample2" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-bars"></i>
+            <button class="navbar-toggler" type="button" (click)="backgroundImageExample3.toggle()" aria-controls="backgroundImageExample3" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars" aria-label="bars"></i>
             </button>
-            <div mdbCollapse #backgroundImageExample3="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
+            <div mdbCollapse #backgroundImageExample3="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample3">
                 <input type="search" class="form-control" id="search-input-sidenav" id="search" name="search" placeholder="Search for Phones, mouse, keyboards, fans, cables, flash....">
                 <button class="btn btn-primary" (click)="search()">Search</button>
                 <div class="logout">

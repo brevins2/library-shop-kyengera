@@ -13,11 +13,6 @@ header {
     width: 100%;
 }
 
-#nav1 {
-    margin-top: 0%;
-    width: 100%;
-}
-
 #navbar {
     width: 100%;
     background-color: rgb(252, 252, 252);
@@ -82,6 +77,10 @@ li a img {
     margin-top: 6px;
     width: 22px;
     height: 35px;
+}
+
+#backgroundImageExample3 {
+    width: 100%;
 }
 
 .logout {

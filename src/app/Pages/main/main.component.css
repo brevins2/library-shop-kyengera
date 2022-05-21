@@ -2,6 +2,11 @@ body {
     background-color: rgb(246, 244, 240);
 }
 
+header {
+    /* position: fixed; */
+    width: 100%
+}
+
 nav {
     background-color: rgb(2, 2, 80);
 }
@@ -38,10 +43,19 @@ nav {
     display: block;
 }
 
+#navs p a {
+    display: flex;
+}
+
+hr {
+    color: white;
+}
+
 #backgroundImageExample2 li a:hover {
     color: orange;
     size: +2%;
     border-top: 2px solid orange;
+    border-bottom: 2px solid orange;
 }
 
 .collapse {
@@ -93,9 +107,11 @@ li a {
 
 .example-sidenav {
     padding: 20px;
-    width: 35%;
+    width: 25%;
+    height: 100%;
 }
 
 mat-drawer {
+    position: relative;
     background-color: rgb(2, 2, 80);
 }
