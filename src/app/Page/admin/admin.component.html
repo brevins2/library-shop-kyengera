@@ -26,8 +26,8 @@
         </a>
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" (click)="backgroundImageExample2.toggle()" aria-controls="backgroundImageExample2" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fa fa-bars" id="bars"></i>
-        </button>
+                <i class="fa fa-bars" id="bars"></i>
+            </button>
             <div mdbCollapse #backgroundImageExample2="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navs">
                     <li class="nav-item active">
@@ -58,6 +58,13 @@
                             <p>Notification</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="messages">
+                            <i class="fa fa-bell"></i>
+                            <br/>
+                            <p>Messages</p>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -71,7 +78,7 @@
                 <input type="search" class="form-control" id="search-input-sidenav" id="search" name="search" placeholder="Search for Phones, mouse, keyboards, fans, cables, flash....">
                 <button class="btn btn-primary" (click)="search()">Search</button>
                 <div class="logout">
-                    <a class="btn btn-danger" routerLink="/login">Logout</a>
+                    <a class="btn btn-danger" routerLink="/login"><i class="fa fa-sign-out"></i>Logout</a>
                 </div>
             </div>
         </div>

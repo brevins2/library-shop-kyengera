@@ -314,5 +314,13 @@
       "Battery": "12000Amh",
       "Price": 450000
     }
+  ],
+  "Message": [
+    {
+      "email": "usama@gmail.com",
+      "name": "Kiggundu Brevin",
+      "message": "get for me 20 iPhones and some computer accessories",
+      "id": 1
+    }
   ]
 }

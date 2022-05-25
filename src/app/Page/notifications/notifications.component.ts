@@ -1,8 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { ServeService } from 'src/app/Services/serve.service';
-import { FormGroup, FormBuilder, FormControl} from '@angular/forms';
 
 export class Data{
   constructor(

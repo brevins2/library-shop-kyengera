@@ -49,31 +49,20 @@
                     <li class="nav-item dropdown" style="margin-right: -40px;">
 
 
-                        <a class="nav-link active" routerLink="/login" style="width: 100px;">
+                        <a class="nav-link active" routerLink="/users/phones" style="width: 100px;">
                             <i class="fa fa-mobile"></i>
                             <br/>
                             <p>Phones</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="/login" style="width: 150px;">
+                        <a class="nav-link" routerLink="//users/computers" style="width: 150px;">
                             <i class="fa fa-desktop"></i>
                             <br/>
                             <p>Accessories</p>
                         </a>
                     </li>
                 </ul>
-            </div>
-        </div>
-    </nav>
-    <nav class="navbar navbar-expand-lg" style="background-color: rgb(252, 252, 252); padding: 3% 0;">
-        <div class="container-fluid" style="display: flex;">
-            <button class="navbar-toggler" type="button" (click)="backgroundImageExample3.toggle()" aria-controls="backgroundImageExample2" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-bars"></i>
-            </button>
-            <div mdbCollapse #backgroundImageExample3="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
-                <input type="search" class="form-control" id="search-input-sidenav" id="form1" name="search" placeholder="Search for Phones, mouse, keyboards, fans, cables, flash...." style="width:520px;">
-                <button class="btn btn-primary" (click)="search()">Search</button>
             </div>
         </div>
     </nav>
@@ -138,21 +127,21 @@
             </div>
         </div>
         <div class="location">
-            <form>
+            <form class="form" [formGroup]="sendMessage" (ngSubmit)="sendMessages()">
                 <h2>Contact Us</h2>
                 <div class="form-group">
                     <label for="exampleInputName">Name</label>
-                    <input type="text" class="form-control" id="exampleInputText" placeholder="Enter name">
+                    <input type="text" formControlName="name" class="form-control" id="exampleInputText" placeholder="Enter name">
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                 </div>
 
                 <div class="form-group">
                     <label for="exampleMessage">Message</label>
-                    <textarea class="form-control" id="exampleMessage" placeholder="Enter your message" rows="6">
+                    <textarea class="form-control" id="exampleMessage" formControlName="message" placeholder="Enter your message" rows="6">
                     </textarea>
                 </div>
 

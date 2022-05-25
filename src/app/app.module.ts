@@ -63,6 +63,7 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { NotificationsComponent } from './Page/notifications/notifications.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MessagesComponent } from './Page/messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -88,7 +89,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CreateComponent,
     TermsComponent,
     TestsComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    MessagesComponent
   ],
   exports: [
     MatDialogModule

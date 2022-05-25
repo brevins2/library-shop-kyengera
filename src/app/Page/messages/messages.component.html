@@ -1,0 +1,28 @@
+<body>
+    <div class="display">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Message</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let datas of data">
+                    <td>{{datas.id}}</td>
+                    <td>{{datas.name}}</td>
+                    <td>{{datas.email}}</td>
+                    <td>{{datas.message}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+
+    <hr>
+    <nav>
+        <i class="fa fa-copyright"></i> copy rights reserved
+    </nav>
+</body>
