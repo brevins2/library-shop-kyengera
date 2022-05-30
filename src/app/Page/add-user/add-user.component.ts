@@ -29,7 +29,10 @@ export class AddUserComponent implements OnInit {
     check: new FormControl('')
   });
 
-  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute, private service: ServeService) { }
+  constructor(private http: HttpClient,
+    private router: Router,
+    private route: ActivatedRoute,
+    private service: ServeService) { }
 
   ngOnInit(): void {
     this.getCurrentData();

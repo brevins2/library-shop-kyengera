@@ -2,6 +2,8 @@ body {
     padding-top: 22.8%;
     width: 100%;
     height: 100%;
+    padding-right: 2%;
+    padding-left: 2%;
 }
 
 nav {
@@ -16,13 +18,12 @@ header {
 #navbar {
     width: 100%;
     background-color: rgb(252, 252, 252);
-    padding: 3% 0;
 }
 
 #backgroundImageExample2 li a:hover,
 #backgroundImageExample2 li a:active {
     color: orange;
-    size: 2%;
+    size: +2%;
     border-top: 2px solid orange;
 }
 
@@ -33,7 +34,6 @@ header {
 li a {
     color: white;
     text-align: center;
-    margin-right: 12px;
 }
 
 li a img {
@@ -43,7 +43,7 @@ li a img {
 }
 
 #navs {
-    margin-left: 2%;
+    margin-left: 1%;
     float: right;
 }
 
@@ -61,7 +61,7 @@ li a img {
 }
 
 .logout {
-    margin-left: 40%;
+    margin-left: 26%;
 }
 
 #search {

@@ -1,12 +1,60 @@
 <body>
     <div class="display">
         <!-- Button trigger modal -->
-        <div class="addPhone">
-            <button type="button" (click)="popUp(id)" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" id="btn">
-                <i class="fa fa-plus" color="white"></i>&nbsp;
+        <ng-template #content let-modal>
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title">Add Phone</h4>
+                <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+            </div>
+            <div class="modal-body">
+
+                <body>
+                    <div class="container">
+                        <div class="input">
+                            <form [formGroup]="addPhone" id="styled" class="form-control">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6" id="title">
+                                        <label for="title">Title</label>
+                                        <input formControlName="title" type="text" class="form-control" id="inputTitle" placeholder="Enter Title">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6" id="ids">
+                                        <div>
+                                            <label for="inputStorage">Storage</label>
+                                            <input formControlName="Storage" type="text" class="form-control" id="inputStorage" placeholder="Enter Storage">
+                                        </div>
+                                        <div>
+                                            <label for="inputBattery">Battery</label>
+                                            <input formControlName="Battery" type="text" class="form-control" id="inputBattery" placeholder="Enter Battery">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row" id="price">
+                                    <label class="inputPrice" for="Price">Price</label>
+                                    <input formControlName="Price" class="form-control" type="text" placeholder="Enter Price" id="inputPrice">
+                                </div>
+                                <div class="form-row" id="upload">
+                                    <label for="upload">Upload image</label>
+                                    <input formControlName="File" class="form-control" type="file" id="fileUpload" (change)="onFileUpload($event)">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </body>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="save" (click)="Edit()">Save</button>
+                <button class="btn btn-secondary" (click)="clr()">Clear Form</button>
+                <button class="btn btn-primary" id="cancel" (click)="cancel()">Cancel</button>
+            </div>
+        </ng-template>
+        <button class="btn btn-lg btn-outline-primary" (click)="open(content)">
+            <i class="fa fa-plus" color="white"></i>&nbsp;
                     Add Phone
-            </button>
-        </div>
+        </button>
+
+        <hr>
         <table class="table table-striped">
             <thead>
                 <tr>

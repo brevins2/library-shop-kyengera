@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { images } from '../../values';
-import { slider } from '../../interfaces';
 import { HttpClient } from '@angular/common/http';
+import { MatDialog } from '@angular/material/dialog';
+import { PhonePayComponent } from 'src/app/Pay/phone-pay/phone-pay.component';
+import { ActivatedRoute } from '@angular/router';
+import { ServeService } from 'src/app/Services/serve.service';
 
 export class Api{
   constructor(
@@ -11,7 +13,6 @@ export class Api{
     public Battery: string,
     public Price: number,
     public File: string,
-    public Category: string,
     public Brand: string
   ){}
 }
@@ -24,26 +25,27 @@ export class Api{
 export class SliderComponent implements OnInit {
 
   api: Api[] = [];
-  constructor( private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private dialogRef: MatDialog,
+    private router: ActivatedRoute,
+    private service: ServeService
+  ) { }
 
   ngOnInit(): void {
     this.getApi();
-    this.getApi2();
+  }
+  getCurrentDatas(){
+    this.service.getCurrentPhoneData(this.router.snapshot.params['id']).subscribe((results)=>{
+      console.log(results);
+      return results;
+    });
   }
 
   getApi(){
     this.http.get<any>('http://localhost:3000/Phones').subscribe(
       response=>{
-        this.api = response;
+        this.api = response
       });
   }
-
-  getApi2(){
-    this.http.get<any>('http://localhost:3000/Computers').subscribe( response=>
-      {
-        this.api = response;
-      });
-  }
-
-
 }

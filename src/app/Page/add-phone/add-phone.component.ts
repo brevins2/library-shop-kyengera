@@ -24,6 +24,7 @@ export class AddPhoneComponent implements OnInit {
   ngOnInit(): void {
     this.getCurrentPhoneData();
   }
+  
   cancel(){
     this.router.navigate(['/phone']);
   }

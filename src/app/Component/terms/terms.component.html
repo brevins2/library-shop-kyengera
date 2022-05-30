@@ -1,137 +1,73 @@
-<p>
-    Welcome to our online shopping website, Home of the best electronics
-</p>
-Login
-<!-- Default form register
-<form class="text-center border border-light p-5">
-    <p class="h4 mb-4">Sign up</p>
-    <div class="form-row mb-4">
-        <div class="col">
-            First name
-<input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name">
-</div>
-<div class="col">
-    Last name
-<input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name">
-</div>
-</div>
-E-mail
-<input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail"> Password
-<input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
-<small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-    At least 8 characters and 1 digit
-  </small> Phone number
-<input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock">
-<small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
-    Optional - for two-step authentication
-  </small> Newsletter
-<div class="row">
-    <div class="col-md-6 mx-auto d-flex justify-content-center">
-        <mdb-checkbox [default]="true">Subscribe to our newsletter</mdb-checkbox>
-    </div>
-</div>
-Sign up button
-<button mdbBtn color="info" block="true" class="my-4" type="submit">Sign in</button> Social register
-<p>or sign up with:</p>
-<a type="button" class="light-blue-text mx-2">
-    <mdb-icon fab icon="facebook"></mdb-icon>
-</a>
-<a type="button" class="light-blue-text mx-2">
-    <mdb-icon fab icon="twitter"></mdb-icon>
-</a>
-<a type="button" class="light-blue-text mx-2">
-    <mdb-icon fab icon="linkedin"></mdb-icon>
-</a>
-<a type="button" class="light-blue-text mx-2">
-    <mdb-icon fab icon="github"></mdb-icon>
-</a>
-<hr> Terms of service
-<p>By clicking
-    <em>Sign up</em> you agree to our
-    <a href="" target="_blank">terms of service</a>
-</p>
-</form>
-Default form register-->
+<!DOCTYPE html>
+<html>
 
-register
-<!-- Default form register 
-<form class="text-center border border-light p-5">
-    <p class="h4 mb-4">Sign up</p>
-    <div class="form-row mb-4">
-        <div class="col">
-            First name
-<input type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="First name">
-</div>
-<div class="col">
-    Last name
-    <input type="text" id="defaultRegisterFormLastName" class="form-control" placeholder="Last name">
-</div>
-</div>
-E-mail
-<input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail"> Password
-<input type="password" id="defaultRegisterFormPassword" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
-<small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-    At least 8 characters and 1 digit
-  </small> Phone number
-<input type="text" id="defaultRegisterPhonePassword" class="form-control" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock">
-<small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
-    Optional - for two-step authentication
-  </small> Newsletter
-<div class="row">
-    <div class="col-md-6 mx-auto d-flex justify-content-center">
-        <mdb-checkbox [default]="true">Subscribe to our newsletter</mdb-checkbox>
-    </div>
-</div>
-Sign up button
-<button mdbBtn color="info" block="true" class="my-4" type="submit">Sign in</button> Social register
-<p>or sign up with:</p>
-<a type="button" class="light-blue-text mx-2">
-    <mdb-icon fab icon="facebook"></mdb-icon>
-</a>
-<a type="button" class="light-blue-text mx-2">
-    <mdb-icon fab icon="twitter"></mdb-icon>
-</a>
-<a type="button" class="light-blue-text mx-2">
-    <mdb-icon fab icon="linkedin"></mdb-icon>
-</a>
-<a type="button" class="light-blue-text mx-2">
-    <mdb-icon fab icon="github"></mdb-icon>
-</a>
-<hr> Terms of service
-<p>By clicking
-    <em>Sign up</em> you agree to our
-    <a href="" target="_blank">terms of service</a>
-</p>
-</form>
-Default form register -->
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+        
+        .sidebar {
+            height: 100%;
+            width: 160px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 16px;
+        }
+        
+        .sidebar a {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #818181;
+            display: block;
+        }
+        
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+        
+        .main {
+            margin-left: 160px;
+            /* Same as the width of the sidenav */
+            padding: 0px 10px;
+        }
+        
+        @media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 15px;
+            }
+            .sidebar a {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
 
-Contact us
-<!--Default form contact
-<form class="text-center border border-light p-5">
-    <p class="h4 mb-4">Contact us</p>
-    Name
-<input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Name">
-Email
-<input type="email" id="defaultContactFormEmail" class="form-control mb-4" placeholder="E-mail">
-Subject
-<label>Subject</label>
-<select class="browser-default custom-select mb-4">
-    <option value="" disabled>Choose option</option>
-    <option value="1" selected>Feedback</option>
-    <option value="2">Report a bug</option>
-    <option value="3">Feature request</option>
-    <option value="4">Feature request</option>
-  </select> Message
-<div class="form-group">
-    <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Message"></textarea>
-</div>
-Copy
-<div class="row">
-    <div class="col-md-6 mx-auto d-flex justify-content-center">
-        <mdb-checkbox [default]="true" class="mb-4">Send me a copy of this message</mdb-checkbox>
+<body>
+
+    <div class="sidebar">
+        <a href="#home"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="#services"><i class="fa fa-fw fa-wrench"></i> Services</a>
+        <a href="#clients"><i class="fa fa-fw fa-user"></i> Clients</a>
+        <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
     </div>
-</div>
-Send button
-<button mdbBtn color="info" block="true" type="submit">Send</button>
-</form>
-Default form contact -->
+
+    <div class="main">
+        <h2>Sidebar with Icons</h2>
+        <p>This side navigation is of full height (100%) and always shown.</p>
+        <p>Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum
+            no molestiae voluptatibus.</p>
+        <p>Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum
+            no molestiae voluptatibus.</p>
+    </div>
+
+</body>
+
+</html>

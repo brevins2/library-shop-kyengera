@@ -22,7 +22,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
         <a class="nav-link" id="homeIcon" aria-current="page" routerLink="/cmj">
-            <img src="../../../assets/image/icons/logo.png" class="logo">
+            <img src="../../../assets/image/icons/logo.png">
         </a>
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" (click)="backgroundImageExample2.toggle()" aria-controls="backgroundImageExample2" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +34,7 @@
                         <a class="nav-link" routerLink="user">
                             <i class="fa fa-user"></i>
                             <br/>
-                            <p style="margin-top: 5px;">User</p>
+                            <p>User</p>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -55,14 +55,20 @@
                         <a class="nav-link" routerLink="notifications">
                             <i class="fa fa-bell"></i>
                             <br/>
-                            <p>Notification</p>
+                            <p>
+                                <span matBadge="4" matBadgeOverlap="false">Notifications</span>
+                            </p>
+                            <!-- <p>Notification</p> -->
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" routerLink="messages">
                             <i class="fa fa-bell"></i>
                             <br/>
-                            <p>Messages</p>
+                            <p>
+                                <span matBadge="4" matBadgeOverlap="false">Messages</span>
+                            </p>
+                            <!-- <p>Messages</p> -->
                         </a>
                     </li>
                 </ul>

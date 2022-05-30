@@ -1,156 +1,58 @@
-body {
-    width: 100%;
-    height: 100%;
-    padding-top: 10px;
-    background-color: rgb(10, 38, 130);
-    color: white;
-}
-
-#backgroundImageExample2 li a:hover {
-    color: orange;
-    size: 2%;
-    border-top: 2px solid orange;
-}
-
-#backgroundImageExample2 li a:active {
-    color: orange;
-    size: 2%;
-    border-top: 2px solid orange;
-}
-
-.collapse {
-    align-items: center;
-}
-
-li a {
-    color: white;
-    text-align: center;
-    margin-right: 12px;
-}
-
-li a img {
-    width: 25px;
-    padding-bottom: 4px;
-    margin-top: 4px;
-}
-
-.home {
-    width: 100%;
-    height: 50%;
-    display: block;
-}
-
-.logo {
-    width: 50%;
-    padding-left: 30%;
-    padding-top: 5%;
-    padding-bottom: 4%;
-}
-
-#about {
-    text-align: center;
-    padding-bottom: 10%;
-    font-size: 25px;
-    margin-bottom: 5%;
-}
-
-.about {
-    padding-bottom: 10%;
-    font-size: 25px;
-    margin-bottom: 5%;
-}
-
-.accounts {
-    margin-top: 4%;
-}
-
-.accounts a {
-    margin: 1%;
-    border-radius: 30px;
-    color: white;
-    text-transform: capitalize;
-}
-
-#create {
-    height: 60px;
-    padding-top: 20px;
-    color: black;
-}
-
-#login {
-    height: 60px;
-    width: 100px;
-    padding-top: 20px;
-}
-
-.help {
-    width: 100%;
-    height: 30%;
+.carousel-div {
     display: flex;
-}
-
-.howtoOrder {
-    width: 60%;
-    margin-left: 5%;
-    font-size: 20px;
-    padding: 10px;
-}
-
-.help .image {
-    width: 30%;
-    margin-left: 4%;
-}
-
-.owner {
     width: 100%;
-    height: 30%;
-    display: flex;
-    margin-bottom: 6%;
-}
-
-.aboutOwner {
-    width: 60%;
-    margin-left: 4%;
+    margin-bottom: 2%;
 }
 
 .services {
-    margin-bottom: 10%;
-    height: 40%;
+    width: 25%;
+    margin-left: 3%;
+    height: 20%;
 }
 
-.phones {
-    margin-bottom: 5%;
+.carousel {
+    width: 100%;
 }
 
-.ownerImage {
-    width: 30%;
-    margin-left: 5%;
-    display: flex;
+.example-card {
+    max-width: 400px;
+    height: 30%;
 }
 
-#navs {
-    margin-left: 300px;
-    padding-left: 5px;
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
 }
 
-#homeIcon {
-    margin-left: -31px;
-    padding: 0;
+#nav-card {
+    background-color: blue;
 }
 
-#id1 {
-    padding: 0;
+
+/* cart card */
+
+.cart {
+    width: 100%;
+    background-color: orange;
+    border: 1px solid orange;
+    text-align: left;
 }
 
-#homeImg {
-    margin-top: -5px;
+.card-title {
+    font-size: 14px;
+    font-weight: bold;
 }
 
-#compImg {
-    height: 35px;
+.row {
+    width: 100%;
 }
 
-#phoneImg {
-    width: 22px;
-    height: 32px;
+.row .col {
+    width: 25%;
+    font-size: 13px;
+    color: black;
+}
+
+.more {
+    color: rgb(0, 217, 255);
 }
