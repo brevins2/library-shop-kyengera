@@ -1,7 +1,29 @@
+.back-style {
+    background-color: rgb(236, 236, 236);
+}
+
+body {
+    background-color: rgb(236, 236, 236);
+}
+
+.body {
+    border: 1px solid rgb(212, 212, 212);
+    margin: 1%;
+    padding: 2%;
+    border-radius: 10px;
+}
+
 .carousel-div {
-    display: flex;
     width: 100%;
     margin-bottom: 2%;
+}
+
+.mat-parent-small {
+    width: 100%;
+}
+
+#carousel-slider {
+    width: 100%;
 }
 
 .services {
@@ -15,7 +37,6 @@
 }
 
 .example-card {
-    max-width: 400px;
     height: 30%;
 }
 
@@ -29,13 +50,44 @@
 }
 
 
+/* icon drop downs */
+
+.power {
+    color: red;
+    width: 16px;
+}
+
+.service {
+    color: green;
+    width: 16px;
+}
+
+.notification {
+    color: blue;
+    width: 16px;
+}
+
+.products {
+    color: blue;
+}
+
+.logout {
+    color: red;
+}
+
+.login {
+    color: green;
+}
+
+
 /* cart card */
 
 .cart {
     width: 100%;
-    background-color: orange;
-    border: 1px solid orange;
+    background-color: rgb(3, 120, 237);
+    border: 1px solid rgb(3, 120, 237);
     text-align: left;
+    margin-bottom: 3%;
 }
 
 .card-title {
@@ -45,14 +97,76 @@
 
 .row {
     width: 100%;
+    margin-top: 4%;
 }
 
 .row .col {
-    width: 25%;
+    width: 24%;
     font-size: 13px;
     color: black;
+    margin: .2%;
 }
 
 .more {
     color: rgb(0, 217, 255);
+}
+
+
+/* contact us styling */
+
+.contact {
+    width: 100%;
+    padding-bottom: 5%;
+    font-size: 20px;
+    margin-top: 6%;
+    margin-bottom: 5%;
+    text-align: center;
+    display: flex;
+}
+
+.help {
+    width: 50%;
+    height: 30%;
+}
+
+.address {
+    text-align: center;
+}
+
+.location {
+    width: 40%;
+    height: 40%;
+    margin-left: 2%;
+    border: .1px solid;
+    text-align: left;
+    padding: 0%;
+    border-radius: 10px;
+    background: url("../../../assets/image/AI laptop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.location input,
+.location textarea {
+    background-color: black transparent;
+    color: white;
+}
+
+.form {
+    color: black;
+    margin: 2%;
+}
+
+.location form div {
+    margin: 20px;
+}
+
+.send {
+    margin-top: 2%;
+    margin-left: 50px;
+    border-radius: 20px;
+    width: 50%;
+    height: 50px;
+    text-transform: capitalize;
+    font-size: 16px;
 }

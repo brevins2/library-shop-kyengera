@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light back-style">
     <!-- Container wrapper -->
     <div class="container-fluid">
         <!-- Toggle button -->
@@ -10,67 +10,71 @@
         <!-- Collapsible wrapper -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Navbar brand -->
-            <a class="navbar-brand mt-2 mt-lg-0" href="#">
+            <a class="navbar-brand mt-2 mt-lg-0" routerLink="/cmj">
                 <img src="../../../assets/image/icons/logo.png" width="210">
             </a>
-            <!-- Left links -->
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Team</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Projects</a>
-                </li>
-            </ul>
-            <!-- Left links -->
         </div>
         <!-- Collapsible wrapper -->
 
         <!-- Right elements -->
         <div class="d-flex align-items-center">
-            <!-- Icon -->
-            <a class="text-reset me-3" href="#">
-                <i class="fa fa-shopping-cart"></i>
-            </a>
+            <!-- Service Icons -->
+            <button mat-button [matMenuTriggerFor]="menu">
+                <i class="fa fa-shopping-cart service"></i>
+                <i class="fa fa-angle-down service"></i>
+                <br>
+                Services
+             </button>
+            <mat-menu #menu="matMenu">
+                <button class="products" mat-menu-item>
+                     <mat-icon class="products">settings_phone</mat-icon>
+                     <a routerLink="/users/phones">Phone</a>
+                 </button>
+                <mat-divider></mat-divider>
+                <button mat-menu-item class="products">
+                     <mat-icon class="products">computer</mat-icon>
+                     <a routerLink="/users/computers">Sign Up</a>
+                 </button>
+            </mat-menu>
 
-            <!-- Notifications -->
-            <div class="dropdown">
-                <a class="text-reset me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-bell"></i>
-                    <span class="badge rounded-pill badge-notification bg-danger">1</span>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                    <li>
-                        <a class="dropdown-item" href="#">Some news</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">Another news</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- Avatar -->
-            <div class="dropdown">
-                <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                    <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25" alt="Black and White Portrait of a Man" loading="lazy" />
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
-                    <li>
-                        <a class="dropdown-item" href="#">My profile</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">Settings</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">Logout</a>
-                    </li>
-                </ul>
-            </div>
+            <!-- Contact Us Icons -->
+            <button mat-button [matMenuTriggerFor]="meenu">
+                <mat-icon  class="products"><span class="material-icons">contact_support</span></mat-icon>
+                <i class="fa fa-angle-down products"></i>
+                <br>
+                Support
+             </button>
+            <mat-menu #meenu="matMenu">
+                <button mat-menu-item class="logout">
+                     <mat-icon  class="logout">logout</mat-icon>
+                     Logout
+                 </button>
+                <mat-divider></mat-divider>
+                <button mat-menu-item class="login">
+                     <mat-icon class="login">login</mat-icon>
+                     Sign Up
+                 </button>
+            </mat-menu>
+
+            <!-- account change Icons -->
+            <button mat-button [matMenuTriggerFor]="meenu">
+               <i class="fa fa-power-off power" ></i>
+               <i class="fa fa-angle-down logout"></i>
+               <br>
+               Account
+            </button>
+            <mat-menu #meenu="matMenu">
+                <button mat-menu-item class="logout">
+                    <mat-icon  class="logout">login</mat-icon>
+                    Login
+                </button>
+                <mat-divider></mat-divider>
+                <button mat-menu-item class="login">
+                    <!-- <mat-icon class="login">person-plus</mat-icon> -->
+                    <i class="fa fa-user-plus"></i>
+                    Sign Up
+                </button>
+            </mat-menu>
         </div>
         <!-- Right elements -->
     </div>
@@ -79,106 +83,113 @@
 <!-- Navbar -->
 
 <!-- carousel -->
-<div class="carousel-div">
-    <!-- <div class="services">
-        <mat-card class="example-card">
-            <nav class="navbar navbar-expand-lg navbar-light" id="nav-card">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-            </nav>
-            <mat-card-content>
-                <div class="navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#">Disabled</a>
-                        </li>
-                    </ul>
+
+<body>
+    <mat-card class="mat-parent-small">
+        <carousel id="carousel-slider">
+            <slide>
+                <mat-card class="example-card">
+                    <img mat-card-image src="../../../assets/image/computers/ear pads.jpg" height="400">
+                </mat-card>
+            </slide>
+            <slide>
+                <mat-card class="example-card">
+                    <img mat-card-image src="../../../assets/image/AI laptop.jpg" height="400">
+                </mat-card>
+            </slide>
+            <slide>
+                <mat-card class="example-card">
+                    <img mat-card-image src="../../../assets/image/computer.jpg" height="400">
+                </mat-card>
+            </slide>
+            <slide>
+                <mat-card class="example-card">
+                    <img mat-card-image src="../../../assets/image/phones/edge.jpg" height="400">
+                </mat-card>
+            </slide>
+            <slide>
+                <mat-card class="example-card">
+                    <img mat-card-image src="../../../assets/image/phones/infinix hot 10.jpg" height="400">
+                </mat-card>
+            </slide>
+        </carousel>
+    </mat-card>
+
+
+    <div class="body">
+        <div class="row row-cols-1 row-cols-md-3 g-2">
+            <a class="col" *ngFor="let phon of api" routerLink="/phon-pay/{{phon.id}}">
+                <div class="card h-100" *ngIf="phon.id <= 8">
+                    <img [src]="'../../../../../assets/image/phones/'+ phon.File" class="card-img-top" />
+                    <div class="card-body">
+                        <h5 class="card-title">{{phon.Title}}</h5>
+                        <p class="card-text">
+                            {{phon.Storage}}
+                            <br>{{phon.Price}}
+                            <br>{{phon.Battery}}
+                        </p>
+                    </div>
+                    <div class="btn cart">
+                        <i class="fa fa-cart-plus"></i>&nbsp;Order
+                    </div>
                 </div>
-            </mat-card-content>
-        </mat-card>
-    </div> -->
-    <!-- Carousel wrapper -->
-    <div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel">
-        <!-- Indicators -->
-        <div class="carousel-indicators">
-            <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide-to="2" aria-label="Slide 3"></button>
+            </a>
         </div>
-
-        <!-- Inner -->
-        <div class="carousel-inner">
-            <!-- Single item -->
-            <div class="carousel-item active">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(15).webp" class="d-block w-100" alt="Sunset Over the City" height="465" />
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </div>
-            </div>
-
-            <!-- Single item -->
-            <div class="carousel-item">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(22).webp" class="d-block w-100" alt="Canyon at Nigh" />
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </div>
-
-            <!-- Single item -->
-            <div class="carousel-item">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/img%20(23).webp" class="d-block w-100" alt="Cliff Above a Stormy Sea" />
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                </div>
-            </div>
-        </div>
-        <!-- Inner -->
-
-        <!-- Controls -->
-        <button class="carousel-control-prev" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-        <button class="carousel-control-next" type="button" data-mdb-target="#carouselBasicExample" data-mdb-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-    </div>
-    <!-- Carousel wrapper -->
-</div>
-
-<div class="body">
-    <div class="row row-cols-1 row-cols-md-3 g-2">
-        <a class="col" *ngFor="let phon of api" routerLink="/phon-pay/{{phon.id}}">
-            <div class="card h-100">
-                <img [src]="'../../../../../assets/image/phones/'+ phon.File" class="card-img-top" />
-                <div class="card-body">
-                    <h5 class="card-title">{{phon.Title}}</h5>
-                    <p class="card-text">
-                        {{phon.Storage}}
-                        <br>{{phon.Price}}
-                        <br>{{phon.Battery}}
-                    </p>
-                </div>
-                <div class="btn cart">
-                    <i class="fa fa-cart-plus"></i>&nbsp;Order
-                </div>
-            </div>
-        </a>
         <a class="more">more >>></a>
     </div>
-</div>
+    <div class="body">
+        <div class="row row-cols-1 row-cols-md-3 g-2">
+            <a class="col" *ngFor="let com of comp" routerLink="/comp-pay/{{com.id}}">
+                <div *ngIf="com.id <= 8" class="card h-100">
+                    <img [src]="'../../../../../assets/image/computers/'+ com.File" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{com.Title}}</h5>
+                        <p class="card-text">
+                            {{com.Category}}
+                            <br>{{com.Price}}
+                        </p>
+                    </div>
+                    <div class="btn cart">
+                        <i class="fa fa-cart-plus"></i>&nbsp;Order
+                    </div>
+                </div>
+            </a>
+        </div>
+        <a class="more">more >>></a>
+    </div>
+
+    <div class="contact">
+        <div class="help">
+            <h2 class="address">
+                <i class="fa fa-address-book-o"></i>&nbsp; Contact Us
+            </h2>
+            We sell phones and Computer accessories at the cheapest prices there is.
+            <b>For online services</b><br/>Order from our websites or any of our social media platforms the device or accessory of your choice and we shall be at your service. Use our email
+            <a href="email">cmjentertainment@gmail.com</a> or our telephone lines <b style="color: red;">0700711932</b> and get served quickly.<br/>
+        </div>
+        <div class="location">
+            <form class="form" [formGroup]="sendMessage" (ngSubmit)="sendMessages()">
+                <h2>Contact Us</h2>
+                <div class="form-group">
+                    <label for="exampleInputName">Name</label>
+                    <input type="text" formControlName="name" class="form-control" id="exampleInputText" placeholder="Enter name">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleMessage">Message</label>
+                    <textarea class="form-control" id="exampleMessage" formControlName="message" placeholder="Enter your message" rows="6">
+                    </textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary send"><i class="fa fa-paper-plane"></i>&nbsp;Send</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+<app-footer></app-footer>
