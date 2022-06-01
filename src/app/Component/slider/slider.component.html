@@ -46,13 +46,13 @@
              </button>
             <mat-menu #meenu="matMenu">
                 <button mat-menu-item class="logout">
-                     <mat-icon  class="logout">logout</mat-icon>
-                     Logout
+                    <mat-icon  class="logout">find</mat-icon>
+                    Contact
                  </button>
                 <mat-divider></mat-divider>
                 <button mat-menu-item class="login">
-                     <mat-icon class="login">login</mat-icon>
-                     Sign Up
+                    <mat-icon class="login">shopping_cart</mat-icon>
+                    Shopping
                  </button>
             </mat-menu>
 
@@ -85,44 +85,64 @@
 <!-- carousel -->
 
 <body>
-    <mat-card class="mat-parent-small">
+    <div class="mat-parent-small">
         <carousel id="carousel-slider">
             <slide>
                 <mat-card class="example-card">
                     <img mat-card-image src="../../../assets/image/computers/ear pads.jpg" height="400">
                 </mat-card>
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Ear phones</h5>
+                    <p>Any phone anything</p>
+                </div>
             </slide>
             <slide>
                 <mat-card class="example-card">
                     <img mat-card-image src="../../../assets/image/AI laptop.jpg" height="400">
                 </mat-card>
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Ear phones</h5>
+                    <p>Any phone anything</p>
+                </div>
             </slide>
             <slide>
                 <mat-card class="example-card">
                     <img mat-card-image src="../../../assets/image/computer.jpg" height="400">
                 </mat-card>
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Ear phones</h5>
+                    <p>Any phone anything</p>
+                </div>
             </slide>
             <slide>
                 <mat-card class="example-card">
                     <img mat-card-image src="../../../assets/image/phones/edge.jpg" height="400">
                 </mat-card>
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Ear phones</h5>
+                    <p>Any phone anything</p>
+                </div>
             </slide>
             <slide>
                 <mat-card class="example-card">
                     <img mat-card-image src="../../../assets/image/phones/infinix hot 10.jpg" height="400">
                 </mat-card>
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Ear phones</h5>
+                    <p>Any phone anything</p>
+                </div>
             </slide>
         </carousel>
-    </mat-card>
+    </div>
 
     <div class="body">
         <div class="row row-cols-1 row-cols-md-3 g-2">
             <a class="col" *ngFor="let phon of api" routerLink="/phon-pay/{{phon.id}}">
                 <div class="card h-100 card-item" *ngIf="phon.id <= 8">
-                    <img [src]="'../../../../../assets/image/phones/'+ phon.File" class="card-img-top" height="90">
+                    <h5 class="card-title">{{phon.Title}}</h5>
                     <div>
                         <div class="card-body">
-                            <h5 class="card-title">{{phon.Title}}</h5>
+                            <img [src]="'../../../../../assets/image/phones/'+ phon.File" class="card-img-top" height="90" width="100">
                             <p class="card-text">
                                 {{phon.Storage}}
                                 <br>{{phon.Price}}
@@ -142,9 +162,9 @@
         <div class="row row-cols-1 row-cols-md-3 g-2">
             <a class="col" *ngFor="let com of comp" routerLink="/comp-pay/{{com.id}}">
                 <div *ngIf="com.id <= 8" class="card h-100">
-                    <img [src]="'../../../../../assets/image/computers/'+ com.File" class="card-img-top" height="90">
+                    <h5 class="card-title">{{com.Title}}</h5>
                     <div class="card-body">
-                        <h5 class="card-title">{{com.Title}}</h5>
+                        <img [src]="'../../../../../assets/image/computers/'+ com.File" class="card-img-top" height="90">
                         <p class="card-text">
                             {{com.Category}}
                             <br>{{com.Price}}
