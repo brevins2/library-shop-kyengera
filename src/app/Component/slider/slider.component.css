@@ -1,9 +1,15 @@
+.back-style {
+    background-color: white;
+}
+
+
 /* carousel details */
 
-.carousel-div {
+
+/* .carousel-div {
     width: 100%;
     margin-bottom: 2%;
-}
+} */
 
 .mat-parent-small {
     width: 100%;
@@ -19,17 +25,13 @@
     height: 20%;
 }
 
-.carousel {
+
+/* .carousel {
     width: 100%;
-}
+} */
 
 .example-card {
     height: 30%;
-}
-
-.example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
 }
 
 #nav-card {
@@ -37,7 +39,19 @@
 }
 
 
-/* icon drop downs */
+/* button icon */
+
+.service {
+    color: green;
+}
+
+.products {
+    color: blue;
+}
+
+.power {
+    color: red;
+}
 
 
 /* cart card */
@@ -46,7 +60,6 @@
     padding: 3%;
     margin-top: 2%;
     margin-bottom: 3%;
-    border: 1px solid black;
 }
 
 .cart {
@@ -84,4 +97,34 @@
 
 .more {
     color: rgb(0, 217, 255);
+}
+
+
+/* form contact */
+
+.contact {
+    margin: 3%;
+}
+
+.help {
+    width: 50%;
+    font-size: 13px;
+    padding: 3%;
+}
+
+.location {
+    width: 50%;
+    padding: 3%;
+    background-image: url("../../../assets/image/computer.jpg");
+    background-color: rgb(3, 2, 2, .8);
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.form {
+    color: black;
+}
+
+.send {
+    margin: 3%;
 }
