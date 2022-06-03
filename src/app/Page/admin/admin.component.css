@@ -1,9 +1,6 @@
 body {
-    padding-top: 22.8%;
     width: 100%;
     height: 100%;
-    padding-right: 2%;
-    padding-left: 2%;
 }
 
 nav {
@@ -20,51 +17,46 @@ header {
     background-color: rgb(252, 252, 252);
 }
 
-#backgroundImageExample2 li a:hover,
-#backgroundImageExample2 li a:active {
+.button-nav button a {
+    color: white;
+}
+
+.button-nav button:hover {
     color: orange;
     size: +2%;
     border-top: 2px solid orange;
+}
+
+.button-nav button a:hover {
+    color: orange;
 }
 
 .collapse {
     align-items: center;
 }
 
-li a {
-    color: white;
-    text-align: center;
-}
-
-li a img {
-    width: 25px;
-    padding-bottom: 4px;
-    margin-top: 4px;
-}
-
-#navs {
-    margin-left: 1%;
-    float: right;
-}
-
-#homeIcon {
-    margin-left: .1%;
-    padding: 0;
-}
-
-#id1 {
-    padding: 0;
-}
-
-#backgroundImageExample3 {
-    width: 100%;
-}
-
-.logout {
-    margin-left: 26%;
-}
-
 #search {
     width: 50%;
     margin-right: .5%;
+}
+
+
+/* sidenav */
+
+.example-container {
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.example-sidenav {
+    width: 20%;
+    padding: 20px;
 }

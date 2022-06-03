@@ -134,4 +134,6 @@ export class ComputingComponent implements OnInit {
     // });
   }
 
+  search(){}
+
 }

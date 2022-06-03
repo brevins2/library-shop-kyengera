@@ -53,8 +53,10 @@
                  </button>
                 <mat-divider></mat-divider>
                 <button mat-menu-item class="products">
-                    <mat-icon class="products">shopping_cart</mat-icon>
-                    Shopping
+                    <a routerLink="/users">
+                        <mat-icon class="products">shopping_cart</mat-icon>
+                        Shopping
+                    </a>
                  </button>
             </mat-menu>
 
@@ -67,13 +69,17 @@
             </button>
             <mat-menu #menus="matMenu">
                 <button mat-menu-item class="power">
-                    <i class="fa fa-power-off power" ></i>
-                    Login
+                    <a routerLink="/login">
+                        <i class="fa fa-power-off power" ></i>
+                        Login
+                    </a>
                 </button>
                 <mat-divider></mat-divider>
                 <button mat-menu-item class="products">
-                    <i class="fa fa-user-plus products"></i>
-                    Sign Up
+                    <a routerLink="/create">
+                        <i class="fa fa-user-plus products"></i>
+                        Sign Up
+                    </a>
                 </button>
             </mat-menu>
         </div>
@@ -135,7 +141,6 @@
             </slide>
         </carousel>
     </div>
-
     <div class="body">
         <div class="row row-cols-1 row-cols-md-3 g-2">
             <a class="col" *ngFor="let phon of api" routerLink="/phon-pay/{{phon.id}}">

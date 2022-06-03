@@ -174,4 +174,6 @@ export class PhoneComponent implements OnInit {
       return result;
     });
   }
+
+  search(){}
 }

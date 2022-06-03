@@ -45,19 +45,25 @@
     color: green;
 }
 
-.products {
+.products,
+.product a {
     color: blue;
 }
 
-.power {
+.power,
+.power a {
     color: red;
 }
 
 
 /* cart card */
 
+body {
+    padding: 1px;
+}
+
 .body {
-    padding: 3%;
+    padding: 1%;
     margin-top: 2%;
     margin-bottom: 3%;
 }
@@ -97,7 +103,8 @@
 }
 
 .more {
-    color: rgb(0, 217, 255);
+    color: orangered;
+    margin-left: 3%;
 }
 
 

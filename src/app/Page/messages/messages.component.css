@@ -1,4 +1,8 @@
-nav {
+.display {
+    overflow: hidden;
+}
+
+.nav {
     text-align: center;
     padding-bottom: 10px;
     padding-top: 30px;

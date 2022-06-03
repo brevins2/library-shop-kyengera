@@ -39,4 +39,5 @@ export class NotificationsComponent implements OnInit {
     })
   }
 
+  search(){}
 }

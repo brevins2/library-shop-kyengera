@@ -109,5 +109,6 @@ export class UserComponent implements OnInit {
     this.router.navigate(['/admin/user']);
   }
 
+  search(){}
 
 }
