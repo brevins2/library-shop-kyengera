@@ -28,37 +28,9 @@
     <br/>
 </header>
 <mat-card class="mat-parent-small">
-    <carousel>
-        <slide>
-            <mat-card class="example-card">
-                <img mat-card-image src="../../../assets/image/Tech Net.jpg">
-            </mat-card>
-        </slide>
-        <slide>
-            <mat-card class="example-card">
-                <img mat-card-image src="../../../assets/image/computers/RAM.jpg">
-            </mat-card>
-        </slide>
-        <slide>
-            <mat-card class="example-card">
-                <img mat-card-image src="../../../assets/image/computers/wireless mouse.jpg">
-            </mat-card>
-        </slide>
-        <slide>
-            <mat-card class="example-card">
-                <img mat-card-image src="../../../assets/image/computers/cpu cooler.jpg">
-            </mat-card>
-        </slide>
-        <slide>
-            <mat-card class="example-card">
-                <img mat-card-image src="../../../assets/image/computers/hdmi.jpg">
-            </mat-card>
-        </slide>
-    </carousel>
-    <br/>
 
     <body>
-        <div class="row row-cols-1 row-cols-md-3 g-2">
+        <div class="row row-cols-1 row-cols-md-3 g-2 flex-wrap">
             <a class="col" *ngFor="let com of comp" routerLink="/comp-pay/{{com.id}}">
                 <div class="card h-100">
                     <img [src]="'../../../../../assets/image/computers/'+ com.File" class="card-img-top">

@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ServeService } from 'src/app/Services/serve.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ComputerPayComponent } from 'src/app/Pay/computer-pay/computer-pay.component';
 
 export interface Tile {
   color: string;
@@ -9,6 +12,21 @@ export interface Tile {
   rows: number;
   text: string;
 }
+
+export class Api{
+  constructor(
+    public id: number,
+    public Title: string,
+    public Storage: string,
+    public Battery: string,
+    public Price: number,
+    public File: string,
+    public Brand: string,
+    public Category: string
+  ){}
+}
+
+
 @Component({
   selector: 'app-first-page',
   templateUrl: './first-page.component.html',
@@ -16,17 +34,21 @@ export interface Tile {
 })
 export class FirstPageComponent implements OnInit {
 
-  itemsPerSlide = 3;
-  singleSlideOffset = false;
-  noWrap = false;
+  api: Api[] = [];
+  comp: Api[] = [];
+  public sendMessage!: FormGroup;
   alerts = false;
 
-  public sendMessage!: FormGroup;
- 
-  slidesChangeMessage = '';
-  constructor(private http: HttpClient, private formBuilder: FormBuilder) { }
+  constructor(
+    private http: HttpClient,
+    private router: ActivatedRoute,
+    private service: ServeService,
+    private dialogRef: MatDialog,
+    private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.getApi();
+    this.getApiComputer();
     this.sendMessage = this.formBuilder.group({
       email: [''],
       name: [''],
@@ -34,15 +56,33 @@ export class FirstPageComponent implements OnInit {
     });
   }
   
-  onSlideRangeChange(indexes: number[]|void): void {
-    this.slidesChangeMessage = `Slides have been switched: ${indexes}`;
+  getCurrentDatas(){
+    this.service.getCurrentPhoneData(this.router.snapshot.params['id']).subscribe((results)=>{
+      console.log(results);
+      return results;
+    });
   }
 
-  search() {
-    let text = "Mr. Blue has a blue house";
-    let position = text.search(/Blue/);
+  getApi(){
+    this.http.get<any>('http://localhost:3000/Phones').subscribe(
+      response=>{
+        this.api = response
+      });
   }
 
+  // computers
+  watch(){
+    this.dialogRef.open(ComputerPayComponent);
+  }
+  
+  getApiComputer(){
+    this.http.get<any>('http://localhost:3000/Computers').subscribe( response=>
+      {
+        this.comp = response;
+      });
+  }
+
+  // contact information
   sendMessages(){
     this.http.post<any>('http://localhost:3000/Message', this.sendMessage.value).subscribe(res=>{
       // this.sendMessage = res;

@@ -1,172 +1,139 @@
-body {
+.back-style {
+    background-color: white;
+}
+
+
+/* carousel details */
+
+
+/* .carousel-div {
     width: 100%;
-    height: 100%;
-    background: linear-gradient(rgb(253, 253, 255), rgb(253, 253, 255));
-}
+    margin-bottom: 2%;
+} */
 
-header {
+.mat-parent-small {
     width: 100%;
-    /* position: fixed; */
 }
 
-.slider {
-    position: static;
+#carousel-slider {
+    width: 100%;
 }
 
-#backgroundImageExample2 li a:hover,
-#backgroundImageExample2 li a:active {
-    color: orange;
-    size: 2%;
-    border-top: 2px solid orange;
+.services {
+    width: 25%;
+    margin-left: 3%;
+    height: 20%;
 }
 
-.collapse {
-    align-items: center;
+
+/* .carousel {
+    width: 100%;
+} */
+
+.example-card {
+    height: 30%;
 }
 
-li a {
+#nav-card {
+    background-color: blue;
+}
+
+
+/* button icon */
+
+.service {
+    color: green;
+}
+
+.products {
+    color: blue;
+}
+
+.power {
+    color: red;
+}
+
+
+/* cart card */
+
+.body {
+    padding: 3%;
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
+
+.cart {
+    width: 100%;
+    background-color: rgb(3, 120, 237);
+    border: 1px solid rgb(3, 120, 237);
+    text-align: left;
+    margin-bottom: 3%;
     color: white;
-    text-align: center;
-    margin-right: 12px;
 }
 
-li a img {
-    width: 25px;
-    padding-bottom: 4px;
-    margin-top: 4px;
+.card-title {
+    font-size: 14px;
+    font-weight: bold;
 }
 
-#navs {
-    margin-left: 26%;
-    padding-left: 5px;
+.col:hover {
+    width: 150%;
 }
 
-#homeIcon {
-    margin-left: 1%;
-    padding: 0;
-}
-
-#id1 {
-    padding: 0;
-}
-
-#homeImg {
-    margin-top: -5px;
-}
-
-#compImg {
-    height: 35px;
-}
-
-#phoneImg {
-    width: 22px;
-    height: 32px;
-}
-
-.home {
+.row {
     width: 100%;
-    height: 50%;
-    display: block;
-}
-
-.logo {
-    width: 50%;
-    padding-left: 30%;
-    padding-top: 5%;
-    padding-bottom: 4%;
-}
-
-#about {
-    text-align: center;
-    padding-bottom: 10%;
-    font-size: 25px;
-    margin-bottom: 5%;
-}
-
-.accounts {
     margin-top: 4%;
 }
 
-.accounts a {
-    margin: 1%;
-    border-radius: 30px;
-    color: white;
-    text-transform: capitalize;
-}
-
-#create {
-    height: 60px;
-    padding-top: 20px;
+.row .col {
+    width: 23%;
+    font-size: 10px;
     color: black;
+    margin: .5%;
 }
 
-#login {
-    height: 60px;
-    width: 100px;
-    padding-top: 20px;
+.card-body {
+    font-size: 10px;
+}
+
+.more {
+    color: rgb(0, 217, 255);
 }
 
 
-/* contact us styling */
+/* form contact */
 
-.about {
-    width: 100%;
-    padding-bottom: 10%;
-    font-size: 25px;
-    margin-bottom: 5%;
-    text-align: center;
-    display: flex;
+.contact {
+    margin: 3%;
 }
 
 .help {
     width: 50%;
-    height: 30%;
-    display: flex;
-}
-
-.howtoOrder {
-    margin-left: 5%;
-    font-size: 20px;
-}
-
-.address {
-    text-align: center;
+    font-size: 13px;
+    padding: 3%;
 }
 
 .location {
-    width: 40%;
-    height: 40%;
-    margin-left: 2%;
-    border: .1px solid;
-    text-align: left;
-    padding: 0%;
-    border-radius: 10px;
-    background: url("../../../assets/image/AI laptop.jpg");
-    background-repeat: no-repeat;
+    width: 50%;
+    padding: 3%;
+    background-image: url("../../../assets/image/computer.jpg");
+    background-color: rgb(3, 2, 2, .8);
     background-size: cover;
-}
-
-.location input,
-.location textarea {
-    background-color: transparent;
-    color: white;
+    border-radius: 10px;
 }
 
 .form {
     color: black;
-    margin: 2%;
-}
-
-.location form div {
-    margin: 20px;
 }
 
 .send {
-    margin-top: 2%;
-    margin-left: 50px;
-    border-radius: 20px;
-    width: 50%;
-    height: 50px;
-    text-transform: capitalize;
-    font-size: 16px;
+    margin: 3%;
+}
+
+
+/* small images spacing */
+
+.small-image img {
+    margin: 2px;
+    border-radius: 2px;
 }
