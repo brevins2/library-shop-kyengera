@@ -6,19 +6,6 @@ import { ComputerPayComponent } from 'src/app/Pay/computer-pay/computer-pay.comp
 import { MatDialog } from '@angular/material/dialog';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
-export class Api{
-  constructor(
-    public id: number,
-    public Title: string,
-    public Storage: string,
-    public Battery: string,
-    public Price: number,
-    public File: string,
-    public Brand: string,
-    public Category: string
-  ){}
-}
-
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
@@ -26,10 +13,8 @@ export class Api{
 })
 export class SliderComponent implements OnInit {
 
-  api: Api[] = [];
-  comp: Api[] = [];
-  public sendMessage!: FormGroup;
-  alerts = false;
+  selectedFile: File | any = null;
+
   constructor(
     private http: HttpClient,
     private router: ActivatedRoute,
@@ -39,48 +24,18 @@ export class SliderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getApi();
-    this.getApiComputer();
-    this.sendMessage = this.formBuilder.group({
-      email: [''],
-      name: [''],
-      message: ['']
-    });
-  }
-  getCurrentDatas(){
-    this.service.getCurrentPhoneData(this.router.snapshot.params['id']).subscribe((results)=>{
-      console.log(results);
-      return results;
-    });
+    
   }
 
-  getApi(){
-    this.http.get<any>('http://localhost:3000/Phones').subscribe(
-      response=>{
-        this.api = response
-      });
+  onFileSelected(event: any){
+    this.selectedFile = <File>event.target.files[0];
   }
 
-  // computers
-  watch(){
-    this.dialogRef.open(ComputerPayComponent);
-  }
-  
-  getApiComputer(){
-    this.http.get<any>('http://localhost:3000/Computers').subscribe( response=>
-      {
-        this.comp = response;
-      });
-  }
-
-  // contact information
-  sendMessages(){
-    this.http.post<any>('http://localhost:3000/Message', this.sendMessage.value).subscribe(res=>{
-      // this.sendMessage = res;
-      this.sendMessage.reset();
-    },
-    error=>{
-      this.alerts =true;
+  onUpload(){
+    const fd= new FormData();
+    fd.append('image', this.selectedFile, this.selectedFile);
+    this.http.post('https://console.firebase.google.com/u/0/project/cmj-entertainment/storage/cmj-entertainment.appspot.com/files', fd).subscribe(res => {
+      console.log(res);
     });
   }
 }

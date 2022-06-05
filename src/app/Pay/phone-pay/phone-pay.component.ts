@@ -39,22 +39,23 @@ export class PhonePayComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCurrentData();
-    this.getCurrentDatas();
-    this.getData();
+    // this.getCurrentDatas();
+    // this.getData();
   }
 
   getData(){
-    this.http.get('http//localhost/3000/Phones').subscribe(result=>{
-      result = this.api;
-    });
+    this.http.get<any>('http://localhost:3000/Phones').subscribe(
+      response=>{
+        this.api = response
+      });
   }
 
-  getCurrentDatas(){
-    this.service.getCurrentPhoneData(this.router.snapshot.params['id']).subscribe((results)=>{
-      console.log(results);
-      results = this.api;
-    });
-  }
+  // getCurrentDatas(){
+  //   this.service.getCurrentPhoneData(this.router.snapshot.params['id']).subscribe((results)=>{
+  //     console.log(results);
+  //     results = this.api;
+  //   });
+  // }
 
   getCurrentData(){
     this.service.getCurrentPhoneData(this.router.snapshot.params['id']).subscribe((result: any)=>{
@@ -66,7 +67,11 @@ export class PhonePayComponent implements OnInit {
         Battery: new FormControl(result['Battery']),
         Price: new FormControl(result['Price'])
       });
-      this.api = result;
+      
+      this.http.get<any>('http://localhost:3000/Phones').subscribe(
+      response=>{
+        this.api = response
+      });
     });
   }
 
@@ -75,6 +80,10 @@ export class PhonePayComponent implements OnInit {
       this.alert = true;
       return result;
     });
+  }
+
+  logout(){
+    this.route.navigate(['login']);
   }
 
   cancel(){

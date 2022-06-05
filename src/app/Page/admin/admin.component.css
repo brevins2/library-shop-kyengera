@@ -31,6 +31,10 @@ header {
     color: orange;
 }
 
+.button-nav button {
+    height: 70px;
+}
+
 .collapse {
     align-items: center;
 }

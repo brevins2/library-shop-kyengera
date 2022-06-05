@@ -18,6 +18,7 @@
                 <h4 class="modal-title" id="modal-basic-title">Add Phone</h4>
                 <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
             </div>
+
             <div class="modal-body">
 
                 <body>
@@ -90,17 +91,70 @@
                     <td>
                         <img [src]="'../../../assets/image/phones/'+phon.File" width="100"></td>
                     <td>
-                        <p class="btn btn-primary" id="edit" routerLink="/edit-phone/{{phon.id}}"><i class="fa fa-edit" aria-label="edit"></i></p>
+                        <button class="btn btn-outline-primary" id="edit" (click)="open(contents)">
+                            <i class="fa fa-edit" aria-label="edit"></i>
+                        </button>
                     </td>
                     <td>
-                        <p class="btn btn-danger" id="del" (click)="deletePhone(phon)"><i class="fa fa-trash" aria-label="delete"></i></p>
+                        <p class="btn btn-outline-danger" id="del" (click)="deletePhone(phon)"><i class="fa fa-trash" aria-label="delete"></i></p>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
 
+    <mat-divider></mat-divider>
     <nav>
         <i class="fa fa-copyright"></i> copy rights reserved
     </nav>
 </body>
+
+<ng-template #contents let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Add Phone</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+
+    <div class="modal-body">
+
+        <body>
+            <div class="container">
+                <div class="input">
+                    <form [formGroup]="addPhone" id="styled" class="form-control">
+                        <div class="form-row">
+                            <div class="form-group col-md-6" id="title">
+                                <label for="title">Title</label>
+                                <input formControlName="title" type="text" class="form-control" id="inputTitle" placeholder="Enter Title">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6" id="ids">
+                                <div>
+                                    <label for="inputStorage">Storage</label>
+                                    <input formControlName="Storage" type="text" class="form-control" id="inputStorage" placeholder="Enter Storage">
+                                </div>
+                                <div>
+                                    <label for="inputBattery">Battery</label>
+                                    <input formControlName="Battery" type="text" class="form-control" id="inputBattery" placeholder="Enter Battery">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row" id="price">
+                            <label class="inputPrice" for="Price">Price</label>
+                            <input formControlName="Price" class="form-control" type="text" placeholder="Enter Price" id="inputPrice">
+                        </div>
+                        <div class="form-row" id="upload">
+                            <label for="upload">Upload image</label>
+                            <input formControlName="File" class="form-control" type="file" id="fileUpload" (change)="onFileUpload($event)">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </body>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" id="save" (click)="Edit()">Save</button>
+        <button class="btn btn-secondary" (click)="clr()">Clear Form</button>
+        <button class="btn btn-primary" id="cancel" (click)="cancel()">Cancel</button>
+    </div>
+</ng-template>

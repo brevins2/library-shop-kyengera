@@ -18,7 +18,7 @@
             <button type="button" class="text-light" mat-button (click)="drawer.toggle()">
                 <mat-icon>menu</mat-icon>
             </button>
-            <button class="text-danger" mat-button>
+            <button class="text-danger" mat-button type="submit" (click)="logout()">
                 <i class="fa fa-power-off power"></i>
                 <br>
                 Logout
@@ -34,45 +34,48 @@
         <mat-drawer #drawer class="example-sidenav bg-primary text-white" mode="side">
             <div class="d-flex flex-column align-items-left button-nav">
                 <!-- user Icons -->
-                <button class="service" mat-button>
-                    <a routerLink="user">
+                <button mat-button>
+                    <a class="d-flex justify-content-between" routerLink="user">
                         <i class="fa fa-users service align-middle d-flex justify-content-start"></i>
-                        <span class="d-flex text-center justify-content-end">User</span>
+                        <span class="d-flex text-left justify-content-end">User</span>
                     </a>
                  </button>
-
+                <mat-divider></mat-divider>
                 <!-- phones Icons -->
-                <button class="products" mat-button>
-                    <a routerLink="phone">
+                <button mat-button>
+                    <a class="d-flex justify-content-between" routerLink="phone">
                         <mat-icon  class="align-middle d-flex justify-content-start products">
                             <span class="material-icons">phone_android
                             </span>
                         </mat-icon>
-                        <span class="d-flex text-center justify-content-end">Phones</span>
+                        <span class="d-flex text-left justify-content-end">Phones</span>
                     </a>
                  </button>
+                <mat-divider></mat-divider>
 
                 <!-- computer accessories Icons -->
-                <button class="power" mat-button>
-                    <a routerLink="computer">
+                <button mat-button>
+                    <a class="d-flex justify-content-between" routerLink="computer">
                         <i class="fa fa-desktop power align-middle d-flex justify-content-start"></i>
-                        <span class="d-flex text-center justify-content-end">Accessories</span>
+                        <span class="d-flex text-left justify-content-end">Accessories</span>
                     </a>
                 </button>
+                <mat-divider></mat-divider>
 
                 <!-- notification Icons -->
-                <button class="power" mat-button>
-                    <a routerLink="notifications">
+                <button mat-button>
+                    <a class="d-flex justify-content-between" routerLink="notifications">
                         <i class="fa fa-bell power align-middle d-flex justify-content-start"></i>
-                        <span class="d-flex text-center justify-content-end">Notification</span>
+                        <span class="d-flex text-left justify-content-end">Notification</span>
                     </a>
                 </button>
+                <mat-divider></mat-divider>
 
                 <!-- Messages Icons -->
-                <button class="power" mat-button>
-                    <a routerLink="messages">
+                <button mat-button>
+                    <a class="d-flex justify-content-between" routerLink="messages">
                         <i class="fa fa-envelope power align-middle d-flex justify-content-start"></i>
-                        <span class="d-flex text-center justify-content-end">Messages</span>
+                        <span class="d-flex text-left justify-content-end">Messages</span>
                     </a>
                  </button>
             </div>

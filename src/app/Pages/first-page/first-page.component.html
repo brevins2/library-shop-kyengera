@@ -48,48 +48,45 @@
              </button>
             <mat-menu #meenu="matMenu">
                 <button mat-menu-item class="products">
-                    <mat-icon  class="products">mobile</mat-icon>
-                    Contact
-                 </button>
-                <mat-divider></mat-divider>
-                <button mat-menu-item class="products">
                     <a routerLink="/users">
                         <mat-icon class="products">shopping_cart</mat-icon>
-                        Shopping
-                    </a>
-                 </button>
-            </mat-menu>
+                        location
+                    </a>      
+                </button>
+                <mat-divider></mat-divider>
+                <button mat-menu-item class="products">
+                            <a routerLink="/users">
+                                <mat-icon class="products">shopping_cart</mat-icon>
+                                Shopping
+                            </a>
+                        </button>
+                </mat-menu>
 
-            <!-- account change Icons -->
-            <button class="power" mat-button [matMenuTriggerFor]="menus">
-               <i class="fa fa-power-off power" ></i>
+        <!-- account change Icons -->
+        <button class="power" mat-button [matMenuTriggerFor]="menus">
+               <i class="fa fa-power-off power" ></i>&nbsp;
                <i class="fa fa-angle-down power"></i>
                <br>
                Account
             </button>
-            <mat-menu #menus="matMenu">
-                <button mat-menu-item class="power">
+        <mat-menu #menus="matMenu">
+            <button mat-menu-item class="power">
                     <a routerLink="/login">
                         <i class="fa fa-power-off power" ></i>
                         Login
                     </a>
                 </button>
-                <mat-divider></mat-divider>
-                <button mat-menu-item class="products">
+            <mat-divider></mat-divider>
+            <button mat-menu-item class="products">
                     <a routerLink="/create">
                         <i class="fa fa-user-plus products"></i>
                         Sign Up
                     </a>
                 </button>
-            </mat-menu>
-        </div>
-        <!-- Right elements -->
+        </mat-menu>
     </div>
-    <!-- Container wrapper -->
+    </div>
 </nav>
-<!-- Navbar -->
-
-<!-- carousel -->
 
 <body>
     <div class="mat-parent-small">

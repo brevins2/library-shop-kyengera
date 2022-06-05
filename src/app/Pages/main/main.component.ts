@@ -24,6 +24,14 @@ export class MainComponent implements OnInit {
     this.dialogRef.open(TermsComponent);
   }
 
+  login(){
+    this.router.navigate(['login']);
+  }
+
+  createAccount(){
+    this.router.navigate(['login']);
+  }
+
   search(){}
 }
 
