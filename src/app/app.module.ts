@@ -69,6 +69,7 @@ import { CreateComponent } from './Security/create/create.component';
 import { TermsComponent } from './Component/terms/terms.component';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { TestsComponent } from './test/tests/tests.component';
+// import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
@@ -181,6 +182,7 @@ import { MessagesComponent } from './Page/messages/messages.component';
     MdbTooltipModule,
     MdbValidationModule,
     NgbModule
+    // Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

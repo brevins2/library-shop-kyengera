@@ -15,3 +15,7 @@ searchBar.addEventListener('keyup', function(e) {
         }
     })
 })
+
+// $scope.submitFilter() {
+//     $scope.SearchList = $scope.searchText;
+// }

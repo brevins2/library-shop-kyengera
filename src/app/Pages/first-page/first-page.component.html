@@ -3,18 +3,16 @@
     <!-- Container wrapper -->
     <div class="container-fluid">
         <!-- Toggle button -->
-        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
         <i class="fa fa-bars"></i>
       </button>
 
         <!-- Collapsible wrapper -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Navbar brand -->
             <a class="navbar-brand mt-2 mt-lg-0" routerLink="/cmj">
                 <img src="../../../assets/image/icons/logo.png" width="250">
             </a>
         </div>
-        <!-- Collapsible wrapper -->
 
         <!-- Right elements -->
         <div class="d-flex align-items-center">
@@ -48,43 +46,43 @@
              </button>
             <mat-menu #meenu="matMenu">
                 <button mat-menu-item class="products">
-                    <a routerLink="/users">
+                    <a href="#contact">
                         <mat-icon class="products">shopping_cart</mat-icon>
-                        location
+                        Contact
                     </a>      
                 </button>
                 <mat-divider></mat-divider>
                 <button mat-menu-item class="products">
-                            <a routerLink="/users">
-                                <mat-icon class="products">shopping_cart</mat-icon>
-                                Shopping
-                            </a>
-                        </button>
-                </mat-menu>
+                    <a routerLink="/users">
+                        <mat-icon class="products">shopping_cart</mat-icon>
+                            Shopping
+                    </a>
+                </button>
+            </mat-menu>
 
-        <!-- account change Icons -->
-        <button class="power" mat-button [matMenuTriggerFor]="menus">
+            <!-- account change Icons -->
+            <button class="power" mat-button [matMenuTriggerFor]="menus">
                <i class="fa fa-power-off power" ></i>&nbsp;
                <i class="fa fa-angle-down power"></i>
                <br>
                Account
             </button>
-        <mat-menu #menus="matMenu">
-            <button mat-menu-item class="power">
+            <mat-menu #menus="matMenu">
+                <button mat-menu-item class="power">
                     <a routerLink="/login">
                         <i class="fa fa-power-off power" ></i>
                         Login
                     </a>
                 </button>
-            <mat-divider></mat-divider>
-            <button mat-menu-item class="products">
+                <mat-divider></mat-divider>
+                <button mat-menu-item class="products">
                     <a routerLink="/create">
                         <i class="fa fa-user-plus products"></i>
                         Sign Up
                     </a>
                 </button>
-        </mat-menu>
-    </div>
+            </mat-menu>
+        </div>
     </div>
 </nav>
 
@@ -173,12 +171,6 @@
                                 <br>{{com.Price}}
                             </p>
                         </div>
-                        <div class="d-inline-flex p-2 small-image">
-                            <img src="../../../../../assets/image/computers/ear pads.jpg" width="40">
-                            <img src="../../../../../assets/image/computers/usb.jpg" width="40">
-                            <img src="../../../../../assets/image/computers/RAM.jpg" width="40">
-                            <img src="../../../../../assets/image/computers/light mouse.jpg" width="40">
-                        </div>
                     </div>
                     <div class="btn cart">
                         <i class="fa fa-cart-plus"></i>&nbsp;Buy
@@ -189,8 +181,8 @@
         <a routerLink="/users/computers" class="more">see more >>></a>
     </div>
 
-    <div class="d-flex contact">
-        <div class="help float-left ">
+    <div class="d-flex contact" id="contact">
+        <div class="help float-left">
             <h5 class="address">
                 Contact Us
             </h5>
