@@ -73,8 +73,8 @@ slide {
 .cart {
     width: 80%;
     margin: 0% 5% 5% 7%;
-    background-color: blue;
-    border: 2px solid blue;
+    background-color: rgb(3, 120, 237);
+    border: 2px solid rgb(3, 120, 237);
     font-size: .1rem;
     text-align: left;
     color: white;
