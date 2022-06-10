@@ -14,3 +14,6 @@ searchBar.addEventListener('keyup', function(e) {
         }
     })
 })
+
+
+$filter('filter')(array, expression, comparator, anyPropertyKey);

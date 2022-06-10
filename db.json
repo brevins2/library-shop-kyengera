@@ -1,370 +1,323 @@
 {
-  "register": [
-    {
-      "id": 1,
-      "email": "admin@ug.com",
-      "password": "i83admin",
-      "confirmPassword": "i83admin",
-      "file": "me.jpg",
-      "check": true
-    },
-    {
-      "id": 2,
-      "email": "user@ug.com",
-      "password": "useIT",
-      "confirmPassword": "useIT",
-      "file": "me.jpg",
-      "check": true
-    },
-    {
-      "id": 3,
-      "email": "saidi@gmail.com",
-      "password": "saidi21",
-      "confirmPassword": "saidi21",
-      "file": "me.jpg",
-      "check": true
-    },
-    {
-      "id": 4,
-      "email": "mrmugisha96@gmail.com",
-      "password": "0700711932",
-      "confirmPassword": "0700711932",
-      "file": "me.jpg",
-      "check": true
-    },
-    {
-      "email": "good@gmail.com",
-      "password": "gooeds",
-      "confirmPassword": "goods",
-      "file": "C:\\fakepath\\Books.jpg",
-      "check": "",
-      "id": 5
-    },
-    {
-      "email": "kasitaa@gmail.com",
-      "password": "kasitaa21",
-      "confirmPassword": "kasitaa21",
-      "file": "C:\\fakepath\\Books.jpg",
-      "check": "",
-      "id": 6
-    }
-  ],
-  "Phones": [
-    {
-      "id": 1,
-      "Title": "Edge",
-      "Storage": "64GB, 4GB RAM",
-      "Battery": "12000Amh",
-      "Price": 500000,
-      "File": "edge.jpg",
-      "Brand": "Samsung"
-    },
-    {
-      "id": 2,
-      "Title": "Infinix Hot 10",
-      "Storage": "124GB, 4GB RAM",
-      "Battery": "16000Amh",
-      "Price": 450000,
-      "File": "infinix hot 10.jpg",
-      "Brand": "Infinix"
-    },
-    {
-      "id": 3,
-      "Title": "Infinix Note i",
-      "Storage": "64GB, 3GB RAM",
-      "Battery": "10000Amh",
-      "Price": 500000,
-      "File": "infinix note i.jpg",
-      "Brand": "Infinix"
-    },
-    {
-      "id": 4,
-      "Title": "iPhone 12",
-      "Storage": "124GB, 4GB RAM",
-      "Battery": "12000Amh",
-      "Price": 450000,
-      "File": "iphone.jpg",
-      "Brand": "iPhone"
-    },
-    {
-      "id": 5,
-      "Title": "iPhone 11",
-      "Storage": "64GB, 4GB RAM",
-      "Battery": "12000Amh",
-      "Price": 500000,
-      "File": "iphone11.jpg",
-      "Brand": "iPhone"
-    },
-    {
-      "id": 6,
-      "Title": "iPhone 13",
-      "Storage": "64GB, 4GB RAM",
-      "Battery": "12000Amh",
-      "Price": 450000,
-      "File": "iphone13.jpg",
-      "Brand": "iPhone"
-    },
-    {
-      "id": 7,
-      "Title": "Nokia 2.4",
-      "Storage": "64GB, 4GB RAM",
-      "Battery": "12000Amh",
-      "Price": 500000,
-      "File": "nokia 2.4.jpg",
-      "Brand": "Nokia"
-    },
-    {
-      "id": 8,
-      "Title": "Nokia HDM",
-      "Storage": "124GB, 4GB RAM",
-      "Battery": "16000Amh",
-      "Price": 450000,
-      "File": "nokia HDM.jpg",
-      "Brand": "Nokia"
-    },
-    {
-      "id": 9,
-      "Title": "Nokia KAPESA",
-      "Storage": "64GB, 3GB RAM",
-      "Battery": "10000Amh",
-      "Price": 500000,
-      "File": "nokia kapesa.jpg",
-      "Brand": "Nokia"
-    },
-    {
-      "id": 10,
-      "Title": "Nokia Round Cam",
-      "Storage": "124GB, 4GB RAM",
-      "Battery": "12000Amh",
-      "Price": 450000,
-      "File": "nokia round cam.jpg",
-      "Brand": "Nokia"
-    },
-    {
-      "id": 11,
-      "Title": "Nokia Smart",
-      "Storage": "64GB, 4GB RAM",
-      "Battery": "12000Amh",
-      "Price": 500000,
-      "File": "nokia smart.jpg",
-      "Brand": "Nokia"
-    },
-    {
-      "id": 12,
-      "Title": "Tecno Camon 17",
-      "Storage": "64GB, 4GB RAM",
-      "Battery": "12000Amh",
-      "Price": 450000,
-      "File": "phone.jpg",
-      "Brand": "Tecno"
-    },
-    {
-      "id": 13,
-      "Title": "snmusang",
-      "Storage": "64GB, 4GB RAM",
-      "Battery": "12000Amh",
-      "Price": 450000,
-      "File": "snmusang.jpg",
-      "Brand": "Samsung"
-    }
-  ],
-  "Computers": [
-    {
-      "id": 1,
-      "Title": "CD",
-      "Category": "4GB New",
-      "Price": 3000,
-      "File": "cd.jpg"
-    },
-    {
-      "id": 2,
-      "Title": "CPU Cooler",
-      "Category": "New",
-      "Price": 70000,
-      "File": "cpu cooler.jpg"
-    },
-    {
-      "id": 3,
-      "Title": "Ear Pads",
-      "Category": "New",
-      "Price": 50000,
-      "File": "ear pads.jpg"
-    },
-    {
-      "id": 4,
-      "Title": "External HDD",
-      "Category": "500GB New",
-      "Price": 170000,
-      "File": "external hdd.jpg"
-    },
-    {
-      "id": 5,
-      "Title": "Flash Disk",
-      "Category": "24GB New",
-      "Price": 80000,
-      "File": "flash disk.jpg"
-    },
-    {
-      "id": 6,
-      "Title": "HDMI Cable",
-      "Category": "New",
-      "Price": 70000,
-      "File": "hdmi.jpg"
-    },
-    {
-      "id": 7,
-      "Title": "Flash disk",
-      "Category": "16GB New",
-      "Price": 65000,
-      "File": "images.jpg"
-    },
-    {
-      "id": 8,
-      "Title": "Light External HDD",
-      "Category": "250GB New",
-      "Price": 120000,
-      "File": "light external hdd.jpg"
-    },
-    {
-      "id": 9,
-      "Title": "Light Mouse",
-      "Category": "New",
-      "Price": 20000,
-      "File": "light mouse.jpg"
-    },
-    {
-      "id": 10,
-      "Title": "Mouse",
-      "Category": "New",
-      "Price": 18000,
-      "File": "mouse.jpg"
-    },
-    {
-      "id": 11,
-      "Title": "Portable Speaker",
-      "Category": "New",
-      "Price": 90000,
-      "File": "portable speaker.jpg"
-    },
-    {
-      "id": 12,
-      "Title": "USB Hub",
-      "Category": "New",
-      "Price": 130000,
-      "File": "USB Hub.jpg"
-    },
-    {
-      "id": 13,
-      "Title": "USB Notes Scanner",
-      "Category": "New",
-      "Price": 170000,
-      "File": "usb notes reader.jpg"
-    },
-    {
-      "id": 14,
-      "Title": "USB Cable",
-      "Category": "New",
-      "Price": 10000,
-      "File": "usb.jpg"
-    },
-    {
-      "id": 15,
-      "Title": "Wire Keyboard",
-      "Category": "New",
-      "Price": 10000,
-      "File": "wire keyboad.jpg"
-    },
-    {
-      "id": 16,
-      "Title": "Wireless Mouse",
-      "Category": "New",
-      "Price": 30000,
-      "File": "wireless mouse.jpg"
-    },
-    {
-      "id": 17,
-      "Title": "Wireless",
-      "Category": "New",
-      "Price": 50000,
-      "File": "wireless.jpg"
-    }
-  ],
-  "Orders": [
-    {
-      "id": 3,
-      "Message": "Kyengera Town, Wakiso 0755113122, kiggundubrevin@gmail.com",
-      "Title": "Infinix Note i",
-      "Storage": "64GB, 3GB RAM",
-      "Battery": "10000Amh",
-      "Price": 500000
-    },
-    {
-      "id": 5,
-      "Title": "Flash Disk",
-      "Price": 80000,
-      "Category": "24GB New",
-      "Message": "Kibuye, Kampala 0777980098 buyer@gmail.com",
-      "File": "flash disk.jpg"
-    },
-    {
-      "id": 6,
-      "Message": "Musoke Nathan \nKyengera Town, 088888065\nmusoke@gmail.com",
-      "Title": "iPhone 13",
-      "Storage": "64GB, 4GB RAM",
-      "Battery": "12000Amh",
-      "Price": 450000
-    }
-  ],
-  "Message": [
-    {
-      "email": "usama@gmail.com",
-      "name": "Kiggundu Brevin",
-      "message": "get for me 20 iPhones and some computer accessories",
-      "id": 1
-    }
-  ],
-  "images": [
-    {
-      "id": 1
-    },
-    {
-      "id": 2
-    },
-    {
-      "id": 3
-    },
-    {
-      "id": 4
-    },
-    {
-      "id": 5
-    },
-    {
-      "id": 6
-    },
-    {
-      "id": 7
-    },
-    {
-      "id": 8
-    },
-    {
-      "id": 9
-    },
-    {
-      "id": 10
-    },
-    {
-      "id": 11
-    },
-    {
-      "id": 12
-    },
-    {
-      "id": 13
-    },
-    {
-      "id": 14
-    }
-  ]
+    "register": [{
+            "id": 1,
+            "email": "admin@ug.com",
+            "password": "i83admin",
+            "confirmPassword": "i83admin",
+            "file": "me.jpg",
+            "check": true
+        },
+        {
+            "id": 2,
+            "email": "user@ug.com",
+            "password": "useIT",
+            "confirmPassword": "useIT",
+            "file": "me.jpg",
+            "check": true
+        },
+        {
+            "id": 3,
+            "email": "saidi@gmail.com",
+            "password": "saidi21",
+            "confirmPassword": "saidi21",
+            "file": "me.jpg",
+            "check": true
+        },
+        {
+            "id": 4,
+            "email": "mrmugisha96@gmail.com",
+            "password": "0700711932",
+            "confirmPassword": "0700711932",
+            "file": "me.jpg",
+            "check": true
+        },
+        {
+            "email": "good@gmail.com",
+            "password": "gooeds",
+            "confirmPassword": "goods",
+            "file": "C:\\fakepath\\Books.jpg",
+            "check": "",
+            "id": 5
+        },
+        {
+            "email": "kasitaa@gmail.com",
+            "password": "kasitaa21",
+            "confirmPassword": "kasitaa21",
+            "file": "C:\\fakepath\\Books.jpg",
+            "check": "",
+            "id": 6
+        }
+    ],
+    "Phones": [{
+            "id": 1,
+            "Title": "Edge",
+            "Storage": "64GB, 4GB RAM",
+            "Battery": "12000Amh",
+            "Price": 500000,
+            "File": "edge.jpg",
+            "Brand": "Samsung"
+        },
+        {
+            "id": 2,
+            "Title": "Infinix Hot 10",
+            "Storage": "124GB, 4GB RAM",
+            "Battery": "16000Amh",
+            "Price": 450000,
+            "File": "infinix hot 10.jpg",
+            "Brand": "Infinix"
+        },
+        {
+            "id": 3,
+            "Title": "Infinix Note i",
+            "Storage": "64GB, 3GB RAM",
+            "Battery": "10000Amh",
+            "Price": 500000,
+            "File": "infinix note i.jpg",
+            "Brand": "Infinix"
+        },
+        {
+            "id": 4,
+            "Title": "iPhone 12",
+            "Storage": "124GB, 4GB RAM",
+            "Battery": "12000Amh",
+            "Price": 450000,
+            "File": "iphone.jpg",
+            "Brand": "iPhone"
+        },
+        {
+            "id": 5,
+            "Title": "iPhone 11",
+            "Storage": "64GB, 4GB RAM",
+            "Battery": "12000Amh",
+            "Price": 500000,
+            "File": "iphone11.jpg",
+            "Brand": "iPhone"
+        },
+        {
+            "id": 6,
+            "Title": "iPhone 13",
+            "Storage": "64GB, 4GB RAM",
+            "Battery": "12000Amh",
+            "Price": 450000,
+            "File": "iphone13.jpg",
+            "Brand": "iPhone"
+        },
+        {
+            "id": 7,
+            "Title": "Nokia 2.4",
+            "Storage": "64GB, 4GB RAM",
+            "Battery": "12000Amh",
+            "Price": 500000,
+            "File": "nokia 2.4.jpg",
+            "Brand": "Nokia"
+        },
+        {
+            "id": 8,
+            "Title": "Nokia HDM",
+            "Storage": "124GB, 4GB RAM",
+            "Battery": "16000Amh",
+            "Price": 450000,
+            "File": "nokia HDM.jpg",
+            "Brand": "Nokia"
+        },
+        {
+            "id": 9,
+            "Title": "Nokia KAPESA",
+            "Storage": "64GB, 3GB RAM",
+            "Battery": "10000Amh",
+            "Price": 500000,
+            "File": "nokia kapesa.jpg",
+            "Brand": "Nokia"
+        },
+        {
+            "id": 10,
+            "Title": "Nokia Round Cam",
+            "Storage": "124GB, 4GB RAM",
+            "Battery": "12000Amh",
+            "Price": 450000,
+            "File": "nokia round cam.jpg",
+            "Brand": "Nokia"
+        },
+        {
+            "id": 11,
+            "Title": "Nokia Smart",
+            "Storage": "64GB, 4GB RAM",
+            "Battery": "12000Amh",
+            "Price": 500000,
+            "File": "nokia smart.jpg",
+            "Brand": "Nokia"
+        },
+        {
+            "id": 12,
+            "Title": "Tecno Camon 17",
+            "Storage": "64GB, 4GB RAM",
+            "Battery": "12000Amh",
+            "Price": 450000,
+            "File": "phone.jpg",
+            "Brand": "Tecno"
+        },
+        {
+            "id": 13,
+            "Title": "snmusang",
+            "Storage": "64GB, 4GB RAM",
+            "Battery": "12000Amh",
+            "Price": 450000,
+            "File": "snmusang.jpg",
+            "Brand": "Samsung"
+        }
+    ],
+    "Computers": [{
+            "id": 1,
+            "Title": "CD",
+            "Category": "4GB New",
+            "Price": 3000,
+            "File": "cd.jpg"
+        },
+        {
+            "id": 2,
+            "Title": "CPU Cooler",
+            "Category": "New",
+            "Price": 70000,
+            "File": "cpu cooler.jpg"
+        },
+        {
+            "id": 3,
+            "Title": "Ear Pads",
+            "Category": "New",
+            "Price": 50000,
+            "File": "ear pads.jpg"
+        },
+        {
+            "id": 4,
+            "Title": "External HDD",
+            "Category": "500GB New",
+            "Price": 170000,
+            "File": "external hdd.jpg"
+        },
+        {
+            "id": 5,
+            "Title": "Flash Disk",
+            "Category": "24GB New",
+            "Price": 80000,
+            "File": "flash disk.jpg"
+        },
+        {
+            "id": 6,
+            "Title": "HDMI Cable",
+            "Category": "New",
+            "Price": 70000,
+            "File": "hdmi.jpg"
+        },
+        {
+            "id": 7,
+            "Title": "Flash disk",
+            "Category": "16GB New",
+            "Price": 65000,
+            "File": "images.jpg"
+        },
+        {
+            "id": 8,
+            "Title": "Light External HDD",
+            "Category": "250GB New",
+            "Price": 120000,
+            "File": "light external hdd.jpg"
+        },
+        {
+            "id": 9,
+            "Title": "Light Mouse",
+            "Category": "New",
+            "Price": 20000,
+            "File": "light mouse.jpg"
+        },
+        {
+            "id": 10,
+            "Title": "Mouse",
+            "Category": "New",
+            "Price": 18000,
+            "File": "mouse.jpg"
+        },
+        {
+            "id": 11,
+            "Title": "Portable Speaker",
+            "Category": "New",
+            "Price": 90000,
+            "File": "portable speaker.jpg"
+        },
+        {
+            "id": 12,
+            "Title": "USB Hub",
+            "Category": "New",
+            "Price": 130000,
+            "File": "USB Hub.jpg"
+        },
+        {
+            "id": 13,
+            "Title": "USB Notes Scanner",
+            "Category": "New",
+            "Price": 170000,
+            "File": "usb notes reader.jpg"
+        },
+        {
+            "id": 14,
+            "Title": "USB Cable",
+            "Category": "New",
+            "Price": 10000,
+            "File": "usb.jpg"
+        },
+        {
+            "id": 15,
+            "Title": "Wire Keyboard",
+            "Category": "New",
+            "Price": 10000,
+            "File": "wire keyboad.jpg"
+        },
+        {
+            "id": 16,
+            "Title": "Wireless Mouse",
+            "Category": "New",
+            "Price": 30000,
+            "File": "wireless mouse.jpg"
+        },
+        {
+            "id": 17,
+            "Title": "Wireless",
+            "Category": "New",
+            "Price": 50000,
+            "File": "wireless.jpg"
+        }
+    ],
+    "Orders": [{
+            "id": 3,
+            "Message": "Kyengera Town, Wakiso 0755113122, kiggundubrevin@gmail.com",
+            "Title": "Infinix Note i",
+            "Storage": "64GB, 3GB RAM",
+            "Battery": "10000Amh",
+            "Price": 500000,
+            "delivered": true
+        },
+        {
+            "id": 5,
+            "Title": "Flash Disk",
+            "Price": 80000,
+            "Category": "24GB New",
+            "Message": "Kibuye, Kampala 0777980098 buyer@gmail.com",
+            "File": "flash disk.jpg",
+            "delivered": true
+        },
+        {
+            "id": 6,
+            "Message": "Musoke Nathan \nKyengera Town, 088888065\nmusoke@gmail.com",
+            "Title": "iPhone 13",
+            "Storage": "64GB, 4GB RAM",
+            "Battery": "12000Amh",
+            "Price": 450000,
+            "delivered": false
+        }
+    ],
+    "Message": [{
+        "email": "usama@gmail.com",
+        "name": "Kiggundu Brevin",
+        "message": "get for me 20 iPhones and some computer accessories"
+    }],
+    "images": []
 }

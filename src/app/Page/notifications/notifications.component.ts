@@ -16,7 +16,8 @@ export class Data{
   public File: string,
   public Brand: string,
   public Battery: string,
-  public Storage: string
+  public Storage: string,
+  public delivered: boolean
   ){}
 }
 @Component({

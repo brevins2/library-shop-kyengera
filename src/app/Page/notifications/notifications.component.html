@@ -37,7 +37,7 @@
                     <td>{{datas.Storage}}</td>
                     <td>{{datas.Message}}</td>
                     <td>
-                        <input type="checkbox" name="delivered">
+                        <input type="checkbox" [value]="'{{datas.delivered}}'" name="delivered">
                     </td>
                 </tr>
             </tbody>
@@ -45,8 +45,8 @@
     </div>
     <br>
 
-    <hr>
-    <nav class="nav">
+    <mat-divider></mat-divider>
+    <nav class="text-center">
         <i class="fa fa-copyright"></i> copy rights reserved
     </nav>
 </body>
