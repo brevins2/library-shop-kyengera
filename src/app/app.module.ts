@@ -38,9 +38,7 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatTreeModule } from "@angular/material/tree";
 
-
 import { AppRoutingModule } from './app-routing.module';
-import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './Component/footer/footer.component';
 import { HeaderComponent } from './Component/header/header.component';
@@ -69,7 +67,7 @@ import { CreateComponent } from './Security/create/create.component';
 import { TermsComponent } from './Component/terms/terms.component';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { TestsComponent } from './test/tests/tests.component';
-// import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
@@ -90,6 +88,12 @@ import { NotificationsComponent } from './Page/notifications/notifications.compo
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MessagesComponent } from './Page/messages/messages.component';
+
+import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -181,8 +185,11 @@ import { MessagesComponent } from './Page/messages/messages.component';
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
-    NgbModule
-    // Ng2SearchPipeModule
+    NgbModule,
+    Ng2SearchPipeModule,
+    provideFirebaseApp(() => initializeApp({})),
+    provideFirestore(() => getFirestore()),
+    // AngularFireModule.initializeApp(environment, firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]
