@@ -91,9 +91,11 @@ import { MessagesComponent } from './Page/messages/messages.component';
 
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { environment } from '../environments/environment';
+import * as firebase from 'firebase/compat';
 
 @NgModule({
   declarations: [
@@ -189,7 +191,9 @@ import { environment } from '../environments/environment';
     Ng2SearchPipeModule,
     provideFirebaseApp(() => initializeApp({})),
     provideFirestore(() => getFirestore()),
-    // AngularFireModule.initializeApp(environment, firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
