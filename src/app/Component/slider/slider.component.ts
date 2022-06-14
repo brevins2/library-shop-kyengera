@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 // AngularFireList
@@ -7,6 +7,7 @@ import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { AngularFireStorage } from'@angular/fire/compat/storage';
 import { FireClass } from 'src/app/firebase/fire-class';
 import { FireServiceService } from 'src/app/Services/fire-service.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-slider',
@@ -16,7 +17,7 @@ import { FireServiceService } from 'src/app/Services/fire-service.service';
 export class SliderComponent implements OnInit {
 
   private basePath = '/uploads';
-  // selectedFiles: FileList;
+  selectedFiles: FileList = new FileList;
   currentFileUpload: FireClass | undefined;
   percentage: number | undefined;
   selectFiles!: File;
@@ -36,10 +37,34 @@ export class SliderComponent implements OnInit {
   onUpload(){
     const fd = new FormData();
     fd.append('image', this.selectFiles, this.selectFiles.name);
-    this.http.post('http://localhost:3000/images', fd).subscribe(res => {
+    this.http.post('https://console.firebase.google.com/u/0/project/cmj-entertainment/storage/files', fd).subscribe(res => {
       console.log(res);
     });
   }
+  /* file upload */
+     /* Variabe to store file data */
+     filedata:any;
+    /* File onchange event */
+    fileEvent(e: any){
+        this.filedata = e.target.files[0];
+    }
+    /* Upload button functionality */
+    onSubmitForm(f: NgForm) {
+
+      alert('working good!!!');
+       
+      var myFormData = new FormData();
+      const headers = new HttpHeaders();
+      headers.append('Content-Type', 'multipart/form-data');
+      headers.append('Accept', 'application/json');
+      myFormData.append('image', this.filedata);
+      /* Image Post Request */
+      this.http.post('http://localhost:3000/images', myFormData, {
+      headers: headers
+      }).subscribe(data => {
+       //Check success message
+       console.log(data);
+      });  
 
   // firebase store for images
   // pushFileToStorage(fileUpload: FireClass): Observable<number>{
@@ -52,7 +77,7 @@ export class SliderComponent implements OnInit {
   //       storageRef.getDownloadURL().subscribe((downloadURL: string) =>{
   //         fileUpload.url = downloadURL;
   //         fileUpload.name = fileUpload.file.name;
-  //         // this.saveFileData(fileUpload);
+  //         this.saveFileData(fileUpload);
   //       });
   //     })
   //   ).subscribe();
@@ -75,5 +100,42 @@ export class SliderComponent implements OnInit {
   //     }
   //   );
   // }
+}
+
+// afuConfig = {
+//   multiple: false,
+//   formatsAllowed: ".jpg,.png",
+//   maxSize: "1",
+//   uploadAPI:  {
+//     url:"https://example-file-upload-api",
+//     method:"POST",
+//     headers: {
+//    "Content-Type" : "text/plain;charset=UTF-8",
+//    "Authorization" : `Bearer ${token}`
+//     },
+//     params: {
+//       'page': '1'
+//     },
+//     responseType: 'blob',
+//     withCredentials: false,
+//   },
+//   theme: "dragNDrop",
+//   hideProgressBar: true,
+//   hideResetBtn: true,
+//   hideSelectBtn: true,
+//   hideSelectBtn: true,
+//   fileNameIndex: true,
+//   autoUpload: false,
+//   replaceTexts: {
+//     selectFileBtn: 'Select Files',
+//     resetBtn: 'Reset',
+//     uploadBtn: 'Upload',
+//     dragNDropBox: 'Drag N Drop',
+//     attachPinBtn: 'Attach Files...',
+//     afterUploadMsg_success: 'Successfully Uploaded !',
+//     afterUploadMsg_error: 'Upload Failed !',
+//     sizeLimit: 'Size Limit'
+//   }
+// };
 }
 // https://console.firebase.google.com/u/0/project/cmj-entertainment/storage/cmj-entertainment.appspot.com/files

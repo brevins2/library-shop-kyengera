@@ -4,6 +4,17 @@ import { ServeService } from 'src/app/Services/serve.service';
 import { HttpClient } from '@angular/common/http';
 import { FormControl, FormGroup } from '@angular/forms';
 
+export class Api{
+  constructor(
+    public id: number,
+    public Title: string,
+    public Price: number,
+    public Category: string,
+    public File: string,
+    public Brand: string
+  ){}
+}
+
 @Component({
   selector: 'app-computer-pay',
   templateUrl: './computer-pay.component.html',
@@ -20,6 +31,8 @@ export class ComputerPayComponent implements OnInit{
     Message: new FormControl(''),
     File: new FormControl('')
   });
+  comp: Api[] = [];
+  _filterText: string= "";
 
   constructor(private router: ActivatedRoute, private route: Router, private service: ServeService, private http: HttpClient) { }
 
@@ -34,8 +47,27 @@ export class ComputerPayComponent implements OnInit{
         File: new FormControl(result['File'])
       });
     });
+    this.getApi(this._filterText);
   }
 
+  getApi(filterTerm: string){
+    this.http.get<any>('http://localhost:3000/Computers').subscribe(response=>
+      {
+        this.comp = response;
+        if(response.length === 0 || this.filterText === ''){
+          return response;
+        }
+        else{
+          return response.filter((computer: any) => {
+            return computer.Title  === filterTerm;
+          })
+        }
+      });
+  }
+
+  logout(){
+    this.route.navigate(['login']);
+  }
  
   order(){
     this.http.post('http://localhost:3000/Orders', this.buyComputer.value).subscribe(result =>{
@@ -50,5 +82,26 @@ export class ComputerPayComponent implements OnInit{
 
   cancel(){
     this.route.navigate(['users/computers']);
+  }
+
+  // search
+  get filterText(){
+    return this._filterText;
+  }
+
+  set filterText(value: string){
+    this._filterText = value;
+    this.comp = this.search(value);
+  }
+
+  search(filterTerm: string){
+    if(this.comp.length === 0 || this.filterText === ''){
+      return this.comp;
+    }
+    else{
+      return this.comp.filter((computer) => {
+        return computer.Title.toLowerCase()  === filterTerm.toLowerCase();
+      })
+    }
   }
 }

@@ -1,117 +1,131 @@
-body {
-    background-color: rgb(227, 227, 227, 0.2);
-    padding-top: 4%;
-    padding-bottom: 4%;
+.back-style {
+    background-color: white;
 }
 
-.side {
-    width: 30%;
-    margin: 0% 1% 0% 1%;
-    border: 2px solid rgb(0, 0, 0, 0.3);
-    border-radius: 1%;
+.mat-parent-small {
+    width: 100%;
 }
 
-#styled {
-    background-color: rgb(227, 227, 227, 0.2);
+#carousel-slider {
+    width: 100%;
+}
+
+.services {
+    width: 25%;
+    margin-left: 3%;
+    height: 20%;
+}
+
+.example-card {
+    height: 30%;
+}
+
+#nav-card {
+    background-color: blue;
+}
+
+
+/* button icon */
+
+.service {
+    color: green;
+}
+
+.products {
+    color: blue;
+}
+
+.power {
+    color: red;
+}
+
+
+/* more phones */
+
+.more-items {
     display: flex;
+    margin-top: 2%;
+    width: 100%;
+    height: 100%;
 }
 
-input,
-textarea {
-    background-color: rgba(255, 255, 255, 0.3);
+body {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(246, 244, 240);
 }
 
-.container {
-    width: 70%;
-    /* background-color: rgb(227, 227, 227, 0.2); */
-}
-
-.butt {
-    width: 400px;
-    margin: 2%;
-}
-
-.butt button {
-    margin: 1%;
+mat-parent-small {
+    padding: 0px;
+    border: -1px;
 }
 
 nav {
-    background-color: rgb(2, 2, 80);
+    text-align: center;
+    width: 100%;
 }
 
-#backgroundImageExample2 li a:hover {
-    color: orange;
-    size: 2%;
-    border-top: 2px solid orange;
+#backgroundImageExample2 {
+    width: 100%;
+    display: flex;
 }
 
-.collapse {
-    align-items: center;
+#search {
+    width: 80%;
 }
 
-#backgroundImageExample2 li a:active {
-    color: orange;
-    size: 2%;
-    border-top: 2px solid orange;
+.accounts {
+    margin-left: 14%;
+    float: right;
 }
 
-li a {
+#createBtn {
+    margin-right: 2px;
+}
+
+#navbars {
+    background-color: rgb(252, 252, 252);
+    height: 20%;
+}
+
+.container-fluid {
+    display: flex;
+}
+
+.card-title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.row {
+    width: 100%;
+}
+
+.row .col {
+    width: 32%;
+    font-size: 13px;
+    color: black;
+}
+
+carousel {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+
+slide {
+    width: 100%;
+}
+
+.cart {
+    width: 80%;
+    margin: 0% 5% 5% 7%;
+    background-color: rgb(3, 120, 237);
+    border: 2px solid rgb(3, 120, 237);
+    font-size: .1rem;
+    text-align: left;
     color: white;
-    text-align: center;
-    margin-right: 12px;
-}
-
-li a img {
-    width: 25px;
-    padding-bottom: 4px;
-    margin-top: 4px;
-}
-
-#navs {
-    margin-left: 400px;
-    /* text-align: center; */
-    padding-left: 5px;
-}
-
-#homeIcon {
-    margin-left: -31px;
-    padding: 0;
-}
-
-#id1 {
-    padding: 0;
-}
-
-#homeImg {
-    margin-top: -5px;
-}
-
-#compImg {
-    height: 35px;
-}
-
-#phoneImg {
-    width: 22px;
-    height: 32px;
-}
-
-#inputCategory,
-#inputTitle {
-    width: 200%;
-    margin-bottom: 4%;
-}
-
-#inputPrice {
-    margin-bottom: 4%;
-}
-
-.navLast {
-    text-align: center;
-    height: 100px;
-    background-color: rgb(227, 227, 227, 0.2);
-}
-
-hr {
-    margin-top: 0%;
-    margin-bottom: 0%;
 }

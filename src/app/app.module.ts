@@ -89,6 +89,7 @@ import { NotificationsComponent } from './Page/notifications/notifications.compo
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MessagesComponent } from './Page/messages/messages.component';
 
+import { AngularFileUploaderModule } from "angular-file-uploader/angular-file-uploader";
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
@@ -189,12 +190,13 @@ import * as firebase from 'firebase/compat';
     MdbValidationModule,
     NgbModule,
     Ng2SearchPipeModule,
+    // AngularFileUploaderModule,
     provideFirebaseApp(() => initializeApp({})),
     provideFirestore(() => getFirestore()),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireStorageModule
-  ],
+  ], 
   providers: [],
   bootstrap: [AppComponent]
 })

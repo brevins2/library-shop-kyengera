@@ -1,62 +1,33 @@
-<header>
-    <!-- Intro settings -->
-    <style>
-        /* Default height for small devices */
-        
-        #intro-example {
-            height: 400px;
-        }
-        /* Height for devices larger than 992px */
-        
-        @media (min-width: 992px) {
-            #intro-example {
-                height: 600px;
-            }
-        }
-        
-        a:hover {
-            color: black;
-        }
-    </style>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light back-style position-sticky fixed-top">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+        <!-- Toggle button -->
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-bars"></i>
+      </button>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg" style="background-color: rgb(2, 2, 80); height: 120px;">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" (click)="backgroundImageExample2.toggle()" aria-controls="backgroundImageExample2" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fas fa-bars"></i>
-        </button>
-            <div mdbCollapse #backgroundImageExample2="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
-                <a class="nav-link" id="homeIcon" aria-current="page" routerLink="/cmj">
-                    <img src="../../../assets/image/icons/logo.png" width="310">
-                </a>
-
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navs">
-                    <li class="nav-item active" style="margin-right: -40px;">
-                        <a class="nav-link" routerLink="/cmj" style="width: 100px;">
-                            <i class="fa fa-home"></i>
-                            <br/>
-                            <p style="margin-top: 5px;">Home</p>
-                        </a>
-                    </li>
-                    <li class="nav-item" style="margin-right: -40px;">
-                        <a class="nav-link active" routerLink="/users/phones" style="width: 100px;">
-                            <i class="fa fa-mobile"></i>
-                            <br/>
-                            <p>Phone</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/users/computers" style="width: 150px;">
-                            <i class="fa fa-desktop"></i>
-                            <br/>
-                            <p>Accessories</p>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Navbar brand -->
+            <a class="navbar-brand mt-2 mt-lg-0" routerLink="/cmj">
+                <img src="../../../assets/image/icons/logo.png" width="250">
+            </a>
         </div>
-    </nav>
-</header>
+        <!-- Collapsible wrapper -->
+
+        <div class="d-flex align-items-center">
+            <!-- account change Icons -->
+            <button class="power" mat-button (click)="logout()">
+               <i class="fa fa-power-off power" ></i>&nbsp;
+               <i class="fa fa-angle-down power"></i>
+               <br>
+               Logout
+            </button>
+        </div>
+    </div>
+</nav>
+
 <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
     <strong>Success !</strong> Log in successful !.
     <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -65,51 +36,77 @@
 </div>
 
 <body>
-    <form [formGroup]="buyComputer" id="styled" (ngSubmit)="order()" class="form-control">
-        <div class="side">
+    <div class="side">
+        <form [formGroup]="buyComputer" class="form-control">
             <img formControlName="File" src="' ../../../../../assets/image/phones/'File" title="Accessory" aria-label="image of product" alt="Image of accessory" width="150">
-        </div>
-        <div class="container">
-            <div class="input">
+        </form>
+    </div>
+    <div class="container">
+        <form [formGroup]="buyComputer" id="styled" (ngSubmit)="order()" class="form-control">
+            <div class="container">
+                <div class="input">
 
-                <h1>Buy Computer Accessory</h1>
-                <div class="form-row">
-                    <div class="form-group col-md-6" id="title">
-                        <label for="Title">Title</label>
-                        <input formControlName="Title" type="text" class="form-control" id="inputTitle" placeholder="title">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md-6" id="ids">
-                        <div>
-                            <label for="Category">Category</label>
-                            <input formControlName="Category" type="text" class="form-control" id="inputCategory" placeholder="Category">
+                    <h1>Buy Computer Accessory</h1>
+                    <div class="form-row">
+                        <div class="form-group col-md-6" id="title">
+                            <label for="Title">Title</label>
+                            <input formControlName="Title" type="text" class="form-control" id="inputTitle" placeholder="title">
                         </div>
-
                     </div>
-                </div>
-                <div class="form-row" id="id">
-                    <label class="Price" for="Price">Price</label>
-                    <input formControlName="Price" class="form-control" type="text" placeholder="Price" id="inputPrice">
-                </div>
-                <div class="form-row" id="id">
-                    <label class="inputPicture" for="picture">Address</label>
-                    <address>
+                    <div class="form-row">
+                        <div class="form-group col-md-6" id="ids">
+                            <div>
+                                <label for="Category">Category</label>
+                                <input formControlName="Category" type="text" class="form-control" id="inputCategory" placeholder="Category">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="form-row" id="id">
+                        <label class="Price" for="Price">Price</label>
+                        <input formControlName="Price" class="form-control" type="text" placeholder="Price" id="inputPrice">
+                    </div>
+                    <div class="form-row" id="id">
+                        <label class="inputPicture" for="picture">Address</label>
+                        <address>
                             <textarea rows="5" cols="78" class="form-control" name="Address" id="inputAddress" formControlName="Message">
                             </textarea>
                     </address>
-                </div>
-                <br>
-                <div class="butt">
-                    <button class="btn btn-primary" (click)="order()">Order</button>
-                    <button class="btn btn-danger" (click)="cancel()">Cancel</button>
-                </div>
+                    </div>
+                    <br>
+                    <div class="butt">
+                        <button class="btn btn-primary" (click)="order()">Order</button>
+                        <button class="btn btn-danger" (click)="cancel()">Cancel</button>
+                    </div>
 
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+<div class="row row-cols-1 row-cols-md-3 g-2 flex-wrap">
+    <a class="col" *ngFor="let com of comp" routerLink="/comp-pay/{{com.id}}">
+        <div class="card h-100">
+            <img [src]="'../../../../../assets/image/computers/'+ com.File" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">{{com.Title}}</h5>
+                <p class="card-text">
+                    {{com.Category}}
+                    <br>{{com.Price | currency}}
+                </p>
+            </div>
+            <div class="btn cart">
+                <i class="fa fa-cart-plus"></i>&nbsp;Order
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">{{com.Title}}</small>
             </div>
         </div>
-    </form>
-</body>
-<hr>
+    </a>
+</div>
+<mat-divider></mat-divider>
+
 <nav class="navLast">
-    <i class="fa fa-copyright"></i> copy rights reserved
+    &copy; copy rights reserved
 </nav>

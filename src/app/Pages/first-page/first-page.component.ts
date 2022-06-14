@@ -85,7 +85,7 @@ export class FirstPageComponent implements OnInit {
   // contact information
   sendMessages(){
     this.http.post<any>('http://localhost:3000/Message', this.sendMessage.value).subscribe(res=>{
-      // this.sendMessage = res;
+      this.sendMessage = res;
       this.sendMessage.reset();
     },
     error=>{
