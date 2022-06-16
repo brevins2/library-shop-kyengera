@@ -62,7 +62,7 @@
                 <button class="btn btn-primary" id="cancel" (click)="cancel()">Cancel</button>
             </div>
         </ng-template>
-        <button class="btn btn-lg btn-outline-primary" (click)="open(content)">
+        <button class="btn btn-lg btn-outline-primary" (click)="open(content, data)">
             <i class="fa fa-plus" color="white"></i>&nbsp;
                     Add Phone
         </button>
@@ -91,7 +91,7 @@
                     <td>
                         <img [src]="'../../../assets/image/phones/'+phon.File" width="100"></td>
                     <td>
-                        <button class="btn btn-outline-primary" id="edit" (click)="open(contents)">
+                        <button class="btn btn-outline-primary" id="edit" (click)="open(contents, data)">
                             <i class="fa fa-edit" aria-label="edit"></i>
                         </button>
                     </td>

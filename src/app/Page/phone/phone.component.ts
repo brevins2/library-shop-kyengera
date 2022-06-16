@@ -28,6 +28,7 @@ export class Api{
 })
 export class PhoneComponent implements OnInit {
 
+  data = '';
   id: number =0;
   phones: Api[] = [];
   phone: Phones[] = phones;
@@ -94,7 +95,7 @@ export class PhoneComponent implements OnInit {
   //   this.Serve.updatePhones(phonesUpdate).subscribe();
   // }
 
-  open(content: any) {
+  open(content: any, data: any) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {

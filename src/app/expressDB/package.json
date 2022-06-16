@@ -1,0 +1,18 @@
+{
+    "name": "expressdb",
+    "version": "1.0.0",
+    "description": "storage area",
+    "main": "src/index.js",
+    "scripts": {
+        "test": "database"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/brevins/library-shop-kyengera"
+    },
+    "keywords": [
+        "store"
+    ],
+    "author": "brevin",
+    "license": "ISC"
+}
