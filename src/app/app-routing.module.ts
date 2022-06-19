@@ -23,6 +23,7 @@ import { SliderComponent } from './Component/slider/slider.component';
 import { NotificationsComponent } from './Page/notifications/notifications.component';
 import { HeaderComponent } from './Component/header/header.component';
 import { MessagesComponent } from './Page/messages/messages.component';
+import { TermsComponent } from './Component/terms/terms.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'cmj', pathMatch: 'full' },
@@ -53,7 +54,8 @@ const routes: Routes = [
   { path: 'edit-computer/:id', component: AddComputerComponent },
   { path: 'up', component: FileUploadComponent },
   { path: 'comp-pay/:id', component: ComputerPayComponent },
-  { path: 'phon-pay/:id', component: PhonePayComponent }
+  { path: 'phon-pay/:id', component: PhonePayComponent },
+  { path: 'terms', component: TermsComponent }
 ];
 
 @NgModule({
