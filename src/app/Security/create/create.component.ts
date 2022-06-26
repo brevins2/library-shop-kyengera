@@ -11,12 +11,9 @@ import { Router } from '@angular/router';
 export class CreateComponent implements OnInit {
 
   public signUpForm !: FormGroup;
-  readonly VAPID_PUBLIC_KEY = "BFmoP_EhCj12NEoynMpDYFrC0axOyEVumyl7NbxtpI0qHTL4YdAw_OqSxJ6FBShMxWAeYEvNU8ivKFfg8ETkVLA";
   alert = false;
   alerts = false;
   constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router) { }
-
-  // private swPush: SwPush, private newsletterService: NewsletterService
 
   ngOnInit(): void {
     this.signUpForm = this.formBuilder.group({
@@ -29,7 +26,7 @@ export class CreateComponent implements OnInit {
   }
 
   signUp(){
-    this.http.post<any>("http://localhost:3000/register", this.signUpForm.value).subscribe(res=>{  
+    this.http.post<any>("http://localhost:3000/register", this.signUpForm.value).subscribe(res=>{
       this.alert = true;
       this.signUpForm.reset();
       this.router.navigate(['login']);

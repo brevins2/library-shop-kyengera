@@ -21,7 +21,7 @@
         <div class="container-fluid">
             <div mdbCollapse #backgroundImageExample3="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
                 <input type="text" [(ngModel)]="searchText" class="form-control" id="search-input-sidenav search" name="search" placeholder="Search for Phones, mouse, keyboards, fans, cables, flash....">
-                <button class="btn btn-primary">Search</button>
+                <button class="btn btn-primary" (click)="search(_filterText)">Search</button>
             </div>
             <!--  (click)="search()" -->
         </div>
@@ -39,7 +39,7 @@
                         <h5 class="card-title">{{com.Title}}</h5>
                         <p class="card-text">
                             {{com.Category}}
-                            <br>{{com.Price | currency"}}
+                            <br>{{com.Price | currency}}
                         </p>
                     </div>
                     <div class="btn cart">

@@ -55,7 +55,7 @@ export class FirstPageComponent implements OnInit {
       message: ['']
     });
   }
-  
+
   getCurrentDatas(){
     this.service.getCurrentPhoneData(this.router.snapshot.params['id']).subscribe((results)=>{
       console.log(results);
@@ -74,9 +74,9 @@ export class FirstPageComponent implements OnInit {
   watch(){
     this.dialogRef.open(ComputerPayComponent);
   }
-  
+
   getApiComputer(){
-    this.http.get<any>('http://localhost:3000/Computers').subscribe( response=>
+    this.http.get<any>("http://localhost:3000/Computers").subscribe( response=>
       {
         this.comp = response;
       });
@@ -84,12 +84,8 @@ export class FirstPageComponent implements OnInit {
 
   // contact information
   sendMessages(){
-    this.http.post<any>('http://localhost:3000/Message', this.sendMessage.value).subscribe(res=>{
-      this.sendMessage = res;
+    this.http.post<any>("http://localhost:3000/Message", this.sendMessage.value).subscribe(response =>{
       this.sendMessage.reset();
-    },
-    error=>{
-      this.alerts =true;
     });
   }
 }

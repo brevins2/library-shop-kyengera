@@ -61,10 +61,7 @@
 
     <div class="main">
         <h2>submit to MySQL databaSe database</h2>
-        <form [formGroup]="loginForm" method="" class="forms" id="main">
-            <div class="profile">
-                <!-- <img src="../../../assets/image/icons/triouser.png" width="200" style="border-radius:5%;"> -->
-            </div>
+        <form [formGroup]="loginForm" action="form.php" method="post" class="forms" id="main">
             <div class="form-group" style="padding: 9px;">
                 <label for="Email1">Email address</label>
                 <input formControlName="email" type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email">

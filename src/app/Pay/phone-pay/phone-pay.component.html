@@ -36,13 +36,13 @@
     </button>
 </div>
 
-<body>
+<body class="d-flex p2">
     <div class="side">
         <form [formGroup]="buyPhone" class="form-control">
             <img formControlName="File" src="../../../../../assets/image/phones/File" title="Phone" aria-label="image of product" alt="Image of Phone">
         </form>
     </div>
-    <div class="container">
+    <div class="d-flex-block container">
         <div class="input">
             <form [formGroup]="buyPhone" id="styled" class="form-control">
                 <h1 class="text-warning">Buys Phones</h1>
@@ -86,7 +86,9 @@
         </div>
     </div>
 </body>
-<div class="more-items">
+
+
+<!-- <div class="more-items">
     <div class="row row-cols-1 row-cols-md-3 g-2">
         <a class="col" *ngFor="let phon of api" routerLink="/phon-pay/{{phon.id}}">
             <div class="card h-100" *ngIf="phon.Brand == phon.Brand">
@@ -108,7 +110,7 @@
             </div>
         </a>
     </div>
-</div>
+</div> -->
 
 <br>
 <mat-divider></mat-divider>

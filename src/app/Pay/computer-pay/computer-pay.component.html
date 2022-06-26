@@ -37,8 +37,9 @@
 
 <body>
     <div class="side">
+        <!-- buyComputer.controls['File'].value -->
         <form [formGroup]="buyComputer" class="form-control">
-            <img formControlName="File" src="' ../../../../../assets/image/phones/'File" title="Accessory" aria-label="image of product" alt="Image of accessory" width="150">
+            <img formControlName="File" [src]="buyComputer.controls['File'].value" title="Accessory" aria-label="image of product" alt="Image of accessory" width="150">
         </form>
     </div>
     <div class="container">
@@ -47,6 +48,7 @@
                 <div class="input">
 
                     <h1>Buy Computer Accessory</h1>
+
                     <div class="form-row">
                         <div class="form-group col-md-6" id="title">
                             <label for="Title">Title</label>
@@ -85,10 +87,10 @@
     </div>
 </body>
 
-<div class="row row-cols-1 row-cols-md-3 g-2 flex-wrap">
+<!-- <div class="row row-cols-1 row-cols-md-3 g-2 flex-wrap">
     <a class="col" *ngFor="let com of comp" routerLink="/comp-pay/{{com.id}}">
         <div class="card h-100">
-            <img [src]="'../../../../../assets/image/computers/'+ com.File" class="card-img-top">
+            <img [src]=" '../../../../../assets/image/computers/'+ com.File" class="card-img-top">
             <div class="card-body">
                 <h5 class="card-title">{{com.Title}}</h5>
                 <p class="card-text">
@@ -104,7 +106,7 @@
             </div>
         </div>
     </a>
-</div>
+</div> -->
 <mat-divider></mat-divider>
 
 <nav class="navLast">

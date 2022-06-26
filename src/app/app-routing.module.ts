@@ -28,7 +28,7 @@ import { TermsComponent } from './Component/terms/terms.component';
 const routes: Routes = [
   { path: '', redirectTo: 'cmj', pathMatch: 'full' },
   { path: 'test', component: TestsComponent },
-  { path: 'second option', component: SliderComponent},
+  { path: 'slider', component: SliderComponent},
   { path: 'cmj', component: FirstPageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'create', component: CreateComponent },

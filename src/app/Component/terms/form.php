@@ -7,8 +7,16 @@
     $conn = Mysqli_connect($host, $user, $password, $dbName);
 
     if($conn){
+        $table = "SELECT * FROM accounts";
+        $query_Table = Mysqli_query($conn, $table);
 
-        
+        if($query_Table){
+            echo "well done";
+        }
+        else {
+            echo "error occurred";
+        }
+
         $loginForm = $_POST['loginForm'];
         $email = $_POST['email'];
         $password = $_POST['password'];

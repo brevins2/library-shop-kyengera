@@ -37,7 +37,8 @@ export class ComputerPayComponent implements OnInit{
   constructor(private router: ActivatedRoute, private route: Router, private service: ServeService, private http: HttpClient) { }
 
   ngOnInit(): void {
-     this.service.getCurrentComputerData(this.router.snapshot.params['id']).subscribe((result: any)=>{
+    this.service.getCurrentComputerData(this.router.snapshot.params['id']).subscribe((result: any)=>{
+      console.log(result);
       this.buyComputer = new FormGroup({
         id: new FormControl(result['id']),
         Title: new FormControl(result['Title']),
@@ -52,6 +53,7 @@ export class ComputerPayComponent implements OnInit{
 
   getApi(filterTerm: string){
     this.http.get<any>('http://localhost:3000/Computers').subscribe(response=>
+    // port for mysql database to store at 3306
       {
         this.comp = response;
         if(response.length === 0 || this.filterText === ''){

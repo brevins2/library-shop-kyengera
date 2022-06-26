@@ -69,6 +69,7 @@ export class PhoneComponent implements OnInit {
     });
   }
 
+  // getting data
   getApi(){
     this.http.get<any>('http://localhost:3000/Phones').subscribe(
       response =>{
@@ -76,6 +77,7 @@ export class PhoneComponent implements OnInit {
       });
   }
 
+  // popup modal failure
   popUp(idToPass: any){
     return this.dialogRef.open(AddPhoneComponent,{
       data:{
@@ -84,6 +86,7 @@ export class PhoneComponent implements OnInit {
     });
   }
 
+  // deleting phones
   deletePhone(phoneDelete: Phones){
     this.Serve.deletePhone(phoneDelete).subscribe(()=> this.phone = this.phone.filter(t => t.id !== phoneDelete.id));
     this.http.delete('http://localhost:3000/Phones').
@@ -96,7 +99,7 @@ export class PhoneComponent implements OnInit {
   // }
 
   open(content: any, data: any) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+    this.modalService.open(content, { size: 'lg', ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
@@ -144,6 +147,7 @@ export class PhoneComponent implements OnInit {
     return this.addPhone.controls;
   }
 
+  // uploading image
   onUpload(){
     // const formData = new FormData();
     // formData.append('image', this.addPhone.get('fileSource').value);
@@ -169,6 +173,7 @@ export class PhoneComponent implements OnInit {
   }
 }
 
+// editing phone on another page
   Edit(){
     this.service.updatePhones(this.route.snapshot.params['id'], this.addPhone.value).subscribe((result) => {
       this.addPhone.reset();

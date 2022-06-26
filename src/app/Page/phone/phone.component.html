@@ -13,7 +13,7 @@
 
     <div class="display">
         <!-- Button trigger modal -->
-        <ng-template #content let-modal>
+        <ng-template #addPhoneModel let-modal>
             <div class="modal-header">
                 <h4 class="modal-title" id="modal-basic-title">Add Phone</h4>
                 <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
@@ -62,12 +62,12 @@
                 <button class="btn btn-primary" id="cancel" (click)="cancel()">Cancel</button>
             </div>
         </ng-template>
-        <button class="btn btn-lg btn-outline-primary" (click)="open(content, data)">
+        <button class="btn btn-lg btn-outline-primary" (click)="open(addPhoneModel, data)">
             <i class="fa fa-plus" color="white"></i>&nbsp;
-                    Add Phone
+                Add Phone
         </button>
 
-        <hr>
+      <mat-divider></mat-divider>
         <table class="table table-striped">
             <thead>
                 <tr>

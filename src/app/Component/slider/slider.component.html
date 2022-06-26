@@ -1,27 +1,23 @@
-<!-- <form #f="ngForm" (ngSubmit)="onSubmitForm(f)">
-</form>
-<h1>File uploader</h1>
-<input type="file" name="myFile" (change)="fileEvent($event)">
-
-<button type="button" id="f" class="btn btn-primary">Upload</button> -->
-
-<!-- <label>
-    <input
-      type="file"
-      class="text-nowrap text-truncate"
-      (change)="selectedFiles($event)"
-    />
-  </label>
-<button class="btn btn-success btn-sm" [disabled]="!selectedFiles" (click)="upload()"> -->
-<!-- 
-Upload
-</button>
-<div *ngIf="currentFileUpload" class="progress mt-2">
-    <div class="progress-bar progress-bar-info" role="progressbar" attr.aria-valuenow="{{ percentage }}" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{ width: percentage + '%' }">
-        {{ percentage }}%
+<!-- <form [formGroup]="loginForm" action="form.php" method="post" class="forms" id="main">
+    <div class="form-group" style="padding: 9px;">
+        <label for="Email1">Email address</label>
+        <input formControlName="email" type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
-</div> -->
-
-
-<!-- <angular-file-uploader [config]="afuConfig" [resetUpload]=resetVar (fileSelected)="fileSelected($event)" (ApiResponse)="docUpload($event)">
-</angular-file-uploader> -->
+    <div class="form-group" style="padding: 9px;">
+        <label for="Password">Password</label>
+        <input formControlName="password" type="password" class="form-control" id="InputPassword" placeholder="Password">
+    </div>
+    <div class="form-group" style="padding: 9px;">
+        <label for="Password">confirm password</label>
+        <input formControlName="confirmpassword" type="password" class="form-control" id="InputPassword" placeholder="Password">
+    </div>
+    <div class="form-group" style="padding: 9px;">
+        <label for="file">Upload image</label>
+        <input formControlName="file" type="file" class="form-control" id="InputFile" placeholder="upload file">
+    </div>
+    <p>
+        <button type="submit" (click)="Login()" style="padding: 10px; text-align: center;" class="btn btn-primary">Login</button> <br>
+    </p>
+    <a routerLink="/create" id="a" style="margin: 20px;">Don't have an account? Click to Register</a>
+</form> -->
