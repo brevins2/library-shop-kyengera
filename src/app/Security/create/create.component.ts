@@ -44,7 +44,7 @@ export class CreateComponent implements OnInit {
     this.alerts = false;
   }
 
-  // for notifications
+  // for notifications next upgrade
   // subscribeToNotifications() {
   //   this.swPush.requestSubscription({
   //       serverPublicKey: this.VAPID_PUBLIC_KEY
