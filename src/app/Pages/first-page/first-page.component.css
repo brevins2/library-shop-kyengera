@@ -2,14 +2,10 @@
     background-color: white;
 }
 
-
-/* carousel details */
-
-
-/* .carousel-div {
-    width: 100%;
-    margin-bottom: 2%;
-} */
+a:hover {
+    text-decoration: none;
+    size: +5%;
+}
 
 .mat-parent-small {
     width: 100%;
@@ -24,11 +20,6 @@
     margin-left: 3%;
     height: 20%;
 }
-
-
-/* .carousel {
-    width: 100%;
-} */
 
 .example-card {
     height: 30%;
@@ -104,6 +95,12 @@ body {
     font-size: 10px;
     color: black;
     margin: .5%;
+}
+
+.row .col:hover {
+    width: 25%;
+    font-size: 15px;
+    color: black;
 }
 
 .card-body {

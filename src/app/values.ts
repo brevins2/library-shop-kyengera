@@ -1,4 +1,4 @@
-import { ComputerAccess, Movies, Phones, slider, User } from './interfaces';
+import { ComputerAccess, Phones, User } from './interfaces';
 
 export const phones: Phones[] = [
     {
@@ -33,27 +33,6 @@ export const compAccess: ComputerAccess[] = [
         "Category": "New",
         "Price": 70000,
         "File": "images.jpg"
-    }
-]
-
-export const images: slider[]=[
-    {
-        "File": "Kin.jpg"
-    },
-    {
-        "File": "Spider.jpg"
-    },
-    {
-        "File": "youth.jpg"
-    },
-    {
-        "File": "Fate.jpg"
-    },
-    {
-        "File": "Nikita.jpg"
-    },
-    {
-        "File": "Kin.jpg"
     }
 ]
 

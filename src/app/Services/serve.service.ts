@@ -82,20 +82,20 @@ export class ServeService {
    // for orders
    private urlOrder ="http://localhost:8080/cmj_entertainment/orders";
 
-    getTaskUser(): Observable<User[]>{
+    getTaskOrders(): Observable<User[]>{
        return this.http.get<any>(this.urlOrder);
     }
 
-    getCurrentUserData(id: number){
+    getCurrentOrderData(id: number){
        return this.http.get(`${this.urlOrder}/${id}`);
     }
 
-    deleteUser(use: User): Observable<User>{
+    deleteOrder(use: User): Observable<User>{
         const url = `${this.urlOrder}/${use.id}`;
         return this.http.delete<User>(url);
     }
 
-    updateUser(id: any, use: { id: any; }){
+    updateOrder(id: any, use: { id: any; }){
         const url = `${this.urlOrder}/${id}`;
         return this.http.put(url, use);
     }

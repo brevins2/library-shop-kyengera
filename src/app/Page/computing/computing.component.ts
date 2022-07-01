@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ComputerAccess, Movies } from 'src/app/interfaces';
+import { ComputerAccess } from 'src/app/interfaces';
 import { ServeService } from 'src/app/Services/serve.service';
 import { compAccess } from 'src/app/values';
 import { AddComputerComponent } from '../add-computer/add-computer.component';
@@ -41,9 +41,9 @@ export class ComputingComponent implements OnInit {
     private Serve: ServeService,
     private dialogRef: MatDialog,
     private router: Router,
-    private modalService: NgbModal,    
+    private modalService: NgbModal,
     private serve: ServeService,
-    private route: ActivatedRoute) { 
+    private route: ActivatedRoute) {
     console.log(this.compute);
   }
 
