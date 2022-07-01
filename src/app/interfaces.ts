@@ -1,12 +1,3 @@
-export interface Movies{
-    id?: number;
-    Title: string;
-    Cartegory: string;
-    Amount: number;
-    Rating: string;
-    File: string;
-}
-
 export interface Phones{
     id?: number;
     Title: string;
@@ -24,14 +15,27 @@ export interface ComputerAccess{
     File: string;
 }
 
-export interface slider{
-    File: string;
-}
-
 export interface User{
     id?: number;
-    email: string
+    email: string;
     password: string;
     confirmPassword: string;
     check: boolean;
+}
+
+export interface Order{
+    id?: number;
+    Message: string;
+    Title: string;
+    Battery: string;
+    Price: string;
+    Brand: string;
+    Storage: string;
+    delivered: boolean;
+}
+
+export interface Messages{
+    id?: number;
+    Email: string;
+    Message: string;
 }

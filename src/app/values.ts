@@ -1,39 +1,5 @@
 import { ComputerAccess, Movies, Phones, slider, User } from './interfaces';
 
-export const movies: Movies[] = [
-    {
-        "id": 1,
-        "Title": "Prison Break",
-        "Cartegory": "Series",
-        "Amount": 2000,
-        "Rating": "PG-12",
-        "File": "RN.jpg"
-    },
-    {
-        "id": 2,
-        "Title": "Home Alone",
-        "Cartegory": "Family",
-        "Amount": 1500,
-        "Rating": "PG-13",
-        "File": "Martial.jpg"
-    }, {
-        "id": 3,
-        "Title": "Prison Break",
-        "Cartegory": "Series",
-        "Amount": 2000,
-        "Rating": "PG-12",
-        "File": "RN.jpg"
-    },
-    {
-        "id": 4,
-        "Title": "Home Alone",
-        "Cartegory": "Family",
-        "Amount": 1500,
-        "Rating": "PG-13",
-        "File": "Kin.jpg"
-    }
-]
-
 export const phones: Phones[] = [
     {
         "id": 1,
