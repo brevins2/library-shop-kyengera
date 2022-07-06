@@ -2,12 +2,12 @@
     <!-- Intro settings -->
     <style>
         /* Default height for small devices */
-        
+
         #intro-example {
             height: 400px;
         }
         /* Height for devices larger than 992px */
-        
+
         @media (min-width: 992px) {
             #intro-example {
                 height: 600px;
@@ -20,7 +20,7 @@
             <div mdbCollapse #backgroundImageExample3="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
                 <input type="search" class="form-control" id="search-input-sidenav" id="search" name="search" placeholder="Search for Phones, mouse, keyboards, fans, cables, flash....">&nbsp;
                 <!--  {{filter_expression | filter : expression : comparator : anyPropertyKey}}/ -->
-                <button class="btn btn-primary" (click)="search()">Search</button>
+                <button class="btn btn-primary" id="btnSearch" (click)="search()">Search</button>
             </div>
         </div>
     </nav>

@@ -2,7 +2,6 @@ body {
     display: flex;
     width: 100%;
     padding: 10px;
-    background-color: rgb(246, 244, 240);
 }
 
 mat-parent-small {
@@ -23,6 +22,11 @@ nav {
 
 #search {
     width: 80%;
+    font-size: 1.5rem;
+}
+
+#btnSearch{
+    font-size: 1.5rem;
 }
 
 .accounts {
@@ -53,9 +57,15 @@ nav {
 }
 
 .row .col {
-    width: 32%;
+    width: 30%;
     font-size: 13px;
     color: black;
+    margin: 1% 1% 1% 1%;
+}
+
+.row .col:hover {
+    text-decoration: none;
+    width: 32%;
 }
 
 carousel {
@@ -71,11 +81,11 @@ slide {
 }
 
 .cart {
-    width: 80%;
+    width: 85%;
     margin: 0% 5% 5% 7%;
     background-color: rgb(3, 120, 237);
     border: 2px solid rgb(3, 120, 237);
-    font-size: .1rem;
+    font-size: 1.2rem;
     text-align: left;
     color: white;
 }
