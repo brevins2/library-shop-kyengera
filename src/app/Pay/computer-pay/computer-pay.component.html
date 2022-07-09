@@ -79,6 +79,7 @@
                     <div class="butt">
                         <button class="btn btn-primary" (click)="order()">Order</button>
                         <button class="btn btn-danger" (click)="cancel()">Cancel</button>
+                        <button class="btn btn-info"><i class="fa fa-paypal"></i>PayPal</button>
                     </div>
 
                 </div>
@@ -87,7 +88,7 @@
     </div>
 </body>
 
-<!-- <div class="row row-cols-1 row-cols-md-3 g-2 flex-wrap">
+<div class="row row-cols-1 row-cols-md-3 g-2 flex-wrap">
     <a class="col" *ngFor="let com of comp" routerLink="/comp-pay/{{com.id}}">
         <div class="card h-100">
             <img [src]=" '../../../../../assets/image/computers/'+ com.File" class="card-img-top">
@@ -106,7 +107,7 @@
             </div>
         </div>
     </a>
-</div> -->
+</div>
 <mat-divider></mat-divider>
 
 <nav class="navLast">

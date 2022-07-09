@@ -2,12 +2,12 @@
     <!-- Intro settings -->
     <style>
         /* Default height for small devices */
-        
+
         #intro-example {
             height: 400px;
         }
         /* Height for devices larger than 992px */
-        
+
         @media (min-width: 992px) {
             #intro-example {
                 height: 600px;
@@ -23,13 +23,11 @@
                 <input type="text" [(ngModel)]="searchText" class="form-control" id="search-input-sidenav search" name="search" placeholder="Search for Phones, mouse, keyboards, fans, cables, flash....">
                 <button class="btn btn-primary" (click)="search(_filterText)">Search</button>
             </div>
-            <!--  (click)="search()" -->
         </div>
     </nav>
     <br/>
 </header>
 <mat-card class="mat-parent-small">
-
     <body>
         <div class="row row-cols-1 row-cols-md-3 g-2 flex-wrap">
             <a class="col" *ngFor="let com of comp" routerLink="/comp-pay/{{com.id}}">

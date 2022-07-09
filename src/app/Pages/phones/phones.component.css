@@ -22,11 +22,11 @@ nav {
 
 #search {
     width: 80%;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 #btnSearch{
-    font-size: 1.5rem;
+    font-size: .9rem;
 }
 
 .accounts {
@@ -85,7 +85,7 @@ slide {
     margin: 0% 5% 5% 7%;
     background-color: rgb(3, 120, 237);
     border: 2px solid rgb(3, 120, 237);
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: left;
     color: white;
 }

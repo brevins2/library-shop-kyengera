@@ -27,15 +27,15 @@
     </div>
 </nav>
 
-
+<body>
 <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
-    <strong>Success !</strong> Log in successful !.
-    <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
+  <strong>Success !</strong> Log in successful !.
+  <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
 </div>
 
-<body class="d-flex">
+<div class="d-flex p-2">
     <div class="side">
         <form [formGroup]="buyPhone" class="form-control">
             <img formControlName="File" src="../../../../../assets/image/phones/File" title="Phone" aria-label="image of product" alt="Image of Phone">
@@ -78,36 +78,37 @@
                 <div class="butt">
                     <button class="btn btn-primary" (click)="save()"><i class="fa fa-shopping"></i>Order</button>&nbsp;
                     <button class="btn btn-danger" (click)="cancel()">Cancel</button>&nbsp;
-                    <button class="btn btn-info"><i class="fa fa-paypal"></i></button>
+                    <button class="btn btn-info"><i class="fa fa-paypal"></i>PayPal</button>
                 </div>
             </form>
     </div>
+</div>
+
+    <div class="more-items">
+      <div class="row row-cols-1 row-cols-md-3 g-2">
+        <a class="col" *ngFor="let phon of api" routerLink="/phon-pay/{{phon.id}}">
+          <div class="card h-100" *ngIf="phon.Brand == phon.Brand">
+            <img [src]="'../../../../../assets/image/phones/'+ phon.File" class="card-img-top" />
+            <div class="card-body">
+              <h5 class="card-title">{{phon.Title}}</h5>
+              <p class="card-text">
+                {{phon.Storage}}
+                <br>{{phon.Price}}
+                <br>{{phon.Battery}}
+              </p>
+            </div>
+            <div class="btn cart">
+              <i class="fa fa-cart-plus"></i>&nbsp;Buy
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">{{phon.Brand}}</small>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
 </body>
 
-
-<!-- <div class="more-items">
-    <div class="row row-cols-1 row-cols-md-3 g-2">
-        <a class="col" *ngFor="let phon of api" routerLink="/phon-pay/{{phon.id}}">
-            <div class="card h-100" *ngIf="phon.Brand == phon.Brand">
-                <img [src]="'../../../../../assets/image/phones/'+ phon.File" class="card-img-top" />
-                <div class="card-body">
-                    <h5 class="card-title">{{phon.Title}}</h5>
-                    <p class="card-text">
-                        {{phon.Storage}}
-                        <br>{{phon.Price}}
-                        <br>{{phon.Battery}}
-                    </p>
-                </div>
-                <div class="btn cart">
-                    <i class="fa fa-cart-plus"></i>&nbsp;Buy
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted">{{phon.Brand}}</small>
-                </div>
-            </div>
-        </a>
-    </div>
-</div> -->
 
 <br>
 <mat-divider></mat-divider>

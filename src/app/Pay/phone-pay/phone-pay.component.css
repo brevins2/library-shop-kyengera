@@ -1,3 +1,10 @@
+body {
+    display: block;
+    width: 100%;
+    padding: 10px;
+}
+
+
 /* button icon */
 .power {
     color: red;
@@ -12,12 +19,6 @@
     height: 100%;
 }
 
-body {
-    display: flex;
-    width: 100%;
-    padding: 10px;
-}
-
 mat-parent-small {
     padding: 0px;
     border: -1px;
@@ -26,6 +27,7 @@ mat-parent-small {
 nav {
     text-align: center;
     width: 100%;
+    background-color: white;
 }
 
 #backgroundImageExample2 {
@@ -65,9 +67,10 @@ nav {
 }
 
 .row .col {
-    width: 32%;
+    width: 30%;
     font-size: 13px;
     color: black;
+    margin: 1%;
 }
 
 .cart {
@@ -75,19 +78,19 @@ nav {
     margin: 0% 5% 5% 7%;
     background-color: rgb(3, 120, 237);
     border: 2px solid rgb(3, 120, 237);
-    font-size: .1rem;
+    font-size: .9rem;
     text-align: left;
     color: white;
 }
 
 /* transaction button */
 .butt {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .butt button {
     height: 15%;
-    width: 10%;
+    width: 15%;
 }
 
 /* item under transaction */

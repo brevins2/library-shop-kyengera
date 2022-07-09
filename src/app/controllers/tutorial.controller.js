@@ -4,7 +4,8 @@ const Tutorial = db.tutorials;
 const Op = db.Sequelize.Op;
 
 // create and Save a new Tutorial
-exports.findAll = (req, res) => {
+exports.create = (req, res) => {
+
 };
 
 //Retrieve all Tutorials from the database.

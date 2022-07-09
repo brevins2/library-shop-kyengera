@@ -80,7 +80,7 @@ export class ServeService {
    }
 
    // for orders
-   private urlOrder ="http://localhost:8080/cmj_entertainment/orders";
+   private urlOrder ="http://localhost:1080/cmj_entertainment/orders";
 
     getTaskOrders(): Observable<User[]>{
        return this.http.get<any>(this.urlOrder);

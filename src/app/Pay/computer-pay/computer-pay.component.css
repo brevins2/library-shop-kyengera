@@ -1,47 +1,9 @@
-.back-style {
-    background-color: white;
-}
-
-.mat-parent-small {
-    width: 100%;
-}
-
-#carousel-slider {
-    width: 100%;
-}
-
-.services {
-    width: 25%;
-    margin-left: 3%;
-    height: 20%;
-}
-
-.example-card {
-    height: 30%;
-}
-
-#nav-card {
-    background-color: blue;
-}
-
-
 /* button icon */
-
-.service {
-    color: green;
-}
-
-.products {
-    color: blue;
-}
-
 .power {
     color: red;
 }
 
-
 /* more phones */
-
 .more-items {
     display: flex;
     margin-top: 2%;
@@ -53,7 +15,6 @@ body {
     display: flex;
     width: 100%;
     padding: 10px;
-    background-color: rgb(246, 244, 240);
 }
 
 mat-parent-small {
@@ -64,33 +25,7 @@ mat-parent-small {
 nav {
     text-align: center;
     width: 100%;
-}
-
-#backgroundImageExample2 {
-    width: 100%;
-    display: flex;
-}
-
-#search {
-    width: 80%;
-}
-
-.accounts {
-    margin-left: 14%;
-    float: right;
-}
-
-#createBtn {
-    margin-right: 2px;
-}
-
-#navbars {
-    background-color: rgb(252, 252, 252);
-    height: 20%;
-}
-
-.container-fluid {
-    display: flex;
+    background-color: white;
 }
 
 .card-title {
@@ -100,24 +35,14 @@ nav {
 
 .row {
     width: 100%;
+    padding: .5%;
 }
 
 .row .col {
-    width: 32%;
+    width: 30%;
     font-size: 13px;
     color: black;
-}
-
-carousel {
-    width: 100%;
-    padding: 0px;
-    margin: 0px;
-    padding: 0px;
-    margin: 0px;
-}
-
-slide {
-    width: 100%;
+    margin: 1%;
 }
 
 .cart {
@@ -125,7 +50,18 @@ slide {
     margin: 0% 5% 5% 7%;
     background-color: rgb(3, 120, 237);
     border: 2px solid rgb(3, 120, 237);
-    font-size: .1rem;
+    font-size: .9rem;
     text-align: left;
     color: white;
+}
+
+/* transaction button */
+.butt {
+    font-size: 1.5rem;
+}
+
+.butt button {
+    margin: .2%;
+    height: 15%;
+    width: 15%;
 }

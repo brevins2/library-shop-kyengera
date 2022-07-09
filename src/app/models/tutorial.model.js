@@ -86,6 +86,13 @@ module.exports = (sequelize, Sequelize) => {
        }
    });
 
+   const Delivered = sequelize.define("delivered", {
+          deliver: {
+            type: Sequelize.BOOLEAN
+          }
+   });
+
+  return Delivered;
   return Message;
   return Orders;
   return Computers;
