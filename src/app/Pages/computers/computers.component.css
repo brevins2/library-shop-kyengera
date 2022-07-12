@@ -56,17 +56,15 @@ nav {
     display: flex;
 }
 
+/* search style */
 #search {
     width: 80%;
+    font-size: 1rem;
 }
 
 .accounts {
     margin-left: 14%;
     float: right;
-}
-
-#createBtn {
-    margin-right: 2px;
 }
 
 .cart {

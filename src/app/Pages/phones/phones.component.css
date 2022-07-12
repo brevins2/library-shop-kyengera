@@ -25,31 +25,13 @@ nav {
     font-size: 1rem;
 }
 
-#btnSearch{
-    font-size: .9rem;
-}
-
 .accounts {
     margin-left: 14%;
     float: right;
 }
 
-#createBtn {
-    margin-right: 2px;
-}
-
-#navbars {
-    background-color: rgb(252, 252, 252);
-    height: 20%;
-}
-
 .container-fluid {
     display: flex;
-}
-
-.card-title {
-    font-size: 14px;
-    font-weight: bold;
 }
 
 .row {
@@ -66,18 +48,6 @@ nav {
 .row .col:hover {
     text-decoration: none;
     width: 32%;
-}
-
-carousel {
-    width: 100%;
-    padding: 0px;
-    margin: 0px;
-    padding: 0px;
-    margin: 0px;
-}
-
-slide {
-    width: 100%;
 }
 
 .cart {

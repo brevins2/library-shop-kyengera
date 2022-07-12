@@ -29,6 +29,11 @@ a:hover {
     background-color: blue;
 }
 
+mat-menu button:hover {
+    border-top: 2px solid orange;
+    color: orange;
+}
+
 
 /* button icon */
 
@@ -114,7 +119,6 @@ body {
 
 
 /* form contact */
-
 .contact {
     margin: 3%;
 }
