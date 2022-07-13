@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient,HttpRequest, HttpEvent, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ComputerAccess, Phones, User, Order, Messages } from '../interfaces';
@@ -101,4 +101,19 @@ export class ServeService {
     }
 
    // for messages
+
+
+   // for image uploads
+   upload(file: File): Observable<HttpEvent<any>> {
+       const formData: FormData = new FormData();
+       formData.append('file', file);
+       const req = new HttpRequest('POST', `${this.baseUrl}/upload`, formData, {
+         reportProgress: true,
+         responseType: 'json'
+       });
+       return this.http.request(req);
+     }
+     getFiles(): Observable<any> {
+       return this.http.get(`${this.baseUrl}/files`);
+    }
 }

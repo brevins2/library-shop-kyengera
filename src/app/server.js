@@ -7,23 +7,20 @@ var corsOptions ={
 
 app.use(cors(corsOptions));
 const db = require("../app/models");
-//db.sequelize.sync();
 db.sequelize.sync({ force: false }).then(() => {
   console.log("~Drop and re-sync db.");
 });
 
 app.use(cors(corsOptions));
+
 // parse requests of content-type-application/json
-
 app.use(express.json());
+
 // parse requests of content-type-application/x-www-form-urlencoded
-
 app.use(express.urlencoded({extended: true}));
-// simple route
 
-app.get("/api/messages", (req, res) => {
-  res.json({ message: "Welcome to CMJ entertainment web application"});
-});
+// simple route use
+require("./app/routes/turorial.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
