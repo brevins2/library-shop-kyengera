@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ServeService } from 'src/app/Services/serve.service';
 import { HttpClient } from '@angular/common/http';
 import { FormControl, FormGroup } from '@angular/forms';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 export class Api{
   constructor(
@@ -33,8 +34,13 @@ export class ComputerPayComponent implements OnInit{
   });
   comp: Api[] = [];
   _filterText: string= "";
+  closeResult = '';
 
-  constructor(private router: ActivatedRoute, private route: Router, private service: ServeService, private http: HttpClient) { }
+  constructor(private router: ActivatedRoute,
+  private route: Router,
+  private service: ServeService,
+  private http: HttpClient,
+  private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.service.getCurrentComputerData(this.router.snapshot.params['id']).subscribe((result: any)=>{
@@ -48,10 +54,24 @@ export class ComputerPayComponent implements OnInit{
         File: new FormControl(result['File'])
       });
     });
+     this.service.getCurrentComputerData(this.router.snapshot.params['Brand']).subscribe((result: any)=>{
+          console.log(result);
+          this.buyComputer = new FormGroup({
+            id: new FormControl(result['id']),
+            Title: new FormControl(result['Title']),
+            Price: new FormControl(result['Price']),
+            Category: new FormControl(result['Category']),
+            Message: new FormControl(result['Message']),
+            File: new FormControl(result['File'])
+          });
+        });
     this.getApi(this._filterText);
   }
 
   getApi(filterTerm: string){
+   this.service.getCurrentComputerData(this.router.snapshot.params['Brand']).subscribe((result: any)=>{
+        console.log(result);
+      });
     this.http.get<any>('http://localhost:3000/Computers').subscribe(response=>
     // port for mysql database to store at 3306
       {
@@ -70,7 +90,7 @@ export class ComputerPayComponent implements OnInit{
   logout(){
     this.route.navigate(['login']);
   }
- 
+
   order(){
     this.http.post('http://localhost:3000/Orders', this.buyComputer.value).subscribe(result =>{
       this.alert = true;
@@ -106,4 +126,23 @@ export class ComputerPayComponent implements OnInit{
       })
     }
   }
+
+  // open a modal for paypal
+  open(content: any) {
+      this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+        this.closeResult = `Closed with: ${result}`;
+      }, (reason) => {
+        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+      });
+  }
+
+  private getDismissReason(reason: any): string {
+      if (reason === ModalDismissReasons.ESC) {
+        return 'by pressing ESC';
+      } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+        return 'by clicking on a backdrop';
+      } else {
+        return `with: ${reason}`;
+      }
+    }
 }

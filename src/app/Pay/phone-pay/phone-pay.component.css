@@ -85,12 +85,17 @@ nav {
 
 /* transaction button */
 .butt {
+    width: 73%;
+    border-radius: 2%;
     font-size: 1.5rem;
+    margin-left: 15%;
+    padding-left: 15%;
 }
 
 .butt button {
     height: 15%;
-    width: 15%;
+    width: 24%;
+    margin: 0% 0.1% 0.5% 0.1%;
 }
 
 /* item under transaction */
@@ -109,4 +114,10 @@ form {
     padding: 2% 2% 5% 2%;
     height: 100%;
     font-size: 1.5rem;
+}
+
+/* footer style */
+.navas {
+    padding-bottom: 5%;
+    padding-top: 1%;
 }

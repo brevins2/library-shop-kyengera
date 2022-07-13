@@ -324,6 +324,14 @@
       "Battery": "12000Amh",
       "Price": 450000,
       "delivered": false
+    },
+    {
+      "id": 2,
+      "Title": "CPU Cooler",
+      "Price": 70000,
+      "Category": "New",
+      "Message": null,
+      "File": "cpu cooler.jpg"
     }
   ],
   "Message": [

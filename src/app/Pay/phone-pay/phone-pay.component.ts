@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServeService } from 'src/app/Services/serve.service';
 import { FormGroup, FormBuilder, FormControl} from '@angular/forms';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 export class Api{
   constructor(
@@ -35,7 +36,13 @@ export class PhonePayComponent implements OnInit {
     Battery: new FormControl(''),
     Price: new FormControl('')
   });
-  constructor(private router: ActivatedRoute, private route: Router, private service: ServeService, private http: HttpClient) { }
+  // for a modal
+  closeResult = '';
+  constructor(private router: ActivatedRoute,
+  private route: Router,
+  private service: ServeService,
+  private http: HttpClient,
+  private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.getCurrentData();
@@ -67,7 +74,7 @@ export class PhonePayComponent implements OnInit {
         Battery: new FormControl(result['Battery']),
         Price: new FormControl(result['Price'])
       });
-      
+
       this.http.get<any>('http://localhost:3000/Phones').subscribe(
       response=>{
         this.api = response
@@ -93,4 +100,23 @@ export class PhonePayComponent implements OnInit {
   closeAlert(){
     this.alert = false;
   }
+
+   // open a modal for paypal
+    open(content: any) {
+        this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+          this.closeResult = `Closed with: ${result}`;
+        }, (reason) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        });
+    }
+
+    private getDismissReason(reason: any): string {
+        if (reason === ModalDismissReasons.ESC) {
+          return 'by pressing ESC';
+        } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+          return 'by clicking on a backdrop';
+        } else {
+          return `with: ${reason}`;
+        }
+    }
 }

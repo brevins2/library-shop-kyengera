@@ -43,7 +43,7 @@
     </div>
     <div class="content container">
             <form [formGroup]="buyPhone" class="d-flex flex-column form-control">
-                <h1 class="text-warning">Buys Phones</h1>
+                <h1 class="text-warning">Order a Phone</h1>
                 <div class="form-row">
                     <div class="form-group col-md-6" id="title">
                         <label for="Name">Title</label>
@@ -75,10 +75,12 @@
                 </address>
                 </div>
                 <br>
-                <div class="butt">
-                    <button class="btn btn-primary" (click)="save()"><i class="fa fa-shopping"></i>Order</button>&nbsp;
-                    <button class="btn btn-danger" (click)="cancel()">Cancel</button>&nbsp;
-                    <button class="btn btn-info"><i class="fa fa-paypal"></i>PayPal</button>
+                <div class="fixed-bottom butt">
+                    <button class="btn btn-lg btn-primary" (click)="save()"><i class="fa fa-shopping"></i>Order</button>&nbsp;
+                    <button class="btn btn-lg btn-danger" (click)="cancel()">Cancel</button>&nbsp;
+                  <button class="btn btn-lg btn-info" (click)="open(content)">
+                    <i class="fa fa-paypal"></i>PayPal
+                  </button>
                 </div>
             </form>
     </div>
@@ -87,13 +89,13 @@
     <div class="more-items">
       <div class="row row-cols-1 row-cols-md-3 g-2">
         <a class="col" *ngFor="let phon of api" routerLink="/phon-pay/{{phon.id}}">
-          <div class="card h-100" *ngIf="phon.Brand == phon.Brand">
+          <div class="card h-100">
             <img [src]="'../../../../../assets/image/phones/'+ phon.File" class="card-img-top" />
             <div class="card-body">
               <h5 class="card-title">{{phon.Title}}</h5>
               <p class="card-text">
                 {{phon.Storage}}
-                <br>{{phon.Price}}
+                <br>Sh. {{phon.Price}}
                 <br>{{phon.Battery}}
               </p>
             </div>
@@ -108,6 +110,13 @@
       </div>
     </div>
 </body>
+
+<!-- Button trigger modal -->
+<ng-template #content let-modal>
+  <body>
+  <ngx-paypal></ngx-paypal>
+  </body>
+</ng-template>
 
 
 <br>

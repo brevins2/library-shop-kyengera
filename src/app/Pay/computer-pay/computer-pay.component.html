@@ -35,7 +35,8 @@
     </button>
 </div>
 
-<body>
+<body class="flex-block">
+<div class="d-flex">
     <div class="side">
         <!-- buyComputer.controls['File'].value -->
         <form [formGroup]="buyComputer" class="form-control">
@@ -46,9 +47,7 @@
         <form [formGroup]="buyComputer" id="styled" (ngSubmit)="order()" class="form-control">
             <div class="container">
                 <div class="input">
-
-                    <h1>Buy Computer Accessory</h1>
-
+                    <h1 class="text-warning">Order a Computer Accessory</h1>
                     <div class="form-row">
                         <div class="form-group col-md-6" id="title">
                             <label for="Title">Title</label>
@@ -76,40 +75,52 @@
                     </address>
                     </div>
                     <br>
-                    <div class="butt">
-                        <button class="btn btn-primary" (click)="order()">Order</button>
-                        <button class="btn btn-danger" (click)="cancel()">Cancel</button>
-                        <button class="btn btn-info"><i class="fa fa-paypal"></i>PayPal</button>
+                    <div class="fixed-bottom butt">
+                        <button class="btn btn-lg btn-primary" (click)="order()">Order</button>
+                        <button class="btn btn-lg btn-danger" (click)="cancel()">Cancel</button>
+                         <button class="btn btn-lg btn-info" (click)="open(content)">
+                          <i class="fa fa-paypal"></i>PayPal
+                        </button>
                     </div>
 
                 </div>
             </div>
         </form>
     </div>
+</div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-2">
+      <a class="col" *ngFor="let com of comp" routerLink="/comp-pay/{{com.id}}">
+        <div class="card h-100">
+          <img [src]=" '../../../../../assets/image/computers/'+ com.File" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">{{com.Title}}</h5>
+            <p class="card-text">
+              {{com.Category}}
+              <br>Sh. {{com.Price}}
+              <!--  | currency -->
+            </p>
+          </div>
+          <div class="btn cart">
+            <i class="fa fa-cart-plus"></i>&nbsp;Order
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">{{com.Title}}</small>
+          </div>
+        </div>
+      </a>
+    </div>
 </body>
 
-<div class="row row-cols-1 row-cols-md-3 g-2 flex-wrap">
-    <a class="col" *ngFor="let com of comp" routerLink="/comp-pay/{{com.id}}">
-        <div class="card h-100">
-            <img [src]=" '../../../../../assets/image/computers/'+ com.File" class="card-img-top">
-            <div class="card-body">
-                <h5 class="card-title">{{com.Title}}</h5>
-                <p class="card-text">
-                    {{com.Category}}
-                    <br>{{com.Price | currency}}
-                </p>
-            </div>
-            <div class="btn cart">
-                <i class="fa fa-cart-plus"></i>&nbsp;Order
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">{{com.Title}}</small>
-            </div>
-        </div>
-    </a>
-</div>
-<mat-divider></mat-divider>
+<!-- Button trigger modal -->
+<ng-template #content let-modal>
+    <body>
+      <ngx-paypal></ngx-paypal>
+    </body>
+</ng-template>
 
-<nav class="navLast">
+<br>
+<mat-divider></mat-divider>
+<nav class="navas">
     &copy; copy rights reserved
 </nav>

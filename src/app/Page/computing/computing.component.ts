@@ -73,6 +73,7 @@ export class ComputingComponent implements OnInit {
     this.router.navigate(['/add computer']);
   }
 
+// open modal to add a computer accessory
   open(content: any) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
@@ -128,10 +129,6 @@ export class ComputingComponent implements OnInit {
 
   cancel(){
     this.router.navigate(['/admin/computer']);
-    // this.http.delete<any>('http://localhost/3000/Computers')
-    // .subscribe(res=>{
-    //   this.addComputer.value;
-    // });
   }
 
   search(){}
