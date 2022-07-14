@@ -14,7 +14,7 @@ export class FileUploadComponent implements OnInit {
   currentFile?: File;
   progress = 0;
   message = '';
-  fileInfos?: Observable<any>;
+  fileInfos?: any;
   constructor(private http: HttpClient, private uploadService: ServeService) { }
 
   ngOnInit(): void {
