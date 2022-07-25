@@ -8,7 +8,7 @@ nav {
 }
 
 .button-nav button a {
-    color: white;
+    color: black;
 }
 
 .button-nav button:hover {
@@ -19,14 +19,11 @@ nav {
 
 .button-nav button a:hover {
     color: orange;
+    text-decoration: none;
 }
 
 .button-nav button {
     height: 70px;
-}
-
-.collapse {
-    align-items: center;
 }
 
 #search {
@@ -47,11 +44,10 @@ nav {
 .example-sidenav-content {
     display: flex;
     height: 100%;
-    align-items: center;
-    justify-content: center;
 }
 
 .example-sidenav {
     width: 20%;
     padding: 20px;
+    background-color: #ebe6de;
 }

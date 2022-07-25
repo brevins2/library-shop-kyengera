@@ -299,39 +299,12 @@
   ],
   "Orders": [
     {
-      "id": 3,
-      "Message": "Kyengera Town, Wakiso 0755113122, kiggundubrevin@gmail.com",
+      "id": 1,
+      "Message": "Nsangi Wakiso 0705388525",
       "Title": "Infinix Note i",
       "Storage": "64GB, 3GB RAM",
       "Battery": "10000Amh",
-      "Price": 500000,
-      "delivered": true
-    },
-    {
-      "id": 5,
-      "Title": "Flash Disk",
-      "Price": 80000,
-      "Category": "24GB New",
-      "Message": "Kibuye, Kampala 0777980098 buyer@gmail.com",
-      "File": "flash disk.jpg",
-      "delivered": true
-    },
-    {
-      "id": 6,
-      "Message": "Musoke Nathan \nKyengera Town, 088888065\nmusoke@gmail.com",
-      "Title": "iPhone 13",
-      "Storage": "64GB, 4GB RAM",
-      "Battery": "12000Amh",
-      "Price": 450000,
-      "delivered": false
-    },
-    {
-      "id": 2,
-      "Title": "CPU Cooler",
-      "Price": 70000,
-      "Category": "New",
-      "Message": null,
-      "File": "cpu cooler.jpg"
+      "Price": 500000
     }
   ],
   "Message": [

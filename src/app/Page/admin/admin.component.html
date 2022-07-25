@@ -31,13 +31,13 @@
 
 <body>
     <mat-drawer-container class="example-container" autosize>
-        <mat-drawer #drawer class="example-sidenav bg-primary text-white" mode="side">
-            <div class="d-flex flex-column align-items-left button-nav">
+        <mat-drawer #drawer class="example-sidenav text-black" mode="side">
+            <div class="d-flex flex-column align-items-left button-nav text-black">
                 <!-- user Icons -->
                 <button mat-button>
                     <a class="d-flex justify-content-between" routerLink="user">
                         <i class="fa fa-users service align-middle d-flex justify-content-start"></i>
-                        <span class="d-flex text-left justify-content-end">User</span>
+                        <span class="d-flex text-right justify-content-end">User</span>
                     </a>
                  </button>
                 <mat-divider></mat-divider>
@@ -55,8 +55,9 @@
 
                 <!-- computer accessories Icons -->
                 <button mat-button>
-                    <a class="d-flex justify-content-between" routerLink="computer">
+                    <a class="d-flex" routerLink="computer">
                         <i class="fa fa-desktop power align-middle d-flex justify-content-start"></i>
+                      &nbsp;&nbsp;
                         <span class="d-flex text-left justify-content-end">Accessories</span>
                     </a>
                 </button>

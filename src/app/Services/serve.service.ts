@@ -101,7 +101,29 @@ export class ServeService {
     }
 
    // for messages
+    private urlMessage ="http://localhost:8080/api/messages";
 
+    getTaskMessages(): Observable<User[]>{
+       return this.http.get<any>(this.urlMessage);
+    }
+
+    getCurrentMessagesData(id: number){
+       return this.http.get(`${this.urlMessage}/${id}`);
+    }
+
+    postCurrentMessagesData(id: number){
+       return this.http.get(`${this.urlMessage}/${id}`);
+    }
+
+    deleteMessages(use: User): Observable<User>{
+        const url = `${this.urlMessage}/${use.id}`;
+        return this.http.delete<User>(url);
+    }
+
+    updateMessages(id: any, use: { id: any; }){
+        const url = `${this.urlMessage}/${id}`;
+        return this.http.put(url, use);
+    }
 
    // for image uploads
    private baseUrl = "http:8080/images"
