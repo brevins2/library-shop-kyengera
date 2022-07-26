@@ -54,6 +54,11 @@ export class FirstPageComponent implements OnInit {
       name: [''],
       message: ['']
     });
+
+    this.http.get<any>("http://localhost:8080/api/messages").subscribe(result => {
+//         console.log(result);
+        console.log("great work")
+    });
   }
 
   getCurrentDatas(){

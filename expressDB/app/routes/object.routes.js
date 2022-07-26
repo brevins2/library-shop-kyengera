@@ -1,10 +1,5 @@
-module.exports = app => {
+module.exports = Phons => {
   const phones = require("../controllers/tutorial.controller.js");
-  const messages = require("../controllers/tutorial.controller.js");
-  const computers = require("../controllers/tutorial.controller.js");
-  const orders = require("../controllers/tutorial.controller.js");
-  const accounts = require("../controllers/tutorial.controller.js");
-  const images = require("../controllers/tutorial.controller.js");
   var router = require("express").Router();
 
   // for phones
@@ -23,6 +18,13 @@ module.exports = app => {
   // Delete all phone
   router.delete("/delete/phones", phones.deleteAll);
 
+  Phons.use('/api/phones', router);
+};
+
+module.exports = Mess => {
+  const messages = require("../controllers/tutorial.controller.js");
+  var router = require("express").Router();
+
   // for messages
   // Create a new Message
   router.post("/add/messages", messages.create);
@@ -38,6 +40,13 @@ module.exports = app => {
   router.delete("/delete-message/:id", messages.delete);
   // Delete all messages
   router.delete("/delete/messages", messages.deleteAll);
+
+  Mess.use('/api/messages', router);
+};
+
+module.exports = Comp => {
+  const computers = require("../controllers/tutorial.controller.js");
+  var router = require("express").Router();
 
   // for computers
   // Create a new Computers
@@ -55,6 +64,14 @@ module.exports = app => {
   // Delete all computer
   router.delete("/delete/computers", computers.deleteAll);
 
+  Comp.use('/api/computers', router);
+};
+
+
+module.exports = orda => {
+  const orders = require("../controllers/tutorial.controller.js");
+  var router = require("express").Router();
+
   // for orders
   // Create a new orders
   router.post("/add/orders", orders.create);
@@ -70,6 +87,13 @@ module.exports = app => {
   router.delete("/delete-order/:id", orders.delete);
   // Delete all order
   router.delete("/delete/orders", orders.deleteAll);
+
+  orda.use('/api/orders', router);
+};
+
+module.exports = acct => {
+  const accounts = require("../controllers/tutorial.controller.js");
+  var router = require("express").Router();
 
   // for accounts
   // Create a new account
@@ -87,6 +111,13 @@ module.exports = app => {
   // Delete all account
   router.delete("/delete/accounts", accounts.deleteAll);
 
+  acct.use('/api/orders', router);
+};
+
+module.exports = img => {
+  const images = require("../controllers/tutorial.controller.js");
+  var router = require("express").Router();
+
   // for images
   // Create a new image
   router.post("/add/image", images.create);
@@ -103,10 +134,5 @@ module.exports = app => {
   // Delete all image
   router.delete("/delete/images", images.deleteAll);
 
-  app.use('/api/accounts', router);
-  app.use('/api/computers', router);
-  app.use('/api/messages', router);
-  app.use('/api/phones', router);
-  app.use('/api/orders', router);
-  app.use('/api/images', router);
+  img.use('/api/images', router);
 };

@@ -20,6 +20,12 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 // simple route use
+app.get("/api/messages", (req, res) => {
+  res.json({ message: "Welcome to bezkoder application."});
+  res.json({ message: res});
+  console.log(res);
+});
+
 require("./app/routes/object.routes")(app);
 
 // set port, listen for requests
