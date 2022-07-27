@@ -23,6 +23,7 @@ body {
 }
 .row .col:hover {
     text-decoration: none;
+    font-size: 15px;
     width: 32%;
 }
 
