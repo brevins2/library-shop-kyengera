@@ -32,7 +32,27 @@ app.use(express.urlencoded({extended: true}));
 // simple route use
 app.get("/api/messages", (req, res) => {
   res.json({ message: "Welcome to bezkoder application."});
-  res.json({ message: res});
+  console.log(res);
+});
+app.get("/api/accounts", (req, res) => {
+  res.json({ message: "Welcome to bezkoder application."});
+  console.log(res);
+});
+app.get("/api/computers", (req, res) => {
+  res.json({ message: "Welcome to bezkoder application."});
+  console.log(res);
+});
+app.get("/api/phones", (req, res) => {
+  res.json({ message: "Welcome to bezkoder application."});
+  console.log(res);
+});
+app.get("/api/orders", (req, res) => {
+  res.json({ message: "Welcome to bezkoder application."});
+  console.log(res);
+});
+
+app.get("/api/images", (req, res) => {
+  res.json({ message: "Welcome to bezkoder application."});
   console.log(res);
 });
 
