@@ -15,5 +15,11 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD,{
 const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
-db.phones = require("./tutorial.model.js")(sequelize, Sequelize);
+db.Phones = require("./tutorial.model.js")(sequelize, Sequelize);
+db.Computers = require("./tutorial.model.js")(sequelize, Sequelize);
+db.Accounts = require("./tutorial.model.js")(sequelize, Sequelize);
+db.Orders = require("./tutorial.model.js")(sequelize, Sequelize);
+db.Messages = require("./tutorial.model.js")(sequelize, Sequelize);
+db.Delivered = require("./tutorial.model.js")(sequelize, Sequelize);
 module.exports = db;
+
