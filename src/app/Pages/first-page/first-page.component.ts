@@ -56,7 +56,7 @@ export class FirstPageComponent implements OnInit {
     });
 
     this.http.get<any>("http://localhost:8080/api/messages").subscribe(result => {
-//         console.log(result);
+        console.log(result);
         console.log("great work")
     });
   }

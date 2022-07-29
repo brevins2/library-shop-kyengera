@@ -32,6 +32,7 @@ app.use(express.urlencoded({extended: true}));
 // simple route use
 app.get("/api/messages", (req, res) => {
   res.json({ message: "Welcome to bezkoder application."});
+  console.log(req);
   console.log(res);
 });
 app.get("/api/accounts", (req, res) => {
