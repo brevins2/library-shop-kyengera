@@ -1,0 +1,60 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="16">
+            <item index="0" class="java.lang.String" itemvalue="mdbcollapse" />
+            <item index="1" class="java.lang.String" itemvalue="#backgroundimageexample3" />
+            <item index="2" class="java.lang.String" itemvalue="routerlink" />
+            <item index="3" class="java.lang.String" itemvalue="*ngfor" />
+            <item index="4" class="java.lang.String" itemvalue="[src]" />
+            <item index="5" class="java.lang.String" itemvalue="(click)" />
+            <item index="6" class="java.lang.String" itemvalue="[formgroup]" />
+            <item index="7" class="java.lang.String" itemvalue="formcontrolname" />
+            <item index="8" class="java.lang.String" itemvalue="mat-button" />
+            <item index="9" class="java.lang.String" itemvalue="*ngif" />
+            <item index="10" class="java.lang.String" itemvalue="[matmenutriggerfor]" />
+            <item index="11" class="java.lang.String" itemvalue="mat-menu-item" />
+            <item index="12" class="java.lang.String" itemvalue="mat-card-image" />
+            <item index="13" class="java.lang.String" itemvalue="(ngsubmit)" />
+            <item index="14" class="java.lang.String" itemvalue="[(ngmodel)]" />
+            <item index="15" class="java.lang.String" itemvalue="[ngstyle]" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="21">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="style" />
+            <item index="7" class="java.lang.String" itemvalue="mat-card" />
+            <item index="8" class="java.lang.String" itemvalue="mat-divider" />
+            <item index="9" class="java.lang.String" itemvalue="mat-menu" />
+            <item index="10" class="java.lang.String" itemvalue="mat-icon" />
+            <item index="11" class="java.lang.String" itemvalue="slide" />
+            <item index="12" class="java.lang.String" itemvalue="carousel" />
+            <item index="13" class="java.lang.String" itemvalue="app-footer" />
+            <item index="14" class="java.lang.String" itemvalue="router-outlet" />
+            <item index="15" class="java.lang.String" itemvalue="mat-drawer-container" />
+            <item index="16" class="java.lang.String" itemvalue="mat-drawer" />
+            <item index="17" class="java.lang.String" itemvalue="ng-template" />
+            <item index="18" class="java.lang.String" itemvalue="ngx-pay-pal" />
+            <item index="19" class="java.lang.String" itemvalue="ngx-paypal" />
+            <item index="20" class="java.lang.String" itemvalue="app-file-upload" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+  </profile>
+</component>
