@@ -45,6 +45,14 @@ nav {
     margin: 1%;
 }
 
+.row .col:hover {
+    width: 32%;
+    font-size: 15px;
+    color: black;
+    margin: 1%;
+    text-decoration: none;
+}
+
 .cart {
     width: 80%;
     margin: 0% 5% 5% 7%;
@@ -61,12 +69,19 @@ nav {
     border-radius: 2%;
     font-size: 1.5rem;
     margin-left: 15%;
-    padding-left: 15%;
 }
 
-.butt button {
-    width: 24%;
-    margin: 0% 0.2% 0.5% 0.2%;
+.butt button .btn-primary {
+    height: 15%;
+    width: 34%;
+    margin-bottom: 4%;
+}
+
+.butt button .btn-danger,
+.butt button .btn-info {
+    width: 15%;
+    height: 15%;
+    margin: 0% 0.1% 0.5% 0.1%;
 }
 
 /* item under transaction */
@@ -75,16 +90,18 @@ nav {
     height: 100%;
 }
 
-.content {
+.container {
     width: 73%;
     height: 100%;
+    margin-bottom: 3%;
 }
 
-form {
+#styled {
     display: block;
     padding: 2% 2% 0% 2%;
     height: 100%;
     font-size: 1.5rem;
+    padding-bottom: 4%;
 }
 
 .input {

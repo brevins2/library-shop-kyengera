@@ -48,13 +48,13 @@
                     <div class="input">
                         <h1 class="text-warning">Order a Computer Accessory</h1>
                         <div class="form-row">
-                            <div class="form-group col-md-6" id="title">
+                            <div class="form-group" id="title">
                                 <label for="Title">Title</label>
                                 <input formControlName="Title" type="text" class="form-control" id="inputTitle" placeholder="title">
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="form-group col-md-6" id="ids">
+                            <div class="form-group" id="ids">
                                 <div>
                                     <label for="Category">Category</label>
                                     <input formControlName="Category" type="text" class="form-control" id="inputCategory" placeholder="Category">
@@ -73,10 +73,10 @@
                         </address>
                         </div>
                         <br>
-                        <div class="fixed-bottom butt">
-                            <button class="btn btn-lg btn-primary" (click)="order()">Order</button>
-                            <button class="btn btn-lg btn-danger" (click)="cancel()">Cancel</button>
-                             <button class="btn btn-lg btn-info" (click)="open(content)">
+                        <div class="butt">
+                            <button class="btn btn-lg btn-primary fixed-bottom" (click)="order()">Order accessory</button>
+                            <button class="btn btn-danger" (click)="cancel()">Cancel order</button> &nbsp;
+                             <button class="btn btn-info" (click)="open(content)">
                               <i class="fa fa-paypal"></i>PayPal
                             </button>
                         </div>

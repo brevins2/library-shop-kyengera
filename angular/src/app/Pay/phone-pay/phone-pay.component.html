@@ -45,29 +45,29 @@
             <form [formGroup]="buyPhone" class="d-flex flex-column form-control">
                 <h1 class="text-warning">Order a Phone</h1>
                 <div class="form-row">
-                    <div class="form-group col-md-6" id="title">
-                        <label for="Name">Title</label>
+                    <div class="form-group" id="title">
+                        <label>Title</label>
                         <input formControlName="Title" type="text" class="form-control" id="inputTitle" placeholder="title">
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group col-md-6" id="ids">
+                    <div class="form-group" id="ids">
                         <div>
-                            <label for="Storage">Storage</label>
+                            <label>Storage</label>
                             <input formControlName="Storage" type="text" class="form-control" id="inputStorage" placeholder="Storage">
                         </div>
                         <div>
-                            <label for="Battery">Battery</label>
+                            <label>Battery</label>
                             <input formControlName="Battery" type="text" class="form-control" id="inputBattery" placeholder="Battery">
                         </div>
                     </div>
                 </div>
-                <div class="form-row" id="id">
-                    <label class="Price" for="Price">Price</label>
+                <div class="form-row">
+                    <label class="Price">Price</label>
                     <input formControlName="Price" class="form-control" type="text" placeholder="Price" id="inputPrice">
                 </div>
-                <div class="form-row" id="id">
-                    <label class="inputPicture" for="picture">Address</label>
+                <div class="form-row">
+                    <label class="inputPicture">Address</label>
                     <address>
                         <textarea rows="5" cols="78" class="form-control" name="Address" id="inputAddress" formControlName="Message">
 
@@ -75,10 +75,10 @@
                 </address>
                 </div>
                 <br>
-                <div class="fixed-bottom butt">
-                    <button class="btn btn-lg btn-primary" (click)="save()"><i class="fa fa-shopping"></i>Order</button>&nbsp;
-                    <button class="btn btn-lg btn-danger" (click)="cancel()">Cancel</button>&nbsp;
-                  <button class="btn btn-lg btn-info" (click)="open(content)">
+                <div class="butt">
+                    <button class="btn btn-lg btn-primary fixed-bottom" (click)="save()"><i class="fa fa-shopping"></i>Order phone</button>&nbsp;
+                    <button class="btn btn-danger" (click)="cancel()">Cancel order</button> &nbsp;
+                  <button class="btn btn-info" (click)="open(content)">
                     <i class="fa fa-paypal"></i>PayPal
                   </button>
                 </div>
