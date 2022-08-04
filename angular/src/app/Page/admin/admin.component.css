@@ -1,4 +1,5 @@
 body {
+    margin-top: -5%;
     width: 100%;
     height: 100%;
 }
@@ -51,7 +52,7 @@ nav {
 }
 
 .example-sidenav {
-    width: 20%;
+    width: 40%;
     padding: 20px;
-    background-color: #ebe6de;
+    background-color: grey;
 }
