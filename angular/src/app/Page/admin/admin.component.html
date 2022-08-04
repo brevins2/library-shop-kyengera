@@ -3,12 +3,14 @@
     <!-- Container wrapper -->
     <div class="container-fluid">
       <!-- Navbar brand -->
-      <a class="navbar-brand mt-2 mt-lg-0" routerLink="/cmj">
-        <img src="../../../assets/image/icons/logo.png" width="250">
-      </a>
+      <div class="brand">
+        <a class="navbar-brand mt-2 mt-lg-0" routerLink="/cmj">
+          <img src="../../../assets/image/icons/logo.png" width="250">
+        </a>
+      </div>
 
       <!-- Toggle button -->
-        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
           <i class="fa fa-bars"></i>
         </button>
       <!-- Collapsible wrapper -->
@@ -17,17 +19,11 @@
           <button type="button" class="text-light" mat-button (click)="drawer.toggle()">
             <mat-icon class="menu">menu</mat-icon>
           </button>
-          <button class="text-danger" mat-button type="submit" (click)="logout()">
-            <i class="fa fa-power-off power"></i>
-            <br>
-            Logout
-          </button>
         </div>
         </div>
       </div>
     <!-- Container wrapper -->
 </nav>
-
 
 <body>
     <mat-drawer-container class="example-container" autosize>
@@ -78,7 +74,13 @@
                         <i class="fa fa-envelope power align-middle d-flex justify-content-start"></i>
                         <span class="d-flex text-left justify-content-end">Messages</span>
                     </a>
-                 </button>
+                </button>
+
+                <!-- power button -->
+                  <button class="text-danger justify-content-start text-left" mat-button type="submit" (click)="logout()">
+                    <i class="fa fa-power-off power"></i>
+                    Logout
+                  </button>
             </div>
             <!-- <p *ngIf="showFiller ">Lorem, ipsum dolor sit amet consectetur.</p>
             <button (click)="showFiller=! showFiller " mat-raised-button>

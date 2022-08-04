@@ -7,6 +7,10 @@ nav {
     background-color: white;
 }
 
+.brand {
+    margin-left: -10px;
+}
+
 .button-nav button a {
     color: black;
 }
