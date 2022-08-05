@@ -3,7 +3,7 @@ module.exports = {
   USER: "root",
   PASSWORD: "",
   DB: "cmj_entertainment",
-  PORT: 3306
+  PORT: 3306,
   dialect: "mysql",
   pool: {
     max: 5,

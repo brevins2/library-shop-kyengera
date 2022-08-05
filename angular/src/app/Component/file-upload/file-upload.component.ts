@@ -2,6 +2,7 @@ import { HttpClient, HttpResponse, HttpEventType } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { finalize, Subscription } from 'rxjs';
 import { ServeService } from 'src/app/Services/serve.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-file-upload',
@@ -14,7 +15,7 @@ export class FileUploadComponent implements OnInit {
   currentFile?: File;
   progress = 0;
   message = '';
-  fileInfos?: any;
+  fileInfos?: Observable<any>;
   constructor(private http: HttpClient, private uploadService: ServeService) { }
 
   ngOnInit(): void {

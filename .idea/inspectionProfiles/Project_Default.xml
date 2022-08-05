@@ -4,7 +4,7 @@
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="16">
+          <list size="19">
             <item index="0" class="java.lang.String" itemvalue="mdbcollapse" />
             <item index="1" class="java.lang.String" itemvalue="#backgroundimageexample3" />
             <item index="2" class="java.lang.String" itemvalue="routerlink" />
@@ -21,6 +21,9 @@
             <item index="13" class="java.lang.String" itemvalue="(ngsubmit)" />
             <item index="14" class="java.lang.String" itemvalue="[(ngmodel)]" />
             <item index="15" class="java.lang.String" itemvalue="[ngstyle]" />
+            <item index="16" class="java.lang.String" itemvalue="attr.aria-valuenow" />
+            <item index="17" class="java.lang.String" itemvalue="[disabled]" />
+            <item index="18" class="java.lang.String" itemvalue="(change)" />
           </list>
         </value>
       </option>
@@ -29,7 +32,7 @@
     <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="21">
+          <list size="22">
             <item index="0" class="java.lang.String" itemvalue="nobr" />
             <item index="1" class="java.lang.String" itemvalue="noembed" />
             <item index="2" class="java.lang.String" itemvalue="comment" />
@@ -51,6 +54,7 @@
             <item index="18" class="java.lang.String" itemvalue="ngx-pay-pal" />
             <item index="19" class="java.lang.String" itemvalue="ngx-paypal" />
             <item index="20" class="java.lang.String" itemvalue="app-file-upload" />
+            <item index="21" class="java.lang.String" itemvalue="body" />
           </list>
         </value>
       </option>
