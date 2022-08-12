@@ -126,7 +126,7 @@ export class ServeService {
     }
 
    // for image uploads
-   private baseUrl = "http://localhost:3000"
+   private baseUrl = "http://localhost:8080"
    upload(file: File): Observable<HttpEvent<any>> {
        const formData: FormData = new FormData();
        formData.append('file', file);

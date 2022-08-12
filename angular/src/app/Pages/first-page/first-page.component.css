@@ -12,6 +12,12 @@ a:hover {
 }
 
 #carousel-slider {
+
+    width: 100%;
+}
+
+mat-accordion,
+mat-expansion-panel {
     width: 100%;
 }
 
@@ -32,6 +38,12 @@ a:hover {
 mat-menu button:hover {
     border-top: 2px solid orange;
     color: orange;
+}
+
+/* navigation bar */
+
+.fixed-top {
+    width: 100%;
 }
 
 
@@ -153,4 +165,17 @@ body {
 .small-image img {
     margin: 2px;
     border-radius: 2px;
+}
+
+/* expansion information */
+.mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+mat-accordion {
+    width: 10%;
+}
+
+#mat-expand {
+    width: 4%;
 }

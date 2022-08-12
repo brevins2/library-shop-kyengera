@@ -1,96 +1,108 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light back-style position-sticky fixed-top">
-    <div class="container-fluid">
+    <div class="d-flex justify-content-between">
         <!-- Collapsible wrapper -->
-        <div>
-            <a class="navbar-brand mt-2 mt-lg-0" routerLink="/cmj">
+        <div class="d-flex justify-content-start">
+          <a class="navbar-brand mt-2 mt-lg-0" routerLink="/cmj">
                 <img src="../../../assets/image/icons/logo.png" width="250">
             </a>
         </div>
 
-      <nav class="navbar navbar-expand-lg" id="navbar">
-        <div class="container-fluid" style="display: flex;">
+      <nav class="navbar navbar-expand-lg d-flex justify-content-end" id="navbar">
+        <div class="d-flex">
           <button class="navbar-toggler" type="button" (click)="backgroundImageExample3.toggle()" aria-controls="backgroundImageExample3" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fa fa-bars" aria-label="bars"></i>
           </button>
-          <div mdbCollapse #backgroundImageExample3="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample3">
-            <div class="d-flex align-items-center">
-              <!-- Service Icons -->
-              <button class="service" mat-button [matMenuTriggerFor]="menu">
-                <i class="fa fa-shopping-cart service"></i>
-                <i class="fa fa-angle-down service"></i>
-                <br>
-                Services
-              </button>
-              <mat-menu #menu="matMenu">
-                <button class="products" mat-menu-item>
-                  <mat-icon class="products">phone_android</mat-icon>
-                  <a routerLink="/users/phones">Phone</a>
-                </button>
-                <mat-divider></mat-divider>
-                <button mat-menu-item class="products">
-                  <mat-icon class="products">computer</mat-icon>
-                  <a routerLink="/users/computers">Computer Accessories</a>
-                </button>
-              </mat-menu>
-
-              <!-- Contact Us Icons -->
-              <button class="products" mat-button [matMenuTriggerFor]="meenu">
-                <mat-icon  class="products">
-                  <span class="material-icons">contact_support</span>
-                </mat-icon>
-                <i class="fa fa-angle-down products"></i>
-                <br>
-                Support
-              </button>
-              <mat-menu #meenu="matMenu">
-                <button mat-menu-item class="products">
-                  <a href="#contact">
-                    <mat-icon class="products">settings_phone</mat-icon>
-                    Contact
-                  </a>
-                </button>
-                <mat-divider></mat-divider>
-                <button mat-menu-item id="shop">
-                  <a routerLink="/users" id="shop">
-                    <mat-icon id="shop">shopping_cart</mat-icon>
-                    Shopping
-                  </a>
-                </button>
-              </mat-menu>
-
-              <!-- account change Icons -->
-              <button class="power" mat-button [matMenuTriggerFor]="menus">
-                <i class="fa fa-power-off power"></i>&nbsp;
-                <i class="fa fa-angle-down power"></i>
-                <br>
-                Account
-              </button>
-              <mat-menu #menus="matMenu">
-                <button mat-menu-item class="power">
-                  <a routerLink="/login">
-                    <i class="fa fa-power-off power"></i>
-                    Login
-                  </a>
-                </button>
-                <mat-divider></mat-divider>
-                <button mat-menu-item class="products">
-                  <a routerLink="/create" id="sign-up">
-                    <i class="fa fa-user-plus"></i>
-                    Sign Up
-                  </a>
-                </button>
-              </mat-menu>
-            </div>
-          </div>
         </div>
       </nav>
+
+      <div mdbCollapse #backgroundImageExample3="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample3">
+        <div class="d-flex justify-content-end">
+          <!-- Service Icons -->
+          <button class="service" mat-button [matMenuTriggerFor]="menu">
+            <i class="fa fa-shopping-cart service"></i>
+            <i class="fa fa-angle-down service"></i>
+            <br>
+            Services
+          </button>
+          <mat-menu #menu="matMenu">
+            <button class="products" mat-menu-item>
+              <mat-icon class="products">phone_android</mat-icon>
+              <a routerLink="/users/phones">Phone</a>
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item class="products">
+              <mat-icon class="products">computer</mat-icon>
+              <a routerLink="/users/computers">Computer Accessories</a>
+            </button>
+          </mat-menu>
+
+          <!-- Contact Us Icons -->
+          <button class="products" mat-button [matMenuTriggerFor]="meenu">
+            <mat-icon  class="products">
+              <span class="material-icons">contact_support</span>
+            </mat-icon>
+            <i class="fa fa-angle-down products"></i>
+            <br>
+            Support
+          </button>
+          <mat-menu #meenu="matMenu">
+            <button mat-menu-item class="products">
+              <a href="#contact">
+                <mat-icon class="products">settings_phone</mat-icon>
+                Contact
+              </a>
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item id="shop">
+              <a routerLink="/users" id="shop">
+                <mat-icon id="shop">shopping_cart</mat-icon>
+                Shopping
+              </a>
+            </button>
+          </mat-menu>
+
+          <!-- account change Icons -->
+          <button class="power" mat-button [matMenuTriggerFor]="menus">
+            <i class="fa fa-power-off power"></i>&nbsp;
+            <i class="fa fa-angle-down power"></i>
+            <br>
+            Account
+          </button>
+          <mat-menu #menus="matMenu">
+            <button mat-menu-item class="power">
+              <a routerLink="/login">
+                <i class="fa fa-power-off power"></i>
+                Login
+              </a>
+            </button>
+            <mat-divider></mat-divider>
+            <button mat-menu-item class="products">
+              <a routerLink="/create" id="sign-up">
+                <i class="fa fa-user-plus"></i>
+                Sign Up
+              </a>
+            </button>
+          </mat-menu>
+        </div>
+      </div>
     </div>
 </nav>
 
 <body>
-    <div class="mat-parent-small">
-        <carousel id="carousel-slider">
+    <div class="d-flex mat-parent-small">
+      <mat-accordion>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon id="menu-expand">menu</mat-icon>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>This is the primary content of the panel.</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <carousel id="carousel-slider">
             <slide>
                 <mat-card class="example-card">
                     <img mat-card-image src="../../../assets/image/computers/ear pads.jpg" height="400">

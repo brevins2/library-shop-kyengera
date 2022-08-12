@@ -38,6 +38,7 @@ export class FirstPageComponent implements OnInit {
   comp: Api[] = [];
   public sendMessage!: FormGroup;
   alerts = false;
+  panelOpenState = false;
 
   constructor(
     private http: HttpClient,
@@ -55,10 +56,10 @@ export class FirstPageComponent implements OnInit {
       message: ['']
     });
 
-    this.http.get<any>("http://localhost:8080/api/messages").subscribe(result => {
-        console.log(result);
-        console.log("great work")
-    });
+//     this.http.get<any>("http://localhost:8080/api/messages").subscribe(result => {
+//         console.log(result);
+//         console.log("great work")
+//     });
   }
 
   getCurrentDatas(){
@@ -86,12 +87,13 @@ export class FirstPageComponent implements OnInit {
         this.comp = response;
       });
   }
+  
 
   // contact information
   // former url http://localhost:3000/Message
   sendMessages(){
   //  this.serve.
-    this.http.post<any>("http://localhost:8080/api/messages", this.sendMessage.value).subscribe(response =>{
+    this.http.post<any>("http://localhost:8080/api/messages/add/messages", this.sendMessage.value).subscribe(response =>{
       this.sendMessage.reset();
     });
   }
