@@ -87,7 +87,6 @@ export class FirstPageComponent implements OnInit {
         this.comp = response;
       });
   }
-  
 
   // contact information
   // former url http://localhost:3000/Message

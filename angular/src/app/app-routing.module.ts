@@ -31,6 +31,7 @@ const routes: Routes = [
   { path: 'slider', component: SliderComponent},
   { path: 'cmj', component: FirstPageComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'head', component: HeaderComponent },
   { path: 'create', component: CreateComponent },
   { path: 'header', component: HeaderComponent },
   { path: 'users', component: MainComponent, children: [

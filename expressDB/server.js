@@ -57,6 +57,9 @@ app.get("/api/images", (req, res) => {
   console.log(res);
 });
 
+app.get("/upload", (req, res) => {
+});
+
 require("./app/routes/object.routes")(app);
 
 // set port, listen for requests

@@ -134,5 +134,5 @@ module.exports = img => {
   // Delete all image
   router.delete("/delete/images", images.deleteAll);
 
-  img.use('/api/images', router);
+  img.use('/upload', router);
 };
