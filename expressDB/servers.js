@@ -21,8 +21,32 @@ const db = mysql.createConnection({
 // check database connection
 db.connect(err => {
       if(err){ console.log('err'); }
-        console.log('database connected....!!!!!');
+        console.log('database connected....');
 });
+
+
+//get all the data
+
+app.get('/Message', (req, res) =>{
+
+    let qr = `select * from messages`;
+
+    db.query(qr, (err, result) =>{
+        if(err)
+        {
+            console.log(err, 'errs');
+        }
+        if(result.length > 0)
+        {
+            res.send({
+                message: 'all data available',
+                data: result
+            });
+        }
+    });
+});
+
+
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
