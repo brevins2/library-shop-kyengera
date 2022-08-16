@@ -25,6 +25,127 @@ db.connect(err => {
 })
 
 
+// for Accounts/registration
+//get all the data
+
+app.get('/Accounts', (req, res) =>{
+
+    let qr = `select * from accounts`;
+
+    db.query(qr, (err, result) =>{
+        if(err)
+        {
+            console.log(err, 'errs');
+        }
+        if(result.length > 0)
+        {
+            res.send({
+                message: 'all data available',
+                data: result
+            });
+        }
+    });
+});
+
+// get single data
+
+app.get('/Account/:id', (req, res) =>{
+
+    let gID = req.params.id;
+
+    let qr =`select * from accounts where id = ${gID}`;
+
+    db.query(qr, (err, results) =>{
+
+        if(err)
+        {
+            console.log(err);
+        }
+        if(results.length > 0)
+        {
+            res.send({
+                Message: 'getting single data',
+                data: results
+            });
+        }
+        else{
+            res.send({
+                message: 'data not found'
+            });
+        }
+    });
+});
+
+// adding data
+
+app.post('/add/Account', (req, res) =>{
+
+    console.log(req.body ,'data added');
+
+    let email = req.body.email;
+    let password = req.body.password;
+    let confirmPassword = req.body.confirm_password;
+    let allow = req.body.Allow;
+    let file = req.body.File;
+
+    let qr = `INSERT INTO accounts(email, password, confirm_password, File, Allow)
+                VALUES('${email}', '${password}', '${confirmPassword}', '${file}', '${Allow}',)`;
+
+    db.query(qr, (err, result) =>{
+
+        if(err){ console.log(err); }
+
+           res.send({
+               message: 'data sent successfully'
+           });
+
+    });
+});
+
+// put data/ update data
+
+app.put('/update/Account/:id', (req, res) =>{
+
+    console.log(req.body ,'data updated');
+
+    let gID = req.params.id;
+    let email = req.body.email;
+    let password = req.body.password;
+    let confirmPassword = req.body.confirm_password;
+    let allow = req.body.Allow;
+    let file = req.body.File;
+
+    let qr = `update accounts set email = '${email}', password = '${password}',
+               confirm_password = '${confirmPassword}', file = '${file}', allow = '${Allow}', where id = ${gID}`;
+
+    db.query(qr, (err, result) =>{
+        if(err) { console.log(err); }
+
+        res.send({
+            message: 'data successfully updated'
+        });
+    });
+});
+
+// delete single data
+
+app.delete('/delete/Accounts/:id', (req, res) =>{
+
+    let qID = req.params.id;
+
+    let qr = `delete from accounts where id = '${qID}'`;
+
+    db.query(qr, (err, result) =>{
+        if(err) { console.log(err); }
+
+        res.send({
+            message: 'data delete successful'
+        });
+    });
+
+});
+
+
 //for Messages
 //get all the data
 
@@ -568,7 +689,7 @@ app.get('/Upload/:id', (req, res) =>{
 
 // adding data
 
-app.post('/add/Upload', (req, res) =>{
+app.post('/add/files', (req, res) =>{
 
     console.log(req.body ,'data added');
 
