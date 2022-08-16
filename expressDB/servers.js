@@ -199,11 +199,15 @@ app.post('/add/Phone', (req, res) =>{
 
     console.log(req.body ,'data added');
 
-    let email = req.body.email;
-    let name = req.body.name;
-    let message = req.body.message;
+    let title = req.body.Title;
+    let storage = req.body.Storage;
+    let battery = req.body.Battery;
+    let price = req.body.Price;
+    let file = req.body.File;
+    let brand = req.body.Brand;
 
-    let qr = `INSERT INTO phones(email, name, message) VALUES('${email}','${name}','${message}')`;
+    let qr = `INSERT INTO phones(Title, Storage, Battery, Price, File, Brand)
+                VALUES('${title}','${storage}','${battery}', '${price}', '${file}', '${brand}')`;
 
     db.query(qr, (err, result) =>{
 
@@ -223,11 +227,15 @@ app.put('/update/Phones/:id', (req, res) =>{
     console.log(req.body ,'data updated');
 
     let gID = req.params.id;
-    let email = req.body.email;
-    let name = req.body.name;
-    let message = req.body.message;
+    let title = req.body.Title;
+    let storage = req.body.Storage;
+    let battery = req.body.Battery;
+    let price = req.body.Price;
+    let file = req.body.File;
+    let brand = req.body.Brand;
 
-    let qr = `update phones set email = '${email}', name = '${name}', message = '${message}' where id = ${gID}`;
+    let qr = `update phones set Title = '${title}', Storage = '${storage}', Battery = '${battery}',
+                Price = '${Price}', File = '${file}', Brand = '${brand}'  where id = ${gID}`;
 
     db.query(qr, (err, result) =>{
         if(err) { console.log(err); }
@@ -237,7 +245,6 @@ app.put('/update/Phones/:id', (req, res) =>{
         });
     });
 });
-
 
 // delete single data
 
@@ -257,6 +264,369 @@ app.delete('/delete/Phones/:id', (req, res) =>{
 
 });
 
+
+// for computers
+//get all the data
+
+app.get('/Computers', (req, res) =>{
+
+    let qr = `select * from computers`;
+
+    db.query(qr, (err, result) =>{
+        if(err)
+        {
+            console.log(err, 'errs');
+        }
+        if(result.length > 0)
+        {
+            res.send({
+                message: 'all data available',
+                data: result
+            });
+        }
+    });
+});
+
+// get single data
+
+app.get('/Computers/:id', (req, res) =>{
+
+    let gID = req.params.id;
+
+    let qr =`select * from computers where id = ${gID}`;
+
+    db.query(qr, (err, results) =>{
+
+        if(err)
+        {
+            console.log(err);
+        }
+        if(results.length > 0)
+        {
+            res.send({
+                Message: 'getting single data',
+                data: results
+            });
+        }
+        else{
+            res.send({
+                message: 'data not found'
+            });
+        }
+    });
+});
+
+// adding data
+
+app.post('/add/Computer', (req, res) =>{
+
+    console.log(req.body ,'data added');
+
+    let title = req.body.Title;
+    let category = req.body.Category;
+    let price = req.body.Price;
+    let file = req.body.File;
+
+    let qr = `INSERT INTO computers(Title, Category, Price, File)
+                VALUES('${title}', '${category}', '${price}', '${file}')`;
+
+    db.query(qr, (err, result) =>{
+
+        if(err){ console.log(err); }
+
+           res.send({
+               message: 'data sent successfully'
+           });
+
+    });
+});
+
+// put data/ update data
+
+app.put('/update/Computer/:id', (req, res) =>{
+
+    console.log(req.body ,'data updated');
+
+    let gID = req.params.id;
+    let title = req.body.Title;
+    let category = req.body.Category;
+    let price = req.body.Price;
+    let file = req.body.File;
+
+    let qr = `update phones set Title = '${title}', Category = '${category}',
+                Price = '${Price}', File = '${file}' where id = ${gID}`;
+
+    db.query(qr, (err, result) =>{
+        if(err) { console.log(err); }
+
+        res.send({
+            message: 'data successfully updated'
+        });
+    });
+});
+
+// delete single data
+
+app.delete('/delete/Computers/:id', (req, res) =>{
+
+    let qID = req.params.id;
+
+    let qr = `delete from computers where id = '${qID}'`;
+
+    db.query(qr, (err, result) =>{
+        if(err) { console.log(err); }
+
+        res.send({
+            message: 'data delete successful'
+        });
+    });
+
+});
+
+
+// for orders
+//get all the data
+
+app.get('/Orders', (req, res) =>{
+
+    let qr = `select * from orders`;
+
+    db.query(qr, (err, result) =>{
+        if(err)
+        {
+            console.log(err, 'errs');
+        }
+        if(result.length > 0)
+        {
+            res.send({
+                message: 'all data available',
+                data: result
+            });
+        }
+    });
+});
+
+// get single data
+
+app.get('/Orders/:id', (req, res) =>{
+
+    let gID = req.params.id;
+
+    let qr =`select * from orders where id = ${gID}`;
+
+    db.query(qr, (err, results) =>{
+
+        if(err)
+        {
+            console.log(err);
+        }
+        if(results.length > 0)
+        {
+            res.send({
+                Message: 'getting single data',
+                data: results
+            });
+        }
+        else{
+            res.send({
+                message: 'data not found'
+            });
+        }
+    });
+});
+
+// adding data
+
+app.post('/add/Orders', (req, res) =>{
+
+    console.log(req.body ,'data added');
+
+    let title = req.body.Title;
+    let messages = req.body.Message;
+    let storage = req.body.Storage;
+    let battery = req.body.Battery;
+    let price = req.body.Price;
+    let file = req.body.File;
+    let category = req.body.Category;
+    let customerName = req.body.Customer_Name;
+    let email = req.body.Email;
+
+    let qr = `INSERT INTO orders(Title, Message, Storage, Battery, Price, File, Category, Customer_Name, email)
+                VALUES('${title}', '${messages}','${storage}','${battery}', '${price}', '${file}', '${brand}',
+                '${customerName}', '${email}')`;
+
+    db.query(qr, (err, result) =>{
+
+        if(err){ console.log(err); }
+
+           res.send({
+               message: 'data sent successfully'
+           });
+
+    });
+});
+
+// put data/ update data
+
+app.put('/update/Orders/:id', (req, res) =>{
+
+    console.log(req.body ,'data updated');
+
+    let gID = req.params.id;
+    let title = req.body.Title;
+    let messages = req.body.Message;
+    let storage = req.body.Storage;
+    let battery = req.body.Battery;
+    let price = req.body.Price;
+    let file = req.body.File;
+    let category = req.body.Category;
+    let customerName = req.body.Customer_Name;
+    let email = req.body.Email;
+
+    let qr = `update phones set Title = '${title}', Message = '${messages}', Storage = '${storage}',
+                Battery = '${battery}', Price = '${Price}', File = '${file}', Category = '${category}',
+                Customer_Name = '${customerName}', Email = '${email}' where id = ${gID}`;
+
+    db.query(qr, (err, result) =>{
+        if(err) { console.log(err); }
+
+        res.send({
+            message: 'data successfully updated'
+        });
+    });
+});
+
+// delete single data
+
+app.delete('/delete/Orders/:id', (req, res) =>{
+
+    let qID = req.params.id;
+
+    let qr = `delete from orders where id = '${qID}'`;
+
+    db.query(qr, (err, result) =>{
+        if(err) { console.log(err); }
+
+        res.send({
+            message: 'data delete successful'
+        });
+    });
+
+});
+
+
+// for Uploaded images
+//get all the data
+
+app.get('/Upload', (req, res) =>{
+
+    let qr = `select * from uploads`;
+
+    db.query(qr, (err, result) =>{
+        if(err)
+        {
+            console.log(err, 'errs');
+        }
+        if(result.length > 0)
+        {
+            res.send({
+                message: 'all data available',
+                data: result
+            });
+        }
+    });
+});
+
+// get single data
+
+app.get('/Upload/:id', (req, res) =>{
+
+    let gID = req.params.id;
+
+    let qr =`select * from uploads where id = ${gID}`;
+
+    db.query(qr, (err, results) =>{
+
+        if(err)
+        {
+            console.log(err);
+        }
+        if(results.length > 0)
+        {
+            res.send({
+                Message: 'getting single data',
+                data: results
+            });
+        }
+        else{
+            res.send({
+                message: 'data not found'
+            });
+        }
+    });
+});
+
+// adding data
+
+app.post('/add/Upload', (req, res) =>{
+
+    console.log(req.body ,'data added');
+
+    let title = req.body.Title;
+    let file = req.body.File;
+
+    let qr = `INSERT INTO uploads(Title, File)
+                VALUES('${title}', '${file}')`;
+
+    db.query(qr, (err, result) =>{
+
+        if(err){ console.log(err); }
+
+           res.send({
+               message: 'data sent successfully'
+           });
+
+    });
+});
+
+// put data/ update data
+
+app.put('/update/Upload/:id', (req, res) =>{
+
+    console.log(req.body ,'data updated');
+
+    let gID = req.params.id;
+    let title = req.body.Title;
+    let file = req.body.File;
+
+    let qr = `update phones set Title = '${title}', File = '${file}' where id = ${gID}`;
+
+    db.query(qr, (err, result) =>{
+        if(err) { console.log(err); }
+
+        res.send({
+            message: 'data successfully updated'
+        });
+    });
+});
+
+// delete single data
+
+app.delete('/delete/Upload/:id', (req, res) =>{
+
+    let qID = req.params.id;
+
+    let qr = `delete from uploads where id = '${qID}'`;
+
+    db.query(qr, (err, result) =>{
+        if(err) { console.log(err); }
+
+        res.send({
+            message: 'data delete successful'
+        });
+    });
+
+});
 
 
 
