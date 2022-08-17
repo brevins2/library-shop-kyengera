@@ -1,6 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
+export class Message{
+  constructor(
+    public id: number,
+    public name: string,
+    public email: string,
+    public message: string
+  ){}
+}
+
 export class Phones{
   constructor(
     public id: number,
@@ -44,11 +53,13 @@ export class TestsComponent implements OnInit {
 
   phone: Phones[] = [];
   computer: Computers[] = [];
+  message: Message[] = [];
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.getApiPhones();
     this.getApiComputer();
+    this.getApiMessages();
   }
 
   getApiPhones(){
@@ -60,6 +71,12 @@ export class TestsComponent implements OnInit {
   getApiComputer(){
     this.http.get<any>('http://localhost:3000/Computers').subscribe(response=>{
       this.computer = response;
+    });
+  }
+
+  getApiMessages(){
+    this.http.get<any>('http://localhost:8080/Message').subscribe(response=>{
+      this.message = response;
     });
   }
 
