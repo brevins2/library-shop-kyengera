@@ -20,13 +20,13 @@ export class CreateComponent implements OnInit {
       email: [''],
       password: [''],
       confirmPassword: [''],
-      file: [''],
-      check: ['']
+//       file: [''],
+      Allow: false
     });
   }
 
   signUp(){
-    this.http.post<any>("http://localhost:3000/register", this.signUpForm.value).subscribe(res=>{
+    this.http.post<any>("http://localhost:8080/add/Account", this.signUpForm.value).subscribe(res=>{
       this.alert = true;
       this.signUpForm.reset();
       this.router.navigate(['login']);

@@ -86,10 +86,10 @@ app.post('/add/Account', (req, res) =>{
     let password = req.body.password;
     let confirmPassword = req.body.confirm_password;
     let allow = req.body.Allow;
-    let file = req.body.File;
+//    let file = req.body.File;
 
-    let qr = `INSERT INTO accounts(email, password, confirm_password, File, Allow)
-                VALUES('${email}', '${password}', '${confirmPassword}', '${file}', '${Allow}',)`;
+    let qr = `INSERT INTO accounts(email, password, confirmPassword, Allow)
+                VALUES('${email}', '${password}', '${confirmPassword}', '${allow}')`;
 
     db.query(qr, (err, result) =>{
 

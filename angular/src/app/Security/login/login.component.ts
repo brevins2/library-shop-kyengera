@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   }
 
   Login(){
-    this.http.get<any>("http://localhost:3000/register")
+    this.http.get<any>("http://localhost:8080/Accounts")
     .subscribe(res=>{
       const user = res.find((a:any)=>{
         return a.email === this.loginForm.value.email &&
@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
         return 'admin@ug.com' === this.loginForm.value.email &&
         'i83admin' === this.loginForm.value.password
       });
-      
+
       if(admin){
         this.alert = true;
         this.loginForm.reset();
