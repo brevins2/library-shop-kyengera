@@ -12,8 +12,7 @@ a:hover {
 }
 
 #carousel-slider {
-
-    width: 100%;
+    width: 70%;
 }
 
 mat-accordion,
@@ -173,7 +172,7 @@ body {
 }
 
 mat-accordion {
-    width: 10%;
+    width: 30%;
 }
 
 #mat-expand {

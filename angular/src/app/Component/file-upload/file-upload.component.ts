@@ -11,11 +11,11 @@ import { Observable } from 'rxjs';
 })
 export class FileUploadComponent implements OnInit {
 
- selectedFiles?: FileList;
-  currentFile?: File;
-  progress = 0;
-  message = '';
-  fileInfos?: Observable<any>;
+  selectedFiles?: FileList;
+   currentFile?: File;
+   progress = 0;
+   message = '';
+   fileInfos?: Observable<any>;
   constructor(private http: HttpClient, private uploadService: ServeService) { }
 
   ngOnInit(): void {
@@ -26,7 +26,7 @@ export class FileUploadComponent implements OnInit {
     this.selectedFiles = event.target.files;
   }
 
-  upload(): void {
+   upload(): void {
       this.progress = 0;
       if (this.selectedFiles) {
         const file: File | null = this.selectedFiles.item(0);
