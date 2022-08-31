@@ -9,12 +9,13 @@
     <button mat-menu-item [matMenuTriggerFor]="accessories">Computer accessories</button>
 </mat-menu>
 
+<div *ngFor="let phon of phones"></div>
 <mat-menu #phones="matMenu">
-    <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
-    <button mat-menu-item [matMenuTriggerFor]="amphibians">Amphibians</button>
-    <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>
-    <button mat-menu-item>Birds</button>
-    <button mat-menu-item>Mammals</button>
+    <button mat-menu-item [matMenuTriggerFor]="brand">phon.Brand</button>
+<!--    <button mat-menu-item [matMenuTriggerFor]="amphibians">Amphibians</button>-->
+<!--    <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>-->
+<!--    <button mat-menu-item>Birds</button>-->
+<!--    <button mat-menu-item>Mammals</button>-->
 </mat-menu>
 
 <mat-menu #accessories="matMenu">
@@ -27,7 +28,7 @@
     <button mat-menu-item>Horseshoe crabs</button>
 </mat-menu>
 
-<mat-menu #fish="matMenu">
+<mat-menu #brand="matMenu">
     <button mat-menu-item>Baikal oilfish</button>
     <button mat-menu-item>Bala shark</button>
     <button mat-menu-item>Ballan wrasse</button>

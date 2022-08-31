@@ -32,12 +32,16 @@ export class Computers{
 })
 export class SliderComponent implements OnInit {
 
+  phones: Phones[] = [];
+  computers: Computers[] = [];
   public payPalConfig ? : IPayPalConfig;
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
 //       this.initConfig();
     this.http.get<any>('http://localhost/8080/Phones').subscribe((result) => {
+        this.phones = result;
+        this.computers = result;
         console.log("All phones retrieved.....");
     });
    }
