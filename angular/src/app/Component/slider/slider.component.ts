@@ -1,5 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
+import { HttpClient } from '@angular/common/http';
+
+export class Phones{
+  constructor(
+    public id: number,
+    public Title: string,
+    public Storage: string,
+    public Battery: string,
+    public Price: number,
+    public File: string,
+    public Brand: string
+  ){}
+}
+
+export class Computers{
+  constructor(
+    public id: number,
+    public Title: string,
+    public Price: number,
+    public Category: string,
+    public File: string,
+    public Brand: string
+  ){}
+}
 
 @Component({
   selector: 'app-slider',
@@ -9,10 +33,13 @@ import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
 export class SliderComponent implements OnInit {
 
   public payPalConfig ? : IPayPalConfig;
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
 //       this.initConfig();
+    this.http.get<any>('http://localhost/8080/Phones').subscribe((result) => {
+        console.log("All phones retrieved.....");
+    });
    }
 
   /* private initConfig(): void {

@@ -1,12 +1,15 @@
 <!--<ngx-paypal [config]="payPalConfig"></ngx-paypal>-->
 
-<button mat-button [matMenuTriggerFor]="animals">Animal index</button>
-<mat-menu #animals="matMenu">
-    <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
-    <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
+<button mat-button [matMenuTriggerFor]="category">
+  <i class="fa fa-bars"></i>
+  <span>Categories</span>
+</button>
+<mat-menu #category="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="phones">Phones</button>
+    <button mat-menu-item [matMenuTriggerFor]="accessories">Computer accessories</button>
 </mat-menu>
 
-<mat-menu #vertebrates="matMenu">
+<mat-menu #phones="matMenu">
     <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
     <button mat-menu-item [matMenuTriggerFor]="amphibians">Amphibians</button>
     <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>
@@ -14,7 +17,7 @@
     <button mat-menu-item>Mammals</button>
 </mat-menu>
 
-<mat-menu #invertebrates="matMenu">
+<mat-menu #accessories="matMenu">
     <button mat-menu-item>Insects</button>
     <button mat-menu-item>Molluscs</button>
     <button mat-menu-item>Crustaceans</button>
