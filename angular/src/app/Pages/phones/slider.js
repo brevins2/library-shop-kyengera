@@ -13,7 +13,7 @@ searchBar.addEventListener('keyup', function(e) {
             divPhone.style.display = 'none'
         }
     })
-})
+});
 
 
 $filter('filter')(array, expression, comparator, anyPropertyKey);
