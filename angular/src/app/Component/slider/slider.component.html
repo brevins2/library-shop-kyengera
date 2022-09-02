@@ -9,14 +9,15 @@
     <button mat-menu-item [matMenuTriggerFor]="accessories">Computer accessories</button>
 </mat-menu>
 
-<div *ngFor="let phon of phones"></div>
-<mat-menu #phones="matMenu"  *ngFor="let phon of phones">
-    <button mat-menu-item [matMenuTriggerFor]="brand" *ngIf="phon.Brand === phon.Brand">phon.Brand</button>
+<!--<div *ngFor="let phon of phones">-->
+<mat-menu #phones="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="brand">phon.Brand</button>
 <!--    <button mat-menu-item [matMenuTriggerFor]="amphibians">Amphibians</button>-->
 <!--    <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>-->
 <!--    <button mat-menu-item>Birds</button>-->
 <!--    <button mat-menu-item>Mammals</button>-->
 </mat-menu>
+<!--</div>-->
 
 <mat-menu #accessories="matMenu">
     <button mat-menu-item>Insects</button>

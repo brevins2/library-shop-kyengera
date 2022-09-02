@@ -20,7 +20,6 @@ export class CreateComponent implements OnInit {
       email: [''],
       password: [''],
       confirmPassword: [''],
-//       file: [''],
       Allow: false
     });
   }

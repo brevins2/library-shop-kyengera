@@ -39,7 +39,7 @@ export class SliderComponent implements OnInit {
 
   ngOnInit(): void {
 //       this.initConfig();
-    this.http.get<any>('http://localhost/8080/Phones').subscribe((result) => {
+    this.http.get<any>("http://localhost/3000/Phones").subscribe((result) => {
         this.phones = result;
         this.computers = result;
         console.log("All phones retrieved.....");
