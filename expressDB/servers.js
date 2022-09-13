@@ -43,6 +43,8 @@ app.get('/Accounts', (req, res) =>{
                 message: 'all data available',
                 data: result
             });
+
+//            res.json(qr);
         }
     });
 });
@@ -63,10 +65,12 @@ app.get('/Account/:id', (req, res) =>{
         }
         if(results.length > 0)
         {
-            res.send({
-                Message: 'getting single data',
-                data: results
-            });
+//            res.send({
+//                Message: 'getting single data',
+//                data: results
+//            });
+
+              res.json(qr);
         }
         else{
             res.send({
@@ -160,10 +164,12 @@ app.get('/Message', (req, res) =>{
         }
         if(result.length > 0)
         {
-            res.send({
-                message: 'all data available',
-                data: result
-            });
+//            res.send({
+//                message: 'all data available',
+//                data: result
+//            });
+
+              res.json();
         }
     });
 });
