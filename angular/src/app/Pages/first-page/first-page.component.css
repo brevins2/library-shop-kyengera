@@ -15,11 +15,6 @@ a:hover {
     width: 70%;
 }
 
-mat-accordion,
-mat-expansion-panel {
-    width: 100%;
-}
-
 .services {
     width: 25%;
     margin-left: 3%;
