@@ -25,7 +25,7 @@ export class MessagesComponent implements OnInit {
   }
 
   getPhoneOrder(){
-    this.http.get<any>('http://localhost:3000/Message').subscribe(result =>{
+    this.http.get<any>('http://localhost:8080/Message').subscribe(result =>{
       this.data = result;
     })
   }

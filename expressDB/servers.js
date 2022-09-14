@@ -164,12 +164,9 @@ app.get('/Message', (req, res) =>{
         }
         if(result.length > 0)
         {
-//            res.send({
-//                message: 'all data available',
-//                data: result
-//            });
-
-              res.json();
+            res.send({
+                data: result
+            });
         }
     });
 });
