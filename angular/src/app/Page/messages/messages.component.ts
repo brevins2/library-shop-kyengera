@@ -30,6 +30,8 @@ export class MessagesComponent implements OnInit {
     })
   }
 
-  search(){}
+  search(){
+    alert("search.....");
+  }
 
 }

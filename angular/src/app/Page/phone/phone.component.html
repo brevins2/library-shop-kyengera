@@ -1,14 +1,9 @@
 <body>
     <nav class="navbar navbar-expand-lg" id="navbar">
-        <div class="container-fluid" style="display: flex;">
-            <button class="navbar-toggler" type="button" (click)="backgroundImageExample3.toggle()" aria-controls="backgroundImageExample3" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-bars" aria-label="bars"></i>
-            </button>
-            <div mdbCollapse #backgroundImageExample3="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample3">
+        <div class="container-fluid d-flex">
                 <input type="search" class="form-control" id="search-input-sidenav" id="search" name="search" placeholder="Search for Phones, mouse, keyboards, fans, cables, flash....">&nbsp;
                 <button class="btn btn-primary" (click)="search()">Search</button>
             </div>
-        </div>
     </nav>
 
     <div class="display">
@@ -67,7 +62,6 @@
                 Add Phone
         </button>
 
-      <mat-divider></mat-divider>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -91,12 +85,12 @@
                     <td>
                         <img [src]="'../../../assets/image/phones/'+phon.File" width="100"></td>
                     <td>
-                        <button class="btn btn-outline-primary" id="edit" (click)="open(contents, data)">
+                        <button class="btn btn-primary" id="edit" (click)="open(contents, data)">
                             <i class="fa fa-edit" aria-label="edit"></i>
                         </button>
                     </td>
                     <td>
-                        <p class="btn btn-outline-danger" id="del" (click)="deletePhone(phon)"><i class="fa fa-trash" aria-label="delete"></i></p>
+                        <p class="btn btn-danger" id="del" (click)="deletePhone(phon)"><i class="fa fa-trash" aria-label="delete"></i></p>
                     </td>
                 </tr>
             </tbody>
@@ -104,9 +98,9 @@
     </div>
 
     <mat-divider></mat-divider>
-    <nav>
+    <footer>
         <i class="fa fa-copyright"></i> copy rights reserved
-    </nav>
+    </footer>
 </body>
 
 <ng-template #contents let-modal>

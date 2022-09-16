@@ -1,14 +1,9 @@
 <body>
     <nav class="navbar navbar-expand-lg" id="navbar">
-        <div class="container-fluid" style="display: flex;">
-            <button class="navbar-toggler" type="button" (click)="backgroundImageExample3.toggle()" aria-controls="backgroundImageExample3" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-bars" aria-label="bars"></i>
-            </button>
-            <div mdbCollapse #backgroundImageExample3="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample3">
+            <div class="container-fluid d-flex">
                 <input type="search" class="form-control" id="search-input-sidenav" id="search" name="search" placeholder="Search for Phones, mouse, keyboards, fans, cables, flash....">&nbsp;
                 <button class="btn btn-primary" (click)="search()">Search</button>
             </div>
-        </div>
     </nav>
 
     <div class="display">
@@ -46,7 +41,7 @@
     <br>
 
     <mat-divider></mat-divider>
-    <nav class="text-center">
+    <footer>
         <i class="fa fa-copyright"></i> copy rights reserved
-    </nav>
+    </footer>
 </body>
