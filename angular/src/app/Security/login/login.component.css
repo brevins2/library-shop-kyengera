@@ -1,27 +1,24 @@
 body {
-    background-color: rgb(10, 104, 104);
     height: 100%;
     width: 100%;
 }
 
 #contain {
-    padding-top: 40px;
-    padding-bottom: 18.7%;
-    height: 100%;
-    width: 95%;
+    padding-top: 60px;
 }
 
+/* rgb(10, 104, 104) */
 #main {
     padding: 15px;
     padding-top: 20px;
-    margin-left: 22%;
-    margin-top: 40px;
-    border: 2px solid rgb(10, 104, 104);
+    margin-left: 30%;
+    margin-top: 45px;
+    border: 1px solid;
     border-radius: 20px;
-    width: 60%;
-    height: 100%;
+    width: 40%;
     background-color: rgb(255, 255, 255, .99);
     opacity: 1;
+    height: 40%;
 }
 
 #link {
@@ -32,9 +29,4 @@ body {
 
 #a {
     text-decoration: none;
-}
-
-.profile {
-    width: 20%;
-    margin-left: 30%;
 }

@@ -35,14 +35,11 @@ mat-menu button:hover {
 }
 
 /* navigation bar */
-
 .fixed-top {
     width: 100%;
 }
 
-
 /* button icon */
-
 .service {
     color: green;
 }
@@ -67,14 +64,9 @@ mat-menu button:hover {
 
 
 /* cart card */
-
 body {
-    padding: 1px;
-}
-
-.body {
-    padding: 1%;
-    margin-top: 2%;
+    padding-top: 1%;
+    padding-left: 1%;
     margin-bottom: 3%;
 }
 
@@ -120,8 +112,8 @@ body {
 
 .more {
     color: orangered;
-    margin-left: 3%;
-    font-size: 1.4rem;
+    margin-left: 2%;
+    font-size: 1.2rem;
 }
 
 
@@ -153,17 +145,13 @@ body {
     margin: 3%;
 }
 
-
 /* small images spacing */
-
 .small-image img {
     margin: 2px;
     border-radius: 2px;
 }
 
-
 /* categories */
-
 .category {
     width: 30%;
 }
