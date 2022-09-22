@@ -1,32 +1,24 @@
 body {
     height: 100%;
     width: 100%;
-}
-
-#contain {
-    padding-top: 60px;
+    background-color: rgb(10, 104, 104);
+    padding-bottom: 3%;
+    padding-left: 7%;
 }
 
 /* rgb(10, 104, 104) */
 #main {
-    padding: 15px;
-    padding-top: 20px;
-    margin-left: 30%;
-    margin-top: 45px;
+    padding: 10px;
+    margin: 15%;
     border: 1px solid;
-    border-radius: 20px;
-    width: 40%;
-    background-color: rgb(255, 255, 255, .99);
-    opacity: 1;
-    height: 40%;
+    border-radius: 8px;
+    width: 50%;
+    height: 80%;
+    font-size: 1.7rem;
 }
 
-#link {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 30px;
-    color: rgb(5, 150, 5);
-}
-
-#a {
-    text-decoration: none;
+input {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
 }
