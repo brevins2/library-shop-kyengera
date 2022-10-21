@@ -4,13 +4,17 @@ body {
     padding: 10px;
 }
 
+
 /* navigation */
+
 #navbars {
     background-color: rgb(252, 252, 252);
     height: 20%;
 }
 
+
 /* body field work */
+
 .row {
     width: 100%;
 }
@@ -20,11 +24,13 @@ body {
     font-size: 13px;
     color: black;
     margin: 1% 1% 1% 1%;
+    transform: scale(1,2);
 }
+
 .row .col:hover {
     text-decoration: none;
     font-size: 15px;
-    width: 32%;
+    /* width: 32%; */
 }
 
 slide {
@@ -57,7 +63,9 @@ nav {
     display: flex;
 }
 
+
 /* search style */
+
 #search {
     width: 80%;
     font-size: 1rem;
@@ -71,6 +79,24 @@ nav {
 .cart {
     width: 80%;
     margin: 0% 5% 5% 7%;
+    background-color: rgb(3, 120, 237);
+    border: 2px solid rgb(3, 120, 237);
+    font-size: .9rem;
+    text-align: left;
+    color: white;
+}/* search style */
+
+#search {
+    width: 80%;
+    font-size: 1rem;
+}
+.accounts {
+    margin-left: 14%;
+    float: right;
+}
+
+.cart {
+     margin: 0% 5% 5% 7%;
     background-color: rgb(3, 120, 237);
     border: 2px solid rgb(3, 120, 237);
     font-size: .9rem;
