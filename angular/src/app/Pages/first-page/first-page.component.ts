@@ -56,10 +56,11 @@ export class FirstPageComponent implements OnInit {
       message: ['']
     });
 
-//     this.http.get<any>("http://localhost:8080/api/messages").subscribe(result => {
-//         console.log(result);
-//         console.log("great work")
-//     });
+    this.http.get<any>("http://localhost:8080/Message").subscribe(result => {
+        // console.log(result);
+        // console.log("great work");
+        return result;
+    });
   }
 
   getCurrentDatas(){
@@ -70,7 +71,7 @@ export class FirstPageComponent implements OnInit {
   }
 
   getApi(){
-    this.http.get<any>('http://localhost:3000/Phones').subscribe(
+    this.http.get<any>("http://localhost:3000/Phones").subscribe(
       response=>{
         this.api = response
       });

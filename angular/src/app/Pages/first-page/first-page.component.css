@@ -4,7 +4,7 @@
 
 a:hover {
     text-decoration: none;
-    size: +5%;
+    transform: scale(1, 1);
 }
 
 .mat-parent-small {
@@ -13,6 +13,12 @@ a:hover {
 
 #carousel-slider {
     width: 70%;
+}
+
+.carousel-caption {
+    background-color: rgb(28, 28, 28, .11);
+    background-size: cover;
+    opacity: 1;
 }
 
 .services {
@@ -34,12 +40,16 @@ mat-menu button:hover {
     color: orange;
 }
 
+
 /* navigation bar */
+
 .fixed-top {
     width: 100%;
 }
 
+
 /* button icon */
+
 .service {
     color: green;
 }
@@ -64,6 +74,7 @@ mat-menu button:hover {
 
 
 /* cart card */
+
 body {
     padding-top: 1%;
     padding-left: 1%;
@@ -118,6 +129,7 @@ body {
 
 
 /* form contact */
+
 .contact {
     margin: 3%;
 }
@@ -130,28 +142,35 @@ body {
 
 .location {
     width: 50%;
-    padding: 3%;
     background-image: url("../../../assets/image/computer.jpg");
-    background-color: rgb(3, 2, 2, .8);
+    opacity: .9;
     background-size: cover;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .form {
+    background-color: rgb(3, 2, 2, .8);
+    background-size: cover;
     color: black;
+    padding: 3%;
+    border-radius: 20px;
 }
 
 .send {
     margin: 3%;
 }
 
+
 /* small images spacing */
+
 .small-image img {
     margin: 2px;
     border-radius: 2px;
 }
 
+
 /* categories */
+
 .category {
     width: 30%;
 }

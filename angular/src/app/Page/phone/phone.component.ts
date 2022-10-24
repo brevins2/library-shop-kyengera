@@ -160,7 +160,7 @@ export class PhoneComponent implements OnInit {
     if(this.selectedFile != null){
       const fd = new FormData();
       fd.append('image', this.selectedFile, this.selectedFile.name);
-      this.http.post("http://localhost/3000/Phones", fd, {reportProgress: true,
+      this.http.post("http://localhost:3000/Phones", fd, {reportProgress: true,
       observe: 'events'}).subscribe(event => {
         if(event.type === HttpEventType.UploadProgress){
           // console.log('Upload Progress: '+ Math.round(event.loaded / event.total * 100));

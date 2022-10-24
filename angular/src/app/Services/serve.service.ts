@@ -17,7 +17,7 @@ export class ServeService {
   constructor(private http: HttpClient) { }
 
  //for phones
-   private url2 ="http://localhost:8080/Phones";
+   private url2 = "http://localhost:8080/Phones";
 
    getTaskPhones(): Observable<Phones[]>{
      return this.http.get<any>(this.url2);
@@ -38,7 +38,7 @@ export class ServeService {
    }
 
    //for computers
-   private url3 ="http://localhost:8080/Computers";
+   private url3 = "http://localhost:8080/Computers";
 
    getTaskComputer(): Observable<ComputerAccess[]>{
      return this.http.get<any>(this.url3);
@@ -59,7 +59,7 @@ export class ServeService {
    }
 
    //for Users
-   private url4 ="http://localhost:8080/Accounts";
+   private url4 = "http://localhost:8080/Accounts";
 
    getTaskUser(): Observable<User[]>{
      return this.http.get<any>(this.url4);
@@ -80,7 +80,7 @@ export class ServeService {
    }
 
    // for orders
-   private urlOrder ="http://localhost:8080/Orders";
+   private urlOrder = "http://localhost:8080/Orders";
 
     getTaskOrders(): Observable<User[]>{
        return this.http.get<any>(this.urlOrder);
@@ -101,7 +101,7 @@ export class ServeService {
     }
 
    // for messages
-    private urlMessage ="http://localhost:8080/Messages";
+    private urlMessage = "http://localhost:8080/Messages";
 
     getTaskMessages(): Observable<User[]>{
        return this.http.get<any>(this.urlMessage);
@@ -126,7 +126,7 @@ export class ServeService {
     }
 
    // for image uploads
-   private baseUrl = 'http://localhost:8080';
+   private baseUrl = "http://localhost:8080";
      upload(file: File): Observable<HttpEvent<any>> {
        const formData: FormData = new FormData();
        formData.append('file', file);
