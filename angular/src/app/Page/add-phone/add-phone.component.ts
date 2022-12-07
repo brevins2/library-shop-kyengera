@@ -12,7 +12,7 @@ import { ServeService } from 'src/app/Services/serve.service';
 export class AddPhoneComponent implements OnInit {
 
   addPhone = new FormGroup({
-    title: new FormControl(''),
+    Title: new FormControl(''),
     Storage: new FormControl(''),
     Battery: new FormControl(''),
     Price: new FormControl(''),
@@ -35,7 +35,7 @@ export class AddPhoneComponent implements OnInit {
   getCurrentPhoneData(){
     this.service.getCurrentPhoneData(this.route.snapshot.params['id']).subscribe((result: any ) => {
       this.addPhone = new FormGroup({
-        title: new FormControl(result['title']),
+        Title: new FormControl(result['Title']),
         Storage: new FormControl(result['Storage']),
         Battery: new FormControl(result['Battery']),
         Price: new FormControl(result['Price']),

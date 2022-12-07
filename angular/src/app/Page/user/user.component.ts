@@ -35,6 +35,7 @@ export class UserComponent implements OnInit {
     file: new FormControl(''),
     check: new FormControl('')
   });
+  
   constructor(
     private http: HttpClient,
     private dialogRef: MatDialog,

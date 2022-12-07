@@ -17,9 +17,9 @@ export class CreateComponent implements OnInit {
 
   ngOnInit(): void {
     this.signUpForm = this.formBuilder.group({
-      email: [''],
-      password: [''],
-      confirmPassword: [''],
+      Email: [''],
+      Password: [''],
+      ConfirmPassword: [''],
       Allow: false
     });
   }
