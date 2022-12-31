@@ -19,6 +19,7 @@ import { TestsComponent } from './test/tests/tests.component';
 
 import { PhonePayComponent } from './Pay/phone-pay/phone-pay.component';
 import { ComputerPayComponent } from './Pay/computer-pay/computer-pay.component';
+
 import { SliderComponent } from './Component/slider/slider.component';
 import { NotificationsComponent } from './Page/notifications/notifications.component';
 import { HeaderComponent } from './Component/header/header.component';
