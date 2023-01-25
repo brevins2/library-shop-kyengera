@@ -7,19 +7,8 @@ import { ServeService } from 'src/app/Services/serve.service';
 import { AddPhoneComponent } from '../add-phone/add-phone.component';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { FormControl, FormGroup } from '@angular/forms';
-
-export class Api{
-  constructor(
-    public id: number,
-    public Title: string,
-    public Storage: string,
-    public Battery: string,
-    public Price: number,
-    public File: string
-  ){}
-}
 
 @Component({
   selector: 'app-phone',
@@ -30,7 +19,7 @@ export class PhoneComponent implements OnInit {
 
   data = '';
   id: number =0;
-  phones: Api[] = [];
+  phones: Phones[] = [];
   phone: Phones[] = phones;
   closeResult = '';
   addPhone = new FormGroup({
@@ -41,14 +30,8 @@ export class PhoneComponent implements OnInit {
     File: new FormControl(''),
   });
   selectedFile!: File; 
-  constructor(
-    private http: HttpClient,
-    private Serve: ServeService,
-    private dialogRef: MatDialog,
-    private router: Router,
-    private route: ActivatedRoute,
-    private modalService: NgbModal,
-    private service: ServeService
+  constructor(private http: HttpClient, private Serve: ServeService, private dialogRef: MatDialog,
+    private router: Router, private route: ActivatedRoute, private modalService: NgbModal, private service: ServeService
   ) { }
 
   ngOnInit(): void {
@@ -71,10 +54,9 @@ export class PhoneComponent implements OnInit {
 
   // getting data
   getApi(){
-    this.http.get<any>('http://localhost:3000/Phones').subscribe(
-      response =>{
-        this.phones = response;
-      });
+    this.http.get<{data: Phones[]}>('http://localhost:8080/Phones').subscribe(response =>{
+      this.phones = response.data;
+    });
   }
 
   // popup modal failure
@@ -89,7 +71,7 @@ export class PhoneComponent implements OnInit {
   // deleting phones
   deletePhone(phoneDelete: Phones){
     this.Serve.deletePhone(phoneDelete).subscribe(()=> this.phone = this.phone.filter(t => t.id !== phoneDelete.id));
-    this.http.delete('http://localhost:3000/Phones').
+    this.http.delete('http://localhost:8080/Phones').
     subscribe(()=>(this.phone = this.phone.filter((t)=>
     t.id!)));
   }

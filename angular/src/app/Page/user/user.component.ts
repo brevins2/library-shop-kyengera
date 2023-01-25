@@ -1,23 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { MatDialog } from '@angular/material/dialog';
 import { ServeService } from 'src/app/Services/serve.service';
 import { User } from 'src/app/interfaces';
 import { AddUserComponent } from '../add-user/add-user.component';
 import { ActivatedRoute, Router } from '@angular/router';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl, FormGroup } from '@angular/forms';
-
-export class Users{
-  constructor(
-    public id: number,
-    public file: string,
-    public email: string,
-    public password: string,
-    public confirmPassword: string,
-    public check: boolean
-  ){}
-}
 
 @Component({
   selector: 'app-user',
@@ -26,7 +14,7 @@ export class Users{
 })
 export class UserComponent implements OnInit {
 
-  user: Users[] =[];
+  user: User[] =[];
   closeResult = '';
   signUpForm = new FormGroup({
     email: new FormControl(''),
@@ -36,15 +24,8 @@ export class UserComponent implements OnInit {
     check: new FormControl('')
   });
   
-  constructor(
-    private http: HttpClient,
-    private dialogRef: MatDialog,
-    private Serve: ServeService,
-    private router: Router,
-    private route: ActivatedRoute,
-    private service: ServeService,
-    private modalService: NgbModal
-  ) { }
+  constructor(private http: HttpClient, private Serve: ServeService, private router: Router,
+    private route: ActivatedRoute, private service: ServeService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.getUser();
@@ -55,15 +36,14 @@ export class UserComponent implements OnInit {
   }
 
   getUser(){
-    this.http.get<any>('http://localhost:3000/register').subscribe(
-      response=>{
-      this.user = response;
+    this.http.get<{data: User[]}>('http://localhost:8080/Accounts').subscribe(response=>{
+      this.user = response.data;
       })
   }
 
   deleteCompAccess(userDelete: User){
     this.Serve.deleteUser(userDelete).subscribe(()=> this.user = this.user.filter(t => t.id !== userDelete.id));
-    this.http.delete('http://localhost:3000/register').
+    this.http.delete('http://localhost:8080/Accounts').
     subscribe(()=>(this.user = this.user.filter((t)=>
     t.id!)));
   }
@@ -111,5 +91,4 @@ export class UserComponent implements OnInit {
   }
 
   search(){}
-
 }

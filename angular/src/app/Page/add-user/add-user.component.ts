@@ -41,12 +41,12 @@ export class AddUserComponent implements OnInit {
   getCurrentData(){
     this.service.getCurrentUserData(this.route.snapshot.params['id']).subscribe((result: any) => {
       this.signUpForm = new FormGroup({
-      email: new FormControl(result['email']),
-      password: new FormControl(result['password']),
-      confirmPassword: new FormControl(result['confirmPassword']),
-      file: new FormControl(result['file']),
-      check: new FormControl(result['check'])
-    });
+        email: new FormControl(result['email']),
+        password: new FormControl(result['password']),
+        confirmPassword: new FormControl(result['confirmPassword']),
+        file: new FormControl(result['file']),
+        check: new FormControl(result['check'])
+      });
   });
   }
 

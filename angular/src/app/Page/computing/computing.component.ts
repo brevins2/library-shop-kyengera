@@ -30,6 +30,7 @@ export class ComputingComponent implements OnInit {
   api: Api[] = [];
   compute: ComputerAccess[] = compAccess;
   closeResult = '';
+  
   addComputer = new FormGroup({
     id: new FormControl(''),
     Title: new FormControl(''),
@@ -51,10 +52,6 @@ export class ComputingComponent implements OnInit {
     this.getAPi();
   }
 
-  // addComputers(){
-  //   this.dialogRef.open(AddComputerComponent);
-  // }
-
   getAPi(){
     this.http.get<any>('http://localhost:3000/Computers').subscribe(
       response=>{
@@ -64,9 +61,7 @@ export class ComputingComponent implements OnInit {
 
   deleteCompAccess(computeDelete: ComputerAccess){
     this.Serve.deleteCompAccess(computeDelete).subscribe(()=> this.compute = this.compute.filter(t => t.id !== computeDelete.id));
-    this.http.delete('http://localhost:3000/Computers').
-    subscribe(()=>(this.compute = this.compute.filter((t)=>
-    t.id!)));
+    this.http.delete('http://localhost:3000/Computers').subscribe(()=>(this.compute = this.compute.filter((t) => t.id!)));
   }
 
   updateCompAccess(){

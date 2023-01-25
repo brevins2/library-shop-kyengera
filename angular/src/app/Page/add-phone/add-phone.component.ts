@@ -76,9 +76,9 @@ export class AddPhoneComponent implements OnInit {
         else if(event.type === HttpEventType.Response){
           console.log(event);
         }
-    });
+      });
+    }
   }
-}
 
   Edit(){
     this.service.updatePhones(this.route.snapshot.params['id'], this.addPhone.value).subscribe((result) => {

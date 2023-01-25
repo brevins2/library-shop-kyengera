@@ -14,14 +14,18 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Message</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let datas of data">
-                    <td>{{datas.id}}</td>
-                    <td>{{datas.name}}</td>
-                    <td>{{datas.email}}</td>
-                    <td>{{datas.message}}</td>
+                    <td>{{datas.ID}}</td>
+                    <td>{{datas.Name}}</td>
+                    <td>{{datas.Email}}</td>
+                    <td>{{datas.Message}}</td>
+                    <td><i class="fa-solid fa-edit"></i></td>
+                    <td><i class="fa-solid fa-trash"></i></td>
                 </tr>
             </tbody>
         </table>

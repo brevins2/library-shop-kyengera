@@ -27,7 +27,6 @@ db.connect(err => {
 
 // for Accounts/registration
 //get all the data
-
 app.get('/Accounts', (req, res) => {
 
     let qr = `select * from accounts`;
@@ -41,15 +40,13 @@ app.get('/Accounts', (req, res) => {
                 message: 'all data available',
                 data: result
             });
-
-            //            res.json(qr);
         }
     });
 });
 
 // get single data
 
-app.get('/Account/:id', (req, res) => {
+app.get('/Accounts/:id', (req, res) => {
 
     let gID = req.params.id;
 
@@ -61,12 +58,10 @@ app.get('/Account/:id', (req, res) => {
             console.log(err);
         }
         if (results.length > 0) {
-            //            res.send({
-            //                Message: 'getting single data',
-            //                data: results
-            //            });
-
-            res.json(qr);
+            res.send({
+                Message: 'getting single data',
+                data: results
+            });
         } else {
             res.send({
                 message: 'data not found'
@@ -76,10 +71,7 @@ app.get('/Account/:id', (req, res) => {
 });
 
 // adding data
-
 app.post('/add/Account', (req, res) => {
-
-    console.log(req.body, 'data added');
 
     let email = req.body.Email;
     let password = req.body.Password;
@@ -102,12 +94,9 @@ app.post('/add/Account', (req, res) => {
 });
 
 // put data/ update data
+app.put('/Accounts/:id', (req, res) => {
 
-app.put('/update/Account/:id', (req, res) => {
-
-    console.log(req.body, 'data updated');
-
-    let gID = req.params.ID;
+    let gID = req.params.id;
     let email = req.body.Email;
     let password = req.body.Password;
     let confirmPassword = req.body.ConfirmPassword;
@@ -127,10 +116,9 @@ app.put('/update/Account/:id', (req, res) => {
 });
 
 // delete single data
+app.delete('/Accounts/:id', (req, res) => {
 
-app.delete('/delete/Accounts/:id', (req, res) => {
-
-    let qID = req.params.ID;
+    let qID = req.params.id;
 
     let qr = `delete from accounts where ID = '${qID}'`;
 
@@ -147,7 +135,6 @@ app.delete('/delete/Accounts/:id', (req, res) => {
 
 //for Messages
 //get all the data
-
 app.get('/Message', (req, res) => {
 
     let qr = `select * from messages`;
@@ -165,10 +152,9 @@ app.get('/Message', (req, res) => {
 });
 
 // get single data
-
 app.get('/Message/:id', (req, res) => {
 
-    let gID = req.params.ID;
+    let gID = req.params.id;
 
     let qr = `select * from messages where ID = ${gID}`;
 
@@ -191,10 +177,7 @@ app.get('/Message/:id', (req, res) => {
 });
 
 // adding data
-
 app.post('/add/Message', (req, res) => {
-
-    console.log(req.body, 'data added');
 
     let email = req.body.Email;
     let name = req.body.Name;
@@ -214,12 +197,9 @@ app.post('/add/Message', (req, res) => {
 });
 
 // put data/ update data
+app.put('/Message/:id', (req, res) => {
 
-app.put('/update/Message/:id', (req, res) => {
-
-    console.log(req.body, 'data updated');
-
-    let gID = req.params.ID;
+    let gID = req.params.id;
     let email = req.body.Email;
     let name = req.body.Name;
     let message = req.body.Message;
@@ -237,10 +217,9 @@ app.put('/update/Message/:id', (req, res) => {
 
 
 // delete single data
+app.delete('/Message/:id', (req, res) => {
 
-app.delete('/delete/Message/:id', (req, res) => {
-
-    let qID = req.params.ID;
+    let qID = req.params.id;
 
     let qr = `delete from messages where ID = '${qID}'`;
 
@@ -258,7 +237,6 @@ app.delete('/delete/Message/:id', (req, res) => {
 
 // for phones
 //get all the data
-
 app.get('/Phones', (req, res) => {
 
     let qr = `select * from phones`;
@@ -277,10 +255,9 @@ app.get('/Phones', (req, res) => {
 });
 
 // get single data
-
 app.get('/Phones/:id', (req, res) => {
 
-    let gID = req.params.ID;
+    let gID = req.params.id;
 
     let qr = `select * from phones where ID = ${gID}`;
 
@@ -303,10 +280,7 @@ app.get('/Phones/:id', (req, res) => {
 });
 
 // adding data
-
 app.post('/add/Phone', (req, res) => {
-
-    console.log(req.body, 'data added');
 
     let title = req.body.Title;
     let storage = req.body.Storage;
@@ -330,12 +304,9 @@ app.post('/add/Phone', (req, res) => {
 });
 
 // put data/ update data
+app.put('/Phones/:id', (req, res) => {
 
-app.put('/update/Phones/:id', (req, res) => {
-
-    console.log(req.body, 'data updated');
-
-    let gID = req.params.ID;
+    let gID = req.params.id;
     let title = req.body.Title;
     let storage = req.body.Storage;
     let battery = req.body.Battery;
@@ -356,10 +327,9 @@ app.put('/update/Phones/:id', (req, res) => {
 });
 
 // delete single data
+app.delete('/Phones/:id', (req, res) => {
 
-app.delete('/delete/Phones/:id', (req, res) => {
-
-    let qID = req.params.ID;
+    let qID = req.params.id;
 
     let qr = `delete from phones where ID = '${qID}'`;
 
@@ -395,10 +365,9 @@ app.get('/Computers', (req, res) => {
 });
 
 // get single data
-
 app.get('/Computers/:id', (req, res) => {
 
-    let gID = req.params.ID;
+    let gID = req.params.id;
 
     let qr = `select * from computers where ID = ${gID}`;
 
@@ -421,10 +390,7 @@ app.get('/Computers/:id', (req, res) => {
 });
 
 // adding data
-
 app.post('/add/Computer', (req, res) => {
-
-    console.log(req.body, 'data added');
 
     let title = req.body.Title;
     let category = req.body.Category;
@@ -446,12 +412,9 @@ app.post('/add/Computer', (req, res) => {
 });
 
 // put data/ update data
+app.put('/Computers/:id', (req, res) => {
 
-app.put('/update/Computer/:id', (req, res) => {
-
-    console.log(req.body, 'data updated');
-
-    let gID = req.params.ID;
+    let gID = req.params.id;
     let title = req.body.Title;
     let category = req.body.Category;
     let price = req.body.Price;
@@ -470,10 +433,9 @@ app.put('/update/Computer/:id', (req, res) => {
 });
 
 // delete single data
+app.delete('/Computers/:id', (req, res) => {
 
-app.delete('/delete/Computers/:id', (req, res) => {
-
-    let qID = req.params.ID;
+    let qID = req.params.id;
 
     let qr = `delete from computers where ID = '${qID}'`;
 
@@ -490,7 +452,6 @@ app.delete('/delete/Computers/:id', (req, res) => {
 
 // for orders
 //get all the data
-
 app.get('/Orders', (req, res) => {
 
     let qr = `select * from orders`;
@@ -509,10 +470,9 @@ app.get('/Orders', (req, res) => {
 });
 
 // get single data
-
 app.get('/Orders/:id', (req, res) => {
 
-    let gID = req.params.ID;
+    let gID = req.params.id;
 
     let qr = `select * from orders where ID = ${gID}`;
 
@@ -535,10 +495,7 @@ app.get('/Orders/:id', (req, res) => {
 });
 
 // adding data
-
 app.post('/add/Orders', (req, res) => {
-
-    console.log(req.body, 'data added');
 
     let title = req.body.Title;
     let messages = req.body.Message;
@@ -566,12 +523,9 @@ app.post('/add/Orders', (req, res) => {
 });
 
 // put data/ update data
+app.put('/Orders/:id', (req, res) => {
 
-app.put('/update/Orders/:id', (req, res) => {
-
-    console.log(req.body, 'data updated');
-
-    let gID = req.params.ID;
+    let gID = req.params.id;
     let title = req.body.Title;
     let messages = req.body.Message;
     let storage = req.body.Storage;
@@ -596,10 +550,9 @@ app.put('/update/Orders/:id', (req, res) => {
 });
 
 // delete single data
+app.delete('/Orders/:id', (req, res) => {
 
-app.delete('/delete/Orders/:id', (req, res) => {
-
-    let qID = req.params.ID;
+    let qID = req.params.id;
 
     let qr = `delete from orders where ID = '${qID}'`;
 
@@ -616,7 +569,6 @@ app.delete('/delete/Orders/:id', (req, res) => {
 
 // for Uploaded images
 //get all the data
-
 app.get('/Upload', (req, res) => {
 
     let qr = `select * from uploads`;
@@ -635,10 +587,9 @@ app.get('/Upload', (req, res) => {
 });
 
 // get single data
-
 app.get('/Upload/:id', (req, res) => {
 
-    let gID = req.params.ID;
+    let gID = req.params.id;
 
     let qr = `select * from uploads where ID = ${gID}`;
 
@@ -661,7 +612,6 @@ app.get('/Upload/:id', (req, res) => {
 });
 
 // adding data
-
 app.post('/add/files', (req, res) => {
 
     console.log(req.body, 'data added');
@@ -684,12 +634,9 @@ app.post('/add/files', (req, res) => {
 });
 
 // put data/ update data
+app.put('/Upload/:id', (req, res) => {
 
-app.put('/update/Upload/:id', (req, res) => {
-
-    console.log(req.body, 'data updated');
-
-    let gID = req.params.ID;
+    let gID = req.params.id;
     let title = req.body.Title;
     let file = req.body.File;
 
@@ -705,10 +652,9 @@ app.put('/update/Upload/:id', (req, res) => {
 });
 
 // delete single data
+app.delete('/Upload/:id', (req, res) => {
 
-app.delete('/delete/Upload/:id', (req, res) => {
-
-    let qID = req.params.ID;
+    let qID = req.params.id;
 
     let qr = `delete from uploads where ID = '${qID}'`;
 

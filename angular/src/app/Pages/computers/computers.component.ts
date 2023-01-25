@@ -2,17 +2,7 @@ import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
 import { ComputerPayComponent } from 'src/app/Pay/computer-pay/computer-pay.component';
-
-export class Api{
-  constructor(
-    public id: number,
-    public Title: string,
-    public Price: number,
-    public Category: string,
-    public File: string,
-    public Brand: string
-  ){}
-}
+import { ComputerAccess } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-computers',
@@ -22,9 +12,9 @@ export class Api{
 
 export class ComputersComponent implements OnInit {
 
-  comp: Api[] = [];
+  comp: ComputerAccess[] = [];
   _filterText: string= "";
-  searchText: Api[] = [];
+  searchText: ComputerAccess[] = [];
   constructor(
     private http: HttpClient,
     private dialogRef: MatDialog
@@ -37,22 +27,18 @@ export class ComputersComponent implements OnInit {
    
   // get computer data from server
   getApi(filterTerm: string){
-    this.http.get<any>('http://localhost:3000/Computers').subscribe(response=>
+    this.http.get<{data: ComputerAccess[]}>('http://localhost:8080/Computers').subscribe(response=>
       {
-        this.comp = response;
-        if(response.length === 0 || this.filterText === ''){
-          return response;
+        this.comp = response.data;
+        if(this.comp.length === 0 || this.filterText === ''){
+          return response.data;
         }
         else{
-          return response.filter((computer: any) => {
+          return this.comp.filter((computer: any) => {
             return computer.Title  === filterTerm;
           })
         }
       });
-  }
-
-  watch(){
-    this.dialogRef.open(ComputerPayComponent);
   }
 
   // search

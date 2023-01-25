@@ -1,6 +1,4 @@
-<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light back-style position-sticky fixed-top d-flex justify-content-between">
-    <!-- Collapsible wrapper -->
     <a class="navbar-brand justify-content-start" routerLink="/cmj">
         <img src="../../../assets/image/icons/logo.png" width="250">
     </a>
@@ -133,10 +131,11 @@
             </slide>
         </carousel>
     </div>
+     <!-- *ngIf="phon.id <= 8" -->
     <div class="body">
         <div class="row row-cols-1 row-cols-md-3 g-2">
-            <a class="col" *ngFor="let phon of api" routerLink="/phon-pay/{{phon.id}}">
-                <div class="card h-100 card-item" *ngIf="phon.id <= 8">
+            <a class="col" *ngFor="let phon of phones" routerLink="/phon-pay/{{phon.id}}">
+                <div class="card h-100 card-item">
                     <h5 class="card-title">{{phon.Title}}</h5>
                     <div>
                         <div class="card-body">
@@ -156,10 +155,11 @@
         </div>
         <a routerLink="/users/phones" class="more">see more >>></a>
     </div>
+     <!-- *ngIf="com.id <= 8" -->
     <div class="body">
         <div class="row row-cols-1 row-cols-md-3 g-2">
-            <a class="col" *ngFor="let com of comp" routerLink="/comp-pay/{{com.id}}">
-                <div *ngIf="com.id <= 8" class="card h-100">
+            <a class="col" *ngFor="let com of computers" routerLink="/comp-pay/{{com.id}}">
+                <div class="card h-100">
                     <h5 class="card-title">{{com.Title}}</h5>
                     <div class="card-body">
                         <img [src]="'../../../../../assets/image/computers/'+ com.File" class="card-img-top" height="90">
@@ -195,17 +195,17 @@
                 <h2>Send Message</h2>
                 <div class="form-group">
                     <label>Name</label>
-                    <input type="text" formControlName="name" class="form-control" id="exampleInputText" placeholder="Enter name" />
+                    <input type="text" formControlName="Name" class="form-control" id="exampleInputText" placeholder="Enter name" />
                 </div>
 
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <input type="email" class="form-control" formControlName="Email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                 </div>
 
                 <div class="form-group">
                     <label for="exampleMessage">Message</label>
-                    <textarea class="form-control" id="exampleMessage" formControlName="message" placeholder="Enter your message" rows="6">
+                    <textarea class="form-control" id="exampleMessage" formControlName="Message" placeholder="Enter your message" rows="6">
                     </textarea>
                 </div>
 

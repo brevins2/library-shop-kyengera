@@ -1,21 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { PhonePayComponent } from 'src/app/Pay/phone-pay/phone-pay.component';
 import { ActivatedRoute } from '@angular/router';
 import { ServeService } from 'src/app/Services/serve.service';
-
-export class Api{
-  constructor(
-    public id: number,
-    public Title: string,
-    public Storage: string,
-    public Battery: string,
-    public Price: number,
-    public File: string,
-    public Brand: string
-  ){}
-}
+import { Phones } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-phones',
@@ -24,13 +12,8 @@ export class Api{
 })
 export class PhonesComponent implements OnInit {
 
-  api: Api[] = [];
-  constructor(
-    private http: HttpClient,
-    private dialogRef: MatDialog,
-    private router: ActivatedRoute,
-    private service: ServeService
-  ) { }
+  api: Phones[] = [];
+  constructor(private http: HttpClient, private router: ActivatedRoute, private service: ServeService) { }
 
   ngOnInit(): void {
     this.getApi();
@@ -43,15 +26,10 @@ export class PhonesComponent implements OnInit {
     });
   }
 
-  watch(){
-    this.dialogRef.open(PhonePayComponent);
-  }
-
   getApi(){
-    this.http.get<any>('http://localhost:3000/Phones').subscribe(
-      response=>{
-        this.api = response
-      });
+    this.http.get<{data: Phones[]}>('http://localhost:8080/Phones').subscribe(response=>{
+      this.api = response.data;
+    });
   }
 
   search(){}

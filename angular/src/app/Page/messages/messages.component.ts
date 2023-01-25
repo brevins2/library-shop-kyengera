@@ -1,14 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-
-export class Data{
-  constructor(
-  public id: number,
-  public name: string,
-  public email: string,
-  public message: string
-  ){}
-}
+import { Messages } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-messages',
@@ -17,17 +9,16 @@ export class Data{
 })
 export class MessagesComponent implements OnInit {
 
-  data: Data[] = [];
+  data: Messages[] = [];
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.getPhoneOrder();
+    this.getMessages();
   }
 
-  getPhoneOrder(){
-    this.http.get<any>('http://localhost:8080/Message').subscribe(result =>{
-      this.data = result;
-      console.log(result);
+  getMessages(){
+    this.http.get<{data: Messages[]}>('http://localhost:8080/Message').subscribe(result =>{
+      this.data = result.data;
     });
   }
 

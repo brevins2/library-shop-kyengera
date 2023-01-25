@@ -5,27 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ServeService } from 'src/app/Services/serve.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ComputerPayComponent } from 'src/app/Pay/computer-pay/computer-pay.component';
-
-export interface Tile {
-  color: string;
-  cols: number;
-  rows: number;
-  text: string;
-}
-
-export class Api{
-  constructor(
-    public id: number,
-    public Title: string,
-    public Storage: string,
-    public Battery: string,
-    public Price: number,
-    public File: string,
-    public Brand: string,
-    public Category: string
-  ){}
-}
-
+import { ComputerAccess, Phones } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-first-page',
@@ -34,9 +14,13 @@ export class Api{
 })
 export class FirstPageComponent implements OnInit {
 
-  api: Api[] = [];
-  comp: Api[] = [];
-  public sendMessage!: FormGroup;
+  phones: Phones[] = [];
+  computers: ComputerAccess[] = [];
+  sendMessage = this.formBuilder.group({
+      Email: [''],
+      Name: [''],
+      Message: ['']
+    });
   alerts = false;
   panelOpenState = false;
 
@@ -48,18 +32,12 @@ export class FirstPageComponent implements OnInit {
     private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    this.getApi();
-    this.getApiComputer();
+    this.getPhones();
+    this.getComputer();
     this.sendMessage = this.formBuilder.group({
-      email: [''],
-      name: [''],
-      message: ['']
-    });
-
-    this.http.get<any>("http://localhost:8080/Message").subscribe(result => {
-        // console.log(result);
-        // console.log("great work");
-        return result;
+      Email: [''],
+      Name: [''],
+      Message: ['']
     });
   }
 
@@ -70,22 +48,15 @@ export class FirstPageComponent implements OnInit {
     });
   }
 
-  getApi(){
-    this.http.get<any>("http://localhost:3000/Phones").subscribe(
-      response=>{
-        this.api = response
-      });
+  getPhones(){
+    this.http.get<{data: Phones[]}>("http://localhost:8080/Phones").subscribe(response=>{
+      this.phones = response.data;
+    });
   }
 
-  // computers
-  watch(){
-    this.dialogRef.open(ComputerPayComponent);
-  }
-
-  getApiComputer(){
-    this.http.get<any>("http://localhost:3000/Computers").subscribe( response=>
-      {
-        this.comp = response;
+  getComputer(){
+    this.http.get<{data: ComputerAccess[]}>("http://localhost:8080/Computers").subscribe( response=>{
+        this.computers = response.data;
       });
   }
 
