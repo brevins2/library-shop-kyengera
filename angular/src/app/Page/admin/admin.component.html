@@ -1,19 +1,15 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light back-style position-sticky fixed-top">
-    <!-- Container wrapper -->
-    <div class="container-fluid">
-      <!-- Navbar brand -->
-      <div class="brand">
+<nav class="position-sticky fixed-top d-flex justify-content-between">
+    <div class="justify-content-start">
         <a class="navbar-brand mt-2 mt-lg-0" routerLink="/cmj">
           <img src="../../../assets/image/icons/logo.png" width="250">
         </a>
-      </div>
+    </div>
 
-      <div class="example-sidenav-content">
+    <div class="justify-content-end">
         <button type="button" class="text-light" mat-button (click)="drawer.toggle()">
           <mat-icon class="menu">menu</mat-icon>
         </button>
-      </div>
     </div>
 </nav>
 
@@ -23,20 +19,20 @@
             <div class="d-flex flex-column align-items-left button-nav text-black">
                 <!-- user Icons -->
                 <button mat-button>
-                    <a class="d-flex justify-content-between" routerLink="user">
-                        <i class="fa fa-users service align-middle d-flex justify-content-start"></i>
-                        <span class="d-flex text-right justify-content-end">User</span>
+                    <a class="d-flex" routerLink="user">
+                        <i class="fa fa-users service align-middle"></i>
+                        <span>User</span>
                     </a>
                  </button>
                 <mat-divider></mat-divider>
                 <!-- phones Icons -->
                 <button mat-button>
-                    <a class="d-flex justify-content-between" routerLink="phone">
-                        <mat-icon  class="align-middle d-flex justify-content-start products">
+                    <a class="d-flex" routerLink="phone">
+                        <mat-icon  class="align-middle d-flex products">
                             <span class="material-icons">phone_android
                             </span>
                         </mat-icon>
-                        <span class="d-flex text-left justify-content-end">Phones</span>
+                        <span>Phones</span>
                     </a>
                  </button>
                 <mat-divider></mat-divider>
@@ -44,40 +40,36 @@
                 <!-- computer accessories Icons -->
                 <button mat-button>
                     <a class="d-flex" routerLink="computer">
-                        <i class="fa fa-desktop power align-middle d-flex justify-content-start"></i>
+                        <i class="fa fa-desktop power align-middle"></i>
                       &nbsp;&nbsp;
-                        <span class="d-flex text-left justify-content-end">Accessories</span>
+                        <span>Accessories</span>
                     </a>
                 </button>
                 <mat-divider></mat-divider>
 
                 <!-- notification Icons -->
                 <button mat-button>
-                    <a class="d-flex justify-content-between" routerLink="notifications">
-                        <i class="fa fa-bell power align-middle d-flex justify-content-start"></i>
-                        <span class="d-flex text-left justify-content-end">Notification</span>
+                    <a class="d-flex" routerLink="notifications">
+                        <i class="fa fa-bell power align-middle"></i>
+                        <span>Notification</span>
                     </a>
                 </button>
                 <mat-divider></mat-divider>
 
                 <!-- Messages Icons -->
                 <button mat-button>
-                    <a class="d-flex justify-content-between" routerLink="messages">
-                        <i class="fa fa-envelope power align-middle d-flex justify-content-start"></i>
-                        <span class="d-flex text-left justify-content-end">Messages</span>
+                    <a class="d-flex" routerLink="messages">
+                        <i class="fa fa-envelope power align-middle"></i>
+                        <span>Messages</span>
                     </a>
                 </button>
 
                 <!-- power button -->
-                  <button class="text-danger justify-content-start text-left" mat-button type="submit" (click)="logout()">
+                  <button class="text-danger text-left" mat-button type="submit" (click)="logout()">
                     <i class="fa fa-power-off power"></i>
                     Logout
                   </button>
             </div>
-            <!-- <p *ngIf="showFiller ">Lorem, ipsum dolor sit amet consectetur.</p>
-            <button (click)="showFiller=! showFiller " mat-raised-button>
-            Toggle extra text
-          </button> -->
         </mat-drawer>
 
         <router-outlet class="hide"></router-outlet>

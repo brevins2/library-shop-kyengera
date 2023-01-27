@@ -1,57 +1,64 @@
 <body>
-    <nav class="navbar navbar-expand-lg" id="navbar">
-        <div class="container-fluid d-flex">
-            <input type="search" class="form-control" id="search-input-sidenav search" name="search" placeholder="Search for Phones, mouse, keyboards, fans, cables, flash....">&nbsp;
-            <button class="btn btn-primary search" (click)="search()">Search</button>
-        </div>
+    <nav class="d-flex">
+        <input type="search" class="form-control" id="search-input-sidenav search" name="search" placeholder="Search for Phones, mouse, keyboards, fans, cables, flash....">&nbsp;
+        <button class="btn btn-primary search" (click)="search()">Search</button>
     </nav>
 
     <div class="display">
-        <button class="btn btn-lg btn-outline-primary" (click)="open()">
+        <button class="btn btn-outline-primary" (click)="open()">
             <i class="fa fa-plus"></i>&nbsp;
                 Add Computer
         </button>
-      <br><br>
 
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Cartegory</th>
-                    <th>Price</th>
-                    <th>File</th>
-                    <th>Edit</th>
-                    <th>Remove</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let comp of api">
-                    <td>{{comp.ID}}</td>
-                    <td>{{comp.Title}}</td>
-                    <td>{{comp.Category}}</td>
-                    <td>{{comp.Price}}</td>
-                    <td>
-                        <img [src]="'../../../assets/image/computers/'+comp.File" width="80">
-                    </td>
-                    <td>
-                        <a class="btn btn-primary" routerLink="/edit-computer/{{comp.ID}}">
-                            <i class="fa fa-edit"></i>
-                        </a>
-                    </td>
-                    <td>
-                        <a class="btn btn-danger" routerLink="/edit-computer/{{comp.ID}}">
-                            <i class="fa fa-trash"></i>
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <!-- ID Column -->
+            <ng-container matColumnDef="ID">
+              <th mat-header-cell *matHeaderCellDef class="text-left"> ID </th>
+              <td mat-cell *matCellDef="let computers"> {{computers.ID}} </td>
+            </ng-container>
+
+            <!-- Title Column -->
+            <ng-container matColumnDef="Title">
+              <th mat-header-cell *matHeaderCellDef class="text-left"> Title </th>
+              <td mat-cell *matCellDef="let computers"> {{computers.Title}} </td>
+            </ng-container>
+
+            <!-- Category Column -->
+            <ng-container matColumnDef="Category">
+              <th mat-header-cell *matHeaderCellDef class="text-left"> Category </th>
+              <td mat-cell *matCellDef="let computers"> {{computers.Category}} </td>
+            </ng-container>
+
+            <!-- Price Column -->
+            <ng-container matColumnDef="Price">
+              <th mat-header-cell *matHeaderCellDef class="text-left"> Price </th>
+              <td mat-cell *matCellDef="let computers"> {{computers.Price}} </td>
+            </ng-container>
+
+            <!-- File Column -->
+            <ng-container matColumnDef="File">
+              <th mat-header-cell *matHeaderCellDef class="text-left"> File </th>
+              <td mat-cell *matCellDef="let computers"> {{computers.File}} </td>
+            </ng-container>
+
+            <!-- Edit Column -->
+            <ng-container matColumnDef="Edit">
+              <th mat-header-cell *matHeaderCellDef class="text-left"> Edit </th>
+              <td mat-cell *matCellDef="let computers"> <button class="btn btn-outline-danger" routerLink="/delete/message/{{computers.ID}}"><i class="fa fa-trash"></i></button> </td>
+            </ng-container>
+
+            <!-- Delete Column -->
+            <ng-container matColumnDef="Delete">
+              <th mat-header-cell *matHeaderCellDef class="text-left"> Delete </th>
+              <td mat-cell *matCellDef="let computers"> <button class="btn btn-outline-danger" routerLink="/delete/message/{{computers.ID}}"><i class="fa fa-trash"></i></button> </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
-
     </div>
-    <br>
-
-    <mat-divider></mat-divider>
+    
     <footer>
         <i class="fa fa-copyright"></i> copy rights reserved
     </footer>

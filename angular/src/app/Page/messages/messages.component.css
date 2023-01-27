@@ -1,5 +1,5 @@
 .display {
-    overflow: hidden;
+    padding: 2%;
 }
 
 nav {
@@ -20,12 +20,16 @@ table {
 /* search styles */
 input {
     font-size: 1.2rem;
-    width: 78%;
+    width: 84%;
+    margin-left: 10px;
 }
 
-button .btn-search {
-    font-size: 1.4rem;
-    width: 5%;
+.btn-primary {
+    height: 35px;
+}
+
+i {
+    font-size: 1.2rem;
 }
 
 /* footer styling */
@@ -34,5 +38,5 @@ footer {
     margin-bottom: 10px;
     padding-top: 30px;
     height: 90px;
-    font-size: 1.0rem;
+    font-size: 1.5rem;
 }

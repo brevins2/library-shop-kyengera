@@ -13,7 +13,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class UserComponent implements OnInit {
 
   user: User[] =[];
-  displayedColumns: string[] = ['ID', 'Email', 'Password', 'ConfirmPassword', 'Delete'];
+  displayedColumns: string[] = ['ID', 'Email', 'Password', 'ConfirmPassword', 'Edit', 'Delete'];
     dataSource = this.user;
   
   constructor(private http: HttpClient, private Serve: ServeService, private route: Router,

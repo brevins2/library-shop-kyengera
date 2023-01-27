@@ -1,46 +1,47 @@
 <body>
-    <nav class="navbar navbar-expand-lg" id="navbar">
-            <div class="container-fluid d-flex">
-                <input type="search" class="form-control" id="search-input-sidenav" id="search" name="search" placeholder="Search for Phones, mouse, keyboards, fans, cables, flash....">&nbsp;
-                <button class="btn btn-primary" (click)="search()">Search</button>
-            </div>
+    <nav class="d-flex">
+        <input type="search" class="form-control" id="search-input-sidenav" id="search" name="search" placeholder="Search for Phones, mouse, keyboards, fans, cables, flash....">&nbsp;
+        <button class="btn btn-primary" (click)="search()">Search</button>
     </nav>
 
     <div class="display">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Cartegory</th>
-                    <th>Price</th>
-                    <th>File</th>
-                    <th>Battery</th>
-                    <th>Storage</th>
-                    <th>Message</th>
-                    <th>Delivered</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let datas of data">
-                    <td>{{datas.id}}</td>
-                    <td>{{datas.Title}}</td>
-                    <td>{{datas.Category}}</td>
-                    <td>{{datas.Price}}</td>
-                    <td>{{datas.File}}</td>
-                    <td>{{datas.Battery}}</td>
-                    <td>{{datas.Storage}}</td>
-                    <td>{{datas.Message}}</td>
-                    <td>
-                        <input type="checkbox" [value]="'{{datas.delivered}}'" name="delivered">
-                    </td>
-                </tr>
-            </tbody>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <!-- ID Column -->
+            <ng-container matColumnDef="ID">
+              <th mat-header-cell *matHeaderCellDef class="text-left"> ID </th>
+              <td mat-cell *matCellDef="let message"> {{message.ID}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="Name">
+              <th mat-header-cell *matHeaderCellDef class="text-left"> Name </th>
+              <td mat-cell *matCellDef="let message"> {{message.Name}} </td>
+            </ng-container>
+
+            <!-- Email Column -->
+            <ng-container matColumnDef="Email">
+              <th mat-header-cell *matHeaderCellDef class="text-left"> Email </th>
+              <td mat-cell *matCellDef="let message"> <a href="u">{{message.Email}}</a> </td>
+            </ng-container>
+
+            <!-- Message Column -->
+            <ng-container matColumnDef="Message">
+              <th mat-header-cell *matHeaderCellDef class="text-left"> Message </th>
+              <td mat-cell *matCellDef="let message"> {{message.Message}} </td>
+            </ng-container>
+
+            <!-- Delete Column -->
+            <ng-container matColumnDef="Delete">
+              <th mat-header-cell *matHeaderCellDef class="text-left"> Delete </th>
+              <td mat-cell *matCellDef="let message"> <button class="btn btn-outline-danger" routerLink="/delete/message/{{message.ID}}"><i class="fa fa-trash"></i></button> </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
     </div>
-    <br>
-
-    <mat-divider></mat-divider>
+    
     <footer>
         <i class="fa fa-copyright"></i> copy rights reserved
     </footer>

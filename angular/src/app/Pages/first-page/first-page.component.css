@@ -1,5 +1,12 @@
-.back-style {
+nav {
+    width: 100%;
+    height: 90px;
     background-color: white;
+    border-bottom: 1px solid #bbbbbb6e;
+}
+
+nav a {
+    margin-top: 10px;
 }
 
 a:hover {

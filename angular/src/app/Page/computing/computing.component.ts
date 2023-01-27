@@ -11,10 +11,12 @@ import { ServeService } from 'src/app/Services/serve.service';
 })
 export class ComputingComponent implements OnInit {
 
-  api: ComputerAccess[] = [];
-  
-  constructor(private http: HttpClient, private serve: ServeService,
-    private route: Router, private router: ActivatedRoute) {
+  computers: ComputerAccess[] = [];
+  displayedColumns: string[] = ['ID', 'Title', 'Category', 'Price', 'File', 'Edit', 'Delete'];
+    dataSource = this.computers;
+
+  constructor(private http: HttpClient, private serve: ServeService, private route: Router, 
+    private router: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -22,7 +24,10 @@ export class ComputingComponent implements OnInit {
   }
 
   getAPi(){
-    this.serve.getAllComputers();
+    this.serve.getAllComputers().subscribe(res => {
+      this.computers = res.data;
+      this.dataSource = this.computers;
+    });
   }
 
   open(){

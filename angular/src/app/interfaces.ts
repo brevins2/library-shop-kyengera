@@ -38,7 +38,9 @@ export interface Order{
     Price: string,
     Brand: string,
     Storage: string,
-    delivered: boolean,
+    Category: string,
+    Email: string,
+    Customer_Name: string
 }
 
 export interface Messages{

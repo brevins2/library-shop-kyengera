@@ -5,6 +5,10 @@ body {
 
 nav {
     background-color: white;
+    width: 100%;
+    height: 80px;
+    padding-top: 10px;
+    border-bottom: 1px solid #b7b5b573;
 }
 
 .brand {
@@ -30,29 +34,10 @@ nav {
     height: 70px;
 }
 
-#search {
-    width: 50%;
-    margin-right: .5%;
-}
-
 .menu {
     color: orangered;
 }
 
-/* sidenav */
-.example-container {
-    width: 100%;
-    height: 100%;
-}
-
-.example-sidenav-content {
-    display: flex;
-    height: 100%;
-}
-
 .example-sidenav {
-    width: 30%;
-    height: 100%;
-    padding: 20px;
-    background-color: grey;
+    width: 200px;
 }

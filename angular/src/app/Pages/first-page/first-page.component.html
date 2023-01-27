@@ -1,12 +1,12 @@
-<nav class="navbar navbar-expand-lg navbar-light back-style position-sticky fixed-top d-flex justify-content-between">
+<nav class="navbar-light position-sticky fixed-top d-flex justify-content-between">
     <a class="navbar-brand justify-content-start" routerLink="/cmj">
         <img src="../../../assets/image/icons/logo.png" width="250">
     </a>
 
-    <nav class="navbar navbar-expand-lg justify-content-end">
-        <button class="navbar-toggler" type="button" (click)="backgroundImageExample3.toggle()" aria-controls="backgroundImageExample3" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="justify-content-end">
+        <!-- <button class="navbar-toggler" type="button" (click)="backgroundImageExample3.toggle()" aria-controls="backgroundImageExample3" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fa fa-bars" aria-label="bars"></i>
-        </button>
+        </button> -->
 
         <div mdbCollapse #backgroundImageExample3="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample3">
             <!-- Service Icons -->
@@ -76,7 +76,7 @@
                   </button>
             </mat-menu>
         </div>
-    </nav>
+    </div>
 </nav>
 
 <body class="bg-light">

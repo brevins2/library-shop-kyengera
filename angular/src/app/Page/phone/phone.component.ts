@@ -9,9 +9,12 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './phone.component.html',
   styleUrls: ['./phone.component.css']
 })
+
 export class PhoneComponent implements OnInit {
 
   phones: Phones[] = [];
+  displayedColumns: string[] = ['ID', 'Title', 'Storage', 'Battrey', 'Price', 'File', 'Brand', 'Edit', 'Delete'];
+    dataSource = this.phones;
   constructor(private http: HttpClient, private Serve: ServeService, private route: Router,
     private router: ActivatedRoute) { }
 
@@ -23,6 +26,7 @@ export class PhoneComponent implements OnInit {
   getApi(){
     this.http.get<{data: Phones[]}>('http://localhost:8080/Phones').subscribe(response =>{
       this.phones = response.data;
+      this.dataSource = this.phones;
     });
   }
 
