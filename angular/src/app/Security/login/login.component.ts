@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
       }
       else if (user) {
         this.alert = true;
-        this.profile = user.email;
+        this.profile = user.Email;
         this.loginForm.reset();
         this.router.navigate(['/users']);
       }

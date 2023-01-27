@@ -78,9 +78,6 @@
                 <div class="butt">
                     <button class="btn btn-lg btn-primary fixed-bottom" (click)="save()"><i class="fa fa-shopping"></i>Order phone</button>&nbsp;
                     <button class="btn btn-danger" (click)="cancel()">Cancel order</button> &nbsp;
-                  <button class="btn btn-info" (click)="open(content)">
-                    <i class="fa fa-paypal"></i>PayPal
-                  </button>
                 </div>
             </form>
     </div>
@@ -88,7 +85,7 @@
 
     <div class="more-items">
       <div class="row row-cols-1 row-cols-md-3 g-2">
-        <a class="col" *ngFor="let phon of api" routerLink="/phon-pay/{{phon.id}}">
+        <a class="col" *ngFor="let phon of api" routerLink="/phon-pay/{{phon.ID}}">
           <div class="card h-100">
             <img [src]="'../../../../../assets/image/phones/'+ phon.File" class="card-img-top" />
             <div class="card-body">

@@ -17,6 +17,9 @@ import { CreateComponent } from './Security/create/create.component';
 import { AddUserComponent } from './Page/add-user/add-user.component';
 import { TestsComponent } from './test/tests/tests.component';
 
+import { EditPhonesComponent } from './Page/edit-phones/edit-phones.component';
+import { EditComputersComponent } from './Page/edit-computers/edit-computers.component';
+
 import { PhonePayComponent } from './Pay/phone-pay/phone-pay.component';
 import { ComputerPayComponent } from './Pay/computer-pay/computer-pay.component';
 
@@ -52,8 +55,8 @@ const routes: Routes = [
   { path: 'add phone', component: AddPhoneComponent },
   { path: 'add user', component: AddUserComponent },
   { path: 'edit-user/:id', component: AddUserComponent },
-  { path: 'edit-phone/:id', component: AddPhoneComponent },
-  { path: 'edit-computer/:id', component: AddComputerComponent },
+  { path: 'edit-phone/:id', component: EditPhonesComponent },
+  { path: 'edit-computer/:id', component: EditComputersComponent },
   { path: 'up', component: FileUploadComponent },
   { path: 'comp-pay/:id', component: ComputerPayComponent },
   { path: 'phon-pay/:id', component: PhonePayComponent },

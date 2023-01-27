@@ -19,15 +19,8 @@ export class PhonesComponent implements OnInit {
     this.getApi();
   }
 
-  getCurrentDatas(){
-    this.service.getCurrentPhoneData(this.router.snapshot.params['id']).subscribe((results)=>{
-      console.log(results);
-      return results;
-    });
-  }
-
   getApi(){
-    this.http.get<{data: Phones[]}>('http://localhost:8080/Phones').subscribe(response=>{
+    this.service.getAllPhones().subscribe(response=>{
       this.api = response.data;
     });
   }

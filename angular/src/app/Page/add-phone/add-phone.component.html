@@ -58,13 +58,9 @@
                     <label class="inputPrice" for="Price">Price</label>
                     <input formControlName="Price" class="form-control" type="text" placeholder="Enter Price" id="inputPrice">
                 </div>
-                <div class="form-row" id="upload">
-                    <label for="upload">Upload image</label>
-                    <input formControlName="File" class="form-control" type="file" id="fileUpload" (change)="onFileUpload($event)">
-                </div>
                 <br>
                 <div class="butt">
-                    <button class="btn btn-primary" id="save" (click)="Edit()">Save</button>
+                    <button class="btn btn-primary" id="save" (click)="Save()">Save</button>
                     <button class="btn btn-secondary" (click)="clr()">Clear Form</button>
                     <button class="btn btn-primary" id="cancel" (click)="cancel()">Cancel</button>
                 </div>

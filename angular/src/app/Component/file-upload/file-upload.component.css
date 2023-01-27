@@ -1,3 +1,38 @@
-.file-input {
-    display: none;
+body {
+  width: 845px;
+  margin: 0 auto;
+  padding: 4px;
+  background-color: unset;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 2%;
+}
+
+span {
+  text-align: center !important;
+  display: inline-block;
+  width: 100%;
+}
+
+td {
+  font-size: .7rem;
+}
+
+.form-group {
+  margin-bottom: 1%;
+}
+
+.form-group input {
+  width: 90%;
+}
+
+.progress {
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+
+.url {
+  padding: 4px;
 }

@@ -36,84 +36,28 @@
 </div>
 
 <body>
-    <div class="d-flex">
-        <div class="side">
-            <!-- buyComputer.controls['File'].value -->
-            <form [formGroup]="buyComputer" class="form-control">
-                <img formControlName="File" [src]="buyComputer.controls['File'].value" title="Accessory" aria-label="image of product" alt="Image of accessory" width="150">
-            </form>
-        </div>
-        <div class="container">
-            <form [formGroup]="buyComputer" id="styled" (ngSubmit)="order()" class="form-control">
-                    <div class="input">
-                        <h1 class="text-warning">Order a Computer Accessory</h1>
-                        <div class="form-row">
-                            <div class="form-group" id="title">
-                                <label for="Title">Title</label>
-                                <input formControlName="Title" type="text" class="form-control" id="inputTitle" placeholder="title">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group" id="ids">
-                                <div>
-                                    <label for="Category">Category</label>
-                                    <input formControlName="Category" type="text" class="form-control" id="inputCategory" placeholder="Category">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row" id="id">
-                            <label class="Price" for="Price">Price</label>
-                            <input formControlName="Price" class="form-control" type="text" placeholder="Price" id="inputPrice">
-                        </div>
-                        <div class="form-row" id="id">
-                            <label class="inputPicture" for="picture">Address</label>
-                            <address>
-                                <textarea rows="5" cols="78" class="form-control" name="Address" id="inputAddress" formControlName="Message">
-                                </textarea>
-                        </address>
-                        </div>
-                        <br>
-                        <div class="butt">
-                            <button class="btn btn-lg btn-primary fixed-bottom" (click)="order()">Order accessory</button>
-                            <button class="btn btn-danger" (click)="cancel()">Cancel order</button> &nbsp;
-                             <button class="btn btn-info" (click)="open(content)">
-                              <i class="fa fa-paypal"></i>PayPal
-                            </button>
-                        </div>
-                    </div>
-            </form>
-        </div>
-    </div>
-
     <div class="row row-cols-1 row-cols-md-3 g-2">
-      <a class="col" *ngFor="let com of comp" routerLink="/comp-pay/{{com.id}}">
-        <div class="card h-100">
-          <img [src]=" '../../../../../assets/image/computers/'+ com.File" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">{{com.Title}}</h5>
-            <p class="card-text">
-              {{com.Category}}
-              <br>Sh. {{com.Price}}
-              <!--  | currency -->
-            </p>
-          </div>
-          <div class="btn cart">
-            <i class="fa fa-cart-plus"></i>&nbsp;Order
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">{{com.Title}}</small>
-          </div>
-        </div>
-      </a>
+        <a class="col" *ngFor="let com of comp" routerLink="/comp-pay/{{com.ID}}">
+            <div class="card h-100">
+              <img [src]=" '../../../../../assets/image/computers/'+ com.File" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">{{com.Title}}</h5>
+                <p class="card-text">
+                  {{com.Category}}
+                  <br>Sh. {{com.Price}}
+                  <!--  | currency -->
+                </p>
+              </div>
+              <div class="btn cart">
+                <i class="fa fa-cart-plus"></i>&nbsp;Order
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">{{com.Title}}</small>
+              </div>
+            </div>
+        </a>
     </div>
 </body>
-
-<!-- Button trigger modal -->
-<ng-template #content let-modal>
-    <body>
-      <ngx-paypal></ngx-paypal>
-    </body>
-</ng-template>
 
 <br>
 <mat-divider></mat-divider>

@@ -20,7 +20,7 @@
         <div class="container-fluid">
             <div mdbCollapse #backgroundImageExample3="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
                 <input type="text" [(ngModel)]="searchText" class="form-control" id="search-input-sidenav search" name="search" placeholder="Search for Phones, mouse, keyboards, fans, cables, flash....">
-                <button class="btn btn-primary" (click)="search(_filterText)">Search</button>
+                <button class="btn btn-primary" (click)="search()">Search</button>
             </div>
         </div>
     </nav>
@@ -29,7 +29,7 @@
 <mat-card class="mat-parent-small">
     <body>
         <div class="row row-cols-1 row-cols-md-3 g-2 flex-wrap">
-            <a class="col" *ngFor="let com of comp" routerLink="/comp-pay/{{com.id}}">
+            <a class="col" *ngFor="let com of comp" routerLink="/comp-pay/{{com.ID}}">
                 <div class="card h-100">
                     <img [src]="'../../../../../assets/image/computers/'+ com.File" class="card-img-top">
                     <div class="card-body">

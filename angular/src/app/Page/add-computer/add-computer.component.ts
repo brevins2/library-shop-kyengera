@@ -3,7 +3,6 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ServeService } from 'src/app/Services/serve.service';
-import { compAccess } from 'src/app/values';
 import { ComputerAccess } from 'src/app/interfaces';
 
 export class values{
@@ -23,7 +22,7 @@ export class values{
 })
 export class AddComputerComponent implements OnInit {
 
-  compute: ComputerAccess[] = compAccess;
+  compute: ComputerAccess[] = [];
   addComputer = new FormGroup({
     ID: new FormControl(''),
     Title: new FormControl(''),
@@ -39,49 +38,21 @@ export class AddComputerComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getCurrentData();
+    
   }
-
-  getCurrentData(){
-    this.serve.getCurrentComputerData(this.route.snapshot.params['id']).subscribe((result: any) => {
-      this.addComputer = new FormGroup({
-        ID: new FormControl(result['ID']),
-        Title: new FormControl(result['Title']),
-        Category: new FormControl(result['Category']),
-        Price: new FormControl(result['Price']),
-        File: new FormControl(result['File'])
-      });
-    });
-  }
-
-  editComputer(){
-    this.serve.updateCompAccess;
-  }
-
-  addComputers(){}
 
   clr(){
     this.addComputer.reset();
   }
 
   save(){
-    this.serve.updateCompAccess;
-    this.http.post<any>("http://localhost/8080/Computers", this.addComputer.value)
-    .subscribe(res=>{
-      alert("added successfully!!");
-      this.addComputer.reset();
-    },
-    error=>{
-      alert("something went wrong!!");
+    this.serve.createComputer(this.addComputer.value).subscribe(res => {
+
     });
   }
 
   cancel(){
     this.router.navigate(['/admin/computer']);
-    // this.http.delete<any>('http://localhost/8080/Computers')
-    // .subscribe(res=>{
-    //   this.addComputer.value;
-    // });
   }
 
 }

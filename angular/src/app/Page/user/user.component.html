@@ -1,92 +1,50 @@
 <body>
-    <nav class="navbar navbar-expand-lg" id="navbar">
-        <div class="container-fluid d-flex">
-                <input type="search" class="form-control" id="search-input-sidenav" id="search" name="search" placeholder="Search for Phones, mouse, keyboards, fans, cables, flash....">&nbsp;
-                <button class="btn btn-primary" (click)="search()">Search</button>
-        </div>
+    <nav class="d-flex">
+        <input type="search" class="form-control" id="search-input-sidenav" id="search" name="search" placeholder="Search for Phones, mouse, keyboards, fans, cables, flash....">&nbsp;
+        <button class="btn btn-primary" (click)="search()">Search</button>
     </nav>
 
     <div class="display">
-        <!-- Button trigger modal -->
-        <ng-template #content let-modal>
-            <div class="modal-header">
-                <h4 class="modal-title" id="modal-basic-title">Add Phone</h4>
-                <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-            </div>
-            <div class="modal-body">
+        <button class="btn btn-lg btn-outline-primary" (click)="open()"><i class="fa fa-user-plus" color="white"></i>&nbsp;
+            Add User
+        </button>
 
-                <body>
-                    <div id="contain">
-                        <form [formGroup]="signUpForm" id="Form" class="form-control">
-                            <h1>Add Phone</h1>
-                            <div class="form-row">
-                                <div class="form-group col-md-6" id="email">
-                                    <label for="inputEmail">Email</label>
-                                    <input formControlName="email" type="email" class="form-control" id="inputEmail" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6" id="ids">
-                                    <div>
-                                        <label for="inputPassword4">Password</label>
-                                        <input formControlName="password" type="password" class="form-control" id="inputPassword4" placeholder="Password">
-                                    </div>
-                                    <div>
-                                        <label for="inputPassword4">Confirm Password</label>
-                                        <input formControlName="confirmPassword" type="password" class="form-control" id="inputPassword4" placeholder="Confirm Password">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <label for="inputPassword4">Upload Image</label>
-                                <input formControlName="file" class="form-control" type="file" id="inputFile">
-                            </div>
-                        </form>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-                    </div>
-                </body>
-            </div>
-            <div class="modal-footer">
-                <button type="submit" (click)="signUp()" class="btn btn-primary" id="btn">Sign up</button>&nbsp;
-                <button type="submit" (click)="cancel()" class="btn btn-danger" id="btn">Cancel</button>
-            </div>
-        </ng-template>
+            <!-- ID Column -->
+            <ng-container matColumnDef="ID">
+              <th mat-header-cell *matHeaderCellDef class="text-left"> ID </th>
+              <td mat-cell *matCellDef="let user"> {{user.ID}} </td>
+            </ng-container>
 
-        <button class="btn btn-lg btn-outline-primary" (click)="open(content)"> <i class="fa fa-user-plus" color="white"></i>&nbsp;
-            Add User</button>
+            <!-- Email Column -->
+            <ng-container matColumnDef="Email">
+              <th mat-header-cell *matHeaderCellDef class="text-left"> Email </th>
+              <td mat-cell *matCellDef="let user"> {{user.Email}} </td>
+            </ng-container>
 
-        <hr>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Email</th>
-                    <th>Password</th>
-                    <th>Confirm Password</th>
-                    <th>Check</th>
-                    <th>Edit</th>
-                    <th>Remove</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let use of user">
-                    <td>{{use.id}}</td>
-                    <td>{{use.email}}</td>
-                    <td>{{use.password}}</td>
-                    <td>{{use.confirmPassword}}</td>
-                    <td>{{use.check}}</td>
-                    <td>
-                        <a class="btn btn-primary" id="edit" routerLink="/edit-user/{{use.id}}"><i class="fa fa-edit"></i>
-                        </a>
-                    </td>
-                    <td>
-                        <p class="btn btn-danger" id="del" (click)="deleteCompAccess(use)"><i class="fa fa-trash"></i></p>
-                    </td>
-                </tr>
-            </tbody>
+            <!-- Password Column -->
+            <ng-container matColumnDef="Password">
+              <th mat-header-cell *matHeaderCellDef class="text-left"> Password </th>
+              <td mat-cell *matCellDef="let user"> <a href="u">{{user.Password}}</a> </td>
+            </ng-container>
+
+            <!-- Confirm Password Column -->
+            <ng-container matColumnDef="ConfirmPassword">
+              <th mat-header-cell *matHeaderCellDef class="text-left"> Confrim Password </th>
+              <td mat-cell *matCellDef="let user"> {{user.ConfirmPassword}} </td>
+            </ng-container>
+
+            <!-- Delete Column -->
+            <ng-container matColumnDef="Delete">
+              <th mat-header-cell *matHeaderCellDef class="text-left"> Delete </th>
+              <td mat-cell *matCellDef="let user"> <button class="btn btn-outline-danger" routerLink="/delete/message/{{user.ID}}"><i class="fa fa-trash"></i></button> </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
     </div>
-    <hr>
 
     <footer>
         @copy rights reserved

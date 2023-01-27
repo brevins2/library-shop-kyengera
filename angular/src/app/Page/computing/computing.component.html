@@ -7,53 +7,7 @@
     </nav>
 
     <div class="display">
-        <!-- Button trigger modal -->
-        <ng-template #content let-modal>
-            <div class="modal-header">
-                <h4 class="modal-title" id="modal-basic-title">Add Computer</h4>
-                <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-            </div>
-            <div class="modal-body">
-
-                <body>
-                    <div class="container">
-                        <div class="input">
-                            <form [formGroup]="addComputer" id="styled" class="form-control">
-                                <div class="form-row">
-                                    <div class="form-group col-md-6" id="title">
-                                        <label for="title">Title</label>
-                                        <input formControlName="Title" type="text" class="form-control" id="inputTitle" placeholder="Enter Title">
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group col-md-6" id="ids">
-                                        <div>
-                                            <label for="inputCategory">Category</label>
-                                            <input formControlName="Category" type="text" class="form-control" id="inputCategory" placeholder="Enter Category">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-row" id="id">
-                                    <label class="inputPrice" for="inputPrice">Price</label>
-                                    <input formControlName="Price" class="form-control" type="text" placeholder="Enter Price" id="inputPrice">
-                                </div>
-                                <div class="form-row" id="id">
-                                    <input formControlName="File" class="form-control" type="file" id="inputAmount">
-                                </div>
-                            </form>
-                        </div>
-
-                    </div>
-                </body>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" (click)="save()" [ngStyle]="{'background-color': 'green', 'border-color': 'green'}">Save</button>
-                <button class="btn btn-secondary" (click)="clr()">Clear</button>
-                <button class="btn btn-primary" (click)="cancel()" [ngStyle]=" { 'background-color': 'red', 'border-color': 'red'}">Cancel</button>
-            </div>
-        </ng-template>
-
-        <button class="btn btn-lg btn-outline-primary" (click)="open(content)">
+        <button class="btn btn-lg btn-outline-primary" (click)="open()">
             <i class="fa fa-plus"></i>&nbsp;
                 Add Computer
         </button>
@@ -73,7 +27,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let comp of api">
-                    <td>{{comp.id}}</td>
+                    <td>{{comp.ID}}</td>
                     <td>{{comp.Title}}</td>
                     <td>{{comp.Category}}</td>
                     <td>{{comp.Price}}</td>
@@ -81,12 +35,14 @@
                         <img [src]="'../../../assets/image/computers/'+comp.File" width="80">
                     </td>
                     <td>
-                        <a type="button" class="btn btn-primary" id="edit" routerLink="/edit-computer/{{comp.id}}">
+                        <a class="btn btn-primary" routerLink="/edit-computer/{{comp.ID}}">
                             <i class="fa fa-edit"></i>
                         </a>
                     </td>
                     <td>
-                        <p id="del" class="btn btn-danger" (click)="deleteCompAccess(comp)"><i class="fa fa-trash"></i></p>
+                        <a class="btn btn-danger" routerLink="/edit-computer/{{comp.ID}}">
+                            <i class="fa fa-trash"></i>
+                        </a>
                     </td>
                 </tr>
             </tbody>

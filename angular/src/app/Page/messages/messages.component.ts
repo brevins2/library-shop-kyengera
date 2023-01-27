@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Messages } from 'src/app/interfaces';
+import { ServeService } from 'src/app/Services/serve.service';
 
 @Component({
   selector: 'app-messages',
@@ -9,21 +10,23 @@ import { Messages } from 'src/app/interfaces';
 })
 export class MessagesComponent implements OnInit {
 
-  data: Messages[] = [];
-  constructor(private http: HttpClient) { }
+  message: Messages[] = [];
+  displayedColumns: string[] = ['ID', 'Name', 'Email', 'Message', 'Delete'];
+  dataSource = this.message;
+  constructor(private http: HttpClient, private service: ServeService) { }
 
   ngOnInit(): void {
     this.getMessages();
   }
 
   getMessages(){
-    this.http.get<{data: Messages[]}>('http://localhost:8080/Message').subscribe(result =>{
-      this.data = result.data;
+    this.service.getAllMessages().subscribe(result =>{
+      this.message = result.data;
+      this.dataSource = this.message;
     });
   }
 
   search(){
     alert("search.....");
   }
-
 }

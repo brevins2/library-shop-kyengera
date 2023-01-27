@@ -97,6 +97,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { environment } from '../environments/environment';
 import * as firebase from 'firebase/compat';
+import { EditPhonesComponent } from './Page/edit-phones/edit-phones.component';
+import { EditComputersComponent } from './Page/edit-computers/edit-computers.component';
 
 @NgModule({
   declarations: [
@@ -123,7 +125,9 @@ import * as firebase from 'firebase/compat';
     TermsComponent,
     TestsComponent,
     NotificationsComponent,
-    MessagesComponent
+    MessagesComponent,
+    EditPhonesComponent,
+    EditComputersComponent
   ],
   exports: [
     MatDialogModule

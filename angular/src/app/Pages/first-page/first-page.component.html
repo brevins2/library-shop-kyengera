@@ -134,7 +134,7 @@
      <!-- *ngIf="phon.id <= 8" -->
     <div class="body">
         <div class="row row-cols-1 row-cols-md-3 g-2">
-            <a class="col" *ngFor="let phon of phones" routerLink="/phon-pay/{{phon.id}}">
+            <a class="col" *ngFor="let phon of phones" routerLink="/phon-pay/{{phon.ID}}">
                 <div class="card h-100 card-item">
                     <h5 class="card-title">{{phon.Title}}</h5>
                     <div>
@@ -158,7 +158,7 @@
      <!-- *ngIf="com.id <= 8" -->
     <div class="body">
         <div class="row row-cols-1 row-cols-md-3 g-2">
-            <a class="col" *ngFor="let com of computers" routerLink="/comp-pay/{{com.id}}">
+            <a class="col" *ngFor="let com of computers" routerLink="/comp-pay/{{com.ID}}">
                 <div class="card h-100">
                     <h5 class="card-title">{{com.Title}}</h5>
                     <div class="card-body">

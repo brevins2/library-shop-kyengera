@@ -22,13 +22,8 @@ export class FirstPageComponent implements OnInit {
       Message: ['']
     });
   alerts = false;
-  panelOpenState = false;
 
-  constructor(
-    private http: HttpClient,
-    private router: ActivatedRoute,
-    private service: ServeService,
-    private dialogRef: MatDialog,
+  constructor(private http: HttpClient, private router: ActivatedRoute, private service: ServeService,
     private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
@@ -41,28 +36,21 @@ export class FirstPageComponent implements OnInit {
     });
   }
 
-  getCurrentDatas(){
-    this.service.getCurrentPhoneData(this.router.snapshot.params['id']).subscribe((results)=>{
-      console.log(results);
-      return results;
-    });
-  }
-
   getPhones(){
-    this.http.get<{data: Phones[]}>("http://localhost:8080/Phones").subscribe(response=>{
+    this.service.getAllPhones().subscribe(response=>{
       this.phones = response.data;
     });
   }
 
   getComputer(){
-    this.http.get<{data: ComputerAccess[]}>("http://localhost:8080/Computers").subscribe( response=>{
+    this.service.getAllComputers().subscribe( response=>{
         this.computers = response.data;
       });
   }
 
   // contact information
   sendMessages(){
-    this.http.post<any>("http://localhost:8080/add/Message", this.sendMessage.value).subscribe(response =>{
+    this.service.createMessage(this.sendMessage.value).subscribe(response =>{
       this.sendMessage.reset();
     });
   }

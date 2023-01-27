@@ -1,13 +1,14 @@
 import { HttpClient,HttpRequest, HttpEvent, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ComputerAccess, Phones, User, Order, Messages } from '../interfaces';
+import { ComputerAccess, Phones, User, Order, Images, Messages } from '../interfaces';
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-type': 'application/json'
-  })
-}
+const baseurlFile = "http://localhost:8080/files";
+const url2 = "http://localhost:8080/Phones";
+const url3 = "http://localhost:8080/Computers";
+const url4 = "http://localhost:8080/Accounts";
+const urlOrder = "http://localhost:8080/Orders";
+const urlMessage = 'http://localhost:8080/Message';
 
 @Injectable({
   providedIn: 'root'
@@ -16,128 +17,185 @@ export class ServeService {
 
   constructor(private http: HttpClient) { }
 
- //for phones
-   private url2 = "http://localhost:8080/Phones";
+  //for phones
+  getAllPhones(): Observable<{data: Phones[]}> {
+    return this.http.get<{data: Phones[]}>(url2);
+  }
 
-   getTaskPhones(): Observable<Phones[]>{
-     return this.http.get<any>(this.url2);
-   }
+  getPhoneWithID(id: number): Observable<{data: Phones[]}> {
+    return this.http.get<{data: Phones[]}>(`${url2}/${id}`);
+  }
 
-   getCurrentPhoneData(id: number){
-    return this.http.get(`${this.url2}/${id}`);
-   }
+  createPhone(data: any): Observable<any> {
+    return this.http.post('http://localhost:8080/add/Phone', data);
+  }
 
-   deletePhone(phone: Phones): Observable<Phones>{
-     const url = `${this.url2}/${phone.id}`;
-     return this.http.delete<Phones>(url);
-   }
+  updatePhone(id: any, data: any): Observable<any> {
+    return this.http.put(`${url2}/${id}`, data);
+  }
 
-   updatePhones(id: any, phone: { id: any; }){
-     const url = `${this.url2}/${id}`;
-     return this.http.put(url, phone);
-   }
+  deletePhone(id: any): Observable<any> {
+    return this.http.delete(`${url2}/${id}`);
+  }
 
-   //for computers
-   private url3 = "http://localhost:8080/Computers";
+  deleteAllPhones(): Observable<any> {
+    return this.http.delete(url2);
+  }
 
-   getTaskComputer(): Observable<ComputerAccess[]>{
-     return this.http.get<any>(this.url3);
-   }
+  findByPhoneName(name: string): Observable<{data: Phones[]}> {
+    return this.http.get<{data: Phones[]}>(`${url2}?Title=${name}`);
+  }
 
-   getCurrentComputerData(id: number){
-    return this.http.get(`${this.url3}/${id}`);
-   }
+  //for computers
+  getAllComputers(): Observable<{data: ComputerAccess[]}> {
+    return this.http.get<{data: ComputerAccess[]}>(url3);
+  }
 
-   deleteCompAccess(comp: ComputerAccess): Observable<ComputerAccess>{
-     const url = `${this.url3}/${comp.id}`;
-     return this.http.delete<ComputerAccess>(url);
-   }
+  getComputerWithID(id: number): Observable<{data: ComputerAccess[]}> {
+    return this.http.get<{data: ComputerAccess[]}>(`${url3}/${id}`);
+  }
 
-   updateCompAccess(id: any, comp: { id: any; }){
-     const url = `${this.url3}/${comp.id}`;
-     return this.http.put(url, comp);
-   }
+  createComputer(data: any): Observable<any> {
+    return this.http.post('http://localhost:8080/add/Computer', data);
+  }
 
-   //for Users
-   private url4 = "http://localhost:8080/Accounts";
+  updateComputer(id: any, data: any): Observable<any> {
+    return this.http.put(`${url3}/${id}`, data);
+  }
 
-   getTaskUser(): Observable<User[]>{
-     return this.http.get<any>(this.url4);
-   }
+  deleteComputer(id: any): Observable<any> {
+    return this.http.delete(`${url3}/${id}`);
+  }
 
-   getCurrentUserData(id: number){
-    return this.http.get(`${this.url4}/${id}`);
-   }
+  deleteAllComputers(): Observable<any> {
+    return this.http.delete(url3);
+  }
 
-   deleteUser(use: User): Observable<User>{
-     const url = `${this.url4}/${use.id}`;
-     return this.http.delete<User>(url);
-   }
+  findByComputerName(name: string): Observable<{data: ComputerAccess[]}> {
+    return this.http.get<{data: ComputerAccess[]}>(`${url3}?Title=${name}`);
+  }
 
-   updateUser(id: any, use: { id: any; }){
-     const url = `${this.url4}/${id}`;
-     return this.http.put(url, use);
-   }
+  //for Users
+  getAllUsers(): Observable<{data: User[]}> {
+    return this.http.get<{data: User[]}>('http://localhost:8080/Accounts');
+  }
 
-   // for orders
-   private urlOrder = "http://localhost:8080/Orders";
+  login(Email: string, Password: string): Observable<{data: User[]}> {
+    return this.http.get<{data: User[]}>('http://localhost:8080/Accounts');
+  }  
 
-    getTaskOrders(): Observable<User[]>{
-       return this.http.get<any>(this.urlOrder);
-    }
+  getUserWithID(id: number): Observable<{data: User[]}> {
+    return this.http.get<{data: User[]}>(`${url4}/${id}`);
+  }
 
-    getCurrentOrderData(id: number){
-       return this.http.get(`${this.urlOrder}/${id}`);
-    }
+  createUser(data: any): Observable<any> {
+    return this.http.post('http://localhost:8080/add/Account', data);
+  }
 
-    deleteOrder(use: User): Observable<User>{
-        const url = `${this.urlOrder}/${use.id}`;
-        return this.http.delete<User>(url);
-    }
+  updateUser(id: any, data: any): Observable<any> {
+    return this.http.put(`${url4}/${id}`, data);
+  }
 
-    updateOrder(id: any, use: { id: any; }){
-        const url = `${this.urlOrder}/${id}`;
-        return this.http.put(url, use);
-    }
+  deleteUser(id: any): Observable<any> {
+    return this.http.delete(`${url4}/${id}`);
+  }
 
-   // for messages
-    private urlMessage = "http://localhost:8080/Messages";
+  deleteAllUsers(): Observable<any> {
+    return this.http.delete('http://localhost:8080/Accounts');
+  }
 
-    getTaskMessages(): Observable<User[]>{
-       return this.http.get<any>(this.urlMessage);
-    }
+  findByUserName(name: string): Observable<{data: User[]}> {
+    return this.http.get<{data: User[]}>(`${url4}?Name=${name}`);
+  }
 
-    getCurrentMessagesData(id: number){
-       return this.http.get(`${this.urlMessage}/${id}`);
-    }
 
-    postCurrentMessagesData(id: number){
-       return this.http.get(`${this.urlMessage}/${id}`);
-    }
+  // for orders
+  getAllOrders(): Observable<{data: Order[]}> {
+    return this.http.get<{data: Order[]}>(urlOrder);
+  }
 
-    deleteMessages(use: User): Observable<User>{
-        const url = `${this.urlMessage}/${use.id}`;
-        return this.http.delete<User>(url);
-    }
+  getOrderWithID(id: number): Observable<{data: Order[]}> {
+    return this.http.get<{data: Order[]}>(`${urlOrder}/${id}`);
+  }
 
-    updateMessages(id: any, use: { id: any; }){
-        const url = `${this.urlMessage}/${id}`;
-        return this.http.put(url, use);
-    }
+  createOrder(data: any): Observable<any> {
+    return this.http.post('http://localhost:8080/add/Orders', data);
+  }
 
-   // for image uploads
-   private baseUrl = "http://localhost:8080";
-     upload(file: File): Observable<HttpEvent<any>> {
-       const formData: FormData = new FormData();
-       formData.append('file', file);
-       const req = new HttpRequest('POST', `${this.baseUrl}/upload`, formData, {
-         reportProgress: true,
-         responseType: 'json'
-       });
-       return this.http.request(req);
-     }
-     getFiles(): Observable<any> {
-       return this.http.get(`${this.baseUrl}/files`);
-     }
+  updateOrder(id: any, data: any): Observable<any> {
+    return this.http.put(`${urlOrder}/${id}`, data);
+  }
+
+  deleteOrder(id: any): Observable<any> {
+    return this.http.delete(`${urlOrder}/${id}`);
+  }
+
+  deleteAllOrders(): Observable<any> {
+    return this.http.delete('http://localhost:8080/Producers');
+  }
+
+  findByNameOrders(name: any): Observable<{data: Order[]}> {
+    return this.http.get<{data: Order[]}>(`${urlOrder}?Customer_Name=${name}`);
+  }
+
+  
+  // for messages
+  getAllMessages(): Observable<{data: Messages[]}> {
+    return this.http.get<{data: Messages[]}>('http://localhost:8080/Message');
+  }
+
+  getMessageWithID(id: number): Observable<{data: Messages[]}> {
+    return this.http.get<{data: Messages[]}>(`${urlMessage}/${id}`);
+  }
+
+  createMessage(data: any): Observable<any> {
+    return this.http.post('http://localhost:8080/add/Message', data);
+  }
+
+  updateMessage(id: any, data: any): Observable<any> {
+    return this.http.put(`${urlMessage}/${id}`, data);
+  }
+
+  deleteMessage(id: any): Observable<any> {
+    return this.http.delete(`${urlMessage}/${id}`);
+  }
+
+  deleteAllMessages(): Observable<any> {
+    return this.http.delete('http://localhost:8080/Message');
+  }
+
+  findByTitleMessage(email: any): Observable<{data: Messages[]}> {
+    return this.http.get<{data: Messages[]}>(`${urlMessage}?Email=${email}`);
+  }
+
+  
+  // for images
+  upload(data: {URL: string, Name: string}): Observable<HttpEvent<any>>{
+    const req = new HttpRequest('Post', 'http://localhost:8080/add/Image', data , {
+      reportProgress: true,
+      responseType: 'json'
+    });
+
+    return this.http.request(req);
+  }
+
+  getFiles(): Observable<{data: Images[]}>{
+    return this.http.get<{data: Images[]}>('http://localhost:8080/files');
+  }
+
+  getFileWithID(id: number): Observable<{data: Images[]}> {
+    return this.http.get<{data: Images[]}>(`${baseurlFile}/${id}`);
+  }
+
+  updateFiles (id: any, data: any): Observable<any> {
+    return this.http.put(`${baseurlFile}/${id}`, data);
+  }
+
+  deleteFiles (id: any): Observable<any> {
+    return this.http.delete(`${baseurlFile}/${id}`);
+  }
+
+  findByFileName(name: any): Observable<{data: Images[]}> {
+    return this.http.get<{data: Images[]}>(`${'http://localhost:8080/files'}?Name=${name}`);
+  }
 }
-

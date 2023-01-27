@@ -45,7 +45,6 @@ app.get('/Accounts', (req, res) => {
 });
 
 // get single data
-
 app.get('/Accounts/:id', (req, res) => {
 
     let gID = req.params.id;
@@ -567,11 +566,34 @@ app.delete('/Orders/:id', (req, res) => {
 });
 
 
-// for Uploaded images
-//get all the data
-app.get('/Upload', (req, res) => {
+// for images
+// adding image
+app.post('/add/Image', (req, res) => {
 
-    let qr = `select * from uploads`;
+    console.log(req.body, 'data added');
+
+    let name = req.body.Name;
+    let url = req.body.URL;
+
+    let qr = `INSERT INTO images(Name, URL)
+                VALUES('${name}', '${url}')`;
+
+    db.query(qr, (err, result) => {
+
+        if (err) { console.log(err); }
+
+        res.send({
+            message: 'data stored successfully',
+            data: result
+        });
+
+    });
+});
+
+//get all the Image
+app.get('/files', (req, res) => {
+
+    let qr = `select * from images`;
 
     db.query(qr, (err, result) => {
         if (err) {
@@ -587,21 +609,21 @@ app.get('/Upload', (req, res) => {
 });
 
 // get single data
-app.get('/Upload/:id', (req, res) => {
+app.get('/files/:id', (req, res) => {
 
     let gID = req.params.id;
 
-    let qr = `select * from uploads where ID = ${gID}`;
+    let qr = `select * from images where ID = '${gID}'`;
 
-    db.query(qr, (err, results) => {
+    db.query(qr, (err, result) => {
 
         if (err) {
             console.log(err);
         }
-        if (results.length > 0) {
+        if (result.length > 0) {
             res.send({
                 Message: 'getting single data',
-                data: results
+                data: result
             });
         } else {
             res.send({
@@ -611,36 +633,16 @@ app.get('/Upload/:id', (req, res) => {
     });
 });
 
-// adding data
-app.post('/add/files', (req, res) => {
-
-    console.log(req.body, 'data added');
-
-    let title = req.body.Title;
-    let file = req.body.File;
-
-    let qr = `INSERT INTO uploads(Title, File)
-                VALUES('${title}', '${file}')`;
-
-    db.query(qr, (err, result) => {
-
-        if (err) { console.log(err); }
-
-        res.send({
-            message: 'data sent successfully'
-        });
-
-    });
-});
-
 // put data/ update data
-app.put('/Upload/:id', (req, res) => {
+app.put('/files/:id', (req, res) => {
+
+    console.log(req.body, 'data updated');
 
     let gID = req.params.id;
-    let title = req.body.Title;
-    let file = req.body.File;
+    let name = req.body.Name;
+    let url = req.body.URL;
 
-    let qr = `update phones set Title = '${title}', File = '${file}' where ID = ${gID}`;
+    let qr = `update user set Name = '${name}', URL = '${url}' where ID = '${gID}'`;
 
     db.query(qr, (err, result) => {
         if (err) { console.log(err); }
@@ -652,11 +654,11 @@ app.put('/Upload/:id', (req, res) => {
 });
 
 // delete single data
-app.delete('/Upload/:id', (req, res) => {
+app.delete('/files/:id', (req, res) => {
 
-    let qID = req.params.id;
+    let gID = req.params.id;
 
-    let qr = `delete from uploads where ID = '${qID}'`;
+    let qr = `delete from user where ID = '${gID}'`
 
     db.query(qr, (err, result) => {
         if (err) { console.log(err); }
@@ -665,7 +667,6 @@ app.delete('/Upload/:id', (req, res) => {
             message: 'data delete successful'
         });
     });
-
 });
 
 

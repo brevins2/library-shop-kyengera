@@ -1,31 +1,37 @@
 export interface Phones{
-    id: number,
+    ID: number,
     Title: string,
     Storage: string,
     Battery: string,
     Price: number,
     File: string,
-    // Brand: string
+    Brand: string
 }
 
 export interface ComputerAccess{
-    id: number,
+    ID: number,
     Title: string,
     Category: string,
     Price: number,
     File: string,
 }
 
+export interface Images {
+    ID: number,
+    Name: string,
+    URL: string
+}
+
 export interface User{
-    id: number,
-    email: string,
-    password: string,
-    confirmPassword: string,
-    check: boolean,
+    ID: number,
+    Email: string,
+    Password: string,
+    ConfirmPassword: string,
+    Check: boolean,
 }
 
 export interface Order{
-    id: number,
+    ID: number,
     Message: string,
     Title: string,
     Battery: string,
