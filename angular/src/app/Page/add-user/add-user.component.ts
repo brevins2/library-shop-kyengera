@@ -13,11 +13,10 @@ import { ServeService } from 'src/app/Services/serve.service';
 export class AddUserComponent implements OnInit {
 
   signUpForm = new FormGroup({
-    email: new FormControl(''),
-    password: new FormControl(''),
-    confirmPassword: new FormControl(''),
-    file: new FormControl(''),
-    check: new FormControl('')
+    Email: new FormControl(''),
+    Password: new FormControl(''),
+    ConfirmPassword: new FormControl(''),
+    Allow: new FormControl('')
   });
 
   constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute,
@@ -29,7 +28,7 @@ export class AddUserComponent implements OnInit {
 
   signUp(){
     this.service.createUser(this.signUpForm.value).subscribe(res => {
-      console.log('good');
+      this.signUpForm.reset();
     });
   }
 

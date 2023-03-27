@@ -36,7 +36,6 @@ export interface Order{
     Title: string,
     Battery: string,
     Price: string,
-    Brand: string,
     Storage: string,
     Category: string,
     Email: string,

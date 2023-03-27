@@ -1,21 +1,4 @@
 <header>
-    <!-- Intro settings -->
-    <style>
-        /* Default height for small devices */
-        
-        #intro-example {
-            height: 400px;
-        }
-        /* Height for devices larger than 992px */
-        
-        @media (min-width: 992px) {
-            #intro-example {
-                height: 600px;
-            }
-        }
-    </style>
-
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg" style="background-color: rgb(2, 2, 80); height: 120px;">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" (click)="backgroundImageExample2.toggle()" aria-controls="backgroundImageExample2" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,7 +37,8 @@
                     <input formControlName="Price" class="form-control" type="text" placeholder="Enter Price" id="inputPrice">
                 </div>
                 <div class="form-row" id="id">
-                    <input formControlName="File" class="form-control" type="file" id="inputAmount">
+                    <label for="Price">File</label>
+                    <input formControlName="File" class="form-control" type="text" id="inputAmount" placeholder="Enter File">
                 </div>
                 <br>
                 <div class="butt">

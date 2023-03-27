@@ -58,6 +58,18 @@
                     <label class="inputPrice" for="Price">Price</label>
                     <input formControlName="Price" class="form-control" type="text" placeholder="Enter Price" id="inputPrice">
                 </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6" id="ids">
+                        <div>
+                            <label for="inputBrand">Brand</label>
+                            <input formControlName="Brand" type="text" class="form-control" id="inputBrand" placeholder="Enter Brand">
+                        </div>
+                        <div>
+                            <label for="inputFile">File</label>
+                            <input formControlName="File" type="text" class="form-control" id="inputFile" placeholder="Enter File">
+                        </div>
+                    </div>
+                </div>
                 <br>
                 <div class="butt">
                     <button class="btn btn-primary" id="save" (click)="Save()">Save</button>

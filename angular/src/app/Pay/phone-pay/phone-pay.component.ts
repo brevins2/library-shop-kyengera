@@ -16,11 +16,14 @@ export class PhonePayComponent implements OnInit {
   api: Phones[] = [];
   alert = false;
   buyPhone = new FormGroup({
-    Message: new FormControl(''),
     Title: new FormControl(''),
+    Message: new FormControl(''),
     Storage: new FormControl(''),
     Battery: new FormControl(''),
-    Price: new FormControl('')
+    Price: new FormControl(''),
+    File: new FormControl(''),
+    CustomerName: new FormControl(''),
+    Email: new FormControl('')
   });
   
   constructor(private router: ActivatedRoute, private route: Router,
@@ -30,13 +33,6 @@ export class PhonePayComponent implements OnInit {
     this.getCurrentData();
   }
 
-  getData(){
-    this.http.get<any>('http://localhost:3000/Phones').subscribe(
-      response=>{
-        this.api = response
-      });
-  }
-
   getCurrentData(){
     this.service.getPhoneWithID(this.router.snapshot.params['id']).subscribe((result: any)=>{
       this.buyPhone = new FormGroup({
@@ -44,7 +40,10 @@ export class PhonePayComponent implements OnInit {
         Title: new FormControl(result['Title']),
         Storage: new FormControl(result['Storage']),
         Battery: new FormControl(result['Battery']),
-        Price: new FormControl(result['Price'])
+        Price: new FormControl(result['Price']),
+        File: new FormControl(result['File']),
+        CustomerName: new FormControl(result['CustomerName']),
+        Email: new FormControl(result['Email'])
       });
     });
   }
@@ -52,6 +51,7 @@ export class PhonePayComponent implements OnInit {
   save(){
     this.service.createOrder(this.buyPhone.value).subscribe((result) => {
       this.alert = true;
+      console.log(result);
     });
   }
 

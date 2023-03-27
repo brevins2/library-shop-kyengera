@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ServeService } from 'src/app/Services/serve.service';
-import { Messages } from 'src/app/interfaces';
+import { Order } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-notifications',
@@ -11,8 +11,8 @@ import { Messages } from 'src/app/interfaces';
 
 export class NotificationsComponent implements OnInit {
 
-  order: Messages[] = [];
-  displayedColumns: string[] = ['ID', 'Name', 'Email', 'Message', 'Delete'];
+  order: Order[] = [];
+  displayedColumns: string[] = ['ID', 'Title', 'Message', 'Storage', 'Battery', 'Price', 'File', 'Category', 'CustomerName', 'Email', 'Delete'];
     dataSource = this.order;
   constructor(private http: HttpClient, private service: ServeService) { }
 
@@ -21,7 +21,7 @@ export class NotificationsComponent implements OnInit {
   }
 
   getPhoneOrder(){
-    this.service.getAllMessages().subscribe(result =>{
+    this.service.getAllOrders().subscribe(result =>{
       this.order = result.data;
       this.dataSource = this.order;
     });

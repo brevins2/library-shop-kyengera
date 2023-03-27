@@ -17,6 +17,7 @@ export class AddPhoneComponent implements OnInit {
     Battery: new FormControl(''),
     Price: new FormControl(''),
     File: new FormControl(''),
+    Brand: new FormControl(''),
   });
   selectedFile!: File; 
   constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute, private service: ServeService) { }
@@ -34,7 +35,7 @@ export class AddPhoneComponent implements OnInit {
 
   Save(){
     this.service.createPhone(this.addPhone.value).subscribe(res => {
-      console.log('good');
+      this.addPhone.reset();
     });
   }
 }

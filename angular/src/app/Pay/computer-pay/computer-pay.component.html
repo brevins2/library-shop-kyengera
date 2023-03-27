@@ -1,62 +1,112 @@
-<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light back-style position-sticky fixed-top">
-    <!-- Container wrapper -->
-    <div class="container-fluid">
-        <!-- Toggle button -->
-        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fa fa-bars"></i>
-      </button>
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa fa-bars"></i>
+    </button>
 
-        <!-- Collapsible wrapper -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Navbar brand -->
-            <a class="navbar-brand mt-2 mt-lg-0" routerLink="/cmj">
-                <img src="../../../assets/image/icons/logo.png" width="250">
-            </a>
-        </div>
-        <!-- Collapsible wrapper -->
-
-        <div class="d-flex align-items-center">
-            <!-- account change Icons -->
-            <button class="power" mat-button (click)="logout()">
-               <i class="fa fa-power-off power" ></i>&nbsp;
-               <i class="fa fa-angle-down power"></i>
-               <br>
-               Logout
-            </button>
-        </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <a class="navbar-brand mt-2 mt-lg-0" routerLink="/cmj">
+        <img src="../../../assets/image/icons/logo.png" width="250">
+      </a>
     </div>
+
+    <div class="d-flex align-items-center">
+      <button class="power" mat-button (click)="logout()">
+        <i class="fa fa-power-off power" ></i>&nbsp;
+        <i class="fa fa-angle-down power"></i>
+        <br>
+          Logout
+      </button>
+    </div>
+  </div>
 </nav>
 
 <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
-    <strong>Success !</strong> Log in successful !.
+  <strong>Success !</strong> Log in successful !.
     <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
 
+<!-- <div class="d-flex p-2">
+  <div class="side">
+    <img src="../../../../../assets/image/phones/File" title="Phone" aria-label="image of product" alt="Image of Phone">
+  </div>
+  <div class="content container">
+    <form [formGroup]="buyPhone" class="d-flex flex-column form-control">
+      <h1 class="text-warning">Order a Phone</h1>
+      <div class="form-row">
+        <div class="form-group" id="title">
+          <label>Title</label>
+          <input formControlName="Title" type="text" class="form-control" id="inputTitle" placeholder="title">
+        </div>
+      </div>
+      <img src="../../../../../assets/image/phones/File" title="Phone" aria-label="image of product" alt="Image of Phone" style="display: none;">
+      <div class="form-row">
+        <div class="form-group" id="ids">
+          <div>
+            <label>File</label>
+            <input formControlName="File" type="text" class="form-control" id="inputFile" placeholder="File">
+          </div>
+          <div>
+            <label>Storage</label>
+            <input formControlName="Storage" type="text" class="form-control" id="inputStorage" placeholder="Storage">
+          </div>
+          <div>
+            <label>Battery</label>
+            <input formControlName="Battery" type="text" class="form-control" id="inputBattery" placeholder="Battery">
+          </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <label class="Price">Price</label>
+          <input formControlName="Price" class="form-control" type="text" placeholder="Price" id="inputPrice">
+        </div>
+        <div class="form-row">
+          <div class="form-row">
+            <label>Name</label>
+            <input formControlName="CustomerName" class="form-control" type="text" placeholder="CustomerName">
+
+            <label>Email</label>
+            <input formControlName="Email" class="form-control" type="email" placeholder="Email" id="inputEmail">
+          </div>
+          
+          <label>Message</label>
+          <textarea rows="5" cols="78" class="form-control" name="Address" id="inputAddress" formControlName="Message" placeholder="enter message">
+          </textarea>
+        </div>
+        <br>
+        <div class="butt">
+          <button class="btn btn-lg btn-primary fixed-bottom" (click)="save()"><i class="fa fa-shopping"></i>Order phone</button>&nbsp;
+          <button class="btn btn-danger" (click)="cancel()">Cancel order</button> &nbsp;
+        </div>
+      </div>
+    </form> 
+  </div>
+</div> -->
+
 <body>
-    <div class="row row-cols-1 row-cols-md-3 g-2">
-        <a class="col" *ngFor="let com of comp" routerLink="/comp-pay/{{com.ID}}">
-            <div class="card h-100">
-              <img [src]=" '../../../../../assets/image/computers/'+ com.File" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">{{com.Title}}</h5>
-                <p class="card-text">
-                  {{com.Category}}
-                  <br>Sh. {{com.Price}}
-                  <!--  | currency -->
-                </p>
-              </div>
-              <div class="btn cart">
-                <i class="fa fa-cart-plus"></i>&nbsp;Order
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">{{com.Title}}</small>
-              </div>
-            </div>
-        </a>
-    </div>
+  <div class="row row-cols-1 row-cols-md-3 g-2">
+    <a class="col" *ngFor="let com of comp" routerLink="/comp-pay/{{com.ID}}">
+        <div class="card h-100">
+          <img [src]=" '../../../../../assets/image/computers/'+ com.File" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">{{com.Title}}</h5>
+            <p class="card-text">
+              {{com.Category}}
+              <br>Sh. {{com.Price}}
+              <!--  | currency -->
+            </p>
+          </div>
+          <div class="btn cart">
+            <i class="fa fa-cart-plus"></i>&nbsp;Order
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">{{com.Title}}</small>
+          </div>
+        </div>
+    </a>
+  </div>
 </body>
 
 <br>

@@ -76,20 +76,26 @@ app.post('/add/Account', (req, res) => {
     let password = req.body.Password;
     let confirmPassword = req.body.ConfirmPassword;
     let allow = req.body.Allow;
-    //    let file = req.body.File;
 
     let qr = `INSERT INTO accounts(Email, Password, ConfirmPassword, Allow)
                 VALUES('${email}', '${password}', '${confirmPassword}', '${allow}')`;
 
-    db.query(qr, (err, result) => {
+    if(password === confirmPassword) {
+        db.query(qr, (err, result) => {
 
         if (err) { console.log(err); }
 
-        res.send({
+        else res.send({
             message: 'data sent successfully'
         });
 
-    });
+        });
+    }
+    else {
+        // console.log('password and confirm password must be the same');
+        // window.alert('password and confirm password must be the same');
+        console.warn('password and confirm password must be the same');
+    }
 });
 
 // put data/ update data
@@ -100,10 +106,9 @@ app.put('/Accounts/:id', (req, res) => {
     let password = req.body.Password;
     let confirmPassword = req.body.ConfirmPassword;
     let allow = req.body.Allow;
-    // let file = req.body.File;
 
     let qr = `update accounts set Email = '${email}', Password = '${password}',
-               ConfirmPassword = '${confirmPassword}', Allow = '${Allow}', where ID = ${gID}`;
+               ConfirmPassword = '${confirmPassword}', Allow = '${allow}', where ID = ${gID}`;
 
     db.query(qr, (err, result) => {
         if (err) { console.log(err); }
@@ -419,7 +424,7 @@ app.put('/Computers/:id', (req, res) => {
     let price = req.body.Price;
     let file = req.body.File;
 
-    let qr = `update phones set Title = '${title}', Category = '${category}',
+    let qr = `update computers set Title = '${title}', Category = '${category}',
                 Price = '${Price}', File = '${file}' where ID = ${gID}`;
 
     db.query(qr, (err, result) => {
@@ -497,7 +502,7 @@ app.get('/Orders/:id', (req, res) => {
 app.post('/add/Orders', (req, res) => {
 
     let title = req.body.Title;
-    let messages = req.body.Message;
+    let message = req.body.Message;
     let storage = req.body.Storage;
     let battery = req.body.Battery;
     let price = req.body.Price;
@@ -506,8 +511,8 @@ app.post('/add/Orders', (req, res) => {
     let customerName = req.body.CustomerName;
     let email = req.body.Email;
 
-    let qr = `INSERT INTO orders(Title, Message, Storage, Battery, Price, File, Category, CustomerName, email)
-                VALUES('${title}', '${messages}','${storage}','${battery}', '${price}', '${file}', '${brand}',
+    let qr = `INSERT INTO orders(Title, Message, Storage, Battery, Price, File, Category, CustomerName, Email)
+                VALUES('${title}', '${message}', '${storage}', '${battery}', '${price}', '${file}', '${category}',
                 '${customerName}', '${email}')`;
 
     db.query(qr, (err, result) => {
@@ -535,8 +540,8 @@ app.put('/Orders/:id', (req, res) => {
     let customerName = req.body.CustomerName;
     let email = req.body.Email;
 
-    let qr = `update phones set Title = '${title}', Message = '${messages}', Storage = '${storage}',
-                Battery = '${battery}', Price = '${Price}', File = '${file}', Category = '${category}',
+    let qr = `update orders set Title = '${title}', Message = '${messages}', Storage = '${storage}',
+                Battery = '${battery}', Price = '${price}', File = '${file}', Category = '${category}',
                 CustomerName = '${customerName}', Email = '${email}' where ID = ${gID}`;
 
     db.query(qr, (err, result) => {
