@@ -14,7 +14,7 @@ const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'cmj_entertainment_database',
+    database: 'cmj_entertainment_db',
     port: 3306
 });
 
