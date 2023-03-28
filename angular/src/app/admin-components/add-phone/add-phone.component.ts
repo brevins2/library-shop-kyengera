@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Router,ActivatedRoute } from '@angular/router';
-import { HttpClient, HttpEventType } from '@angular/common/http';
+import { Router } from '@angular/router';
 import { ServeService } from 'src/app/Services/serve.service';
 
 @Component({
@@ -20,14 +19,14 @@ export class AddPhoneComponent implements OnInit {
     Brand: new FormControl(''),
   });
   selectedFile!: File; 
-  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute, private service: ServeService) { }
+  constructor(private router: Router, private service: ServeService) { }
 
   ngOnInit(): void {
     
   }
   
   cancel(){
-    this.router.navigate(['/phone']);
+    this.router.navigate(['/admin/phone']);
   }
   clr(){
     this.addPhone.reset();

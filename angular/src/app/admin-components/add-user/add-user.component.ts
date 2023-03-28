@@ -1,5 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServeService } from 'src/app/Services/serve.service';
@@ -22,9 +22,7 @@ export class AddUserComponent implements OnInit {
   constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute,
     private service: ServeService) { }
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
   signUp(){
     this.service.createUser(this.signUpForm.value).subscribe(res => {

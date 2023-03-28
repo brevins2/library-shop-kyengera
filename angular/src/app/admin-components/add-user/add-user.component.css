@@ -1,0 +1,53 @@
+body {
+    padding-top: 7%;
+    background-color: rgb(204, 202, 202);
+    padding-bottom: 8%;
+    height: 100%;
+}
+
+header {
+    width: 100%;
+}
+
+form {
+    margin: 0 auto;
+    margin-top: 5rem;
+    width: 50%;
+}
+
+.form-row {
+    margin-left: 1.2rem;
+    margin-top: .5rem;
+}
+
+.form-group div {
+    margin: 1rem 1rem 0rem 0rem;
+}
+
+.butt {
+    padding: 0px 10px 10px 10px;
+    display: flex;
+}
+
+.butt button {
+    padding: 10px;
+    margin: 10px;
+}
+
+.cancel {
+    background-color: red;
+    border-color: red;
+}
+
+.save {
+    background-color: green;
+    border-color: green;
+}
+
+.password {
+    width: 100%;
+}
+
+.password div {
+    width: 44%;
+}

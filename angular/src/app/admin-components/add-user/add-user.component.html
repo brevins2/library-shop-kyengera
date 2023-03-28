@@ -1,0 +1,41 @@
+<header class="fixed-top bg-white">
+    <nav class="navbar navbar-expand-lg">
+        <a class="nav-link" id="homeIcon" aria-current="page" routerLink="/cmj">
+            <img src="../../../assets/image/icons/logo.png" width="60%">
+        </a>
+    </nav>
+</header>
+
+<body>
+    <form [formGroup]="signUpForm" class="form-control">
+        <h1>Add User</h1>
+        <div class="form-row">
+            <div class="form-group col-md-11">
+                <label for="inputEmail">Email</label>
+                <input formControlName="Email" type="email" class="form-control" id="inputEmail" placeholder="Email">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-11 d-flex password">
+                <div>
+                    <label>Password</label>
+                    <input formControlName="Password" type="password" class="form-control" placeholder="Password">
+                </div>
+                <div>
+                    <label>Confirm Password</label>
+                    <input formControlName="ConfirmPassword" type="password" class="form-control" placeholder="Confirm Password">
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-11">
+                <label for="inputAllow">Allow</label>
+                <input formControlName="Allow" class="form-control" type="text" placeholder="Enter Y/N">
+            </div>
+        </div>
+        <div class="butt">
+            <button type="submit" (click)="signUp()" class="btn btn-primary" id="btn">Sign up</button>
+            <button type="submit" (click)="cancel()" class="btn btn-danger" id="btn">Cancel</button>
+        </div>
+    </form>
+</body>

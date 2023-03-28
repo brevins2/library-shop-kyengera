@@ -28,12 +28,12 @@
     </button>
 </div>
 
-<!-- <div class="d-flex p-2">
+<div class="d-flex p-2">
   <div class="side">
     <img src="../../../../../assets/image/phones/File" title="Phone" aria-label="image of product" alt="Image of Phone">
   </div>
   <div class="content container">
-    <form [formGroup]="buyPhone" class="d-flex flex-column form-control">
+    <form [formGroup]="buyComputer" class="d-flex flex-column form-control">
       <h1 class="text-warning">Order a Phone</h1>
       <div class="form-row">
         <div class="form-group" id="title">
@@ -57,33 +57,32 @@
             <input formControlName="Battery" type="text" class="form-control" id="inputBattery" placeholder="Battery">
           </div>
           </div>
-        </div>
-        <div class="form-row">
-          <label class="Price">Price</label>
-          <input formControlName="Price" class="form-control" type="text" placeholder="Price" id="inputPrice">
-        </div>
-        <div class="form-row">
-          <div class="form-row">
-            <label>Name</label>
-            <input formControlName="CustomerName" class="form-control" type="text" placeholder="CustomerName">
-
-            <label>Email</label>
-            <input formControlName="Email" class="form-control" type="email" placeholder="Email" id="inputEmail">
-          </div>
-          
-          <label>Message</label>
-          <textarea rows="5" cols="78" class="form-control" name="Address" id="inputAddress" formControlName="Message" placeholder="enter message">
-          </textarea>
-        </div>
-        <br>
-        <div class="butt">
-          <button class="btn btn-lg btn-primary fixed-bottom" (click)="save()"><i class="fa fa-shopping"></i>Order phone</button>&nbsp;
-          <button class="btn btn-danger" (click)="cancel()">Cancel order</button> &nbsp;
-        </div>
       </div>
-    </form> 
+      <div class="form-row">
+        <label class="Price">Price</label>
+        <input formControlName="Price" class="form-control" type="text" placeholder="Price" id="inputPrice">
+      </div>
+      <div class="form-row">
+        <div class="form-row">
+          <label>Name</label>
+          <input formControlName="CustomerName" class="form-control" type="text" placeholder="CustomerName">
+
+          <label>Email</label>
+          <input formControlName="Email" class="form-control" type="email" placeholder="Email" id="inputEmail">
+        </div>
+          
+        <label>Message</label>
+        <textarea rows="5" cols="78" class="form-control" name="Address" id="inputAddress" formControlName="Message" placeholder="enter message">
+        </textarea>
+      </div>
+      <br>
+      <div class="butt">
+        <button class="btn btn-lg btn-primary fixed-bottom" (click)="order()"><i class="fa fa-shopping"></i>Order accessory</button>&nbsp;
+        <button class="btn btn-danger" (click)="cancel()">Cancel order</button> &nbsp;
+      </div>
+    </form>
   </div>
-</div> -->
+</div>
 
 <body>
   <div class="row row-cols-1 row-cols-md-3 g-2">
