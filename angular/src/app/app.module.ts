@@ -89,14 +89,12 @@ import { NotificationsComponent } from './admin-components/notifications/notific
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MessagesComponent } from './admin-components/messages/messages.component';
 
-import { AngularFileUploaderModule } from "angular-file-uploader/angular-file-uploader";
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { environment } from '../environments/environment';
-import * as firebase from 'firebase/compat';
 import { EditPhonesComponent } from './admin-components/edit-phones/edit-phones.component';
 import { EditComputersComponent } from './admin-components/edit-computers/edit-computers.component';
 

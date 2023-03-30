@@ -1,7 +1,3 @@
-.back-style {
-    background-color: white;
-}
-
 /* button icon */
 .service {
     color: green;
@@ -17,75 +13,7 @@
 
 /* body styling */
 body {
-     width: 100%;
-     height: 100%;
-     padding-top: 2%;
-}
-
-.cart {
     width: 100%;
-    background-color: rgb(3, 120, 237);
-    border: 1px solid rgb(3, 120, 237);
-    text-align: left;
-    margin-bottom: 3%;
-    color: white;
-}
-
-.card-title {
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.col:hover {
-    width: 150%;
-}
-
-.row {
-    width: 100%;
-    margin-top: 4%;
-}
-
-.row .col {
-    width: 23%;
-    font-size: 10px;
-    color: black;
-    margin: .5%;
-}
-
-.card-body {
-    font-size: 10px;
-}
-
-.more {
-    color: rgb(0, 217, 255);
-}
-
-
-/* form contact */
-
-.contact {
-    margin: 3%;
-}
-
-.help {
-    width: 50%;
-    font-size: 13px;
-    padding: 3%;
-}
-
-.location {
-    width: 50%;
-    padding: 3%;
-    background-image: url("../../../assets/image/computer.jpg");
-    background-color: rgb(3, 2, 2, .8);
-    background-size: cover;
-    border-radius: 10px;
-}
-
-.form {
-    color: black;
-}
-
-.send {
-    margin: 3%;
+    height: 100%;
+    padding-top: 2%;
 }

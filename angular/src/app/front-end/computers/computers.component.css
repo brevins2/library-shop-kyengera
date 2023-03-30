@@ -4,102 +4,46 @@ body {
     padding: 10px;
 }
 
-
-/* navigation */
-
-#navbars {
-    background-color: rgb(252, 252, 252);
-    height: 20%;
+nav {
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    padding-right: 1rem;
+    padding-left: 1rem;
 }
 
+.search {
+    width: 90%;
+    font-size: 1rem;
+}
 
-/* body field work */
+.accounts {
+    margin-left: 14%;
+    float: right;
+}
 
 .row {
     width: 100%;
 }
 
-.row .col {
-    width: 30%;
-    font-size: 13px;
+.col {
+    width: 20%;
+    font-size: .7rem;
     color: black;
-    margin: 1% 1% 1% 1%;
-    transform: scale(1,2);
+    margin: 0 auto;
 }
 
-.row .col:hover {
+.col:hover {
     text-decoration: none;
-    font-size: 15px;
-    /* width: 32%; */
-}
-
-slide {
-    width: 100%;
-    height: 620px;
-}
-
-slide img {
-    height: 620px;
-}
-
-carousel {
-    width: 100%;
-    padding-left: -5px;
-    margin-left: -10px;
-}
-
-nav {
-    text-align: center;
-    width: 100%;
-    height: 50px;
-}
-
-.container-fluid {
-    display: flex;
-}
-
-#backgroundImageExample2 {
-    width: 100%;
-    display: flex;
-}
-
-
-/* search style */
-
-#search {
-    width: 80%;
-    font-size: 1rem;
-}
-
-.accounts {
-    margin-left: 14%;
-    float: right;
+    font-size: .9rem;
+    color: black;
 }
 
 .cart {
-    width: 80%;
-    margin: 0% 5% 5% 7%;
+    width: 85%;
+    margin: 0 auto;
     background-color: rgb(3, 120, 237);
-    border: 2px solid rgb(3, 120, 237);
-    font-size: .9rem;
-    text-align: left;
-    color: white;
-}/* search style */
-
-#search {
-    width: 80%;
     font-size: 1rem;
-}
-.accounts {
-    margin-left: 14%;
-    float: right;
-}
-
-.cart {
-     margin: 0% 5% 5% 7%;
-    background-color: rgb(3, 120, 237);
-    border: 2px solid rgb(3, 120, 237);
-    font-size: .9rem;
     text-align: left;
     color: white;
 }

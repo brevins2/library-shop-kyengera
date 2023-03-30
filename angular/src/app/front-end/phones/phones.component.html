@@ -1,35 +1,13 @@
 <header>
-    <!-- Intro settings -->
-    <style>
-        /* Default height for small devices */
-
-        #intro-example {
-            height: 400px;
-        }
-        /* Height for devices larger than 992px */
-
-        @media (min-width: 992px) {
-            #intro-example {
-                height: 600px;
-            }
-        }
-    </style>
-
-    <nav class="navbar navbar-expand-lg" id="navbars">
-        <div class="container-fluid">
-            <div mdbCollapse #backgroundImageExample3="mdbCollapse" class="collapse navbar-collapse" id="backgroundImageExample2">
-                <input type="search" class="form-control" id="search-input-sidenav" id="search" name="search" placeholder="Search for Phones, mouse, keyboards, fans, cables, flash....">&nbsp;
-                <!--  {{filter_expression | filter : expression : comparator : anyPropertyKey}}/ -->
-                <button class="btn btn-primary" id="btnSearch" (click)="search()">Search</button>
-            </div>
-        </div>
+    <nav class="d-flex justify-content-between">
+        <input type="search" class="form-control search justify-content-start" name="search" placeholder="Search for Phones, mouse, keyboards, fans, cables, flash....">
+        <button class="btn btn-primary justify-content-end" (click)="search()">Search</button>
     </nav>
-    <br/>
 </header>
-<mat-card class="mat-parent-small">
 
+<mat-card class="mat-parent-small">
     <body>
-        <div class="row row-cols-1 row-cols-md-3 g-2">
+        <div class="row row-cols-1 row-cols-md-3 g-2 d-flex flex-wrap">
             <a class="col" *ngFor="let phon of api" routerLink="/phon-pay/{{phon.ID}}">
                 <div class="card h-100">
                     <img [src]="'../../../../../assets/image/phones/'+ phon.File" class="card-img-top" />
@@ -45,14 +23,14 @@
                         <i class="fa fa-cart-plus"></i>&nbsp;Buy
                     </div>
                     <div class="card-footer">
-                        <!-- <small class="text-muted">{{phon.Brand}}</small> -->
                     </div>
                 </div>
             </a>
         </div>
     </body>
+
     <hr>
-    <nav>
+    <footer class="text-center">
         <i class="fa fa-copyright"></i> copy rights reserved
-    </nav>
+    </footer>
 </mat-card>

@@ -1,9 +1,7 @@
 body {
-    display: block;
     width: 100%;
-    padding: 10px;
+    padding: 1rem;
 }
-
 
 /* button icon */
 .power {
@@ -11,7 +9,6 @@ body {
 }
 
 /* more phones */
-
 .more-items {
     display: flex;
     margin-top: 2%;
@@ -19,46 +16,8 @@ body {
     height: 100%;
 }
 
-mat-parent-small {
-    padding: 0px;
-    border: -1px;
-}
-
-nav {
-    text-align: center;
-    width: 100%;
-    background-color: white;
-}
-
-#backgroundImageExample2 {
-    width: 100%;
-    display: flex;
-}
-
-#search {
-    width: 80%;
-}
-
-.accounts {
-    margin-left: 14%;
-    float: right;
-}
-
-#createBtn {
-    margin-right: 2px;
-}
-
-#navbars {
-    background-color: rgb(252, 252, 252);
-    height: 20%;
-}
-
-.container-fluid {
-    display: flex;
-}
-
 .card-title {
-    font-size: 14px;
+    font-size: .9rem;
     font-weight: bold;
 }
 
@@ -68,14 +27,14 @@ nav {
 
 .row .col {
     width: 30%;
-    font-size: 13px;
+    font-size: 1rem;
     color: black;
     margin: 1%;
 }
 
 .row .col:hover {
     width: 32%;
-    font-size: 15px;
+    font-size: 1rem;
     color: black;
     margin: 1%;
     text-decoration: none;
@@ -84,32 +43,7 @@ nav {
 .cart {
     width: 80%;
     margin: 0% 5% 5% 7%;
-    background-color: rgb(3, 120, 237);
-    border: 2px solid rgb(3, 120, 237);
     font-size: .9rem;
-    text-align: left;
-    color: white;
-}
-
-/* transaction button */
-.butt {
-    width: 73%;
-    border-radius: 2%;
-    font-size: 1.5rem;
-    margin-left: 15%;
-}
-
-.butt button .btn-primary {
-    height: 15%;
-    width: 34%;
-    margin-bottom: 4%;
-}
-
-.butt button .btn-danger,
-.butt button .btn-info {
-    width: 15%;
-    height: 15%;
-    margin: 0% 0.1% 0.5% 0.1%;
 }
 
 /* item under transaction */
@@ -124,14 +58,13 @@ nav {
 }
 
 form {
-    display: block;
     padding: 2% 2% 5% 2%;
     height: 100%;
     font-size: 1.5rem;
 }
 
 /* footer style */
-.navas {
-    padding-bottom: 5%;
+footer {
+    padding-bottom: 1%;
     padding-top: 1%;
 }

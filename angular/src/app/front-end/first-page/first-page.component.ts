@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
 import { ServeService } from 'src/app/Services/serve.service';
-import { MatDialog } from '@angular/material/dialog';
-import { ComputerPayComponent } from 'src/app/Pay/computer-pay/computer-pay.component';
 import { ComputerAccess, Phones } from 'src/app/interfaces';
 
 @Component({
@@ -23,8 +19,7 @@ export class FirstPageComponent implements OnInit {
     });
   alerts = false;
 
-  constructor(private http: HttpClient, private router: ActivatedRoute, private service: ServeService,
-    private formBuilder: FormBuilder) { }
+  constructor(private service: ServeService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.getPhones();

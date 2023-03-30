@@ -1,57 +1,46 @@
-<nav class="navbar navbar-expand-lg navbar-light back-style position-sticky fixed-top">
-    <!-- Container wrapper -->
-        <!-- Toggle button -->
-        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fa fa-bars"></i>
-        </button>
-
-        <!-- Collapsible wrapper -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <a class="navbar-brand mt-2 mt-lg-0" routerLink="/cmj">
-                <img src="../../../assets/image/icons/logo.png" width="250">
-            </a>
-        </div>
-        <!-- Collapsible wrapper -->
-
-        <div class="d-flex align-items-center">
-            <!-- Service Icons -->
-            <button class="service" mat-button [matMenuTriggerFor]="menu">
-                <i class="fa fa-shopping-cart service"></i>&nbsp;
-                <i class="fa fa-angle-down service"></i>
-                <br>
-                Services
+<nav class="navbar navbar-expand-lg bg-white position-sticky fixed-top d-flex justify-content-between">
+    <a class="navbar-brand mt-2 mt-lg-0 justify-content-start" routerLink="/cmj">
+        <img src="../../../assets/image/icons/logo.png" width="250">
+    </a>
+    
+    <div class="d-flex align-items-center justify-content-end">
+        <button class="service" mat-button [matMenuTriggerFor]="menu">
+            <i class="fa fa-shopping-cart service"></i>&nbsp;
+            <i class="fa fa-angle-down service"></i>
+            <br>
+            Services
+         </button>
+        <mat-menu #menu="matMenu">
+            <button class="products" mat-menu-item>
+                 <mat-icon class="products">settings_phone</mat-icon>
+                 <a routerLink="/users/phones">Phone</a>
              </button>
-            <mat-menu #menu="matMenu">
-                <button class="products" mat-menu-item>
-                     <mat-icon class="products">settings_phone</mat-icon>
-                     <a routerLink="/users/phones">Phone</a>
-                 </button>
-                <mat-divider></mat-divider>
-                <button mat-menu-item class="products">
-                     <mat-icon class="products">computer</mat-icon>
-                     <a routerLink="/users/computers">Computer accessories</a>
-                 </button>
-            </mat-menu>
+            <mat-divider></mat-divider>
+            <button mat-menu-item class="products">
+                 <mat-icon class="products">computer</mat-icon>
+                 <a routerLink="/users/computers">Computer accessories</a>
+             </button>
+        </mat-menu>
 
-            <!-- account change Icons -->
-            <button class="power" mat-button [matMenuTriggerFor]="menus">
-               <i class="fa fa-power-off power"></i>&nbsp;
-               <i class="fa fa-angle-down power"></i>
-               <br>
-               Account
+        <!-- account change Icons -->
+        <button class="power" mat-button [matMenuTriggerFor]="menus">
+           <i class="fa fa-power-off power"></i>&nbsp;
+           <i class="fa fa-angle-down power"></i>
+           <br>
+           Account
+        </button>
+        <mat-menu #menus="matMenu">
+            <button mat-menu-item (click)="login()" class="power">
+                <i class="fa fa-power-off power" ></i>
+                Login
             </button>
-            <mat-menu #menus="matMenu">
-                <button mat-menu-item (click)="login()" class="power">
-                    <i class="fa fa-power-off power" ></i>
-                    Login
-                </button>
-                <mat-divider></mat-divider>
-                <button mat-menu-item (click)="createAccount()" class="products">
-                    <i class="fa fa-user-plus products"></i>
-                    Sign Up
-                </button>
-            </mat-menu>
-        </div>
+            <mat-divider></mat-divider>
+            <button mat-menu-item (click)="createAccount()" class="products">
+                <i class="fa fa-user-plus products"></i>
+                Sign Up
+            </button>
+        </mat-menu>
+    </div>
 </nav>
 
 <body>

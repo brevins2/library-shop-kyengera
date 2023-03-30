@@ -1,8 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServeService } from 'src/app/Services/serve.service';
-import { FormGroup, FormBuilder, FormControl} from '@angular/forms';
+import { FormGroup, FormControl} from '@angular/forms';
 import { Phones } from 'src/app/interfaces';
 
 @Component({
@@ -14,23 +13,23 @@ import { Phones } from 'src/app/interfaces';
 export class PhonePayComponent implements OnInit {
 
   api: Phones[] = [];
+  onephone: Phones[] = [];
   alert = false;
+
   buyPhone = new FormGroup({
-    Title: new FormControl(''),
-    Message: new FormControl(''),
-    Storage: new FormControl(''),
-    Battery: new FormControl(''),
-    Price: new FormControl(''),
-    File: new FormControl(''),
-    CustomerName: new FormControl(''),
-    Email: new FormControl('')
-  });
+    Title: new FormControl(''), Message: new FormControl(''), Storage: new FormControl(''), Battery: new FormControl(''),
+    Price: new FormControl(''), File: new FormControl(''), CustomerName: new FormControl(''), Email: new FormControl('')});
   
-  constructor(private router: ActivatedRoute, private route: Router,
-  private service: ServeService, private http: HttpClient) { }
+  constructor(private router: ActivatedRoute, private route: Router, private service: ServeService) { }
 
   ngOnInit(): void {
     this.getCurrentData();
+    this.service.getAllPhones().subscribe( res=> {
+      this.api = res.data;
+    })
+    this.service.getPhoneWithID(this.router.snapshot.params['id']).subscribe(result => {
+      this.onephone = result.data;
+    })
   }
 
   getCurrentData(){
