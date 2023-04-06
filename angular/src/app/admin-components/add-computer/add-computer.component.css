@@ -1,23 +1,30 @@
-body {
-    padding-top: 5%;
-    background-color: rgb(204, 202, 202);
-    padding-bottom: 5%;
-    height: 100%;
-}
-
 header {
     width: 100%;
+}
+
+body {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    height: 100%;
 }
 
 form {
     margin: 0 auto;
     margin-top: 8rem;
     width: 50%;
+    border: 1px solid #8080809e;
+    border-radius: 2%;
+    padding: 2%;
+    font-size: 1.3rem;
 }
 
 .form-row {
     margin-left: 1.2rem;
     margin-top: .5rem;
+}
+
+.form-group {
+    width: 90%;
 }
 
 .form-group div {
@@ -32,6 +39,7 @@ form {
 .butt button {
     padding: 10px;
     margin: 10px;
+    font-size: 1.2rem;
 }
 
 .cancel {

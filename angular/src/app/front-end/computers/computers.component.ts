@@ -1,6 +1,5 @@
-import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ComputerPayComponent } from 'src/app/Pay/computer-pay/computer-pay.component';
 import { ComputerAccess } from 'src/app/interfaces';
 import { ServeService } from 'src/app/Services/serve.service';
 

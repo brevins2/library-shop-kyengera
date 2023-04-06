@@ -7,7 +7,7 @@
 
   <div class="d-flex align-items-center justify-content-end">
     <button class="power" mat-button (click)="logout()">
-      <i class="fa fa-power-off power" ></i>
+      <i class="fa fa-power-off power"></i>
       <br>
       Logout
     </button>
@@ -22,23 +22,39 @@
     </button>
   </div>
 
-  <div class="d-flex p-2">
-    <div class="side" *ngFor="let image of onephone">
-      <img src="../../../../../assets/image/phones/File" title="Phone" aria-label="image of product" alt="Image of Phone">
+  <div class="d-flex flex-column">
+    <div class="d-flex side justify-content-between">
+      <div class="d-flex image justify-content-start" *ngFor="let image of onephone">
+        <img [src]='"../../../../../assets/image/phones/"+image.File' title="Phone" aria-label="image of product" alt="Image of Phone">
+        <label>{{image.Title}}</label>
+      </div>
+      <div class="d-flex flex-column justify-content-end sec-image">
+        <div class="d-flex justify-content-between top-images">
+          <div *ngFor="let image of onephone" class="justify-content-start">
+            <img [src]='"../../../../../assets/image/phones/"+image.File' title="Phone" aria-label="image of product" alt="Image of Phone">
+          </div>
+
+          <div *ngFor="let image of onephone" class="justify-content-end">
+            <img [src]='"../../../../../assets/image/phones/"+image.File' title="Phone" aria-label="image of product" alt="Image of Phone">
+          </div>
+        </div>
+        <div class="bottom-image">
+          <div *ngFor="let image of onephone">
+            <img [src]='"../../../../../assets/image/phones/"+image.File' title="Phone" alt="Image of Phone">
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="content container">
-      <form [formGroup]="buyPhone" class="d-flex flex-column form-control">
-        <h1 class="text-warning">Order a Phone</h1>
-        <div class="form-row">
+    <div class="content d-flex">
+      <form [formGroup]="buyPhone" class="form-control d-flex flex-column">
+        <div class="form-row" style="display: none;">
             <div class="form-group">
                 <label>Title</label>
                 <input formControlName="Title" type="text" class="form-control" placeholder="title">
             </div>
         </div>
 
-        <img src="../../../../../assets/image/phones/File" title="Phone" aria-label="image of product" alt="Image of Phone" style="display: none;">
-
-        <div class="form-row">
+        <div class="form-row" style="display: none;">
           <div class="form-group">
             <div>
               <label>File</label>
@@ -57,18 +73,22 @@
           </div>
         </div>
 
-        <div class="form-row">
+        <div class="form-row" style="display: none;">
           <label>Price</label>
           <input formControlName="Price" class="form-control" type="text" placeholder="Price">
         </div>
 
         <div class="form-row">
-          <div class="form-row">
-            <label>Name</label>
-            <input formControlName="CustomerName" class="form-control" type="text" placeholder="CustomerName">
+          <div class="d-flex justify-content-between identity">
+            <div>
+              <label>Name</label>
+              <input formControlName="CustomerName" class="form-control" type="text" placeholder="CustomerName">
+            </div>
 
-            <label>Email</label>
-            <input formControlName="Email" class="form-control" type="email" placeholder="Email">
+            <div>
+              <label>Email</label>
+              <input formControlName="Email" class="form-control" type="email" placeholder="Email">
+            </div>
           </div>
           <label>Message</label>
           <textarea rows="5" cols="78" class="form-control" formControlName="Message" placeholder="enter message">
@@ -76,37 +96,23 @@
         </div>
         <br>
 
-        <div>
-            <button class="btn btn-primary" (click)="save()"><i class="fa fa-shopping"></i>Order phone</button>&nbsp;
-            <button class="btn btn-danger" (click)="cancel()">Cancel order</button> &nbsp;
+        <div style="display: none;">
+          <button class="btn btn-primary" (click)="save()"><i class="fa fa-shopping"></i>Order phone</button>&nbsp;
+          <button class="btn btn-danger" (click)="cancel()">Cancel order</button> &nbsp;
         </div>
       </form>
+
+      <div class="d-flex flex-column details" *ngFor="let phone of onephone">
+        <span class="d-flex justify-content-between">
+          <p>Ush {{phone.Price}}</p>
+          <p class="extra">
+            <i class="fa fa-cart"></i>
+            <button class="btn bg-white" (click)="save()">Buy now<i class="fa fa-arrow-right"></i></button>
+          </p>
+        </span>
+      </div>
     </div>
   </div>
-
-  <div class="more-items">
-    <div class="row row-cols-1 row-cols-md-3 g-2">
-      <a class="col" *ngFor="let phon of api" routerLink="/phon-pay/{{phon.ID}}">
-        <div class="card h-100">
-          <img [src]="'../../../../../assets/image/phones/'+ phon.File" class="card-img-top" />
-          <div class="card-body">
-            <h5 class="card-title">{{phon.Title}}</h5>
-            <p class="card-text">
-              {{phon.Storage}}
-              <br>Sh. {{phon.Price}}
-              <br>{{phon.Battery}}
-            </p>
-          </div>
-          <div class="btn btn-primary cart text-center">
-            <i class="fa fa-cart-plus"></i>&nbsp;Buy
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">{{phon.Brand}}</small>
-          </div>
-        </div>
-      </a>
-    </div>
-  </div>    
 </body>
 
 <br>

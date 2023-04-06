@@ -11,23 +11,16 @@ import { ServeService } from 'src/app/Services/serve.service';
 export class AddPhoneComponent implements OnInit {
 
   addPhone = new FormGroup({
-    Title: new FormControl(''),
-    Storage: new FormControl(''),
-    Battery: new FormControl(''),
-    Price: new FormControl(''),
-    File: new FormControl(''),
-    Brand: new FormControl(''),
-  });
+    Title: new FormControl(''), Storage: new FormControl(''), Battery: new FormControl(''),    Price: new FormControl(''), File: new FormControl(''), Brand: new FormControl('')});
   selectedFile!: File; 
   constructor(private router: Router, private service: ServeService) { }
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
   
   cancel(){
     this.router.navigate(['/admin/phone']);
   }
+  
   clr(){
     this.addPhone.reset();
   }

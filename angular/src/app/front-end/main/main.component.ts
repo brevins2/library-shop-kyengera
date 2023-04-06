@@ -1,7 +1,5 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';
-import { TermsComponent } from 'src/app/Component/terms/terms.component';
 
 @Component({
   selector: 'app-main',
@@ -10,19 +8,9 @@ import { TermsComponent } from 'src/app/Component/terms/terms.component';
 })
 export class MainComponent implements OnInit {
 
-  showFiller = false;
-  panelOpenState = false;
-  constructor(
-    private router: Router,
-    private dialogRef: MatDialog
-  ) { }
+  constructor(private router: Router) { }
 
-  ngOnInit(): void {
-  } 
-
-  onTerms(){
-    this.dialogRef.open(TermsComponent);
-  }
+  ngOnInit(): void {}
 
   login(){
     this.router.navigate(['login']);

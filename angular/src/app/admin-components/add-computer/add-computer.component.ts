@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { ServeService } from 'src/app/Services/serve.service';
 
 @Component({
@@ -11,20 +11,13 @@ import { ServeService } from 'src/app/Services/serve.service';
 
 export class AddComputerComponent implements OnInit {
 
-  addComputer = new FormGroup({
-    ID: new FormControl(''),
-    Title: new FormControl(''),
-    Category: new FormControl(''),
-    Price: new FormControl(''),
-    File: new FormControl('')
-  });
+  addComputer = new FormGroup({ID: new FormControl(''), Title: new FormControl(''), Category: new FormControl(''), Price: new FormControl(''), File: new FormControl('')});
 
-  constructor(private router: Router, private serve: ServeService, private route: ActivatedRoute) { }
+  constructor(private router: Router, private serve: ServeService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  clr(){
+  clr() {
     this.addComputer.reset();
   }
 

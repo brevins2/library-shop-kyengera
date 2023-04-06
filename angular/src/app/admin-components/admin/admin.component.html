@@ -1,17 +1,18 @@
-<!-- Navbar -->
-<nav class="position-sticky fixed-top d-flex justify-content-between">
-    <div class="justify-content-start">
-        <a class="navbar-brand mt-2 mt-lg-0" routerLink="/cmj">
-          <img src="../../../assets/image/icons/logo.png" width="250">
-        </a>
-    </div>
+<header class="position-sticky fixed-top navbar navbar-expand-lg">
+    <nav class="d-flex justify-content-between">
+        <div class="justify-content-start">
+            <a class="navbar-brand mt-2 mt-lg-0" routerLink="/cmj">
+                <img src="../../../assets/image/icons/logo.png" width="250">
+            </a>
+        </div>
 
-    <div class="justify-content-end">
-        <button type="button" class="text-light" mat-button (click)="drawer.toggle()">
-          <mat-icon class="menu">menu</mat-icon>
-        </button>
-    </div>
-</nav>
+        <div class="justify-content-end">
+            <button type="button" class="text-light" mat-button (click)="drawer.toggle()">
+                <mat-icon class="menu">menu</mat-icon>
+            </button>
+        </div>
+    </nav>
+</header>
 
 <body>
     <mat-drawer-container class="example-container">

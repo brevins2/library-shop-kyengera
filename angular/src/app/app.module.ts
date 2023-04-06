@@ -42,7 +42,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './Component/footer/footer.component';
 import { HeaderComponent } from './Component/header/header.component';
-import { SliderComponent } from './Component/slider/slider.component';
 import { AddPhoneComponent } from './admin-components/add-phone/add-phone.component';
 import { AddUserComponent } from './admin-components/add-user/add-user.component';
 import { AddComputerComponent } from './admin-components/add-computer/add-computer.component';
@@ -58,15 +57,11 @@ import { ComputerPayComponent } from './Pay/computer-pay/computer-pay.component'
 import { PhonePayComponent } from './Pay/phone-pay/phone-pay.component';
 import { LoginComponent } from './Security/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FileUploadComponent } from './Component/file-upload/file-upload.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { CreateComponent } from './Security/create/create.component';
-import { TermsComponent } from './Component/terms/terms.component';
 import { NgxPayPalModule } from 'ngx-paypal';
-import { TestsComponent } from './test/tests/tests.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
@@ -103,7 +98,6 @@ import { EditComputersComponent } from './admin-components/edit-computers/edit-c
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    SliderComponent,
     AddPhoneComponent,
     AddUserComponent,
     AddComputerComponent,
@@ -118,10 +112,6 @@ import { EditComputersComponent } from './admin-components/edit-computers/edit-c
     ComputerPayComponent,
     PhonePayComponent,
     LoginComponent,
-    FileUploadComponent,
-    CreateComponent,
-    TermsComponent,
-    TestsComponent,
     NotificationsComponent,
     MessagesComponent,
     EditPhonesComponent,
@@ -192,7 +182,6 @@ import { EditComputersComponent } from './admin-components/edit-computers/edit-c
     MdbValidationModule,
     NgbModule,
     Ng2SearchPipeModule,
-    // AngularFileUploaderModule,
     provideFirebaseApp(() => initializeApp({})),
     provideFirestore(() => getFirestore()),
     AngularFireModule.initializeApp(environment.firebase),

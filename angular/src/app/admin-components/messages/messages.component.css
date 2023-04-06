@@ -1,13 +1,13 @@
-.display {
-    padding: 2%;
-}
-
 nav {
     text-align: center;
     margin-bottom: 10px;
     padding-top: 30px;
     height: 90px;
     font-size: 1.3rem;
+}
+
+.display {
+    padding: 2%;
 }
 
 table {
@@ -20,8 +20,15 @@ table {
 /* search styles */
 input {
     font-size: 1.2rem;
-    width: 84%;
-    margin-left: 10px;
+    width: 85%;
+    margin-left: 1rem;
+}
+
+.search {
+    font-size: 1.2rem;
+    width: 8rem;
+    height: 3.5rem;
+    text-transform: capitalize;
 }
 
 .btn-primary {

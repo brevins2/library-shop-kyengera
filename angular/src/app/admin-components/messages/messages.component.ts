@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Messages } from 'src/app/interfaces';
 import { ServeService } from 'src/app/Services/serve.service';
 
@@ -13,11 +13,10 @@ export class MessagesComponent implements OnInit {
   message: Messages[] = [];
   displayedColumns: string[] = ['ID', 'Name', 'Email', 'Message', 'Delete'];
   dataSource = this.message;
-  constructor(private http: HttpClient, private service: ServeService) { }
+  id = this.router.snapshot.params['id'];
+  constructor(private service: ServeService, private router: ActivatedRoute) { }
 
-  ngOnInit(): void {
-    this.getMessages();
-  }
+  ngOnInit(): void {this.getMessages();}
 
   getMessages(){
     this.service.getAllMessages().subscribe(result =>{
@@ -28,5 +27,9 @@ export class MessagesComponent implements OnInit {
 
   search(){
     alert("search.....");
+  }
+
+  delete(id: any) {
+    alert(id);
   }
 }

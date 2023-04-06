@@ -24,38 +24,35 @@ export class PhonePayComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCurrentData();
-    this.service.getAllPhones().subscribe( res=> {
-      this.api = res.data;
-    })
-    this.service.getPhoneWithID(this.router.snapshot.params['id']).subscribe(result => {
-      this.onephone = result.data;
-    })
   }
 
   getCurrentData(){
     this.service.getPhoneWithID(this.router.snapshot.params['id']).subscribe((result: any)=>{
-      this.buyPhone = new FormGroup({
-        Message: new FormControl(result['Message']),
-        Title: new FormControl(result['Title']),
-        Storage: new FormControl(result['Storage']),
-        Battery: new FormControl(result['Battery']),
-        Price: new FormControl(result['Price']),
-        File: new FormControl(result['File']),
-        CustomerName: new FormControl(result['CustomerName']),
-        Email: new FormControl(result['Email'])
+      let x = result.data;
+      x.forEach((element: any) => {
+        this.buyPhone = new FormGroup({
+          Message: new FormControl(element['Message']),
+          Title: new FormControl(element['Title']),
+          Storage: new FormControl(element['Storage']),
+          Battery: new FormControl(element['Battery']),
+          Price: new FormControl(element['Price']),
+          File: new FormControl(element['File']),
+          CustomerName: new FormControl(element['CustomerName']),
+          Email: new FormControl(element['Email'])
+        });
       });
+      this.onephone = x;
     });
   }
 
   save(){
     this.service.createOrder(this.buyPhone.value).subscribe((result) => {
       this.alert = true;
-      console.log(result);
     });
   }
 
   logout(){
-    this.route.navigate(['login']);
+    this.route.navigate(['users/phones']);
   }
 
   cancel(){

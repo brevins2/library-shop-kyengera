@@ -1,18 +1,22 @@
-body {
+/* header styles */
+header {
     width: 100%;
-    height: 100%;
+    height: 8rem;
 }
 
 nav {
     background-color: white;
-    width: 100%;
-    height: 80px;
     padding-top: 10px;
-    border-bottom: 1px solid #b7b5b573;
 }
 
-.brand {
-    margin-left: -10px;
+.justify-content-end {
+    margin-left: 90rem;
+}
+
+/* body styles */
+body {
+    width: 100%;
+    height: 100%;
 }
 
 .button-nav button a {

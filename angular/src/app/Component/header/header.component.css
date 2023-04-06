@@ -1,37 +1,80 @@
 nav {
-    display: flex;
-    justify-content: "space-between";
     width: 100%;
-    padding-left: 9px;
-    background-color: rgb(2, 2, 80);
+    height: 90px;
+    background-color: white;
+    border-bottom: 1px solid #bbbbbb6e;
 }
 
-form {
-    display: flex;
+nav a {
+    margin-top: 10px;
 }
 
-input {
-    margin-right: 5px;
+a:hover {
+    text-decoration: none;
+    transform: scale(1, 1);
 }
 
-.collapse {
-    right: 0;
-    float: right;
+.mat-parent-small {
+    width: 100%;
 }
 
-#img {
-    width: 39px;
-    height: 39px;
-    border: 1px solid;
-    border-radius: 100%;
+#carousel-slider {
+    width: 70%;
 }
 
-.log {
-    width: 60px;
-    border-radius: 2px;
+.carousel-caption {
+    background-color: rgb(28, 28, 28, .11);
+    background-size: cover;
+    opacity: 1;
 }
 
-.space {
-    justify-content: space-between;
-    align-items: flex-end;
+.services {
+    width: 25%;
+    margin-left: 3%;
+    height: 20%;
+}
+
+.example-card {
+    height: 30%;
+}
+
+#nav-card {
+    background-color: blue;
+}
+
+mat-menu button:hover {
+    border-top: 2px solid orange;
+    color: orange;
+}
+
+
+/* navigation bar */
+
+.fixed-top {
+    width: 100%;
+}
+
+
+/* button icon */
+
+.service {
+    color: green;
+}
+
+.products,
+.product a {
+    color: blue;
+}
+
+.power,
+.power a {
+    color: red;
+}
+
+#sign-up {
+    color: green;
+}
+
+#shop {
+    color: orangered;
 }

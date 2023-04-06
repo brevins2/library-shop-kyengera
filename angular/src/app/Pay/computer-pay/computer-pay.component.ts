@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServeService } from 'src/app/Services/serve.service';
-import { HttpClient } from '@angular/common/http';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ComputerAccess } from 'src/app/interfaces';
 
@@ -10,45 +9,46 @@ import { ComputerAccess } from 'src/app/interfaces';
   templateUrl: './computer-pay.component.html',
   styleUrls: ['./computer-pay.component.css']
 })
+
 export class ComputerPayComponent implements OnInit{
 
   alert = false;
-  buyComputer = new FormGroup({
-    id: new FormControl(''),
-    Title: new FormControl(''),
-    Price: new FormControl(''),
-    Category: new FormControl(''),
-    Message: new FormControl(''),
-    File: new FormControl('')
-  });
+  buyComputer = new FormGroup({CustomerName: new FormControl(''), Title: new FormControl(''), Price: new FormControl(''),
+    Category: new FormControl(''), Message: new FormControl(''), File: new FormControl(''), Email: new FormControl(''), Storage: new FormControl(''), Battery: new FormControl('')});
 
   comp: ComputerAccess[] = [];
+  oneaccessories: ComputerAccess[] = [];
 
-  constructor(private router: ActivatedRoute, private route: Router, private service: ServeService,
-  private http: HttpClient) { }
+  constructor(private router: ActivatedRoute, private route: Router, private service: ServeService) { }
 
   ngOnInit(): void {
-    
+    this.getCurentSelectedData();
   }
 
   getCurentSelectedData(){
-    this.service.getComputerWithID(this.router.snapshot.params['ID']).subscribe((result: any)=>{
-      this.buyComputer = new FormGroup({
-        Title: new FormControl(result['Title']),
-        Price: new FormControl(result['Price']),
-        Category: new FormControl(result['Category']),
-        Message: new FormControl(result['Message']),
-        File: new FormControl(result['File'])
+    this.service.getComputerWithID(this.router.snapshot.params['id']).subscribe((result: any)=>{
+      let x = result.data;
+      x.forEach((element: any) => {
+        this.buyComputer = new FormGroup({
+          Title: new FormControl(element['Title']),
+          Price: new FormControl(element['Price']),
+          Category: new FormControl(element['Category']),
+          Message: new FormControl(element['Message']),
+          File: new FormControl(element['File']),
+          CustomerName: new FormControl(element['CustomerName']),
+          Email: new FormControl(element['Email'])
+        });
       });
+      this.oneaccessories = x;
     });
   }
 
   logout(){
-    this.route.navigate(['login']);
+    this.route.navigate(['users/computers']);
   }
 
   order(){
-    this.http.post('http://localhost:3000/Orders', this.buyComputer.value).subscribe(result =>{
+    this.service.createOrder(this.buyComputer.value).subscribe(result => {
       this.alert = true;
       return result;
     });
