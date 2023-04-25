@@ -1,1 +1,56 @@
-<p>edit-computers works!</p>
+<header class="fixed-top bg-white">
+    <nav class="navbar navbar-expand-lg">
+        <a class="nav-link" id="homeIcon" aria-current="page" routerLink="/cmj">
+            <img src="../../../assets/image/icons/logo.png" width="60%">
+        </a>
+    </nav>
+</header>
+
+<body>
+    <form [formGroup]="editComputer">
+        <h1>Edit Accessory</h1>
+        <div class="form-row">
+            <div class="form-group">
+                <label>Title</label>
+                <input formControlName="Title" type="text" class="form-control" placeholder="Enter Title">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group d-flex pair">
+                <div>
+                    <label>Category</label>
+                    <input formControlName="Category" type="text" class="form-control" placeholder="Enter Category">
+                </div>
+
+                <div>
+                    <label>Price</label>
+                    <input formControlName="Price" class="form-control" type="text" placeholder="Enter Price">
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group d-flex pair">            
+                <div>
+                    <label>Front</label>
+                    <input formControlName="File1" class="form-control" type="text" placeholder="Enter File">
+                </div>
+
+                <div>
+                    <label>Back</label>
+                    <input formControlName="File2" class="form-control" type="text" placeholder="Enter File">
+                </div>
+
+                <div>
+                    <label>Side</label>
+                    <input formControlName="File3" class="form-control" type="text" placeholder="Enter File">
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="butt">
+            <button class="btn btn-primary" (click)="edit()">Edit</button>
+            <button class="btn btn-secondary" (click)="clr()">Clear</button>
+            <button class="btn btn-danger" (click)="cancel()">Cancel</button>
+        </div>
+    </form>        
+</body>

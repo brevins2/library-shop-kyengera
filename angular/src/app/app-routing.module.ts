@@ -23,6 +23,7 @@ import { ComputerPayComponent } from './Pay/computer-pay/computer-pay.component'
 import { NotificationsComponent } from './admin-components/notifications/notifications.component';
 import { HeaderComponent } from './Component/header/header.component';
 import { MessagesComponent } from './admin-components/messages/messages.component';
+import { EditUserComponent } from './admin-components/edit-user/edit-user.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'cmj', pathMatch: 'full' },
@@ -49,7 +50,7 @@ const routes: Routes = [
   { path: 'add computer', component: AddComputerComponent },
   { path: 'add phone', component: AddPhoneComponent },
   { path: 'add user', component: AddUserComponent },
-  { path: 'edit-user/:id', component: AddUserComponent },
+  { path: 'edit-user/:id', component: EditUserComponent },
   { path: 'edit-phone/:id', component: EditPhonesComponent },
   { path: 'edit-computer/:id', component: EditComputersComponent },
   { path: 'comp-pay/:id', component: ComputerPayComponent },

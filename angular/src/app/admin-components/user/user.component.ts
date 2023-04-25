@@ -35,4 +35,8 @@ export class UserComponent implements OnInit {
   }
 
   search(){}
+
+  delete(id: any) {
+    this.Serve.deleteUser(id).subscribe(() => { this.getUser() });
+  }
 }

@@ -3,43 +3,16 @@
         <img src="../../../assets/image/icons/logo.png" width="250">
     </a>
     
-    <div class="d-flex align-items-center justify-content-end">
-        <button class="service" mat-button [matMenuTriggerFor]="menu">
-            <i class="fa fa-shopping-cart service"></i>&nbsp;
-            <i class="fa fa-angle-down service"></i>
-            <br>
-            Services
-         </button>
-        <mat-menu #menu="matMenu">
-            <button class="products" mat-menu-item>
-                 <mat-icon class="products">settings_phone</mat-icon>
-                 <a routerLink="/users/phones">Phone</a>
-             </button>
-            <mat-divider></mat-divider>
-            <button mat-menu-item class="products">
-                 <mat-icon class="products">computer</mat-icon>
-                 <a routerLink="/users/computers">Computer accessories</a>
-             </button>
-        </mat-menu>
-
-        <!-- account change Icons -->
-        <button class="power" mat-button [matMenuTriggerFor]="menus">
-           <i class="fa fa-power-off power"></i>&nbsp;
-           <i class="fa fa-angle-down power"></i>
-           <br>
-           Account
-        </button>
-        <mat-menu #menus="matMenu">
-            <button mat-menu-item (click)="login()" class="power">
-                <i class="fa fa-power-off power" ></i>
-                Login
-            </button>
-            <mat-divider></mat-divider>
-            <button mat-menu-item (click)="createAccount()" class="products">
-                <i class="fa fa-user-plus products"></i>
-                Sign Up
-            </button>
-        </mat-menu>
+    <div class="d-flex justify-content-end">
+        <a routerLink="/users/phones" class="link-btn d-flex flex-column text-blue">
+          <i class="fa fa-mobile"></i>
+          Phone
+        </a>
+      
+        <a routerLink="/users/computers" class="link-btn d-flex flex-column text-blue">
+          <i class="fa fa-desktop"></i>
+          Computer Accessories
+        </a>
     </div>
 </nav>
 

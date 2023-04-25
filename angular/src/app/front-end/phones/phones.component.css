@@ -15,11 +15,12 @@ nav {
 .search {
     width: 90%;
     font-size: 1rem;
+    margin-right: 1rem;
 }
 
-.accounts {
-    margin-left: 14%;
-    float: right;
+.btn {
+    height: 3.3rem;
+    margin-left: 1%;
 }
 
 .row {
@@ -28,14 +29,14 @@ nav {
 
 .col {
     width: 20%;
-    font-size: .7rem;
+    font-size: 1.2rem;
     color: black;
     margin: 0 auto;
 }
 
 .col:hover {
     text-decoration: none;
-    font-size: .9rem;
+    font-size: 1.3rem;
     color: black;
 }
 
@@ -43,7 +44,7 @@ nav {
     width: 85%;
     margin: 0 auto;
     background-color: rgb(3, 120, 237);
-    font-size: 1rem;
+    font-size: 1.2rem;
     text-align: left;
     color: white;
 }

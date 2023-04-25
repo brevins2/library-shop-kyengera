@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgxPayPalModule } from 'ngx-paypal';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -60,30 +65,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { NgxPayPalModule } from 'ngx-paypal';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
-
-import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
-import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
-import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
-import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
-import { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';
-import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
-import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
-import { MdbPopoverModule } from 'mdb-angular-ui-kit/popover';
-import { MdbRadioModule } from 'mdb-angular-ui-kit/radio';
-import { MdbRangeModule } from 'mdb-angular-ui-kit/range';
-import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
-import { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';
-import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
-import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
-import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { NotificationsComponent } from './admin-components/notifications/notifications.component';
-
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MessagesComponent } from './admin-components/messages/messages.component';
-
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/compat';
@@ -92,6 +75,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { environment } from '../environments/environment';
 import { EditPhonesComponent } from './admin-components/edit-phones/edit-phones.component';
 import { EditComputersComponent } from './admin-components/edit-computers/edit-computers.component';
+import { EditUserComponent } from './admin-components/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -115,7 +99,8 @@ import { EditComputersComponent } from './admin-components/edit-computers/edit-c
     NotificationsComponent,
     MessagesComponent,
     EditPhonesComponent,
-    EditComputersComponent
+    EditComputersComponent,
+    EditUserComponent
   ],
   exports: [
     MatDialogModule
@@ -165,21 +150,6 @@ import { EditComputersComponent } from './admin-components/edit-computers/edit-c
     FontAwesomeModule,
     NgxPayPalModule,
     CarouselModule,
-    MdbAccordionModule,
-    MdbCarouselModule,
-    MdbCheckboxModule,
-    MdbCollapseModule,
-    MdbDropdownModule,
-    MdbFormsModule,
-    MdbModalModule,
-    MdbPopoverModule,
-    MdbRadioModule,
-    MdbRangeModule,
-    MdbRippleModule,
-    MdbScrollspyModule,
-    MdbTabsModule,
-    MdbTooltipModule,
-    MdbValidationModule,
     NgbModule,
     Ng2SearchPipeModule,
     provideFirebaseApp(() => initializeApp({})),

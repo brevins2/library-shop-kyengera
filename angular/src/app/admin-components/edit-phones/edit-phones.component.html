@@ -1,1 +1,68 @@
-<p>edit-phones works!</p>
+<header class="fixed-top bg-white">
+    <nav class="navbar navbar-expand-lg">
+        <a class="nav-link" id="homeIcon" aria-current="page" routerLink="/cmj">
+            <img src="../../../assets/image/icons/logo.png" width="60%">
+        </a>
+    </nav>
+</header>
+
+<body>
+    <form [formGroup]="editPhone" class="d-flex flex-column">
+        <h1>Edit Phone</h1>
+        <div class="form-row">
+            <div class="form-group col-md-11">
+                <label>Title</label>
+                <input formControlName="Title" type="text" class="form-control" placeholder="Enter Title">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-11 d-flex">
+                <div>
+                    <label>Storage</label>
+                    <input formControlName="Storage" type="text" class="form-control" placeholder="Enter Storage">
+                </div>
+                <div>
+                    <label>Battery</label>
+                    <input formControlName="Battery" type="text" class="form-control" placeholder="Enter Battery">
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-11 d-flex">
+                <div>
+                    <label>Price</label>
+                    <input formControlName="Price" class="form-control" type="text" placeholder="Enter Price">
+                </div>
+
+                <div>
+                    <label>Brand</label>
+                    <input formControlName="Brand" type="text" class="form-control" placeholder="Enter Brand">
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-11 d-flex">
+                <div>
+                    <label>Front</label>
+                    <input formControlName="File1" type="text" class="form-control" placeholder="Enter File">
+                </div>
+
+                <div>
+                    <label>Back</label>
+                    <input formControlName="File2" type="text" class="form-control" placeholder="Enter File">
+                </div>
+
+                <div>
+                    <label>Side</label>
+                    <input formControlName="File3" type="text" class="form-control" placeholder="Enter File">
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="butt">
+            <button class="btn btn-primary save" (click)="edit()">Edit</button>
+            <button class="btn btn-secondary" (click)="clr()">Clear Form</button>
+            <button class="btn btn-primary cancel" (click)="cancel()">Cancel</button>
+        </div>
+    </form>
+</body>

@@ -92,8 +92,6 @@ app.post('/add/Account', (req, res) => {
         });
     }
     else {
-        // console.log('password and confirm password must be the same');
-        // window.alert('password and confirm password must be the same');
         console.warn('password and confirm password must be the same');
     }
 });
@@ -108,7 +106,7 @@ app.put('/Accounts/:id', (req, res) => {
     let allow = req.body.Allow;
 
     let qr = `update accounts set Email = '${email}', Password = '${password}',
-               ConfirmPassword = '${confirmPassword}', Allow = '${allow}', where ID = ${gID}`;
+               ConfirmPassword = '${confirmPassword}', Allow = '${allow}' where ID = '${gID}'`;
 
     db.query(qr, (err, result) => {
         if (err) { console.log(err); }
@@ -290,11 +288,13 @@ app.post('/add/Phone', (req, res) => {
     let storage = req.body.Storage;
     let battery = req.body.Battery;
     let price = req.body.Price;
-    let file = req.body.File;
+    let file1 = req.body.File1;
+    let file2 = req.body.File2;
+    let file3 = req.body.File3;
     let brand = req.body.Brand;
 
-    let qr = `INSERT INTO phones(Title, Storage, Battery, Price, File, Brand)
-                VALUES('${title}','${storage}','${battery}', '${price}', '${file}', '${brand}')`;
+    let qr = `INSERT INTO phones(Title, Storage, Battery, Price, File1, File2, File3, Brand)
+                VALUES('${title}','${storage}','${battery}', '${price}', '${file1}', '${file2}', '${file3}', '${brand}')`;
 
     db.query(qr, (err, result) => {
 
@@ -315,11 +315,13 @@ app.put('/Phones/:id', (req, res) => {
     let storage = req.body.Storage;
     let battery = req.body.Battery;
     let price = req.body.Price;
-    let file = req.body.File;
+    let file1 = req.body.File1;
+    let file2 = req.body.File2;
+    let file3 = req.body.File3;
     let brand = req.body.Brand;
 
     let qr = `update phones set Title = '${title}', Storage = '${storage}', Battery = '${battery}',
-                Price = '${Price}', File = '${file}', Brand = '${brand}'  where id = ${gID}`;
+                Price = '${price}', File1 = '${file1}', File2 = '${file2}', File3 = '${file3}', Brand = '${brand}'  where id = ${gID}`;
 
     db.query(qr, (err, result) => {
         if (err) { console.log(err); }
@@ -399,10 +401,12 @@ app.post('/add/Computer', (req, res) => {
     let title = req.body.Title;
     let category = req.body.Category;
     let price = req.body.Price;
-    let file = req.body.File;
+    let file1 = req.body.File1;
+    let file2 = req.body.File2;
+    let file3 = req.body.File3;
 
-    let qr = `INSERT INTO computers(Title, Category, Price, File)
-                VALUES('${title}', '${category}', '${price}', '${file}')`;
+    let qr = `INSERT INTO computers(Title, Category, Price, File1, File2, File3)
+                VALUES('${title}', '${category}', '${price}', '${file1}', '${file2}', '${file3}')`;
 
     db.query(qr, (err, result) => {
 
@@ -422,10 +426,12 @@ app.put('/Computers/:id', (req, res) => {
     let title = req.body.Title;
     let category = req.body.Category;
     let price = req.body.Price;
-    let file = req.body.File;
+    let file1 = req.body.File1;
+    let file2 = req.body.File2;
+    let file3 = req.body.File3;
 
     let qr = `update computers set Title = '${title}', Category = '${category}',
-                Price = '${Price}', File = '${file}' where ID = ${gID}`;
+                Price = '${price}', File1 = '${file1}', File2 = '${file2}', File3 = '${file3}' where ID = ${gID}`;
 
     db.query(qr, (err, result) => {
         if (err) { console.log(err); }

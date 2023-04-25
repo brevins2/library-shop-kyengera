@@ -30,6 +30,6 @@ export class MessagesComponent implements OnInit {
   }
 
   delete(id: any) {
-    alert(id);
+    this.service.deleteMessage(id).subscribe();
   }
 }

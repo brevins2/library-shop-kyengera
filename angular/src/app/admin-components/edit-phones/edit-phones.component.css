@@ -1,0 +1,54 @@
+header {
+    width: 100%;
+}
+
+body {
+    padding: 5%;
+    padding-top: 2%;
+    padding-bottom: 1%;
+}
+
+form {
+    margin: 0 auto;
+    margin-top: 6rem;
+    width: 50%;
+    border: 1px solid #8080809e;
+    border-radius: 2%;
+    padding: 2%;
+    padding-bottom: 0;
+    font-size: 1.3rem;
+}
+
+.col-md-11 div {
+    width: 49%;
+}
+
+.form-row {
+    margin-left: 1.2rem;
+}
+
+.form-group div {
+    margin: 1rem 1rem 1rem 0rem;
+}
+
+.butt {
+    padding: 10px;
+    display: flex;
+}
+
+.butt button {
+    padding: 10px;
+    margin: 10px;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+}
+
+.cancel {
+    background-color: red;
+    border-color: red;
+}
+
+.save {
+    background-color: green;
+    border-color: green;
+}

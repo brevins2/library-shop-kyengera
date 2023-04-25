@@ -28,15 +28,21 @@ export class ComputersComponent implements OnInit {
 
   search(){
     this.service.findByComputerName(this.searchText).subscribe(res => {
-      this.comp = res.data;
+      let x = res.data;
+
+      x.forEach((element: any) => {
+        const y = element.find((a: any) => {
+          return a.Title === this.searchText
+        });
+        
+        if(y) {
+          console.log("match found"+ y);
+          // this.comp = x;
+        }
+        else {
+          console.log("no match");
+        }
+      });
     });
-    // if(this.comp.length === 0 || this.filterText === ''){
-    //   return this.comp;
-    // }
-    // else{
-    //   return this.comp.filter((computer) => {
-    //     return computer.Title.toLowerCase()  === filterTerm.toLowerCase();
-    //   })
-    // }
   }
 }

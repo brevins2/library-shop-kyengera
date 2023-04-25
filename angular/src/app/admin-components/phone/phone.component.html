@@ -41,10 +41,22 @@
         <td mat-cell *matCellDef="let phones"> {{phones.Price}} </td>
       </ng-container>
 
-      <!-- File Column -->
-      <ng-container matColumnDef="File">
-        <th mat-header-cell *matHeaderCellDef class="text-left"> File </th>
-        <td mat-cell *matCellDef="let phones"> {{phones.File}} </td>
+      <!-- Front File Column -->
+      <ng-container matColumnDef="Front">
+        <th mat-header-cell *matHeaderCellDef class="text-left"> Front </th>
+        <td mat-cell *matCellDef="let phones"> {{phones.File1}} </td>
+      </ng-container>
+
+      <!-- Back File Column -->
+      <ng-container matColumnDef="Back">
+        <th mat-header-cell *matHeaderCellDef class="text-left"> Back </th>
+        <td mat-cell *matCellDef="let phones"> {{phones.File2}} </td>
+      </ng-container>
+
+      <!-- Side File Column -->
+      <ng-container matColumnDef="Side">
+        <th mat-header-cell *matHeaderCellDef class="text-left"> Side </th>
+        <td mat-cell *matCellDef="let phones"> {{phones.File3}} </td>
       </ng-container>
 
       <!-- Brand Column -->
@@ -62,7 +74,7 @@
       <!-- Delete Column -->
       <ng-container matColumnDef="Delete">
         <th mat-header-cell *matHeaderCellDef class="text-left"> Delete </th>
-        <td mat-cell *matCellDef="let phones"> <button class="btn btn-outline-danger" routerLink="/edit-phone/{{phones.ID}}"><i class="fa fa-trash"></i></button> </td>
+        <td mat-cell *matCellDef="let phones"> <button class="btn btn-outline-danger" (click)="delete(phones.ID)"><i class="fa fa-trash"></i></button> </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

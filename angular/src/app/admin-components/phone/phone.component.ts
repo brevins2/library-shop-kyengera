@@ -1,8 +1,7 @@
-import { HttpClient, HttpEventType } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Phones } from 'src/app/interfaces';
 import { ServeService } from 'src/app/Services/serve.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-phone',
@@ -13,10 +12,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class PhoneComponent implements OnInit {
 
   phones: Phones[] = [];
-  displayedColumns: string[] = ['ID', 'Title', 'Storage', 'Battrey', 'Price', 'File', 'Brand', 'Edit', 'Delete'];
+  displayedColumns: string[] = ['ID', 'Title', 'Storage', 'Battrey', 'Price', 'Front', 'Back', 'Side', 'Brand', 'Edit', 'Delete'];
     dataSource = this.phones;
-  constructor(private http: HttpClient, private Serve: ServeService, private route: Router,
-    private router: ActivatedRoute) { }
+  constructor(private Serve: ServeService, private route: Router) { }
 
   ngOnInit(): void {
     this.getApi();
@@ -24,7 +22,7 @@ export class PhoneComponent implements OnInit {
 
   // getting data
   getApi(){
-    this.http.get<{data: Phones[]}>('http://localhost:8080/Phones').subscribe(response =>{
+   this.Serve.getAllPhones().subscribe(response =>{
       this.phones = response.data;
       this.dataSource = this.phones;
     });
@@ -35,4 +33,8 @@ export class PhoneComponent implements OnInit {
   }
 
   search(){}
+
+  delete(id: any) {
+    this.Serve.deletePhone(id).subscribe(() => this.getApi);
+  }
 }

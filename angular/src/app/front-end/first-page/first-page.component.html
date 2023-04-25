@@ -1,11 +1,10 @@
 <app-header></app-header>
 <body class="bg-light">
-    <div class="d-flex justify-conent-between mat-parent-small">
-
-        <carousel class="justify-content-end" id="carousel-slider">
+    <div class="carousel">
+        <carousel id="carousel-slider">
             <slide>
                 <mat-card class="example-card">
-                    <img mat-card-image src="../../../assets/image/computers/ear pads.jpg" height="400">
+                    <img mat-card-image src="../../../assets/image/computers/ear pads.jpg" height="500">
                 </mat-card>
                 <div class="carousel-caption d-none d-md-block">
                     <h3>CMJ Entertainment</h3>
@@ -14,7 +13,7 @@
             </slide>
             <slide>
                 <mat-card class="example-card">
-                    <img mat-card-image src="../../../assets/image/AI laptop.jpg" height="400">
+                    <img mat-card-image src="../../../assets/image/AI laptop.jpg" height="500">
                 </mat-card>
                 <div class="carousel-caption d-none d-md-block">
                     <h3>CMJ Entertainment</h3>
@@ -23,7 +22,7 @@
             </slide>
             <slide>
                 <mat-card class="example-card">
-                    <img mat-card-image src="../../../assets/image/computer.jpg" height="400">
+                    <img mat-card-image src="../../../assets/image/computer.jpg" height="500">
                 </mat-card>
                 <div class="carousel-caption d-none d-md-block">
                     <h3>CMJ Entertainment</h3>
@@ -32,7 +31,7 @@
             </slide>
             <slide>
                 <mat-card class="example-card">
-                    <img mat-card-image src="../../../assets/image/phones/edge.jpg" height="400">
+                    <img mat-card-image src="../../../assets/image/phones/edge.jpg" height="500">
                 </mat-card>
                 <div class="carousel-caption d-none d-md-block">
                     <h3>CMJ Entertainment</h3>
@@ -41,7 +40,7 @@
             </slide>
             <slide>
                 <mat-card class="example-card">
-                    <img mat-card-image src="../../../assets/image/phones/infinix hot 10.jpg" height="400">
+                    <img mat-card-image src="../../../assets/image/phones/infinix hot 10.jpg" height="500">
                 </mat-card>
                 <div class="carousel-caption d-none d-md-block">
                     <h3>CMJ Entertainment</h3>
@@ -50,7 +49,7 @@
             </slide>
         </carousel>
     </div>
-     <!-- *ngIf="phon.id <= 8" -->
+    
     <div class="body">
         <div class="row row-cols-1 row-cols-md-3 g-2">
             <a class="col" *ngFor="let phon of phones" routerLink="/phon-pay/{{phon.ID}}">

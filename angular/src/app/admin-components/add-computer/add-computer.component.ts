@@ -11,7 +11,7 @@ import { ServeService } from 'src/app/Services/serve.service';
 
 export class AddComputerComponent implements OnInit {
 
-  addComputer = new FormGroup({ID: new FormControl(''), Title: new FormControl(''), Category: new FormControl(''), Price: new FormControl(''), File: new FormControl('')});
+  addComputer = new FormGroup({Title: new FormControl(''), Category: new FormControl(''), Price: new FormControl(''), File1: new FormControl(''), File2: new FormControl(''), File3: new FormControl('')});
 
   constructor(private router: Router, private serve: ServeService) { }
 

@@ -3,7 +3,7 @@ header {
 }
 
 body {
-    padding-top: 5%;
+    padding-top: 1%;
     padding-bottom: 5%;
     height: 100%;
 }
@@ -39,6 +39,7 @@ form {
 .butt button {
     padding: 10px;
     margin: 10px;
+    text-transform: capitalize;
     font-size: 1.2rem;
 }
 

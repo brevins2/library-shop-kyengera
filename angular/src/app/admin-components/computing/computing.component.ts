@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { ComputerAccess } from 'src/app/interfaces';
 import { ServeService } from 'src/app/Services/serve.service';
 
@@ -12,11 +11,10 @@ import { ServeService } from 'src/app/Services/serve.service';
 export class ComputingComponent implements OnInit {
 
   computers: ComputerAccess[] = [];
-  displayedColumns: string[] = ['ID', 'Title', 'Category', 'Price', 'File', 'Edit', 'Delete'];
+  displayedColumns: string[] = ['ID', 'Title', 'Category', 'Price', 'Front', 'Back', 'Side', 'Edit', 'Delete'];
     dataSource = this.computers;
 
-  constructor(private http: HttpClient, private serve: ServeService, private route: Router, 
-    private router: ActivatedRoute) {
+  constructor(private serve: ServeService, private route: Router) {
   }
 
   ngOnInit(): void {
@@ -36,4 +34,7 @@ export class ComputingComponent implements OnInit {
 
   search(){}
 
+  delete(id: any) {
+    this.serve.deleteComputer(id).subscribe(() => { this.getAPi() });
+  }
 }
