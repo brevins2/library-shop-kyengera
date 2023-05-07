@@ -1,3 +1,12 @@
+<nav class="d-flex justify-content-between contact-span text-center text-white align-items-center">
+    <div class="justify-content-start">
+        <i class="fa fa-phone"></i>
+        +256 755113122
+    </div>
+    <div class="justify-content-end">
+        @ copyright 2023
+    </div>
+</nav>
 <app-header></app-header>
 <body class="bg-light">
     <div class="carousel">
@@ -64,7 +73,7 @@
                                 <br>{{phon.Battery}}
                             </p>
                         </div>
-                        <div class="btn cart">
+                        <div class="btn btn-primary cart">
                             <i class="fa fa-cart-plus"></i>&nbsp;Buy
                         </div>
                     </div>
@@ -73,7 +82,7 @@
         </div>
         <a routerLink="/users/phones" class="more">see more >>></a>
     </div>
-     <!-- *ngIf="com.id <= 8" -->
+     
     <div class="body">
         <div class="row row-cols-1 row-cols-md-3 g-2">
             <a class="col" *ngFor="let com of computers" routerLink="/comp-pay/{{com.ID}}">
@@ -87,7 +96,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="btn cart">
+                    <div class="btn btn-primary cart">
                         <i class="fa fa-cart-plus"></i>&nbsp;Buy
                     </div>
                 </div>
@@ -96,40 +105,27 @@
         <a routerLink="/users/computers" class="more">see more >>></a>
     </div>
 
-    <div class="d-flex contact" id="contact">
-        <div class="help float-left">
-            <h5 class="address">
-                Contact Us
-            </h5>
-            We sell phones and Computer accessories at the cheapest prices there is.
-            <b>For online services</b><br/>Order from our websites or any of our social media platforms the device or accessory of your choice and we shall be at your service. Use our email
-            <a href="email">cmjentertainment@gmail.com</a> or our telephone lines <b>0700711932</b> and get served quickly.
-            <br/><br/>
-            <P>Our Motto is</P>
-            <h5>"COME VISIT THE WORLD FULL OF ENJOYMENT"</h5>
+    <h3>Storage</h3>
+    <div class="body">
+        <div class="row row-cols-1 row-cols-md-3 g-2" id="myRow">
+            <a class="col d-flex flex-column" id="myTitle" *ngFor="let com of storage" routerLink="/comp-pay/{{com.ID}}">
+                <div class="card h-100" *ngIf="com.Category == 'Storage'">
+                    <h5 class="card-title">{{com.Title}}</h5>
+                    <div class="card-body">
+                        <img [src]="'../../../../../assets/image/computers/'+ com.File" class="card-img-top" height="90">
+                        <div class="card-text ">
+                            <p>{{com.Category}}
+                                <br>{{com.Price}}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="btn btn-primary cart">
+                        <i class="fa fa-cart-plus"></i>&nbsp;Buy
+                    </div>
+                </div>
+            </a>
         </div>
-        <div class="float-right location">
-            <form class="form" [formGroup]="sendMessage" (ngSubmit)="sendMessages()">
-                <h2>Send Message</h2>
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" formControlName="Name" class="form-control" id="exampleInputText" placeholder="Enter name" />
-                </div>
-
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" formControlName="Email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                </div>
-
-                <div class="form-group">
-                    <label for="exampleMessage">Message</label>
-                    <textarea class="form-control" id="exampleMessage" formControlName="Message" placeholder="Enter your message" rows="6">
-                    </textarea>
-                </div>
-
-                <button type="submit" class="btn btn-primary send"><i class="fa fa-paper-plane"></i>&nbsp;Send</button>
-            </form>
-        </div>
+        <a routerLink="/users/computers" class="more">see more >>></a>
     </div>
 </body>
 

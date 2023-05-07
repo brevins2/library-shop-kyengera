@@ -11,7 +11,8 @@ import { Order } from 'src/app/interfaces';
 export class NotificationsComponent implements OnInit {
 
   order: Order[] = [];
-  displayedColumns: string[] = ['ID', 'Title', 'Message', 'Storage', 'Battery', 'Price', 'File', 'Category', 'CustomerName', 'Email', 'Delete'];
+
+  displayedColumns: string[] = ['Title', 'Message', 'Storage', 'Battery', 'Price', 'File', 'Category', 'CustomerName', 'Email', 'Delete'];
     dataSource = this.order;
   constructor(private service: ServeService) { }
 

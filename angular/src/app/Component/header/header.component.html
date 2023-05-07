@@ -1,92 +1,9 @@
-<nav class="navbar-light position-sticky fixed-top d-flex justify-content-between">
-  <a class="navbar-brand justify-content-start" routerLink="/cmj">
+<nav class="position-sticky fixed-top navbar navbar-expand-lg d-flex justify-content-between">
+  <div class="d-flex container justify-content-start">
+    <a class="navbar-brand" routerLink="/cmj">
       <img src="../../../assets/image/icons/logo.png" width="250">
-  </a>
-
-  <div class="justify-content-end">
-      <!-- <button class="navbar-toggler" type="button" (click)="backgroundImageExample3.toggle()" aria-controls="backgroundImageExample3" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fa fa-bars" aria-label="bars"></i>
-      </button> -->
-
-      <div>
-          <!-- Service Icons -->
-          <button class="service" mat-button [matMenuTriggerFor]="menu">
-                <i class="fa fa-shopping-cart service"></i>
-                <i class="fa fa-angle-down service"></i>
-                <br>
-                Services
-              </button>
-          <mat-menu #menu="matMenu">
-              <button class="products" mat-menu-item>
-                  <mat-icon class="products">phone_android</mat-icon>
-                  <a routerLink="/users/phones">Phone</a>
-                </button>
-              <mat-divider></mat-divider>
-              <button mat-menu-item class="products">
-                  <mat-icon class="products">computer</mat-icon>
-                  <a routerLink="/users/computers">Computer Accessories</a>
-                </button>
-          </mat-menu>
-
-          <!-- Contact Us Icons -->
-          <button class="products" mat-button [matMenuTriggerFor]="menu2">
-                <mat-icon  class="products">
-                  <span class="material-icons">contact_support</span>
-                </mat-icon>
-                <i class="fa fa-angle-down products"></i>
-                <br>
-                Support
-              </button>
-          <mat-menu #menu2="matMenu">
-              <button mat-menu-item class="products">
-                  <a href="#contact">
-                    <mat-icon class="products">settings_phone</mat-icon>
-                    Contact
-                  </a>
-                </button>
-              <mat-divider></mat-divider>
-              <button mat-menu-item id="shop">
-                  <a routerLink="/users">
-                    <mat-icon id="shop">shopping_cart</mat-icon>
-                    Shopping
-                  </a>
-                </button>
-          </mat-menu>
-
-          <!-- account change Icons -->
-          <button class="power" mat-button [matMenuTriggerFor]="menu3">
-                <i class="fa fa-power-off power"></i>&nbsp;
-                <i class="fa fa-angle-down power"></i>
-                <br>
-                Account
-              </button>
-          <mat-menu #menu3="matMenu">
-              <button mat-menu-item class="power">
-                  <a routerLink="/login">
-                    <i class="fa fa-power-off power"></i>
-                    Login
-                  </a>
-                </button>
-              <mat-divider></mat-divider>
-              <button mat-menu-item class="products">
-                  <a routerLink="/create" id="sign-up">
-                    <i class="fa fa-user-plus"></i>
-                    Sign Up
-                  </a>
-                </button>
-          </mat-menu>
-      </div>
-  </div>
-</nav>
-
-
-
-<!-- <nav class="position-sticky fixed-top navbar navbar-expand-lg d-flex justify-content-between">
-  <a class="navbar-brand justify-content-start" routerLink="/cmj">
-    <img src="../../../assets/image/icons/logo.png" width="250">
-  </a>
-
-  <div class="d-flex justify-content-end">
+    </a>
+  
     <a routerLink="/users/phones" class="link-btn d-flex flex-column text-blue">
       <i class="fa fa-mobile"></i>
       Phone
@@ -97,15 +14,60 @@
       Computer Accessories
     </a>
 
-    <a href="#contact" class="link-btn d-flex flex-column text-blue">
+    <a href="#contact" data-toggle="modal" data-target="#exampleModal" class="link-btn d-flex flex-column text-blue">
       <i class="fa fa-phone"></i>          
       Contact
     </a>
-  
+  </div>
+
+  <div class="d-flex justify-content-end">
+    <input type="search" class="form-control" id="myInput" class="form-control" placeholder="search for....." onkeyup="searchelement()">
 
     <a routerLink="/users" class="link-btn d-flex flex-column text-blue">
       <i class="fa fa-shopping-cart"></i>
       Shopping
     </a>
   </div>
-</nav> -->
+</nav>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="d-flex contact" id="contact">
+        <div class="help float-left">
+          <h5 class="address">
+            Contact Us
+          </h5>
+          We sell phones and Computer accessories at the cheapest prices there is.
+          <b>For online services</b><br/>Order from our websites or any of our social media platforms the device or accessory of your choice and we shall be at your service. Use our email
+          <a href="email">cmjentertainment@gmail.com</a> or our telephone lines <b>0700711932</b> and get served quickly.
+          <br/><br/>
+          <P>Our Motto is</P>
+          <h5>"COME VISIT THE WORLD FULL OF ENJOYMENT"</h5>
+        </div>
+        <div class="float-right location">
+          <form class="form" [formGroup]="sendMessage" (ngSubmit)="sendMessages()">
+            <h2>Send Message</h2>
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" formControlName="Name" class="form-control" id="exampleInputText" placeholder="Enter name" />
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" formControlName="Email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+
+            <div class="form-group">
+              <label for="exampleMessage">Message</label>
+              <textarea class="form-control" id="exampleMessage" formControlName="Message" placeholder="Enter your message" rows="6">
+              </textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary send"><i class="fa fa-paper-plane"></i>&nbsp;Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

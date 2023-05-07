@@ -76,6 +76,9 @@ import { environment } from '../environments/environment';
 import { EditPhonesComponent } from './admin-components/edit-phones/edit-phones.component';
 import { EditComputersComponent } from './admin-components/edit-computers/edit-computers.component';
 import { EditUserComponent } from './admin-components/edit-user/edit-user.component';
+import { LibraryComponent } from './admin-components/library/library.component';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { DeleteComponent } from './admin-components/user/delete/delete.component';
 
 @NgModule({
   declarations: [
@@ -100,7 +103,9 @@ import { EditUserComponent } from './admin-components/edit-user/edit-user.compon
     MessagesComponent,
     EditPhonesComponent,
     EditComputersComponent,
-    EditUserComponent
+    EditUserComponent,
+    LibraryComponent,
+    DeleteComponent
   ],
   exports: [
     MatDialogModule
@@ -152,11 +157,24 @@ import { EditUserComponent } from './admin-components/edit-user/edit-user.compon
     CarouselModule,
     NgbModule,
     Ng2SearchPipeModule,
-    provideFirebaseApp(() => initializeApp({})),
-    provideFirestore(() => getFirestore()),
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule,
-    AngularFireStorageModule
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyCmuc2M1cwtQD23cfMjTfPjheTEA0g-ljY",
+      authDomain: "lutimbefilmz-6878c.firebaseapp.com",
+      databaseURL: "https://lutimbefilmz-6878c-default-rtdb.firebaseio.com",
+      projectId: "lutimbefilmz-6878c",
+      storageBucket: "lutimbefilmz-6878c.appspot.com",
+      messagingSenderId: "387520150986",
+      appId: "1:387520150986:web:6a67c15c7e16662790a333"
+
+    }),
+    AngularFireStorageModule,
+    AngularFireAuthModule,
+    
+    // provideFirebaseApp(() => initializeApp({})),
+    // provideFirestore(() => getFirestore()),
+    // AngularFireModule.initializeApp(environment.firebase),
+    // AngularFireDatabaseModule,
+    // AngularFireStorageModule
   ], 
   providers: [],
   bootstrap: [AppComponent]

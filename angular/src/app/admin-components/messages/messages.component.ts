@@ -11,7 +11,7 @@ import { ServeService } from 'src/app/Services/serve.service';
 export class MessagesComponent implements OnInit {
 
   message: Messages[] = [];
-  displayedColumns: string[] = ['ID', 'Name', 'Email', 'Message', 'Delete'];
+  displayedColumns: string[] = ['Name', 'Email', 'Message', 'Delete'];
   dataSource = this.message;
   id = this.router.snapshot.params['id'];
   constructor(private service: ServeService, private router: ActivatedRoute) { }

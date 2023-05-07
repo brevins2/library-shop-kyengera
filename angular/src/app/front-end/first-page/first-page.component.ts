@@ -11,7 +11,10 @@ import { ComputerAccess, Phones } from 'src/app/interfaces';
 export class FirstPageComponent implements OnInit {
 
   phones: Phones[] = [];
+
   computers: ComputerAccess[] = [];
+  storage: ComputerAccess[] = [];
+
   sendMessage = this.formBuilder.group({
       Email: [''],
       Name: [''],
@@ -24,6 +27,7 @@ export class FirstPageComponent implements OnInit {
   ngOnInit(): void {
     this.getPhones();
     this.getComputer();
+    this.getComputerWithStorage();
     this.sendMessage = this.formBuilder.group({
       Email: [''],
       Name: [''],
@@ -39,8 +43,20 @@ export class FirstPageComponent implements OnInit {
 
   getComputer(){
     this.service.getAllComputers().subscribe( response=>{
-        this.computers = response.data;
+      this.computers = response.data;
+    });
+  }
+
+  getComputerWithStorage(){
+    this.service.getAllComputers().subscribe( response=>{
+      var x = response.data;
+      x.forEach((element: any) => {
+        var y = element['Category'];
+        if(y == 'Storage') {
+          this.storage = x;
+        }
       });
+    });
   }
 
   // contact information

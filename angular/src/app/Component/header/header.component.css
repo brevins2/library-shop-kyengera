@@ -1,141 +1,60 @@
 nav {
     width: 100%;
-    height: 90px;
     background-color: white;
-    border-bottom: 1px solid #bbbbbb6e;
 }
 
-nav a {
-    margin-top: 10px;
+.justify-content-start {
+    width: 70%;
+}
+
+.justify-content-end {
+    width: 30%;
 }
 
 a:hover {
     text-decoration: none;
-    transform: scale(1, 1);
 }
 
 .mat-parent-small {
     width: 100%;
 }
 
-#carousel-slider {
-    width: 70%;
+.navbar-brand {
+    margin-right: 10%;
 }
 
-.carousel-caption {
-    background-color: rgb(28, 28, 28, .11);
-    background-size: cover;
-    opacity: 1;
+.link-btn:hover {
+    background-color: grey;
 }
 
-.services {
-    width: 25%;
-    margin-left: 3%;
-    height: 20%;
-}
-
-.example-card {
-    height: 30%;
-}
-
-#nav-card {
-    background-color: blue;
-}
-
-mat-menu button:hover {
-    border-top: 2px solid orange;
-    color: orange;
-}
-
-
-/* navigation bar */
-
-.fixed-top {
-    width: 100%;
-}
-
-
-/* button icon */
-
-.service {
-    color: green;
-}
-
-.products,
-.product a {
+.link-btn {
+    font-size: .9rem;
     color: blue;
+    text-transform: capitalize;
+    display: flex !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    vertical-align: middle !important;
+    cursor: pointer !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    user-select: none !important;
+    background-color: transparent !important;
+    border: 1px solid transparent !important;
+    padding: 0.375rem 0.75rem !important;
+    font-size: 1rem !important;
+    border-radius: 0.25rem !important;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
 }
 
-.power,
-.power a {
-    color: red;
-}
+/* form styles */
 
-#sign-up {
-    color: green;
-}
-
-#shop {
-    color: orangered;
-}
-
-
-/* cart card */
-
-body {
-    padding-top: 1%;
-    padding-left: 1%;
-    margin-bottom: 3%;
-}
-
-.cart {
+.modal {
+    margin-top: 10%;
     width: 100%;
-    background-color: rgb(3, 120, 237);
-    border: 1px solid rgb(3, 120, 237);
-    text-align: left;
-    margin-bottom: 3%;
-    color: white;
 }
-
-.card-title {
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.col:hover {
-    width: 150%;
-}
-
-.row {
-    width: 100%;
-    margin-top: 4%;
-}
-
-.row .col {
-    width: 23%;
-    font-size: 10px;
-    color: black;
-    margin: .5%;
-}
-
-.row .col:hover {
-    width: 25%;
-    font-size: 15px;
-    color: black;
-}
-
-.card-body {
-    font-size: 10px;
-}
-
-.more {
-    color: orangered;
-    margin-left: 2%;
-    font-size: 1.2rem;
-}
-
-
-/* form contact */
 
 .contact {
     margin: 3%;
@@ -166,63 +85,3 @@ body {
 .send {
     margin: 3%;
 }
-
-
-/* small images spacing */
-
-.small-image img {
-    margin: 2px;
-    border-radius: 2px;
-}
-
-
-/* categories */
-
-.category {
-    width: 30%;
-}
-
-
-/* nav {
-    width: 100%;
-    height: 90px;
-    background-color: white;
-}
-
-a:hover {
-    text-decoration: none;
-}
-
-.mat-parent-small {
-    width: 100%;
-}
-
-.navbar-brand {
-    margin-right: 50%;
-}
-
-.link-btn:hover {
-    background-color: grey;
-}
-
-.link-btn {
-    font-size: .9rem;
-    color: blue;
-    text-transform: capitalize;
-    display: flex !important;
-    font-weight: 400 !important;
-    line-height: 1.5 !important;
-    text-align: center !important;
-    text-decoration: none !important;
-    vertical-align: middle !important;
-    cursor: pointer !important;
-    -webkit-user-select: none !important;
-    -moz-user-select: none !important;
-    user-select: none !important;
-    background-color: transparent !important;
-    border: 1px solid transparent !important;
-    padding: 0.375rem 0.75rem !important;
-    font-size: 1rem !important;
-    border-radius: 0.25rem !important;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
-} */

@@ -1,6 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { BreakpointObserver } from '@angular/cdk/layout';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -20,6 +18,4 @@ export class AdminComponent implements OnInit {
   logout(){
     this.router.navigate(['login']);
   }
-
-  search(){}
 }

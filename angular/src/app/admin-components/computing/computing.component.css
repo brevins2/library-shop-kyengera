@@ -30,15 +30,8 @@ table {
 /* search styles */
 input {
     font-size: 1.2rem;
-    width: 84%;
+    width: 100%;
     margin-right: 1rem;
-}
-
-.search {
-    font-size: 1.2rem;
-    width: 8rem;
-    height: 3.5rem;
-    text-transform: capitalize;
 }
 
 /* footer styling */

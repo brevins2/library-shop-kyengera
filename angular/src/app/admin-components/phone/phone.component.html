@@ -1,6 +1,5 @@
 <nav class="d-flex">
-  <input type="search" class="form-control" id="search-input-sidenav" id="search" name="search" placeholder="Search for Phones, mouse, keyboards, fans, cables, flash....">&nbsp;
-  <button class="btn btn-primary search" (click)="search()">Search</button>
+   <input type="search" class="form-control" name="search" placeholder="Search for emails....." id="myInput" onkeyup="myFunction()">
 </nav>
 
 <body>
@@ -10,7 +9,7 @@
       Add Phone
     </button>
 
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" id="myTable">
       <!-- ID Column -->
       <ng-container matColumnDef="ID">
         <th mat-header-cell *matHeaderCellDef class="text-left"> ID </th>

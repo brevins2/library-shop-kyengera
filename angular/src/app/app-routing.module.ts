@@ -24,13 +24,14 @@ import { NotificationsComponent } from './admin-components/notifications/notific
 import { HeaderComponent } from './Component/header/header.component';
 import { MessagesComponent } from './admin-components/messages/messages.component';
 import { EditUserComponent } from './admin-components/edit-user/edit-user.component';
+import { LibraryComponent } from './admin-components/library/library.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'cmj', pathMatch: 'full' },
   { path: 'cmj', component: FirstPageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'head', component: HeaderComponent },
-  { path: 'header', component: HeaderComponent },
+  { path: 'library', component: LibraryComponent},
 
   { path: 'users', component: MainComponent, children: [
     { path: '', redirectTo: 'phones', pathMatch: 'full' },

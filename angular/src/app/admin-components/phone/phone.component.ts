@@ -12,7 +12,8 @@ import { Router } from '@angular/router';
 export class PhoneComponent implements OnInit {
 
   phones: Phones[] = [];
-  displayedColumns: string[] = ['ID', 'Title', 'Storage', 'Battrey', 'Price', 'Front', 'Back', 'Side', 'Brand', 'Edit', 'Delete'];
+  public searched: string = '';
+  displayedColumns: string[] = ['Title', 'Storage', 'Battrey', 'Price', 'Front', 'Back', 'Side', 'Brand', 'Edit', 'Delete'];
     dataSource = this.phones;
   constructor(private Serve: ServeService, private route: Router) { }
 

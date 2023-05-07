@@ -11,7 +11,9 @@ import { ServeService } from 'src/app/Services/serve.service';
 export class ComputingComponent implements OnInit {
 
   computers: ComputerAccess[] = [];
-  displayedColumns: string[] = ['ID', 'Title', 'Category', 'Price', 'Front', 'Back', 'Side', 'Edit', 'Delete'];
+  public searched: string = '';
+  
+  displayedColumns: string[] = ['Title', 'Category', 'Price', 'Front', 'Back', 'Side', 'Edit', 'Delete'];
     dataSource = this.computers;
 
   constructor(private serve: ServeService, private route: Router) {

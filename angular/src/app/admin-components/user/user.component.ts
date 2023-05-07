@@ -1,9 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, Inject, OnInit } from '@angular/core';
 import { ServeService } from 'src/app/Services/serve.service';
 import { User } from 'src/app/interfaces';
-import { ActivatedRoute, Router } from '@angular/router';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -13,11 +11,12 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class UserComponent implements OnInit {
 
   user: User[] =[];
-  displayedColumns: string[] = ['ID', 'Email', 'Password', 'ConfirmPassword', 'Edit', 'Delete'];
+  idPick = '';
+  public searched: string = '';
+  displayedColumns: string[] = ['Email', 'Password', 'ConfirmPassword', 'Edit', 'Delete'];
     dataSource = this.user;
   
-  constructor(private http: HttpClient, private Serve: ServeService, private route: Router,
-    private router: ActivatedRoute) { }
+  constructor(private Serve: ServeService, private route: Router) { }
 
   ngOnInit(): void {
     this.getUser();
@@ -30,11 +29,13 @@ export class UserComponent implements OnInit {
     })
   }
 
-  open() {
+  openAdd() {
     this.route.navigate(['add user']);
   }
 
-  search(){}
+  open(id: any) {
+    this.idPick = id;   
+  }
 
   delete(id: any) {
     this.Serve.deleteUser(id).subscribe(() => { this.getUser() });

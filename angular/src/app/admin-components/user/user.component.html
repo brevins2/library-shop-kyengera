@@ -1,14 +1,13 @@
 <nav class="d-flex">
-  <input type="search" class="form-control" name="search" placeholder="Search for Phones, mouse, keyboards, fans, cables, flash...." id="myInput" onkeyup="myFunction()">&nbsp;
-  <button class="btn btn-primary search" (click)="search()">Search</button>
+  <input type="search" class="form-control" name="search" placeholder="Search for emails....." id="myInput" onkeyup="myFunction()">&nbsp;
 </nav>
 
 <body>
   <div class="display">
-    <button class="btn btn-outline-primary" (click)="open()"><i class="fa fa-user-plus"></i>&nbsp;
-        Add User
+    <button class="btn btn-outline-primary" (click)="openAdd()"><i class="fa fa-user-plus"></i>&nbsp;
+      Add User
     </button>
-
+      <!-- {{searched}} -->
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" id="myTable">
       <!-- ID Column -->
       <ng-container matColumnDef="ID">
@@ -43,15 +42,37 @@
       <!-- Delete Column -->
       <ng-container matColumnDef="Delete">
         <th mat-header-cell *matHeaderCellDef class="text-left"> Delete </th>
-        <td mat-cell *matCellDef="let user"> <button class="btn btn-outline-danger" (click)="delete(user.ID)"><i class="fa fa-trash"></i></button> </td>
+        <td mat-cell *matCellDef="let user"> <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal" (click)="open(user.ID)"><i class="fa fa-trash"></i></button> </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Are you sure you want to delete this?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-danger" (click)="delete(idPick)">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
   </div>
 
   <footer>
     @copy rights reserved
   </footer>
+  <script src="../../../assets/modal.js"></script>
 </body>
