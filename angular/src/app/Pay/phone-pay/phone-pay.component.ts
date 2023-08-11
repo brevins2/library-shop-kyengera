@@ -15,6 +15,7 @@ export class PhonePayComponent implements OnInit {
   api: Phones[] = [];
   onephone: Phones[] = [];
   alert = false;
+  id = this.router.snapshot.params['id']
 
   buyPhone = new FormGroup({
     Title: new FormControl(''), Message: new FormControl(''), Storage: new FormControl(''), Battery: new FormControl(''),

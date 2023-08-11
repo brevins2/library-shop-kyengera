@@ -1,36 +1,19 @@
-<header>
-    <nav class="d-flex">
-        <input type="search" class="form-control search" name="search" placeholder="Search for Phones, mouse, keyboards, fans, cables, flash....">
-        <button class="btn btn-primary" (click)="search()">Search</button>
-    </nav>
-</header>
-
-<mat-card class="mat-parent-small">
-    <body>
-        <div class="row row-cols-1 row-cols-md-3 g-2 d-flex flex-wrap">
-            <a class="col" *ngFor="let phon of api" routerLink="/phon-pay/{{phon.ID}}">
-                <div class="card h-100">
-                    <img [src]="'../../../../../assets/image/phones/'+ phon.File" class="card-img-top" />
-                    <div class="card-body">
-                        <h5 class="card-title">{{phon.Title}}</h5>
-                        <p class="card-text">
-                            {{phon.Storage}}
-                            <br>{{phon.Price}}
-                            <br>{{phon.Battery}}
-                        </p>
-                    </div>
-                    <div class="btn cart">
-                        <i class="fa fa-cart-plus"></i>&nbsp;Buy
-                    </div>
-                    <div class="card-footer">
+<body>
+    <h1 class="ml-4 mb-5">Phones</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-2 flex-wrap">
+        <a class="col" *ngFor="let phon of phone" routerLink="/phon-pay/{{phon.ID}}">
+            <div class="card h-100">
+                <div class="card-body">
+                    <img [src]="'../../../../../assets/image/phones/'+ phon.File" class="card-img-top" width="264">
+                    <div class="card-text text-center">
+                        <h3>{{phon.Title}}</h3>
+                        <br>{{phon.Price}}
                     </div>
                 </div>
-            </a>
-        </div>
-    </body>
-
-    <hr>
-    <footer class="text-center">
-        <i class="fa fa-copyright"></i> copy rights reserved
-    </footer>
-</mat-card>
+                <div class="btn btn-primary-cart cart">
+                    Buy&nbsp;<i class="fa fa-cart-plus"></i>
+                </div>
+            </div>
+        </a>
+    </div>
+</body>

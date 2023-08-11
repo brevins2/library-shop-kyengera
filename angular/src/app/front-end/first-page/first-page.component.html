@@ -1,81 +1,60 @@
-<nav class="d-flex justify-content-between contact-span text-center text-white align-items-center">
-    <div class="justify-content-start">
-        <i class="fa fa-phone"></i>
-        +256 755113122
-    </div>
-    <div class="justify-content-end">
-        @ copyright 2023
-    </div>
-</nav>
 <app-header></app-header>
 <body class="bg-light">
-    <div class="carousel">
-        <carousel id="carousel-slider">
-            <slide>
-                <mat-card class="example-card">
-                    <img mat-card-image src="../../../assets/image/computers/ear pads.jpg" height="500">
-                </mat-card>
-                <div class="carousel-caption d-none d-md-block">
-                    <h3>CMJ Entertainment</h3>
-                    <p>"COME VISIT THE WORLD FULL OF ENJOYMENT"</p>
-                </div>
-            </slide>
-            <slide>
-                <mat-card class="example-card">
-                    <img mat-card-image src="../../../assets/image/AI laptop.jpg" height="500">
-                </mat-card>
-                <div class="carousel-caption d-none d-md-block">
-                    <h3>CMJ Entertainment</h3>
-                    <p>"COME VISIT THE WORLD FULL OF ENJOYMENT"</p>
-                </div>
-            </slide>
-            <slide>
-                <mat-card class="example-card">
-                    <img mat-card-image src="../../../assets/image/computer.jpg" height="500">
-                </mat-card>
-                <div class="carousel-caption d-none d-md-block">
-                    <h3>CMJ Entertainment</h3>
-                    <p>"COME VISIT THE WORLD FULL OF ENJOYMENT"</p>
-                </div>
-            </slide>
-            <slide>
-                <mat-card class="example-card">
-                    <img mat-card-image src="../../../assets/image/phones/edge.jpg" height="500">
-                </mat-card>
-                <div class="carousel-caption d-none d-md-block">
-                    <h3>CMJ Entertainment</h3>
-                    <p>"COME VISIT THE WORLD FULL OF ENJOYMENT"</p>
-                </div>
-            </slide>
-            <slide>
-                <mat-card class="example-card">
-                    <img mat-card-image src="../../../assets/image/phones/infinix hot 10.jpg" height="500">
-                </mat-card>
-                <div class="carousel-caption d-none d-md-block">
-                    <h3>CMJ Entertainment</h3>
-                    <p>"COME VISIT THE WORLD FULL OF ENJOYMENT"</p>
-                </div>
-            </slide>
-        </carousel>
+    <div class="container-procedure d-flex flex-wrap">
+        <div class="d-flex div-procedure">
+            <i class="fa fa-shopping-cart"></i>
+            <div class="d-flex flex-column">
+                <h3>Free Shipping & Return</h3>
+                <h5>Free Shipping on all order over $99</h5>
+            </div>
+        </div>
+        <div class="d-flex div-procedure">
+            <i class="fa fa-money"></i>
+            <div class="d-flex flex-column">
+                <h3>Money Back Guarantee</h3>
+                <h5>100% Money Back Guarantee</h5>
+            </div>
+        </div>
+        <div class="d-flex div-procedure">
+            <i class="fa fa-headphones"></i>
+            <div class="d-flex flex-column">
+                <h3> Free Customer Support</h3>
+                <h5>Support 24/7 online and phone</h5>
+            </div>
+        </div>
+        <hr>
+    </div>
+
+    <div class="d-flex flex-wrap important-info">
+        <div class="div-image-background1">
+            <div>
+                <h3>Get discount on every item</h3>
+                <h4>5% discount and enjoy</h4>
+                <button class="btn btn-orangered">Shop Now</button>
+            </div>
+        </div>
+        <div class="div-image-background2">
+            <div>
+                <h3>Get discount on every item</h3>
+                <h4>5% discount and enjoy</h4>
+                <button class="btn btn-orangered">Shop Now</button>
+            </div>
+        </div>
     </div>
     
     <div class="body">
         <div class="row row-cols-1 row-cols-md-3 g-2">
             <a class="col" *ngFor="let phon of phones" routerLink="/phon-pay/{{phon.ID}}">
-                <div class="card h-100 card-item">
-                    <h5 class="card-title">{{phon.Title}}</h5>
-                    <div>
-                        <div class="card-body">
-                            <img [src]="'../../../../../assets/image/phones/'+ phon.File" class="card-img-top" height="90" width="100">
-                            <p class="card-text">
-                                {{phon.Storage}}
-                                <br>{{phon.Price}}
-                                <br>{{phon.Battery}}
-                            </p>
+                <div class="card h-100">
+                    <div class="card-body">
+                        <img [src]="'../../../../../assets/image/phones/'+ phon.File" class="card-img-top" width="200">
+                        <div class="card-text text-center">
+                            <h3>{{phon.Title}}</h3>
+                            <br>{{phon.Price}}
                         </div>
-                        <div class="btn btn-primary cart">
-                            <i class="fa fa-cart-plus"></i>&nbsp;Buy
-                        </div>
+                    </div>
+                    <div class="btn btn-primary-cart cart">
+                        Buy&nbsp;<i class="fa fa-cart-plus"></i>
                     </div>
                 </div>
             </a>
@@ -87,40 +66,37 @@
         <div class="row row-cols-1 row-cols-md-3 g-2">
             <a class="col" *ngFor="let com of computers" routerLink="/comp-pay/{{com.ID}}">
                 <div class="card h-100">
-                    <h5 class="card-title">{{com.Title}}</h5>
                     <div class="card-body">
-                        <img [src]="'../../../../../assets/image/computers/'+ com.File" class="card-img-top" height="90">
-                        <div class="card-text ">
-                            <p>{{com.Category}}
-                                <br>{{com.Price}}
-                            </p>
+                        <img [src]="'../../../../../assets/image/computers/'+ com.File" class="card-img-top" width="200">
+                        <div class="card-text text-center">
+                            <h3>{{com.Title}}<br/></h3>
+                            {{com.Price}}
                         </div>
                     </div>
-                    <div class="btn btn-primary cart">
-                        <i class="fa fa-cart-plus"></i>&nbsp;Buy
+                    <div class="btn btn-primary-cart cart">
+                        Buy&nbsp;<i class="fa fa-cart-plus"></i>
                     </div>
                 </div>
             </a>
         </div>
         <a routerLink="/users/computers" class="more">see more >>></a>
     </div>
-
-    <h3>Storage</h3>
+    
+    <!-- <p class="badge badge-danger">on sale</p> -->
     <div class="body">
+        <h3>Storage</h3>
         <div class="row row-cols-1 row-cols-md-3 g-2" id="myRow">
             <a class="col d-flex flex-column" id="myTitle" *ngFor="let com of storage" routerLink="/comp-pay/{{com.ID}}">
                 <div class="card h-100" *ngIf="com.Category == 'Storage'">
-                    <h5 class="card-title">{{com.Title}}</h5>
                     <div class="card-body">
-                        <img [src]="'../../../../../assets/image/computers/'+ com.File" class="card-img-top" height="90">
-                        <div class="card-text ">
-                            <p>{{com.Category}}
-                                <br>{{com.Price}}
-                            </p>
+                        <img [src]="'../../../../../assets/image/computers/'+ com.File" class="card-img-top" width="200">
+                        <div class="card-text text-center">
+                            <h3>{{com.Title}}</h3>
+                            <br>{{com.Price}}
                         </div>
                     </div>
-                    <div class="btn btn-primary cart">
-                        <i class="fa fa-cart-plus"></i>&nbsp;Buy
+                    <div class="btn btn-primary-cart cart">
+                        Buy&nbsp;<i class="fa fa-cart-plus"></i>
                     </div>
                 </div>
             </a>

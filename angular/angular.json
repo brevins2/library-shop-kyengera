@@ -36,7 +36,8 @@
                         ],
                         "scripts": [
                             "node_modules/chart.js/dist/chart.js",
-                            "src/assets/filters/user.js"
+                            "src/assets/filters/user.js",
+                            "src/assets/categories.js"
                         ]
                     },
                     "configurations": {

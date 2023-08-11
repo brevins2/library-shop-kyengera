@@ -1,73 +1,74 @@
-<nav class="position-sticky fixed-top navbar navbar-expand-lg d-flex justify-content-between">
-  <div class="d-flex container justify-content-start">
+<nav class="d-flex justify-content-between contact-span text-center text-white align-items-center">
+  <div class="justify-content-start">
     <a class="navbar-brand" routerLink="/cmj">
-      <img src="../../../assets/image/icons/logo.png" width="250">
-    </a>
-  
-    <a routerLink="/users/phones" class="link-btn d-flex flex-column text-blue">
-      <i class="fa fa-mobile"></i>
-      Phone
-    </a>
-  
-    <a routerLink="/users/computers" class="link-btn d-flex flex-column text-blue">
-      <i class="fa fa-desktop"></i>
-      Computer Accessories
-    </a>
-
-    <a data-toggle="modal" data-target="#exampleModal" class="link-btn d-flex flex-column text-blue">
-      <i class="fa fa-phone"></i>          
-      Contact
+      <img src="../../../assets/image/icons/logo.png" width="250" height="60">
     </a>
   </div>
+  
+  <div class="justify-content-end top-search">
+    <form class="d-flex">
+      <select name="Categories" class="form-select form-control select">
+        <option>All Categories</option>
+        <option>All Categories</option>
+        <option>All Categories</option>
+        <option>All Categories</option>
+        <option>All Categories</option>
+      </select>
 
-  <div class="d-flex justify-content-end">
-    <input type="search" class="form-control" id="myInput" class="form-control" placeholder="search for....." onkeyup="searchelement()">
-
-    <a routerLink="/users" class="link-btn d-flex flex-column text-blue">
-      <i class="fa fa-shopping-cart"></i>
-      Shopping
-    </a>
+      <input type="search" class="form-control search-input" id="myInput" placeholder="search for products....." onkeyup="searchelement()">
+    </form>
   </div>
 </nav>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="d-flex contact" id="contact">
-        <div class="help float-left">
-          <h5 class="address">
-            Contact Us
-          </h5>
-          We sell phones and Computer accessories at the cheapest prices there is.
-          <b>For online services</b><br/>Order from our websites or any of our social media platforms the device or accessory of your choice and we shall be at your service. Use our email
-          <a href="email">cmjentertainment@gmail.com</a> or our telephone lines <b>0700711932</b> and get served quickly.
-          <br/><br/>
-          <P>Our Motto is</P>
-          <h5>"COME VISIT THE WORLD FULL OF ENJOYMENT"</h5>
-        </div>
-        <div class="float-right location">
-          <form class="form" [formGroup]="sendMessage" (ngSubmit)="sendMessages()">
-            <h2>Send Message</h2>
-            <div class="form-group">
-              <label>Name</label>
-              <input type="text" formControlName="Name" class="form-control" id="exampleInputText" placeholder="Enter name" />
-            </div>
+<header class="position-sticky fixed-top d-flex flex-wrap justify-content-between">
+  <button class="text-white text-uppercase d-flex align-items-center categories-btn" onmouseover="document.getElementById('categories').style.cssText = 'display: unset;'"
+  onmouseleave="document.getElementById('categories').style.cssText = 'display: none'">
+    <i class="fa fa-bars" style="padding-right: 10px; font-size: 15px;"></i>
+    Categories
+  </button>
 
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" formControlName="Email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            </div>
+  <div class="d-flex justify-content-start align-items-center">
+    <a routerLink="/cmj" class="link-btn">
+      Home
+    </a>
 
-            <div class="form-group">
-              <label for="exampleMessage">Message</label>
-              <textarea class="form-control" id="exampleMessage" formControlName="Message" placeholder="Enter your message" rows="6">
-              </textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary send"><i class="fa fa-paper-plane"></i>&nbsp;Send</button>
-          </form>
-        </div>
-      </div>
-    </div>
+    <a routerLink="/users/phones" class="link-btn">
+      Phone
+    </a>
+  
+    <a routerLink="/users/computers" class="link-btn">
+      Computer Accessories
+    </a>
   </div>
+
+  <button onmouseover="document.getElementById('accounts').style.cssText = 'display: unset;'" onmouseleave="document.getElementById('accounts').style.cssText = 'display: none;'" class="text-uppercase d-flex align-items-center menu-btn">
+    <i class="fa fa-person" style="color: orangered; font-size: 20px;"></i>
+    My Account
+  </button>
+</header>
+
+<div class="container list-container" id="categories">
+  <ul class="bg-dark text-white">
+    <li>one</li>
+    <li>one</li>
+    <li>one</li>
+    <li>one</li>
+    <li>one</li>
+    <li>one</li>
+    <li>one</li>
+    <li>one</li>
+    <li>one</li>
+    <li>one</li>
+    <li>one</li>
+    <li>one</li>
+    <li>one</li>
+    <li>one</li>
+  </ul>
+</div>
+
+<div class="container list-container-accounts" id="accounts">
+  <ul class="bg-dark text-white">
+    <li>one</li>
+    <li>one</li>
+  </ul>
 </div>

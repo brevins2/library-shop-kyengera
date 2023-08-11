@@ -12,16 +12,16 @@ import { Phones } from 'src/app/interfaces';
 })
 export class PhonesComponent implements OnInit {
 
-  api: Phones[] = [];
+  phone: Phones[] = [];
   constructor(private http: HttpClient, private router: ActivatedRoute, private service: ServeService) { }
 
   ngOnInit(): void {
-    this.getApi();
+    this.getPhones();
   }
 
-  getApi(){
+  getPhones(){
     this.service.getAllPhones().subscribe(response=>{
-      this.api = response.data;
+      this.phone = response.data;
     });
   }
 

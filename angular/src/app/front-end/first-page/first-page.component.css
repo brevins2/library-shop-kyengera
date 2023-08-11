@@ -1,17 +1,17 @@
-/* contact-span styling */
-.contact-span {
-    width: 100%;
-    height: 3rem;
-    background-color: darkgreen;
-    font-size: 1.2rem;
-    padding-left: 2%;
-    padding-right: 2%;
-}
-
 /* general styling */
 
 a {
     text-decoration: none;
+}
+
+i {
+    color: white;
+    background-color: #f73838;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 4px;
+    border: 1px solid #f73838;
+    border-radius: 50%;
 }
 
 .carousel {
@@ -23,27 +23,84 @@ a {
 body {
     padding-top: 1%;
     padding-left: 1%;
-    margin-bottom: 3%;
     height: 100%;
 }
 
-.cart {
+.container-procedure {
+    margin: 0 auto;
+    margin-left: 30%;
+    margin-bottom: 20px;
+    /* border-bottom: 1px solid orangered; */
+}
+
+hr {
+    width: 2px;
+    color: black;
+}
+
+.important-info {
+    margin: 0 4%;
+}
+
+.div-image-background1, .div-image-background2{
+    width: 600px;
+    height: 320px;
+    align-items: center;
+    background-image: url('../../../assets/image/sale-discount.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.div-image-background2 {
+    background-image: url('../../../assets/image/Credit Cards.jpg');
+}
+
+.div-image-background1 div, .div-image-background2 div {
+    background-color: rgba(0, 0, 0, 0.171);
+    background-size: cover;
+    padding: 10%;
     width: 100%;
-    text-align: left;
-    margin-bottom: 3%;
-    font-size: 1.3rem;
+    height: 100%;
     color: white;
 }
 
-.card-title {
-    font-size: 1.5rem;
-    font-weight: bold;
+.div-image-background1 div h3, .div-image-background2 div h3 {
+    font-weight: 700;
+    font-size: 40px;
+    color: white;
 }
 
-.col:hover {
-    width: 150%;
+.div-image-background1 div h4, .div-image-background2 div h4 {
+    font-size: 20px;
 }
 
+.btn-orangered {
+    background-color: #f73838;
+    color: white;
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 17px;
+    padding: 10px 20px;
+}
+
+.btn-orangered:hover {
+    background-color: #2d2d2d;
+}
+
+.div-procedure{
+    padding: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.div-procedure i {
+    width: 40px;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+/* product cart styles */
 .row {
     width: 100%;
     margin-top: 4%;
@@ -51,26 +108,39 @@ body {
 
 .row .col {
     width: 23%;
-    /* height: 200px; */
     font-size: 1.4rem;
     color: black;
     margin: .5%;
-}
-
-.row .col .card:hover {
-    font-size: 1.5rem;
-    color: black;
-    background-color: rgb(199, 199, 199, 0.4);
 }
 
 .card-body {
     font-size: 10px;
 }
 
+.card-text {
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+.card-text h3 {
+    font-size: 15px;
+}
+
+.btn-primary-cart {
+    background-color: #f73838;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    border-radius: 0px;
+    font-size: 16px;
+    color: white;
+}
+
 .more {
     color: orangered;
+    font-size: 18px;
     margin-left: 2%;
-    font-size: 1.2rem;
+    margin-bottom: 20px;
 }
 
 /* small images spacing */
@@ -82,7 +152,12 @@ body {
 
 
 /* categories */
-
 .category {
     width: 30%;
+}
+
+/* babge style */
+.badge {
+    width: 40px;
+    height: 15px;
 }
